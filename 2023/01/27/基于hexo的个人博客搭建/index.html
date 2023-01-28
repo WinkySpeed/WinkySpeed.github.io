@@ -6,49 +6,49 @@
   
   <title>基于hexo的个人博客搭建教程 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="这个教程涵盖了我搭建博客时遇到的所有问题，希望能够帮到你  准备工作需要下载以下软件：node.js Git 魔法上网			可以用Steam++访问github    Git的配置装好Git以后，右键菜单就会出现如图选项，进入Git控制台  第一件事就是配置用户名和邮箱 1234# 配置用户名git config --global user.name WinkySpeed	# 配置邮箱	~~此处邮">
+  <meta name="description" content="这个教程涵盖了我搭建博客时遇到的所有问题，希望能够帮到你  准备工作需要下载以下软件：node.js Git 魔法上网			可以用Steam++访问github    Git的配置装好Git以后，右键菜单就会出现如图选项，进入Git控制台   第一件事就是配置用户名和邮箱 1234# 配置用户名git config --global user.name WinkySpeed	# 配置邮箱	~~此处">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于hexo的个人博客搭建教程">
 <meta property="og:url" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="这个教程涵盖了我搭建博客时遇到的所有问题，希望能够帮到你  准备工作需要下载以下软件：node.js Git 魔法上网			可以用Steam++访问github    Git的配置装好Git以后，右键菜单就会出现如图选项，进入Git控制台  第一件事就是配置用户名和邮箱 1234# 配置用户名git config --global user.name WinkySpeed	# 配置邮箱	~~此处邮">
+<meta property="og:description" content="这个教程涵盖了我搭建博客时遇到的所有问题，希望能够帮到你  准备工作需要下载以下软件：node.js Git 魔法上网			可以用Steam++访问github    Git的配置装好Git以后，右键菜单就会出现如图选项，进入Git控制台   第一件事就是配置用户名和邮箱 1234# 配置用户名git config --global user.name WinkySpeed	# 配置邮箱	~~此处">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127232413.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127233116.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127233545.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127234440.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127235002.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127235107.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20230128000014172.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128000405.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128001302.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128001350.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128001608.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127232413.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128001948.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128005900.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128010402.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128010530.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128011550.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128113516.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128114651.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128115326.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128115943.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128120653.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128121157.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128121518.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128121914.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128122121.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128122341.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128122430.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128124651.png">
-<meta property="og:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128140552.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127232413.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127233116.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127233545.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127234440.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127235002.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127235107.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20230128000014172.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128000405.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128001302.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128001350.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128001608.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127232413.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128001948.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128005900.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128010402.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128010530.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128011550.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128113516.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128114651.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128115326.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128115943.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128120653.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128121157.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128121518.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128121914.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128122121.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128122341.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128122430.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128124651.png">
+<meta property="og:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128140552.png">
 <meta property="article:published_time" content="2023-01-27T14:45:20.000Z">
-<meta property="article:modified_time" content="2023-01-28T09:15:11.524Z">
+<meta property="article:modified_time" content="2023-01-28T11:58:05.243Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="hexo 个人博客">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127232413.png">
+<meta name="twitter:image" content="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127232413.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -135,14 +135,16 @@
 <br>
 
 <h3 id="Git的配置"><a href="#Git的配置" class="headerlink" title="Git的配置"></a>Git的配置</h3><p>装好Git以后，右键菜单就会出现如图选项，进入Git控制台</p>
-<p><img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127232413.png"></p>
+<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127232413.png" class>
+
 <p>第一件事就是配置用户名和邮箱</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">配置用户名</span></span><br><span class="line">git config --global user.name WinkySpeed	</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">配置邮箱	~~此处邮箱可以实际上不存在~~</span></span><br><span class="line">git config --global user.email WinkySpeed@test.mail	</span><br></pre></td></tr></table></figure>
 
 <br>
 
 <p>如图</p>
-<p><img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127233116.png"></p>
+<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127233116.png" class>
+
 <br>
 
 <hr>
@@ -150,21 +152,25 @@
 
 <h2 id="进行hexo的配置与搭建"><a href="#进行hexo的配置与搭建" class="headerlink" title="进行hexo的配置与搭建"></a>进行hexo的配置与搭建</h2><h3 id="查看nodejs是否安装成功"><a href="#查看nodejs是否安装成功" class="headerlink" title="查看nodejs是否安装成功"></a>查看nodejs是否安装成功</h3><p>以管理员身份打开cmd</p>
 <p>如图，输入	<code>node -v</code>	和	<code>npm -v</code>	查看版本</p>
-<p><img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127233545.png"></p>
-<p>国内的源可能有些慢，先安装一个淘宝的源，控制台输入</p>
+<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127233545.png" class>
+
+<p>国内的源可能有些慢，最好利用淘宝的源，控制台输入</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
 
 <p>等安装成功后输入	<code>cnpm -v</code>	如果能查出版本号说明安装成功</p>
-<p><img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127234440.png"></p>
+<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127234440.png" class>
+
 <br>
 
 <h3 id="下载hexo"><a href="#下载hexo" class="headerlink" title="下载hexo"></a>下载hexo</h3><p>控制台输入</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 
 <p>等待安装</p>
-<p><img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127235002.png"></p>
+<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127235002.png" class>
+
 <p>用	<code>hexo -v</code>	验证</p>
-<p><img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127235107.png"></p>
+<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127235107.png" class>
+
 <br>
 
 <h3 id="使用hexo正式搭建博客"><a href="#使用hexo正式搭建博客" class="headerlink" title="使用hexo正式搭建博客"></a>使用hexo正式搭建博客</h3><p>建立一个Blog文件夹，<strong>以后的控制台操作都会在此文件夹内进行</strong>，如果搭建博客过程中出现问题，可以直接把该文件夹删除重来</p>
@@ -172,24 +178,31 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
 
 <p>此处大概会出现两种错误：</p>
-<p>一种是没安装Git或没初始化，无法clone，如图<img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20230128000014172.png"></p>
-<p>一种是网络问题，无法正常clone，如图，提示 <strong>Failed to connect to github.com port 443</strong><img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128000405.png"></p>
+<p>一种是没安装Git或没初始化，无法clone，如图<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20230128000014172.png" class></p>
+<p>一种是网络问题，无法正常clone，如图，提示 <strong>Failed to connect to github.com port 443</strong><img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128000405.png" class></p>
 <br>
 
 <p>如果是Git的问题，照着之前的教程再做一遍即可</p>
 <p>网络问题就需要科学上网了，打开steam++选择github加速，<strong>加速模式选择系统代理模式</strong></p>
 <p>可以看到，挂了加速以后可以连上github了</p>
-<p><img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128001302.png"></p>
+<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128001302.png" class>
+
 <p>此时再	<code>hexo init</code>	一次试试，发现仍不行，还是报错，但是都能上github了，为什么不能clone呢？</p>
-<p><img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128001350.png"></p>
+<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128001350.png" class>
+
 <p>原因是Git没有启用代理，右键打开右下角网络，选择“网络和Internet设置”，左边选择“代理”</p>
 <p>注意到这里</p>
-<p><img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128001608.png"></p>
+<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128001608.png" class>
+
 <p>地址应该都是本机回送地址，但是端口可能会不一样，得看不同科学上网软件了，记住这个端口: 26501</p>
 <p>右键打开Git控制台</p>
-<p><img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127232413.png"></p>
+<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127232413.png" class>
+
 <p>如图输入</p>
-<p><img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128001948.png"></p>
+<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128001948.png" class>
+
+<br>
+
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy 127.0.0.1:26501</span><br><span class="line"></span><br><span class="line">git config --global https.proxy 127.0.0.1:26501</span><br></pre></td></tr></table></figure>
 
 <p>端口26501就是上文中出现的端口，<em><strong>不同魔法上网软件的端口是不一样的，按自己机子上显示的来</strong></em></p>
@@ -198,67 +211,87 @@
 <br>
 
 <p>但是有时可能出现下图错误</p>
-<p><img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128005900.png"></p>
+<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128005900.png" class>
+
 <p>报错为 <strong>SSL certificate problem: unable to get local issuer certificate</strong></p>
 <p>解决方法为，通过命令关闭SSL证书验证</p>
 <p>在Git控制台输入	</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.sslverify false</span><br></pre></td></tr></table></figure>
 
-<p><img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128010402.png"></p>
+<br>
+
+<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128010402.png" class>
+
 <p>此时再回到Blog目录下的控制台，也可以在Blog目录里打开Git控制台，输入	<code>hexo init</code></p>
-<p><img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128010530.png"></p>
+<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128010530.png" class>
+
 <p>经过漫长的等待，hexo终于装好了</p>
-<p><img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128011550.png"></p>
+<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128011550.png" class>
+
 <br>
 
 <h3 id="启动博客"><a href="#启动博客" class="headerlink" title="启动博客"></a>启动博客</h3><p>在Blog目录下的控制台输入</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 
-<p><img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128113516.png"></p>
+<br>
+
+<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128113516.png" class>
+
 <p>现在hexo就在回送地址的4000端口显示了，在浏览器中输入</p>
 <p><a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a>	或	127.0.0.1:4000</p>
-<p>hexo就会自动生成<img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128114651.png"></p>
+<p>hexo就会自动生成<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128114651.png" class></p>
 <p>美化是后面的事，最重要的是<strong>先拥有一个属于自己的博客</strong></p>
 <p>控制台中Ctrl + C可以退出hexo，输入</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;第一篇博客test&quot;</span><br></pre></td></tr></table></figure>
 
-<p><img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128115326.png"></p>
+<br>
+
+<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128115326.png" class>
+
 <p>进入	Blog\source_posts\	中，就会发现hexo帮你生成了一篇博客，后缀名是.md</p>
 <p>文章采用Markdown语法，推荐使用Typora编辑，不过现在收费了，<del>可以使用破解版</del></p>
 <p>随便写一写保存退出，再通过<code>hexo s</code>启动，就可以看到新写的博客发布在上面了</p>
-<p><img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128115943.png"></p>
+<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128115943.png" class>
+
 <br>
 
 <hr>
 <br>
 
 <h2 id="把博客部署到github上"><a href="#把博客部署到github上" class="headerlink" title="把博客部署到github上"></a>把博客部署到github上</h2><p>打开github新建一个仓库</p>
-<p><img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128120653.png"></p>
+<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128120653.png" class>
+
 <p>仓库名一定要是自己github的用户名+.github.io</p>
 <p>例如我的就是	WinkySpeed.github.io</p>
 <p>成功创建仓库后，在Blog目录下打开控制台，安装Git部署插件，输入</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
 
 <p>如图显示则安装成功</p>
-<p><img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128121157.png"></p>
+<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128121157.png" class>
+
 <p>然后进入Blog目录，设置 _config.yml 文件，用记事本或vscode打开都可以</p>
 <p>拉到最底下找到	# Deployment</p>
-<p><img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128121518.png"></p>
+<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128121518.png" class>
+
 <p>修改如下，保存退出</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/WinkySpeed/WinkySpeed.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
 
 <p>repo: 后的地址就是刚刚建立的github仓库地址，可以在仓库里获取</p>
-<p><img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128121914.png"></p>
+<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128121914.png" class>
+
 <p>回到Blog目录下的控制台，输入</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 
 <p>中途会跳出github的登陆界面，在里面输入账号密码就可以了</p>
-<p><img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128122121.png"></p>
-<p>如图显示则成功<img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128122341.png"></p>
+<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128122121.png" class>
+
+<p>如图显示则成功<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128122341.png" class></p>
 <p>回到github仓库刷新，就发现仓库里有内容了</p>
-<p><img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128122430.png"></p>
+<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128122430.png" class>
+
 <p>在浏览器中输入你的博客地址，就可以访问部署到远端的博客了</p>
-<p><img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128124651.png"></p>
+<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128124651.png" class>
+
 <p>如果没成功，可以多刷新几次，等待github检查代码，成功时会有个小绿勾，就可以正常访问了</p>
 <p>如果实在不行，就把github库删了重新建一个新库，重新推就行了</p>
 <br>
@@ -273,7 +306,8 @@
 
 <p>就可以完成一次推送</p>
 <p>推送中可能出现的问题：</p>
-<p><img src="/./%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128140552.png"></p>
+<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128140552.png" class>
+
 <p><strong>fatal: detected dubious ownership in repository at xxx</strong></p>
 <p>原因：一开始部署博客的时候是用的管理员身份运行的cmd，这里我是直接在blog目录下打开的cmd，不是管理员身份</p>
 <p>解决方法：通过管理员身份打开cmd后cd到blog目录下，重新<code>hexo d</code>即可</p>
@@ -298,7 +332,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" data-id="cldfs1sd80002fsvc6klb90b4" data-title="基于hexo的个人博客搭建教程" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" data-id="cldfwk68z0001j0vcekcbfre3" data-title="基于hexo的个人博客搭建教程" class="article-share-link">Share</a>
       
       
       
@@ -310,11 +344,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2023/01/28/test/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/01/28/%E5%9B%BE%E7%89%87%E7%9A%84%E6%98%BE%E7%A4%BA/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          test
+          解决Hexo博客图片显示问题
         
       </div>
     </a>
@@ -342,7 +376,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" rel="tag">hexo 个人博客</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA-Typora/" rel="tag">Hexo 博客图片显示 Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" rel="tag">hexo 个人博客</a></li></ul>
     </div>
   </div>
 
@@ -352,7 +386,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">hexo 个人博客</a>
+      <a href="/tags/Hexo-%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA-Typora/" style="font-size: 10px;">Hexo 博客图片显示 Typora</a> <a href="/tags/hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">hexo 个人博客</a>
     </div>
   </div>
 
@@ -374,7 +408,7 @@
       <ul>
         
           <li>
-            <a href="/2023/01/28/test/">test</a>
+            <a href="/2023/01/28/%E5%9B%BE%E7%89%87%E7%9A%84%E6%98%BE%E7%A4%BA/">解决Hexo博客图片显示问题</a>
           </li>
         
           <li>
