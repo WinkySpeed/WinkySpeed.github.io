@@ -141,7 +141,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/01/28/%E5%9B%BE%E7%89%87%E7%9A%84%E6%98%BE%E7%A4%BA/" data-id="cldfz80c0000fkwvc4y2xdsc7" data-title="解决Hexo博客图片显示问题" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/01/28/%E5%9B%BE%E7%89%87%E7%9A%84%E6%98%BE%E7%A4%BA/" data-id="cldg1d8yl000a7svce5a5g8qm" data-title="解决Hexo博客图片显示问题" class="article-share-link">Share</a>
       
       
       
@@ -382,7 +382,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" data-id="cldfz80bz000ckwvc53hr1car" data-title="基于hexo的个人博客搭建教程" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" data-id="cldg1d8yn000n7svcgpaidksj" data-title="基于hexo的个人博客搭建教程" class="article-share-link">Share</a>
       
       
       
@@ -435,7 +435,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/01/27/hello-world/" data-id="cldfz80bw0005kwvch7yu00fj" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/01/27/hello-world/" data-id="cldg1d8yh00037svc3lym0pen" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -527,11 +527,91 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/01/15/%E9%80%86%E8%BD%AC%E8%A3%81%E5%88%A41-3%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" data-id="cldfz80c1000hkwvc01hc2hyb" data-title="逆转裁判1-3通关感想" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/01/15/%E9%80%86%E8%BD%AC%E8%A3%81%E5%88%A41-3%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" data-id="cldg1d8yo000q7svc1mhu2aga" data-title="逆转裁判1-3通关感想" class="article-share-link">Share</a>
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" rel="tag">游戏通关感想</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-基于OpenCV实现的灰度图幻影坦克" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/27/%E5%9F%BA%E4%BA%8EOpenCV%E5%AE%9E%E7%8E%B0%E7%9A%84%E7%81%B0%E5%BA%A6%E5%9B%BE%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B/" class="article-date">
+  <time class="dt-published" datetime="2022-09-27T15:03:28.000Z" itemprop="datePublished">2022-09-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/09/27/%E5%9F%BA%E4%BA%8EOpenCV%E5%AE%9E%E7%8E%B0%E7%9A%84%E7%81%B0%E5%BA%A6%E5%9B%BE%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B/">基于OpenCV实现的灰度图幻影坦克</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>对于png透明图片，在QQ，贴吧等平台上，<strong>看缩略图时默认是以白色为背景，而点开看原图时默认是以黑色为背景</strong>，基于此显示逻辑可以实现一种图像，看缩略图时是表图，看原图时是里图，这就是幻影坦克。</p>
+<p>基于图像线性融合原理，公式：<strong>g(x) &#x3D; α×f(x) + (1-α)×h(x)</strong> ，可以假设最后生成图与白色叠加得到表图，最后生成图与黑色叠加得到里图，套用公式即可得到幻影坦克的理论公式：</p>
+<img src="/2022/09/27/%E5%9F%BA%E4%BA%8EOpenCV%E5%AE%9E%E7%8E%B0%E7%9A%84%E7%81%B0%E5%BA%A6%E5%9B%BE%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B/image-20230128213900762.png" class title="image-20230128213900762">
+
+<p>公式和原理都源自B站视频: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kV411v7fR">『整活』幻影坦克 基础版</a>，讲的很细致。</p>
+<p>需要注意的是，公式里α透明度有一项是表图的灰度值减里图灰度值，<strong>必须保证这个值时刻大于0</strong>，不然会出现α值大于255的情况，造成错误，即里图显示时出现表图部分，如图：</p>
+<img src="/2022/09/27/%E5%9F%BA%E4%BA%8EOpenCV%E5%AE%9E%E7%8E%B0%E7%9A%84%E7%81%B0%E5%BA%A6%E5%9B%BE%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B/409448276ee344c983d101569975d24e.png" class>
+
+<p>在我把背景换成橙色以后，图中错误部分也显示为橙色，所以判断为这些地方透明度计算出现问题。</p>
+<img src="/2022/09/27/%E5%9F%BA%E4%BA%8EOpenCV%E5%AE%9E%E7%8E%B0%E7%9A%84%E7%81%B0%E5%BA%A6%E5%9B%BE%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B/1909616ff607481ab40bed983f6a6026.png" class>
+
+<p>经过初步分析得到：显示错误的地方在原图中的灰度值非常低，导致P表-P里小于0，使α超出上限，造成完全透明。</p>
+<p>如何保证P表-P里大于0？我的想法是<em>里图调暗一些，最后保证表图每一像素的灰度大于里图灰度</em>即可。</p>
+<p>经过一段时间的调试，我得到了我的解决办法：以里图尺寸为基准，遍历全部像素点，分别读取表图和里图的灰度，将读取到的里图灰度乘0.35，灰度的范围是0-255，因此最大值255*0.35&#x3D;89.25。对于表图的灰度，如果出现小于上面这个值的灰度，就给他强行赋值为100，这样一定能够保证P表-P里大于0，α正常，里图显示正常。</p>
+<p>可能会有人问：改变了表图灰度，会不会对最终结果造成影响？这个问题我还不清楚，但是根据生成的幻影坦克来看，这点影响可以忽略不计。</p>
+<p>希望大神指点更好的方法以保证α不出问题。</p>
+<p>解决了最基础的幻影坦克功能问题，接着就解决图片后缀名问题</p>
+<p>问老师后得到了一个思路：<strong>C++检验文件是否存在</strong></p>
+<p>查阅他人博客得到了一个简单的方法：用ifstream的good函数可以判断文件是否存在</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">isFileExists_ifstream</span><span class="params">(string&amp; name)</span> </span>&#123;</span><br><span class="line">    <span class="function">ifstream <span class="title">f</span><span class="params">(name.c_str())</span></span>;</span><br><span class="line">    <span class="keyword">return</span> f.<span class="built_in">good</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    string filename = <span class="string">&quot;1.txt&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">bool</span> ret = <span class="built_in">isFileExists_ifstream</span>(filename);</span><br><span class="line">    <span class="keyword">if</span> (ret)</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;文件存在&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;文件不存在&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个方法实现起来比较省事，就采用这种方法</p>
+<p>大体思路是检查同一文件夹中是否存在jpg, png, bmp, jfif, jpeg这些常见图片后缀名，再通过string加法将存在的后缀名加到图片名后，因为先前固定了表图命名为A，里图命名为B，所以这样可以直接实现</p>
+<p>检查后缀名的总函数采用了C++值传递的特征，传入参数string后，在函数里随便修改也不会影响string本身，于是就利用这点构造了一系列返回值bool的函数，进行文件存在判断，最后再利用C++传入引用的参数，修改string，就得到了实际存在的两张图，再对他们缩放、生成幻影坦克</p>
+<br>
+
+<br>
+
+<h2 id="最后附上源码"><a href="#最后附上源码" class="headerlink" title="最后附上源码"></a>最后附上源码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;opencv2/opencv.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">IsJPG</span><span class="params">(string name)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	name += <span class="string">&quot;.jpg&quot;</span>;</span><br><span class="line">	<span class="function">ifstream <span class="title">f</span><span class="params">(name.c_str())</span></span>;</span><br><span class="line">	<span class="keyword">return</span> f.<span class="built_in">good</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">IsPNG</span><span class="params">(string name)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	name += <span class="string">&quot;.png&quot;</span>;</span><br><span class="line">	<span class="function">ifstream <span class="title">f</span><span class="params">(name.c_str())</span></span>;</span><br><span class="line">	<span class="keyword">return</span> f.<span class="built_in">good</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">IsBMP</span><span class="params">(string name)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	name += <span class="string">&quot;.bmp&quot;</span>;</span><br><span class="line">	<span class="function">ifstream <span class="title">f</span><span class="params">(name.c_str())</span></span>;</span><br><span class="line">	<span class="keyword">return</span> f.<span class="built_in">good</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">IsJFIF</span><span class="params">(string name)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	name += <span class="string">&quot;.jfif&quot;</span>;</span><br><span class="line">	<span class="function">ifstream <span class="title">f</span><span class="params">(name.c_str())</span></span>;</span><br><span class="line">	<span class="keyword">return</span> f.<span class="built_in">good</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">IsJPEG</span><span class="params">(string name)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	name += <span class="string">&quot;.jpeg&quot;</span>;</span><br><span class="line">	<span class="function">ifstream <span class="title">f</span><span class="params">(name.c_str())</span></span>;</span><br><span class="line">	<span class="keyword">return</span> f.<span class="built_in">good</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">AddSuffix</span><span class="params">(string&amp; name)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">IsPNG</span>(name))</span><br><span class="line">	&#123;</span><br><span class="line">		name += <span class="string">&quot;.png&quot;</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">IsJPG</span>(name))</span><br><span class="line">	&#123;</span><br><span class="line">		name += <span class="string">&quot;.jpg&quot;</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">IsJPEG</span>(name))</span><br><span class="line">	&#123;</span><br><span class="line">		name += <span class="string">&quot;.jpeg&quot;</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">IsBMP</span>(name))</span><br><span class="line">	&#123;</span><br><span class="line">		name += <span class="string">&quot;.bmp&quot;</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">IsJFIF</span>(name))</span><br><span class="line">	&#123;</span><br><span class="line">		name += <span class="string">&quot;.jfif&quot;</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	string PICA = <span class="string">&quot;A&quot;</span>;</span><br><span class="line">	string PICB = <span class="string">&quot;B&quot;</span>;</span><br><span class="line">	<span class="built_in">AddSuffix</span>(PICA);						<span class="comment">//给A图添加后缀名</span></span><br><span class="line">	<span class="built_in">AddSuffix</span>(PICB);						<span class="comment">//给B图添加后缀名</span></span><br><span class="line"></span><br><span class="line">	Mat A_origin = <span class="built_in">imread</span>(PICA, <span class="number">0</span>);</span><br><span class="line">	Mat A;</span><br><span class="line">	Mat B = <span class="built_in">imread</span>(PICB, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">resize</span>(A_origin, A, B.<span class="built_in">size</span>());			 <span class="comment">//将表图按里图尺寸缩放</span></span><br><span class="line"></span><br><span class="line">	Mat C = Mat::<span class="built_in">zeros</span>(B.<span class="built_in">size</span>(), CV_8UC4);	  <span class="comment">//生成一张空图，尺寸为里图尺寸</span></span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> PA, PB, PC;</span><br><span class="line">	<span class="type">int</span> Alpha;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; B.rows; i++)		  </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; B.cols; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			PA = (<span class="type">int</span>)A.<span class="built_in">at</span>&lt;uchar&gt;(i, j);	</span><br><span class="line">			PB = ((<span class="type">int</span>)B.<span class="built_in">at</span>&lt;uchar&gt;(i, j)) * <span class="number">0.35</span>;</span><br><span class="line">						</span><br><span class="line">			<span class="keyword">if</span> (PA &lt; <span class="number">100</span>)					<span class="comment">//解决阈值问题的关键</span></span><br><span class="line">			&#123;</span><br><span class="line">				PA = <span class="number">100</span>;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			Alpha = <span class="number">255</span> - (PA - PB);		 <span class="comment">//遍历每一个像素点，获得对应参数</span></span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> (Alpha == <span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				Alpha = <span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			PC = (<span class="type">int</span>)(<span class="number">255</span> * PB / Alpha);	 <span class="comment">//按公式计算出幻影坦克对应位置像素的灰度值</span></span><br><span class="line">            							    </span><br><span class="line"></span><br><span class="line">			C.<span class="built_in">at</span>&lt;Vec4b&gt;(i, j) = <span class="built_in">Vec4b</span>(PC, PC, PC, Alpha);	<span class="comment">//赋值给空图</span></span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">imwrite</span>(<span class="string">&quot;Mirage Tank.png&quot;</span>, C);			 <span class="comment">//储存为png的幻影坦克</span></span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;DONE&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<br>
+
+<br>
+
+<hr>
+<h2 id="参考教程"><a href="#参考教程" class="headerlink" title="参考教程"></a>参考教程</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kV411v7fR">『整活』幻影坦克 基础版</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/QLeelq/article/details/123360740">介绍几种使用C&#x2F;C++语言判断一个文件是否存在的方法</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/WinkySpeed/article/details/127079909">从CSDN上搬运的我的博客，并进行更新</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/27/%E5%9F%BA%E4%BA%8EOpenCV%E5%AE%9E%E7%8E%B0%E7%9A%84%E7%81%B0%E5%BA%A6%E5%9B%BE%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B/" data-id="cldg1d8yk00087svc9rbp145f" data-title="基于OpenCV实现的灰度图幻影坦克" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenCV/" rel="tag">OpenCV</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B/" rel="tag">幻影坦克</a></li></ul>
 
     </footer>
   </div>
@@ -626,7 +706,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/04/Xenoblade-2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" data-id="cldfz80bv0004kwvc67m1d9gm" data-title="Xenoblade 2通关感想" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/08/04/Xenoblade-2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" data-id="cldg1d8yj00057svc7uxqh1kb" data-title="Xenoblade 2通关感想" class="article-share-link">Share</a>
       
       
       
@@ -734,7 +814,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/13/Ever17%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" data-id="cldfz80bp0000kwvcdsmxezcv" data-title="Ever17通关感想" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/13/Ever17%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" data-id="cldg1d8yb00007svc1sfk7xb9" data-title="Ever17通关感想" class="article-share-link">Share</a>
       
       
       
@@ -832,7 +912,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/07/Steins-Gate%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" data-id="cldfz80bs0001kwvc896s1yx6" data-title="Steins;Gate通关感想" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/07/Steins-Gate%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" data-id="cldg1d8yf00017svc8x7s6o9o" data-title="Steins;Gate通关感想" class="article-share-link">Share</a>
       
       
       
@@ -900,7 +980,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/01/09/%E8%8D%92%E9%87%8E%E5%A4%A7%E9%95%96%E5%AE%A2%E6%95%91%E8%B5%8E2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" data-id="cldfz80bz000dkwvc7cw20stj" data-title="荒野大镖客救赎2通关感想" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/01/09/%E8%8D%92%E9%87%8E%E5%A4%A7%E9%95%96%E5%AE%A2%E6%95%91%E8%B5%8E2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" data-id="cldg1d8yo000o7svc0bk37yg2" data-title="荒野大镖客救赎2通关感想" class="article-share-link">Share</a>
       
       
       
@@ -970,7 +1050,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/21/%E4%BC%A0%E9%80%81%E9%97%A8%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" data-id="cldfz80bv0003kwvc8zx626k2" data-title="传送门通关感想" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/11/21/%E4%BC%A0%E9%80%81%E9%97%A8%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" data-id="cldg1d8yi00047svc55b706b1" data-title="传送门通关感想" class="article-share-link">Share</a>
       
       
       
@@ -997,7 +1077,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/" rel="tag">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" rel="tag">个人博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/" rel="tag">博客图片显示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" rel="tag">游戏通关感想</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenCV/" rel="tag">OpenCV</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/" rel="tag">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" rel="tag">个人博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/" rel="tag">博客图片显示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B/" rel="tag">幻影坦克</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" rel="tag">游戏通关感想</a></li></ul>
     </div>
   </div>
 
@@ -1007,7 +1087,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">个人博客</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/" style="font-size: 10px;">博客图片显示</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" style="font-size: 20px;">游戏通关感想</a>
+      <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/OpenCV/" style="font-size: 10px;">OpenCV</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">个人博客</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/" style="font-size: 10px;">博客图片显示</a> <a href="/tags/%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B/" style="font-size: 10px;">幻影坦克</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" style="font-size: 20px;">游戏通关感想</a>
     </div>
   </div>
 
@@ -1016,7 +1096,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li></ul>
     </div>
   </div>
 
@@ -1045,7 +1125,7 @@
           </li>
         
           <li>
-            <a href="/2022/08/04/Xenoblade-2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/">Xenoblade 2通关感想</a>
+            <a href="/2022/09/27/%E5%9F%BA%E4%BA%8EOpenCV%E5%AE%9E%E7%8E%B0%E7%9A%84%E7%81%B0%E5%BA%A6%E5%9B%BE%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B/">基于OpenCV实现的灰度图幻影坦克</a>
           </li>
         
       </ul>
