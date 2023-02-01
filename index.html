@@ -1,1213 +1,298 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>WinkySpeed</title><meta name="author" content="WinkySpeed"><meta name="copyright" content="WinkySpeed"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="WinkySpeed">
 <meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="og:site_name" content="WinkySpeed">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:author" content="WinkySpeed">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'WinkySpeed',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-02-02 01:17:06'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
   
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
   
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-<meta name="generator" content="Hexo 6.3.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-图片的显示" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/28/%E5%9B%BE%E7%89%87%E7%9A%84%E6%98%BE%E7%A4%BA/" class="article-date">
-  <time class="dt-published" datetime="2023-01-28T10:06:30.000Z" itemprop="datePublished">2023-01-28</time>
-</a>
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/28/%E5%9B%BE%E7%89%87%E7%9A%84%E6%98%BE%E7%A4%BA/">解决Hexo博客图片显示问题</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="纪念第一次成功显示图片"><a href="#纪念第一次成功显示图片" class="headerlink" title="纪念第一次成功显示图片"></a>纪念第一次成功显示图片</h1><img src="/2023/01/28/%E5%9B%BE%E7%89%87%E7%9A%84%E6%98%BE%E7%A4%BA/yurucamp.png" class>
-
-<br>
-
-<hr>
-<p>笔者花了很长时间找解决方案，查过<a target="_blank" rel="noopener" href="https://hexo.io/docs/asset-folders">官方文档</a>，查过其他许多博客，大多都是安装 hexo-asset-image 插件，还下载了一些魔改版的 hexo-asset-image ，甚至尝试了一些改文件的方法，但都没有成功</p>
-<p>终于找到一个方法能够成功在部署的博客上显示图片，很激动，就把第一张成功显示的摇曳露营截图放在这里当做纪念了</p>
-<br>
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="WinkySpeed"><span class="site-name">WinkySpeed</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">WinkySpeed</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/01/28/%E5%9B%BE%E7%89%87%E7%9A%84%E6%98%BE%E7%A4%BA/" title="解决Hexo博客图片显示问题">解决Hexo博客图片显示问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-28T10:06:30.000Z" title="发表于 2023-01-28 18:06:30">2023-01-28</time></span></div><div class="content">纪念第一次成功显示图片
 
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>首先修改 _config.yml 中的 post_asset_folder ，改成 true</p>
-<img src="/2023/01/28/%E5%9B%BE%E7%89%87%E7%9A%84%E6%98%BE%E7%A4%BA/image-20230128194218256.png" class title="image-20230128194218256">
 
-<blockquote>
-<p>当资源文件管理功能打开后，Hexo将会在你每一次通过 <code>hexo new [layout] &lt;title&gt;</code> 命令创建新文章时自动创建一个文件夹。这个资源文件夹将会有与这个文章文件一样的名字。将所有与你的文章有关的资源放在这个关联文件夹中之后，你可以通过相对路径来引用它们，这样你就得到了一个更简单而且方便得多的工作流。		—— <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders.html">资源文件夹 | Hexo</a></p>
-</blockquote>
-<br>
 
-<p>然后，利用Typora自动保存图片的功能，进行图片的保存</p>
-<p>打开Typora，左上角选择文件，再选择偏好设置，选择图像，进行如图所示的修改</p>
-<img src="/2023/01/28/%E5%9B%BE%E7%89%87%E7%9A%84%E6%98%BE%E7%A4%BA/image-20230128194736127.png" class title="image-20230128194736127">
 
-<p>这样会很方便地保存图片，比如QQ截图以后可以直接放在Typora里，然后Typora会帮你把这张图片保存在当前正在编辑的文件名相同的同级文件夹中，即Hexo自动生成的资源文件夹内</p>
-<br>
+笔者花了很长时间找解决方案，查过官方文档，查过其他许多博客，大多都是安装 hexo-asset-image 插件，还下载了一些魔改版的 hexo-asset-image ，甚至尝试了一些改文件的方法，但都没有成功
+终于找到一个方法能够成功在部署的博客上显示图片，很激动，就把第一张成功显示的摇曳露营截图放在这里当做纪念了
 
-<p>最后利用在Blog目录下打开控制台，输入</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-img --save</span><br></pre></td></tr></table></figure>
 
-<p>就可以获取这个插件</p>
-<p>测试如图所示</p>
-<img src="/2023/01/28/%E5%9B%BE%E7%89%87%E7%9A%84%E6%98%BE%E7%A4%BA/image-20230128195309946.png" class title="image-20230128195309946">
+方法首先修改 _config.yml 中的 post_asset_folder ，改成 true
 
 
 
+当资源文件管理功能打开后，Hexo将会在你每一次通过 hexo new [layout] &lt;title&gt; 命令创建新文章时自动创建一个文件夹。这个资源文件夹将会有与这个文章文件一样的名字。将所有与你的文章有关的资源放在这个关联文件夹中之后，你可以通过相对路径来引用它们，这样你就得到了一个更简单而且方便得多的工作流。		—— 资源文件夹 | Hexo
 
 
-<hr>
-<br>
 
-<br>
+然后，利用Typora自动保存图片的功能，进行图片的保存
+打开Typora，左上角选择文件，再选择偏好设置，选择图像，进行如图所示的修改
 
-<br>
 
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a target="_blank" rel="noopener" href="https://moeci.com/posts/hexo-typora/">Hexo + Typora + 开发Hexo插件 解决图片路径不一致</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/z952957407/article/details/111642548">解决：hexo+github本地和线上图片不显示问题</a></p>
+这样会很方便地保存图片，比 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title="基于hexo的个人博客搭建教程">基于hexo的个人博客搭建教程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-27T14:45:20.000Z" title="发表于 2023-01-27 22:45:20">2023-01-27</time></span></div><div class="content">这个教程涵盖了我搭建博客时遇到的所有问题，希望能够帮到你
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/01/28/%E5%9B%BE%E7%89%87%E7%9A%84%E6%98%BE%E7%A4%BA/" data-id="cldlc0u8500046kvcbjo398w2" data-title="解决Hexo博客图片显示问题" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Typora/" rel="tag">Typora</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/" rel="tag">博客图片显示</a></li></ul>
+准备工作需要下载以下软件node.js
+Git
+魔法上网			可以用Steam++访问github 
 
-    </footer>
-  </div>
-  
-</article>
 
+Git的配置装好Git以后，右键菜单就会出现如图选项，进入Git控制台
 
 
-  
-    <article id="post-基于hexo的个人博客搭建" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="article-date">
-  <time class="dt-published" datetime="2023-01-27T14:45:20.000Z" itemprop="datePublished">2023-01-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">基于hexo的个人博客搭建教程</a>
-    </h1>
-  
+第一件事就是配置用户名和邮箱
+1234# 配置用户名git config --global user.name WinkySpeed	# 配置邮箱	~~此处邮箱可以实际上不存在~~git config --global user.email WinkySpeed@test.mail	
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="这个教程涵盖了我搭建博客时遇到的所有问题，希望能够帮到你"><a href="#这个教程涵盖了我搭建博客时遇到的所有问题，希望能够帮到你" class="headerlink" title="这个教程涵盖了我搭建博客时遇到的所有问题，希望能够帮到你"></a>这个教程涵盖了我搭建博客时遇到的所有问题，希望能够帮到你</h1><br>
 
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="需要下载以下软件："><a href="#需要下载以下软件：" class="headerlink" title="需要下载以下软件："></a>需要下载以下软件：</h3><p><a target="_blank" rel="noopener" href="https://nodejs.org/">node.js</a></p>
-<p><a target="_blank" rel="noopener" href="https://git-scm.com/">Git</a></p>
-<p><del>魔法上网</del>			可以用<a target="_blank" rel="noopener" href="https://steampp.net/">Steam++</a>访问github </p>
-<br>
 
-<h3 id="Git的配置"><a href="#Git的配置" class="headerlink" title="Git的配置"></a>Git的配置</h3><p>装好Git以后，右键菜单就会出现如图选项，进入Git控制台</p>
-<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127232413.png" class>
+如图
 
-<p>第一件事就是配置用户名和邮箱</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">配置用户名</span></span><br><span class="line">git config --global user.name WinkySpeed	</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">配置邮箱	~~此处邮箱可以实际上不存在~~</span></span><br><span class="line">git config --global user.email WinkySpeed@test.mail	</span><br></pre></td></tr></table></figure>
 
-<br>
 
-<p>如图</p>
-<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127233116.png" class>
 
-<br>
 
-<hr>
-<br>
 
-<h2 id="进行hexo的配置与搭建"><a href="#进行hexo的配置与搭建" class="headerlink" title="进行hexo的配置与搭建"></a>进行hexo的配置与搭建</h2><h3 id="查看nodejs是否安装成功"><a href="#查看nodejs是否安装成功" class="headerlink" title="查看nodejs是否安装成功"></a>查看nodejs是否安装成功</h3><p>以管理员身份打开cmd</p>
-<p>如图，输入	<code>node -v</code>	和	<code>npm -v</code>	查看版本</p>
-<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127233545.png" class>
 
-<p>国内的源可能有些慢，最好利用淘宝的源，控制台输入</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+进行hexo的配置与搭建查看nodejs是否安装成功以管理员身份打开cmd
+如图，输入	node -v	和	npm -v	查看版本
 
-<p>等安装成功后输入	<code>cnpm -v</code>	如果能查出版本号说明安装成功</p>
-<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127234440.png" class>
 
-<br>
+国内的源可能有些慢，最好利用淘宝的源，控制台输入
+1npm install -g cnpm --registry=https://registry.npm.taobao.org
 
-<h3 id="下载hexo"><a href="#下载hexo" class="headerlink" title="下载hexo"></a>下载hexo</h3><p>控制台输入</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+等安装成功后输入	cnpm -v	如果能查出版本号说明安装成功
 
-<p>等待安装</p>
-<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127235002.png" class>
 
-<p>用	<code>hexo -v</code>	验证</p>
-<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127235107.png" class>
 
-<br>
 
-<h3 id="使用hexo正式搭建博客"><a href="#使用hexo正式搭建博客" class="headerlink" title="使用hexo正式搭建博客"></a>使用hexo正式搭建博客</h3><p>建立一个Blog文件夹，<strong>以后的控制台操作都会在此文件夹内进行</strong>，如果搭建博客过程中出现问题，可以直接把该文件夹删除重来</p>
-<p>使用cd指令进入对应的Blog文件夹，在控制台输入</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+下载hexo控制台输入
+1cnpm install -g  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/01/27/hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-27T14:00:00.000Z" title="发表于 2023-01-27 22:00:00">2023-01-27</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;
 
-<p>此处大概会出现两种错误：</p>
-<p>一种是没安装Git或没初始化，无法clone，如图<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20230128000014172.png" class></p>
-<p>一种是网络问题，无法正常clone，如图，提示 <strong>Failed to connect to github.com port 443</strong><img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128000405.png" class></p>
-<br>
+More info: Writing
+Run server1$ hexo server
 
-<p>如果是Git的问题，照着之前的教程再做一遍即可</p>
-<p>网络问题就需要科学上网了，打开steam++选择github加速，<strong>加速模式选择系统代理模式</strong></p>
-<p>可以看到，挂了加速以后可以连上github了</p>
-<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128001302.png" class>
+More info: Server
+Generate static files1$ hexo generate
 
-<p>此时再	<code>hexo init</code>	一次试试，发现仍不行，还是报错，但是都能上github了，为什么不能clone呢？</p>
-<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128001350.png" class>
+More info: Generating
+Deploy to remote sites1$ hexo deploy
 
-<p>原因是Git没有启用代理，右键打开右下角网络，选择“网络和Internet设置”，左边选择“代理”</p>
-<p>注意到这里</p>
-<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128001608.png" class>
+More info: Deployment
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/01/15/%E9%80%86%E8%BD%AC%E8%A3%81%E5%88%A41-3%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" title="逆转裁判1-3通关感想">逆转裁判1-3通关感想</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-14T16:00:00.000Z" title="发表于 2023-01-15 00:00:00">2023-01-15</time></span></div><div class="content">逆转裁判1-3合集：利用证据和推理的法庭战斗，指出矛盾推动情节的“侦探喜剧”
 
-<p>地址应该都是本机回送地址，但是端口可能会不一样，得看不同科学上网软件了，记住这个端口: 26501</p>
-<p>右键打开Git控制台</p>
-<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230127232413.png" class>
+通关游戏后，成步堂的一句“異議あり”，一声拍桌，一个凌空指都给我留下了相当深刻的印象，而正是这些元素造就了逆转裁判最令人称道的地方——打击感。
+ 
 
-<p>如图输入</p>
-<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128001948.png" class>
+作为一名玩家，我对“打击感”这个词汇的浅薄理解就是：游戏给玩家带来反馈的爽快体验。在逆转裁判里，玩家通过手上已有的证据进行思考，发现之前没注意到的细节，恍然大悟后，针对证人的证言发起攻击。伴随着响亮的拍桌和一声清脆的“異議あり！”，成步堂有力地一指，证人的“受击动画”清楚并夸张地展现了情绪状态变化过程，表明了提交的证据确实起了作用，推理正朝着正确的方向前进。在玩家运用辩护和推理不断深究的过程中，证人不断升高的紧张和愤怒就成了玩家的奖赏。不断地对证人施压后，戳穿他们所有的谎言后，游戏会奖励玩家一个精心制作的“崩溃动画”，这正是玩家经历波折才收获的满足结果。整个过程，无不充斥着游戏即时反馈带来的爽快体验，使玩家沉浸在了和检察官酣畅淋漓的法庭交锋中，辩论逐渐白热化，玩家也随之热血沸腾，这可能正是逆转裁判的“打击感”所在。
+ 
 
-<br>
+逆转裁判有着独特的幽默感。虽然本系列以 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/11/14/%E4%BB%A3%E7%A0%81%E7%8C%AE%E7%A4%BC%E8%AE%B0%E5%BD%95/" title="代码献礼记录">代码献礼记录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-11-14T05:45:54.000Z" title="发表于 2022-11-14 13:45:54">2022-11-14</time></span></div><div class="content">代码献礼工程的记录原理：利用windows自带api接口来播放midi音乐本工程的midi音乐由对应十六进制文件生成，所以运行exe时可以在没有midi文件的基础上播放音乐
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy 127.0.0.1:26501</span><br><span class="line"></span><br><span class="line">git config --global https.proxy 127.0.0.1:26501</span><br></pre></td></tr></table></figure>
 
-<p>端口26501就是上文中出现的端口，<em><strong>不同魔法上网软件的端口是不一样的，按自己机子上显示的来</strong></em></p>
-<p>这样就可以解决 <strong>Failed to connect to github.com port 443</strong> 问题</p>
-<p>回到控制台，再次输入	<code>hexo init</code>	应该就可以<em>正常进行</em>了</p>
-<br>
+midi音乐转十六进制首先找到一首midi音乐，我在MIDI云 ◇ MIDI音乐下载与分享找到的《没有共产党就没有新中国》质量极高
+把midi文件用010Editor打开，点击左上角File，选Export Hex即可导出十六进制文件，会得到一个txt文本
+把其中的内容复制，随便找个去除空格和回车的网站，比如文本去空格，去除后得到一个字符串，赋值给MIDImusic数组
+此处字符串一般很长，需要在中间断开，把一整个字符串分隔成3-4个字符串，具体可见下方示例代码
 
-<p>但是有时可能出现下图错误</p>
-<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128005900.png" class>
 
-<p>报错为 <strong>SSL certificate problem: unable to get local issuer certificate</strong></p>
-<p>解决方法为，通过命令关闭SSL证书验证</p>
-<p>在Git控制台输入	</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.sslverify false</span><br></pre></td></tr></table></figure>
+三个数组的作用const char* MIDImusic数组存储midi文件十六进制的字符串，注意分隔开，不然会报字符串过长的错
+const char* Lyrics[]数组存放歌词
+int SleepTime[]数组存放两句歌词之间的间隔时间，单位为毫秒
 
-<br>
 
-<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128010402.png" class>
+函数void Pos(int x, int y)函数是可以定位小黑框中光标的函数，实现如 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/09/27/%E5%9F%BA%E4%BA%8EOpenCV%E5%AE%9E%E7%8E%B0%E7%9A%84%E7%81%B0%E5%BA%A6%E5%9B%BE%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B/" title="基于OpenCV实现的灰度图幻影坦克">基于OpenCV实现的灰度图幻影坦克</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-27T15:03:28.000Z" title="发表于 2022-09-27 23:03:28">2022-09-27</time></span></div><div class="content">幻影坦克简介对于png透明图片，在QQ，贴吧等平台上，看缩略图时默认是以白色为背景，而点开看原图时默认是以黑色为背景，基于此显示逻辑可以实现一种图像，看缩略图时是表图，看原图时是里图，这就是幻影坦克。
+基于图像线性融合原理，公式：g(x) &#x3D; α×f(x) + (1-α)×h(x) ，可以假设最后生成图与白色叠加得到表图，最后生成图与黑色叠加得到里图，套用公式即可得到幻影坦克的理论公式：
 
-<p>此时再回到Blog目录下的控制台，也可以在Blog目录里打开Git控制台，输入	<code>hexo init</code></p>
-<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128010530.png" class>
 
-<p>经过漫长的等待，hexo终于装好了</p>
-<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128011550.png" class>
+公式和原理都源自B站视频: 『整活』幻影坦克 基础版，讲的很细致。
 
-<br>
 
-<h3 id="启动博客"><a href="#启动博客" class="headerlink" title="启动博客"></a>启动博客</h3><p>在Blog目录下的控制台输入</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+幻影坦克实现过程先将表图缩放为里图尺寸，再遍历表图和里图的每个像素，算出幻影坦克图对应位置像素的灰度和透明度，赋值给一张空图，这张图就是最后的幻影坦克了
 
-<br>
 
-<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128113516.png" class>
+Debug记录需要注意的是，公式里α透明度有一项是表图的灰度值减里图灰度值，必须保证这个值时刻大于0，不然会出现α值大于255的情况，造成错误，即里图显示时出现表图部分，如图：
 
-<p>现在hexo就在回送地址的4000端口显示了，在浏览器中输入</p>
-<p><a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a>	或	127.0.0.1:4000</p>
-<p>hexo就会自动生成<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128114651.png" class></p>
-<p>美化是后面的事，最重要的是<strong>先拥有一个属于自己的博客</strong></p>
-<p>控制台中Ctrl + C可以退出hexo，输入</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;第一篇博客test&quot;</span><br></pre></td></tr></table></figure>
 
-<br>
+在我把背景换成橙色以后，图中错误部分也显示为橙色，所以判断为这些地方透明度计算出现问题。
 
-<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128115326.png" class>
 
-<p>进入	Blog\source_posts\	中，就会发现hexo帮你生成了一篇博客，后缀名是.md</p>
-<p>文章采用Markdown语法，推荐使用Typora编辑，不过现在收费了，<del>可以使用破解版</del></p>
-<p>随便写一写保存退出，再通过<code>hexo s</code>启动，就可以看到新写的博客发布在上面了</p>
-<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128115943.png" class>
+经过初步分析得到：显示错误的地方在原图中的灰度值非常低，导致P表-P里小于0，使α超出上 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/08/04/Xenoblade-2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" title="Xenoblade 2通关感想">Xenoblade 2通关感想</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-04T06:03:34.000Z" title="发表于 2022-08-04 14:03:34">2022-08-04</time></span></div><div class="content">于是少年遇到了少女异度之刃2：热血王道的乐园之旅
 
-<br>
+本作的剧情简单，是标准的王道热血漫。虽然讲述的就是少年遇到少女，然后踏上旅途这样老套的故事，但是搭配上惊艳且完美的演出效果，流畅，连贯，十分富有感染力和代入感，很容易让人沉浸在剧情中。作为一个玩了这么多年，接触了各种游戏的玩家，仔细想想，的确很难在记忆中找出足够多的能达到这种演出水平的游戏作品，说“完美”确实不过分。
+ 
 
-<hr>
-<br>
+地图设计令人爱恨交加。基于本作世界观，云海吞没大地，人类只能生存在巨神兽身上，于是不同的巨神兽上有着截然不同的场景：古拉的古代森林，英维迪亚的柳暗花明，斯佩比亚的机械帝国，洛修利亚的冰雪之原……纵横交错的地图设计使每一处都有独具特色的风景，即使受于机能限制，远景细节不足，但还是能感受到场景的恢弘大气。
+尤其是英维迪亚，绝美景色与弦乐合奏给我带来的深刻印象不亚于《摇曳露营》中本栖湖夜晚的富士山，震撼甚至超过了《尼尔：机械纪元》中初见的游园设施。
+ 
 
-<h2 id="把博客部署到github上"><a href="#把博客部署到github上" class="headerlink" title="把博客部署到github上"></a>把博客部署到github上</h2><p>打开github新建一个仓库</p>
-<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128120653.png" class>
+然而，本作的引导系统一言难尽。本就立体感十足的复杂场景，菜单的引导地图却只是平面，任务指引只有任务终点到角色的直线距离，经常遇到的就是跟着指引跑过千山万水，到地方发现任 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/04/13/Ever17%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" title="Ever17通关感想">Ever17通关感想</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-04-12T23:21:28.000Z" title="发表于 2022-04-13 07:21:28">2022-04-13</time></span></div><div class="content">Ever17：设计精妙，但仍有些许瑕疵的一场“骗局”
 
-<p>仓库名一定要是自己github的用户名+.github.io</p>
-<p>例如我的就是	WinkySpeed.github.io</p>
-<p>成功创建仓库后，在Blog目录下打开控制台，安装Git部署插件，输入</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+本作最为人称道的是“叙述性诡计”，准确来说是专属于galgame游戏机制的，独特的叙述性诡计。无论是双主角视角叙事还是meta元素，其他体裁都不能在此基础上还原出galgame独树一帜的体验，所以这是个只能由文字avg讲述，而不可能被改编成其他体裁的“骗局”。
+ 
 
-<p>如图显示则安装成功</p>
-<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128121157.png" class>
-
-<p>然后进入Blog目录，设置 _config.yml 文件，用记事本或vscode打开都可以</p>
-<p>拉到最底下找到	# Deployment</p>
-<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128121518.png" class>
-
-<p>修改如下，保存退出</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/WinkySpeed/WinkySpeed.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-
-<p>repo: 后的地址就是刚刚建立的github仓库地址，可以在仓库里获取</p>
-<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128121914.png" class>
-
-<p>回到Blog目录下的控制台，输入</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<p>中途会跳出github的登陆界面，在里面输入账号密码就可以了</p>
-<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128122121.png" class>
-
-<p>如图显示则成功<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128122341.png" class></p>
-<p>回到github仓库刷新，就发现仓库里有内容了</p>
-<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128122430.png" class>
-
-<p>在浏览器中输入你的博客地址，就可以访问部署到远端的博客了</p>
-<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128124651.png" class>
-
-<p>如果没成功，可以多刷新几次，等待github检查代码，成功时会有个小绿勾，就可以正常访问了</p>
-<p>如果实在不行，就把github库删了重新建一个新库，重新推就行了</p>
-<br>
-
-<hr>
-<br>
-
-<h2 id="Hexo指令"><a href="#Hexo指令" class="headerlink" title="Hexo指令"></a>Hexo指令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">本地预览，可以在回送地址预览自己的博客</span></span><br><span class="line">hexo s</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">新建博文，双引号内字符串为标题</span></span><br><span class="line">hexo n &quot;&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">清理缓存</span></span><br><span class="line">hexo clean</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">生成文件</span></span><br><span class="line">hexo g</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">部署到远端</span></span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<p>每次做出修改，在Blog目录下打开控制台，依次输入</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g </span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<p>就可以完成一次推送</p>
-<p>推送中可能出现的问题：</p>
-<img src="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230128140552.png" class>
-
-<p><strong>fatal: detected dubious ownership in repository at xxx</strong></p>
-<p>原因：一开始部署博客的时候是用的管理员身份运行的cmd，这里我是直接在blog目录下打开的cmd，不是管理员身份</p>
-<p>解决方法：通过管理员身份打开cmd后cd到blog目录下，重新<code>hexo d</code>即可</p>
-<br>
-
-<hr>
-<br>
-
-<h2 id="关于美化"><a href="#关于美化" class="headerlink" title="关于美化"></a>关于美化</h2><p>这次的目的是帮助大家建立一个属于自己的博客，至于美化就看个人了，可以参考别人的博客，个性化自己的</p>
-<br>
-
-<br>
-
-<br>
-
-<hr>
-<h2 id="参考教程"><a href="#参考教程" class="headerlink" title="参考教程"></a>参考教程</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Cr4y1J7iQ">『教程』简单明了的Git入门</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty">手把手教你从0开始搭建自己的个人博客 |无坑版视频教程| hexo</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zpf1813763637/article/details/128340109">Git报错： Failed to connect to github.com port 443 解决方案</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.shuzhiduo.com/A/gVdnMre85W/">使用git克隆仓库到本地报错：SSL certificate problem: unable to get local issuer certificate</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" data-id="cldlc0u89000f6kvc5dy42vsp" data-title="基于hexo的个人博客搭建教程" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" rel="tag">个人博客</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/27/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2023-01-27T14:00:00.000Z" itemprop="datePublished">2023-01-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/27/hello-world/">Hello World</a>
-    </h1>
+整体的悬疑氛围会随着剧情发展显得越来越浓厚，线索越多却越感蹊跷，奇怪的违和感会让玩家对整个故事的疑问不减反增，在到达解密篇之前，营造了良好的悬疑感与神秘感。根据线索尝试推理后发现了整个骗局的冰山一角，等到完全揭开谜底那一刻，即使玩家或多或少猜中了诡计，还是能给玩家带来不小的冲击力。
   
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/01/27/hello-world/" data-id="cldlc0u8400036kvcaz2naezr" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-逆转裁判1-3通关感想" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/15/%E9%80%86%E8%BD%AC%E8%A3%81%E5%88%A41-3%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" class="article-date">
-  <time class="dt-published" datetime="2023-01-15T14:35:36.000Z" itemprop="datePublished">2023-01-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/15/%E9%80%86%E8%BD%AC%E8%A3%81%E5%88%A41-3%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/">逆转裁判1-3通关感想</a>
-    </h1>
+本作在2002年发售，以现代玩家的眼光来看，的确存在许多瑕疵
   
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="逆转裁判1-3合集：利用证据和推理的法庭战斗，指出矛盾推动情节的“侦探喜剧”"><a href="#逆转裁判1-3合集：利用证据和推理的法庭战斗，指出矛盾推动情节的“侦探喜剧”" class="headerlink" title="逆转裁判1-3合集：利用证据和推理的法庭战斗，指出矛盾推动情节的“侦探喜剧”"></a>逆转裁判1-3合集：利用证据和推理的法庭战斗，指出矛盾推动情节的“侦探喜剧”</h1><br>
+其一，就是冗长的重复剧情。在本作中，玩家必须经过至少4次重复才能到达最终的解密线。重复的作品我已经经历很多了，比如《凉宫春日》中漫无止境的八月，《尼尔机械纪元》中一二周目必须要用2B和9S的视角体验同一个故事，我甚至还会在每年冬天重新玩一次《白色相簿2》。这些都是重复，但为什么《E17》的重复给人留下糟糕的体验？ ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/02/07/Steins-Gate%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" title="Steins;Gate通关感想">Steins;Gate通关感想</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-02-06T18:21:59.000Z" title="发表于 2022-02-07 02:21:59">2022-02-07</time></span></div><div class="content">“你脱离了因果律的束缚，一直以来都孤独地抗争着，所以你内心的痛苦，谁都不知道……”—— 牧濑红莉栖命运石之门：首尾呼应，环环相扣，精彩绝伦的文字AVG
 
-<p>通关游戏后，成步堂的一句“<strong>異議あり</strong>”，一声拍桌，一个凌空指都给我留下了相当深刻的印象，而正是这些元素造就了逆转裁判最令人称道的地方——打击感。</p>
- <br>
+先在不剧透的情况下介绍结局，结局给人带来的震撼，不仅在于紧扣住了前面的一切伏笔，那些因为被故事逐渐吸引而稀释了记忆的悬念，在故事的后半段，随着每一个细节都有其合理的解释，因为线索的串联而延伸回去的瞬间，带来的是巨大的冲击力，和问题被完美解决的爽快；更在于结局时的主角是已经克服过困难，得到了一定成长的，所以新出现的几乎不可能解决的冲突才会更加令人印象深刻，所以当主角选择与命运为敌时才会更加令人热血沸腾。
+ 
 
-<p>作为一名玩家，我对“打击感”这个词汇的浅薄理解就是：游戏给玩家带来反馈的爽快体验。在逆转裁判里，玩家通过手上已有的证据进行思考，发现之前没注意到的细节，恍然大悟后，针对证人的证言发起攻击。伴随着响亮的拍桌和一声清脆的“異議あり！”，成步堂有力地一指，证人的“受击动画”清楚并夸张地展现了情绪状态变化过程，表明了提交的证据确实起了作用，推理正朝着正确的方向前进。在玩家运用辩护和推理不断深究的过程中，证人不断升高的紧张和愤怒就成了玩家的奖赏。不断地对证人施压后，戳穿他们所有的谎言后，游戏会奖励玩家一个精心制作的“崩溃动画”，这正是玩家经历波折才收获的满足结果。整个过程，无不充斥着游戏即时反馈带来的爽快体验，使玩家沉浸在了和检察官酣畅淋漓的法庭交锋中，辩论逐渐白热化，玩家也随之热血沸腾，这可能正是逆转裁判的“打击感”所在。</p>
- <br>
+本作主角冈部伦太郎，经历了“中二——成长——后中二”的转变。
+最初的中二，实在是无法让人对他产生好感，隔着屏幕都为他的言行举止感到尴尬，很难想象通关以后我竟然对他中二的态度发生了完全的转变。
+随着剧情发展，当他成为观测者，越过每一秒的世界线，只为了守护天真无邪的笑容，孤独的观测者，渐渐被吞没在轮回中。被命运逼上绝境，被迫从“凤凰院凶真”转变为“冈部伦太郎”，被迫成长，那充斥着中二气息的日常直到失去才令人觉得珍贵。
+在最后的绝境面前 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/01/09/%E8%8D%92%E9%87%8E%E5%A4%A7%E9%95%96%E5%AE%A2%E6%95%91%E8%B5%8E2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" title="荒野大镖客救赎2通关感想">荒野大镖客救赎2通关感想</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-09T06:12:35.000Z" title="发表于 2022-01-09 14:12:35">2022-01-09</time></span></div><div class="content">“我不想被救赎，我也不值得被救赎，我只是想帮助一些人，至少我做了点什么。” ——亚瑟·摩根荒野大镖客救赎2：一个大家庭在时代面前分崩离析的过程
 
-<p>逆转裁判有着独特的幽默感。虽然本系列以法庭为大背景，但相比于严谨写实的庭审环节，游戏所呈现的法庭更像一个能够容纳各种个性鲜明角色的舞台，这些角色夸张的行为举止赋予了游戏漫画色彩，也暗示着游戏想要营造的法庭氛围与现实中严肃的法庭相差甚远。游戏的幽默感，体现在角色们的互动上，这种装傻吐槽之间的你来我往，是日式相声——漫才的常见形式。制作人巧舟编写的对话文本轻松有趣，正是这漫才形式的语言，在文字主导的AVG游戏中，让人物鲜活了起来。更难能可贵的一点是，逆转系列作为一个20多年前的作品，里面台词的笑料放到今天来看都不会使人尴尬，而是令人发自内心地感到有趣。</p>
- <br>
+R星以帮派为主题塑造角色，游戏一开始就把整个帮派20多个陌生人全都扔出来，只能通过大量对话的细节来理解每个人不同的背景，人与人之间的关系。这个过程是很慢的，但是这样充满铺垫的人物塑造方式，可以逐渐积累对角色的感情，直到最后的爆发点，情绪高涨到极致。从刚开始“这20多个人都是谁？”，到通关之后能够清晰地回忆起每个角色的性格特征，回忆起一起经过的任务，R星在角色塑造这块属于是顶尖。
 
-<p>很多视觉小说的角色几乎在整个游戏里都保持一种平静的姿态，让文本和面部表情来承担剩下的工作。而逆转裁判并非如此，和其他视觉小说比起来，逆转裁判的角色动感十足，虽然每个角色姿态不多，但已经足够生动，使玩家游玩过程充满戏剧性。</p>
- <br>
 
-<p>逆转裁判是我假期里遇见的一个惊喜，虽然有的时候出示证据时我的思路与制作人稍有不同而卡关许久，寻找证物的时候也会因为不同角色的要求而卡关，但无良新人律师成步堂龙一通过非法搜证，藐视公堂，指控证人，随意展示律师徽章，虚张声势，胡言乱语等方法，帮助自己的委托人摆脱罪名的故事可太有意思了。</p>
-<br>
+与GTA不同，大表哥2并不是讲述“小角色”逐渐成长为“强者”的过程，主角亚瑟摩根本身就是强者，一个确定了生活方式的强者，处于一个强弩之末的范德林帮。省去了技能上成长的过程，就可以专注于心路历程，更容易关注他内心的矛盾与挣扎。作为一个流落街头后加入匪帮的孤儿，亚瑟在一辈子的犯罪生涯里日渐麻木，但世道的改变和身体状况的恶化，让他得以重新审视自己的人生，遵从自己的感情，试着帮助身边的人，即使改变不了大势，至少也能得到心灵上的救赎，这也是游戏副标题：救赎的极致体现。
 
-<hr>
-<img src="/2023/01/15/%E9%80%86%E8%BD%AC%E8%A3%81%E5%88%A41-3%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/1.jpg" class>
 
-<br>
-
-<img src="/2023/01/15/%E9%80%86%E8%BD%AC%E8%A3%81%E5%88%A41-3%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/2.jpg" class>
-
-<br>
-
-<img src="/2023/01/15/%E9%80%86%E8%BD%AC%E8%A3%81%E5%88%A41-3%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/3.jpg" class>
-
-<br>
-
-<img src="/2023/01/15/%E9%80%86%E8%BD%AC%E8%A3%81%E5%88%A41-3%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/4.jpg" class>
-
-<br>
-
-<img src="/2023/01/15/%E9%80%86%E8%BD%AC%E8%A3%81%E5%88%A41-3%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/5.jpg" class>
-
-<br>
-
-<img src="/2023/01/15/%E9%80%86%E8%BD%AC%E8%A3%81%E5%88%A41-3%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/7.jpg" class>
-
-<br>
-
-<img src="/2023/01/15/%E9%80%86%E8%BD%AC%E8%A3%81%E5%88%A41-3%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/8.jpg" class>
-
-<br>
-
-<img src="/2023/01/15/%E9%80%86%E8%BD%AC%E8%A3%81%E5%88%A41-3%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/6.jpg" class>
-
-<br>
-
-<img src="/2023/01/15/%E9%80%86%E8%BD%AC%E8%A3%81%E5%88%A41-3%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/9.jpg" class>
-
-
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/01/15/%E9%80%86%E8%BD%AC%E8%A3%81%E5%88%A41-3%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" data-id="cldlc0u8d000y6kvc3e69hvp8" data-title="逆转裁判1-3通关感想" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" rel="tag">游戏通关感想</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-代码献礼记录" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/11/14/%E4%BB%A3%E7%A0%81%E7%8C%AE%E7%A4%BC%E8%AE%B0%E5%BD%95/" class="article-date">
-  <time class="dt-published" datetime="2022-11-14T05:45:54.000Z" itemprop="datePublished">2022-11-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/11/14/%E4%BB%A3%E7%A0%81%E7%8C%AE%E7%A4%BC%E8%AE%B0%E5%BD%95/">代码献礼记录</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="代码献礼工程的记录"><a href="#代码献礼工程的记录" class="headerlink" title="代码献礼工程的记录"></a>代码献礼工程的记录</h1><h2 id="原理：利用windows自带api接口来播放midi音乐"><a href="#原理：利用windows自带api接口来播放midi音乐" class="headerlink" title="原理：利用windows自带api接口来播放midi音乐"></a>原理：利用windows自带api接口来播放midi音乐</h2><p>本工程的midi音乐由对应十六进制文件生成，所以运行exe时可以在没有midi文件的基础上播放音乐</p>
-<br>
-
-<h3 id="midi音乐转十六进制"><a href="#midi音乐转十六进制" class="headerlink" title="midi音乐转十六进制"></a>midi音乐转十六进制</h3><p>首先找到一首midi音乐，我在<a target="_blank" rel="noopener" href="https://www.midiclouds.com/">MIDI云 ◇ MIDI音乐下载与分享</a>找到的《没有共产党就没有新中国》质量极高</p>
-<p>把midi文件用010Editor打开，点击左上角File，选Export Hex即可导出十六进制文件，会得到一个txt文本</p>
-<p>把其中的内容复制，随便找个去除空格和回车的网站，比如<a target="_blank" rel="noopener" href="http://wenbenqukongge.123chacha.cn/">文本去空格</a>，去除后得到一个字符串，赋值给<code>MIDImusic</code>数组</p>
-<p>此处字符串一般很长，需要在中间断开，把一整个字符串分隔成3-4个字符串，具体可见下方示例代码</p>
-<br>
-
-<h3 id="三个数组的作用"><a href="#三个数组的作用" class="headerlink" title="三个数组的作用"></a>三个数组的作用</h3><p><code>const char* MIDImusic</code>数组存储midi文件十六进制的字符串，注意分隔开，不然会报字符串过长的错</p>
-<p><code>const char* Lyrics[]</code>数组存放歌词</p>
-<p><code>int SleepTime[]</code>数组存放两句歌词之间的间隔时间，单位为毫秒</p>
-<br>
-
-<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p><code>void Pos(int x, int y)</code>函数是可以定位小黑框中光标的函数，实现如下</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">Pos</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span></span><br><span class="line">&#123;</span><br><span class="line">	COORD pos;</span><br><span class="line">	HANDLE hOutput;</span><br><span class="line">	pos.X = x;</span><br><span class="line">	pos.Y = y;</span><br><span class="line">	hOutput = GetStdHandle(STD_OUTPUT_HANDLE);</span><br><span class="line">	SetConsoleCursorPosition(hOutput, pos);</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这个函数其实很好玩，我大一没写完的《基于十三机兵防卫圈的战棋游戏》就利用了这个函数，可以在<strong>初学编程仅接触过小黑框时</strong>用来做UI，做地图，在此工程用作字符画和歌词定位，具体实现原理还不清楚，不过可以直接拿来主义</p>
-<br>
-
-<p><code>void PrintLyrics()</code>函数用于打印歌词，需要算好时间和位置显示</p>
-<p>时间就用<code>SleepTime[]</code>数组，位置就用<code>Pos(int x, int y)</code>函数</p>
-<p>然后在循环中对应时间位置显示歌词即可</p>
-<br>
-
-<p><code>void InitializeMusic()</code>函数为Pointer指针做初始化</p>
-<br>
-
-<p><code>void PlayMusic()</code>函数先在C:\Users\WinkySpeed\AppData\Local\Temp\目录下根据十六进制字符串创建midi音乐，再播放该音乐，所以可以做到在一开始没有midi文件的前提下还能播放音乐</p>
-<p>这个目录下的文件全部可以清理，不然C盘容易红</p>
-<br>
-
-<p><code>main()</code>函数中</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">system</span>(<span class="string">&quot;color F4&quot;</span>);	<span class="comment">//设置小黑框底色为亮白色(F),字体颜色为红色(4)</span></span><br><span class="line">HWND hWnd = <span class="built_in">GetConsoleWindow</span>();	<span class="comment">//获得cmd窗口句柄</span></span><br><span class="line"><span class="built_in">SetWindowPos</span>(hWnd, <span class="literal">NULL</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1500</span>, <span class="number">800</span>, <span class="literal">NULL</span>);  <span class="comment">//设置小黑框长1500像素，宽800像素</span></span><br></pre></td></tr></table></figure>
-
-<br>
-
-<h3 id="字符画"><a href="#字符画" class="headerlink" title="字符画"></a>字符画</h3><p>字符画可以利用Ascgen2-2.0.0来获取，<a target="_blank" rel="noopener" href="https://sourceforge.net/projects/ascgen2/">下载地址</a></p>
-<p>左上角File - Load Image就可以选择图片，然后生成字符画</p>
-<p>左上角File - Save As可以选择txt格式导出</p>
-<p>这个字符画的大小要根据小黑框的大小调整，具体什么比例就看自己需求了</p>
-<br>
-
-<br>
-
-<h2 id="最后附上代码"><a href="#最后附上代码" class="headerlink" title="最后附上代码"></a>最后附上代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;Windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vfw.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> comment(lib,<span class="string">&quot;vfw32.lib&quot;</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">char</span>* MIDImusic = <span class="string">&quot;4D546864000000060001001100F04D54726B0000001C00FF510307A12082BB00FF51030A2C2B8740FF510307A12000FF2F004D54726B0000002800B9650000640200064000650000640100064000650000640000060200076482CF63090000FF2F004D54726B0000003A00FF030D42726173732053656374696F6E00B0650000640200064000650000640100064000650000640000060200C03D82CE59B0090000FF2F004D54726B0000003D00FF030D46696E676572452E426173733000B1650000640200064000650000640100064000650000640000060200C12100B1076282D033090000FF2F004D54726B0000003A00FF030D42726173732053656374696F6E00B2650000640200064000650000640100064000650000640000060200C23D82BA2EB2090000FF2F004D54726B0000004100FF03115472756D706574616E64205069616E6F1000B3650000640200064000650000640100064000650000640000060200C33800B3075082900D090000FF2F004D54726B0000003800FF030B53747220456E736D62203100B4650000640200064000650000640100064000650000640000060200C43082D03DB4090000FF2F004D54726B0000003100FF03045475626100B5650000640200064000650000640100064000650000640000060200C53A81A54CB5090000FF2F004D54726B0000002500B9650000640200064000650000640100064000650000640000060282CF63090000FF2F004D54726B00001655009931500099265100992469139926000199240000993100649926381399260029992638139926002999264013992600659926401299260066993150009924691199240000993100679926381399260029992638129926002A992648179926006199264713992600659931500099265100992469119931000099260001992400669926421599260027992647139926002999264C149926006499265111992600679931500099246913992400009931006599263D149926002899264215992600279931550099264C0099246611992400019931000199260029992634119926002B9926140099264C12992600009926002A9926240099261C12992600009926002A99335000992651009924691299240000993300029926006499263815992600279926381699260026992640149926006499264014992600649933500099246914993300019924006399263815992600279926381499260028992648129926006699264715992600639933500099265100992469129926000199240000993300659926421499260028992647179926002599264C149926006499265115992600639933500099246914992400009933006499263D1599260027992642169926002699264812992600669933420099263D00992466149924000099260001993300639933500099246911992400009933006799263D1399260029992642179926002599264C14992600649926421399260065993350009924691299240001993300659926421599260027992642159926002799264C14992600649926421199260067993350009926570099246917992400009926000099330061992642129926002A9926421399260029992648149926006499333D0099263D0099246B149924000099260000993300649933500099264C009924691899240000992600009933006099263D149926002899263D14992600289933570099263D009924691399240000993300029926002799262E1499260028992638149926002899263D129926002A9933500099265100992469149924000099330001992600639926381399260029992638119926002B99264015992600639926401499260064993350009924691399330002992400639926381499260028992638159926002799264814992600649926471499260064993350009926510099246915992400009926000099330063992642129926002A992647149926002899264C149926006499265116992600629933500099246914992400009933006499263D1399260029992642119926002B99264814992600649933420099263D00992466119924000099330002992600659933500099246915992400009933006399263D129926002A992642139926002999264C1499260064992642139926006599335000992469149924000099330064992642129926002A992642149926002899264C1599260063992642149926006499335000992657009924691499240000993300019926006399264214992600289926421399260029992648129926006699333D0099263D0099246B1499240000992600009933006499334A00992665009924691499240000992600009933006499262E0099264515992600009926002799263800992622139926000099260029992865009926541399280001992600815C993350009926510099246912993300009926000199240065992655139926006599334900992465159924000099330063992655129926002A99263A119926002B993350009924691599240001993300629926501499260028992638169926002699334900992648009924651699240000992600009933006299264714992600649933500099265100992469109924000099330001992600679926501399260065993349009924651199240001993300669926511399260065993350009924601499240000993300649926441499260064993349009926480099246A11993300009926000199240066993342009926400099246613993300009926000199240028992630119926002B9933500099246916992400009933006299265512992600669933490099246A1399330001992400649926501499260064993350009924691299330001992400659926501399260029992642179926002599334E0099264C0099246A1499330000992600019924006399334A0099264200992465139926000199240000993300649933500099246900992657149933000099240002992600629926501499260028992642149926002899335300992648009924651299240000993300019926006599265513992600659933500099246914992400009933006499263D139926002999263D159926002799334E0099263D0099246A1599240001992600009933002699262E15992600279933500099246A009926381499330000992400029926002699263D129926002A993150009926510099246910992400019926000399310064992655149926006499314900992465129931000299240064992655149926002899263A15992600279931500099246913992400009931006599265013992600299926381599260027993149009926480099246510992400009926000199310067993142009926471499260001993100639931500099265100992469149931000199240000992600639926501299260066993149009924651299310001992400659926511399260065993150009924601399240000993100659926441199260067993149009926480099246A11993100009926000199240066993142009926400099246615993100019924000099260026992630129926002A9931500099246915992400009931006399265514992600649931490099246A1299240000993100669926501499260064993150009924691399240000993100659926501599260027992642159926002799314E0099264C0099246A1399310000992600019924006499314A00992642009924651099240000992600019931006799315000992657009924690F9924000099260001993100689926501499260028992642159926002799315300992648009924651399310000992600019924006499265511992600679931500099246915992400009931006399263D129926002A99263D159926002799314E0099263D0099246A1499310001992400009926002799262E13992600299931500099246A009926381599310000992400019926002699263D159926002799314E0099265A00992469129924000099260000993100812299262A0099282700992625009928211199280000992800029926000099260029992863009926621199280001992600815E9931500099265100992469149926000199240000993100639926381499260028992638159926002799264017992600619926401299260066993150009924691099240002993100669926381499260028992638159926002799264814992600649926471399260065993150009926510099246914992600019924000099310063992642129926002A992647119926002B99264C159926006399265114992600649931500099246914992400009931006499263D1599260027992642139926002999264814992600649931420099263D00992466119924000099260000993100679931500099246913992400009931006599263D1499260028992642119926002B99264C1499260064992642159926006399315000992469149924000199310063992642129926002A992642139926002999264C1599260063992642139926006599315000992657009924691199240000992600009931006799264213992600299926421699260026992648119926006799313D0099263D0099246B109924000099310002992600669931500099266C009924691199240001992600009931002A99262C1799260025992638149926002899264C14992600289931550099264C009924661499310001992400009926002799263419992600239926140099264C12992600009926002A9926240099261C15992600009926002799335000992469009926511299330003992400019926006299263814992600289926381599260027992640139926006599264010992600689933500099246911992400039933006499263814992600289926381699260026992648139926006599264715992600639933500099265100992469139933000299240001992600629926421399260029992647169926002699264C169926006299265115992600639933500099246914993300019924006399263D1399260029992642169926002699264815992600639933420099263D00992466129926000199240002993300639933500099246911993300049924006399263D119926002B992642159926002799264C15992600639926421499260064993350009924691399330001992400649926421399260029992642149926002899264C169926006299264214992600649933500099265700992469119926000299240004993300619926421699260026992642129926002A992648149926006499333D0099263D0099246B129926000199240001993300649933500099264C009924691299260001992400059933006099263D129926002A99263D109926002C9933570099264C009924661199240000992600029933002999263413992600299926140099264C1399260000992600299926240099261C1399260000992600299933500099265100992469139924000199260000993300649926381599260027992638139926002999264014992600649926401399260065993350009924691399330001992400649926381399260029992638129926002A992648149926006499264714992600649933500099265100992469139924000099260002993300639926421499260028992647139926002999264C149926006499265114992600649933500099246914993300029924006299263D1599260027992642159926002799264815992600639933420099263D00992466119933000299260001992400649933500099246911992400049933006399263D1599260027992642159926002799264C15992600639926421599260063993350009924691499240000993300649926421499260028992642169926002699264C139926006599264212992600669933500099265700992469149933000299240000992600629926421399260029992642119926002B992648149926006499333D0099263D0099246B1399260001993300019924006399334A00992665009924691299240000992600029933006499262E0099264513992600009926002999263800992622139926000099260029992865009926541499280001992600815B993350009926510099246912992400009933000199260065992655149926006499334900992465159924000099330063992655169926002699263A1599260027993350009924691499240002993300629926501399260029992638159926002799334900992648009924651599240000992600019933006299264715992600639933500099265100992469109933000399240001992600649926501399260065993349009924651199240001993300669926511499260064993350009924601399240001993300649926441499260064993349009926480099246A10992400009926000199330067993342009926400099246613993300019924000099260028992630129926002A9933500099246913992400039933006299265514992600649933490099246A1299240001993300659926501499260064993350009924691299330003992400639926501399260029992642179926002599334E0099264C0099246A1399260001992400009933006499334A0099264200992465119924000099260003993300649933500099265700992469149933000199240000992600639926501599260027992642119926002B99335300992648009924651299330000992600019924006599265513992600659933500099265A009924691399240000992600019933006499265A149926006499334E00992655009924651399240000992600039933006299335000992650129926000299330064993150009926510099246911992400009926000399310064992655119926006799314900992465129924000099310066992655159926002799263A109926002C99315000992469139931000199240064992650119926002B9926381399260029993149009926480099246511993100019924000099260066993142009926471499260001993100639931500099265100992469109924000299260002993100649926501299260066993149009924651299310001992400659926511699260062993150009924601399310001992400649926441499260064993149009926480099246A11993100029924000099260065993142009926400099246612992600019924000299310027992630119926002B99315000992469139924000&quot;</span> <span class="string">&quot;29931006399265514992600649931490099246A129924000099310066992650159926006399315000992469139931000199240064992650129926002A992642159926002799314E0099264C0099246A1399310002992400029926006199314A0099264200992465119931000099260002992400659931500099265700992469109931000299260001992400659926501399260029992642149926002899315300992648009924651199240000992600029931006599265513992600659931500099246915992400009931006399263D159926002799263D149926002899314E0099263D0099246A1499310003992400009926002599262E1499260028993150009926380099246A1399240001992600019931002799263D139926002999314E0099265A00992469129931000399240000992600811F992827009928210099262A00992625119926000099260001992800009928002A992863009926621199260000992800815F993150009926510099246914992400019926000099310063992638109926002C992638139926002999264014992600649926401299260066993150009924691299310002992400649926381399260029992638129926002A992648149926006499264712992600669931500099265100992469139926000199240001993100639926421499260028992647129926002A99264C149926006499265115992600639931500099246914992400009931006499263D1499260028992642109926002C99264814992600649931420099263D00992466119931000299240001992600649931500099246911992400029931006599263D1699260026992642139926002999264C13992600659926421599260063993150009924691399240002993100639926421499260028992642159926002799264C139926006599264211992600679931500099265700992469119931000099260001992400825699313D109931006899315012993100815E99315514993100815C993150009924690F9924000299310067992650129926002A992642139926002999315300992648009924651199240000992600019931006699265514992600649931500099246914992400009931006499263D139926002999263D169926002699314E0099263D0099246A1699240000992600019931002599262E1599260027992638139926002999263D1399260029993150009926600099246914993100019924000099260063992625139926002999263A0099262A13992600009926002999266514992600289926601599260063992660149926002899265A159926006399262B159926002799282A00992825009926310099261F109928000099280005992600009926002799316E009928510099265E009924711199310000992600009928000299240000FF2F004D54726B000003FF00C03D00904C7F78904A6C25904C0013904A004090485A4A9048002E904C733C904C003C904A7F825E904A000A904C6934904C0044904F7027904F0051904F6630904F0048904C736C904C000C904A6C7890486C01904A003F904800819D0090487F81269048004A904354813A9043003690457723904500559045772F90450049904366789045613F904500109043002990486320904800589048633190480047904566779045000190485A3390480045904A70810E904A008252904C5A8128904C0048904A638138904A003890487C3C9048003C904C5649904C002F904A5A6B904A000D904869619048001790456978904A630290450029904A004D9047736A9047000E904566749045000490435C831C9043004490487F81589048001890455E81679045000990486983339048002D90405E6790400011904861589048002090455863904500159043517890455A01904300835C9045000390406981529040001E90486C81519048001F90455E825E9045000A9043637190430007904A5A4E904A002A904851699048000F9045407890434E079045006C9043000590455A83609040700990450081539040001490485E813790480039904563815E9045001290406C812E904000429040586490400014904370429043003690457381369045003A904566832B90450035904C56812F904C0041904A696A904A000E9048703690480042904A7C8150904A002090436381669043000A9045697890485C089045003D90480033904A5C8135904A003B904A5E8304904A005C9040615A9040001E90435A28904300509043612B9043004D904366359043004390457C399045003F90456C419045003790435E789045700F9043001E9045004B90487F249048005490487F369048004290455A78904A5C059045002A904A004990477F74904700049045586690450012904366816A90430006904A731A904A005E904A7F35904A004390487078904A770390480075904C7307904A001C904C0055904C7F27904C0051904A7C6B904A000D90487063904800159045693090450048904569439045003590487F35904800439048733E9048003A904A7F74904A000490487C6B9048000D9045546C9045000C9048587890436902904800820E9043008150904873259048005390435C639043001590456C2E9045004A9045772E9045004A9043618268904563239043000E9045004790485A259048005390485A3590480043904563789048630690450072904A690890480047904A008311904C7F61904C0017904A7C59904A001F9048666790480011904C6C6B904C000D904A778268904C700A904A0031904C003D904F7300904F660A904F0000904F008166904F708170904C660D904F00814D904C0016904A7F8156904A001A9048778C1990480000FF2F004D54726B000005BB00C1210091247081069124006A911F5E8103911F006D912166810B91210065911F618103911F006D912466811091240060911F5A79911F007791247363912400810D911F6166911F00810A91247381039124006D911F5A6F911F00810191215C7F91210071911F6971911F007F91246681019124006F91214F709121008100912663699126008107911F5A75911F007B912461811091240060911F5C7B911F007591215C7791210079911F666F911F00810191216361912100810F91216C6B9121008105911F7C8115911F005B911F636F911F00810191247381119124005F91246681029124006E91246981029124006E91246677912400799121637F9121007191215C739121007D912166769121007A9121696D91210081039124668108912400689124636D91240081039121698110912100609121636891210081089124668117912400599124636F9124008101912166810E912100629121697991210077911F738129911F0047911F5E8102911F006E912166811C9121005491215E81019121006F911F778114911F005C911F66810F911F0061912170811C9121005491216381029121006E912477811C9124005491247081129124005E91247081129124005E91246C81029124006E912673811E912600529126667D91260073911F7F812C911F0044911F668118911F0058912161810D91210063912161739121007D911F6C8112911F005E91215E81249121004C9121668117912100599121667991210077911F778102911F006E911F6977911F007991267C810B9126006591267381019126006F91247F810B91240065912473739124007D912177811A9121005691216981039121006D911D738119911D0057911D707B911D0075911F7F8276911F006A91247F812C9124004491246981069124006A912170811791210059911F738102911F006E91247781369124003A912466719124007F9126667791260079911F6974911F007C912463811D912400539124697A912400769126697A91260076911F6661911F00810F912470810B91240065911F7073911F007D91247F8154912400820C91247381039124006D911F5A6F911F00810191215C7F91210071911F6971911F007F91246681019124006F91214F709121008100912663699126008107911F5A75911F007B912461811091240060911F5C7B911F007591215C7791210079911F666F911F00810191216361912100810F91216C6B9121008105911F7C8115911F005B911F636F911F00810191247381119124005F91246681029124006E91246981029124006E91246677912400799121637F9121007191215C739121007D912166769121007A9121696D91210081039124668108912400689124636D91240081039121698110912100609121636891210081089124668117912400599124636F9124008101912166810E912100629121697991210077911F738129911F0047911F5E8102911F006E912166811C9121005491215E81019121006F911F778114911F005C911F66810F911F0061912170811C9121005491216381029121006E912477811C9124005491247081129124005E91247081129124005E91246C81029124006E912673811E912600529126667D91260073911F7F812C911F0044911F668118911F0058912161810D91210063912161739121007D911F6C8112911F005E91215E81249121004C9121668117912100599121667991210077911F778102911F006E911F6977911F007991267C810B9126006591267381019126006F91247F810B91240065912473739124007D912177811A9121005691216981039121006D911D738119911D0057911D707B911D0075911F7F8276911F006A91247F812C9124004491246981069124006A912170811791210059911F738102911F006E91247781369124003A912466719124007F9126667791260079911F6974911F007C912463811D912400539124697A912400769126697A91260076911F6661911F008121911F7F8632911F00799118778D7691180000FF2F004D54726B0000134000C23D8268924C510092484A0092433A1D92430000924C00029248008151924A580092475C009243491E9243000192470000924A008151924A630092475C0092434A1D924A000392430002924700814E924A690092475E0092434B219243000292470000924A00814D924A4F0092474A009243372A92430003924A000292470049924C4F0092484E009243391E92480004924C0004924300814A924C6C0092487C009243695D9243000792480000924C008204924C4F00924849009243351D9243000992480000924C00814A924C4800924843009243342192430001924C0004924800814A924C4D009248490092433D2192430000924C0001924800814E924C540092484B0092433B219243000092480002924C00814D924C410092484100924335259243000392480002924C008146924C440092484100924339259243000292480004924C008145924A5E0092475A009243441E9243000192470005924A00814C924A4F0092474D0092433D239243000292470000924A00814B924C4B0092484B0092433B1F924C000292430003924800814C924C5800924854009243462192430003924C0002924800814A924C5300924856009243431C924C000692430000924800814E924C4B0092484F00924340229243000492480001924C008149924C5A0092485E0092454F20924C000292450002924800814C924C5600924851009245492192480002924C00049245008149924A630092475E0092434D1F92470002924A0001924300814E924A5400924754009243411E9243000192470000924A008151924C4E0092484F009243381B92430000924C00049248008151924C4900924849009243391B924C0002924300019248008152924C5400924853009243401B9243000392480000924C008152924C45009248460092433725924C0002924300019248008148924C4F009248540092433F209243000692480001924C008149924C4D0092484D0092433A2092430007924C00019248008148924C5400924851009245401E9245000592480003924C00814A924C58009248560092454B219248000292450000924C00814D924C4500924845009243391F924C000192430004924800814C924C4A0092484B0092433B219243000192480002924C00814C924C530092485C009245531D9248000392450000924C008150924C5600924853009245441D9245000192480001924C008151924A54009247540092433E19924A0002924300039247008152924A5400924758009243441D924A000392470002924300814E924C580092485C009245461892450006924C000292480058924C5A009248580092454B1B9248000292450002924C0059924C580092485E009245451992450002924C00029248008153924C4D009248580092434018924C0006924300019248008151924C4F009248510092433B1A92430005924C0005924800814C924C4A0092484D0092433A1B9243000292480001924C008152924C45009&quot;</span> <span class="string">&quot;24844009243371D9248000292430001924C008150924C4B0092484B0092433A1F92430000924C0002924800814F924C4F00924851009245431B9245000192480002924C008152924C510092484F009245401D9245000392480000924C008150924C4F0092484B009245421B92480002924C00039245008150924C4D0092484D0092433D1E92430004924C0002924800814C924C44009248490092433A1D92430002924C0004924800559249350E9249006A924C5400924851009243401D9243000092480002924C008151924C4B0092484E0092433B1E9243000392480005924C00814A924C5600924853009243451E92430009924C000192480050924C660092486100924351219248000492430000924C00814B924A730092476C0092435E82209243000292470004924A0042924C4D0092484E0092434A1192480002924C00099243008154924C360092483E009243341D9248000292430002924C0057924C4200924845009243381C9243000192480002924C0059924C490092484D0092433B1C9243000392480003924C0056924C4D0092484D009245431A9248000592450000924C0059924C480092484E0092453D1F9245000092480000924C0059924C480092484F009245421C92450003924C000192480058924C450092484D0092453C1D92450001924C000492480056924C430092484B009243482192430000924C000392480054924C460092484E0092433B1B924C00049243000192480058924C490092484D0092433B1E924C00039243000192480056924C480092484D0092433B1D9243000392480001924C0057924A4200924751009243351892430001924A00019247005E924A460092474E009243411A92470003924A000592430056924A5100924758009243431B92470004924A000192430058924A480092474F0092433D1F9243000092470003924A0056924A5600924756009243421D9243000292470002924A0057924A51009247560092433E1C92430001924A000292470059924A540092475400924340199247000192430002924A005C924A5300924758009243371D92430002924A000192470058924C53009248580092433D17924C00079248000292430058924C430092484F0092433B19924C00049243000392480058924C4F00924856009243431F9248000292430000924C0057924C5A0092485A0092434B1992480004924C00059243005692485300924553009241451A9245000392480003924100589248580092455A009241451892480003924500049241005992485100924554009241431F9245000192410001924800579248530092455A009241451D924500019241000192480059924863009245610092414D1B92450002924800029241005992485A009245630092414A1D9248000392410002924500569248580092455C0092414D1E9248000192450002924100579248560092455A009241441D924100049245000392480054924A73009247770092435C259243000492470000924A008147924A7F0092477F00924370810E924300039247000B924A00814C924C63009248630092434922924C000392480001924300814A924C580092485C0092434A1E924C000492480002924300814C924C5A009248610092434E1F9243000092480002924C00814F924C5A0092485E0092434E1E9248000392430003924C00814C924C5C009248630092434E2192430002924C0003924800814A924C54009248610092434B229248000192430003924C00814A924A5E009247660092434B1F9243000292470003924A00814C924A63009247630092434B2192430000924A0003924700814C924C5A0092485E0092434B22924C000292430000924800814C924C61009248610092434E219243000292480002924C00814B924A58009247660092434B1F92430003924A0002924700814C924A5100924758009243451E92430005924A0003924700814A924A5100924756009243462492430005924A00019247008146924C460092484D009243362792430003924C00039248004B924C690092485E0092435C1492480005924C00039243008154924C7F0092487F0092437C579243000792480004924C008206924C4F00924849009243351D9243000992480000924C00814A924C4800924843009243342192430001924C0004924800814A924C4D009248490092433D2192430000924C0001924800814E924C540092484B0092433B219243000092480002924C00814D924C410092484100924335259243000392480002924C008146924C440092484100924339259243000292480004924C008145924A5E0092475A009243441E9243000192470005924A00814C924A4F0092474D0092433D239243000292470000924A00814B924C4B0092484B0092433B1F924C000292430003924800814C924C5800924854009243462192430003924C0002924800814A924C5300924856009243431C924C000692430000924800814E924C4B0092484F00924340229243000492480001924C008149924C5A0092485E0092454F20924C000292450002924800814C924C5600924851009245492192480002924C00049245008149924A630092475E0092434D1F92470002924A0001924300814E924A5400924754009243411E9243000192470000924A008151924C4E0092484F009243381B92430000924C00049248008151924C4900924849009243391B924C0002924300019248008152924C5400924853009243401B9243000392480000924C008152924C45009248460092433725924C0002924300019248008148924C4F009248540092433F209243000692480001924C008149924C4D0092484D0092433A2092430007924C00019248008148924C5400924851009245401E9245000592480003924C00814A924C58009248560092454B219248000292450000924C00814D924C4500924845009243391F924C000192430004924800814C924C4A0092484B0092433B219243000192480002924C00814C924C530092485C009245531D9248000392450000924C008150924C5600924853009245441D9245000192480001924C008151924A54009247540092433E19924A0002924300039247008152924A5400924758009243441D924A000392470002924300814E924C580092485C009245461892450006924C000292480058924C5A009248580092454B1B9248000292450002924C0059924C580092485E009245451992450002924C00029248008153924C4D009248580092434018924C0006924300019248008151924C4F009248510092433B1A92430005924C0005924800814C924C4A0092484D0092433A1B9243000292480001924C008152924C4500924844009243371D9248000292430001924C008150924C4B0092484B0092433A1F92430000924C0002924800814F924C4F00924851009245431B9245000192480002924C008152924C510092484F009245401D9245000392480000924C008150924C4F0092484B009245421B92480002924C00039245008150924C4D0092484D0092433D1E92430004924C0002924800814C924C44009248490092433A1D92430002924C0004924800559249350E9249006A924C5400924851009243401D9243000092480002924C008151924C4B0092484E0092433B1E9243000392480005924C00814A924C5600924853009243451E92430009924C000192480050924C660092486100924351219248000492430000924C00814B924A730092476C0092435E82209243000292470004924A0042924C4D0092484E0092434A1192480002924C00099243008154924C360092483E009243341D9248000292430002924C0057924C4200924845009243381C9243000192480002924C0059924C490092484D0092433B1C9243000392480003924C0056924C4D0092484D009245431A9248000592450000924C0059924C480092484E0092453D1F9245000092480000924C0059924C480092484F009245421C92450003924C000192480058924C450092484D0092453C1D92450001924C000492480056924C430092484B009243482192430000924C000392480054924C460092484E0092433B1B924C00049243000192480058924C490092484D0092433B1E924C00039243000192480056924C480092484D0092433B1D9243000392480001924C0057924A4200924751009243351892430001924A00019247005E924A460092474E009243411A92470003924A000592430056924A5100924758009243431B92470004924A000192430058924A480092474F0092433D1F9243000092470003924A0056924A5600924756009243421D9243000292470002924A0057924A51009247560092433E1C92430001924A000292470059924A540092475400924340199247000192430002924A005C924A5300924758009243371D92430002924A000192470058924C53009248580092433D17924C00079248000292430058924C430092484F0092433B19924C00049243000392480058924C4F00924856009243431F9248000292430000924C0057924C5A0092485A0092434B1992480004924C00059243005692485300924553009241451A9245000392480003924100589248580092455A009241451892480003924500049241005992485100924554009241431F9245000192410001924800579248530092455A009241451D924500019241000192480059924863009245610092414D1B92450002924800029241005992485A009245630092414A1D9248000392410002924500569248580092455C0092414D1E9248000192450002924100579248560092455A009241441D924100049245000392480054924A73009247770092435C259243000492470000924A008147924A7F0092477F00924370810E924300039247000B924A00814C924C63009248630092434922924C000392480001924300814A924C580092485C0092434A1E924C000492480002924300814C924C5A009248610092434E1F9243000092480002924C00814F924C5A0092485E0092434E1E9248000392430003924C00814C924C5C009248630092434E2192430002924C0003924800814A924C54009248610092434B229248000192430003924C00814A924A5E009247660092434B1F9243000292470003924A00814C924A63009247630092434B2192430000924A0003924700814C924C5A0092485E0092434B22924C000292430000924800814C924C61009248610092434E219243000292480002924C00814B924A58009247660092434B1F92430003924A0002924700814C924A5100924758009243451E92430005924A000392470000FF2F004D54726B000002B900C3388D10934F7F00934C7F0093487335934C000293480002934F00D84F934F690093537F0093567F1D9353000493560000934F001B934F580&quot;</span> <span class="string">&quot;09353630093566654934F0002935300029356005C93537C0093567000934F7718934F00059353000493560057934F770093537F0093567F8212934F00059353000B93560046934F660093567300935373159353000493560003934F00209353400093565600934F4A0F935300079356002693536E0093566E8208934F0015935300079356004493567000934F6300935373199353000093560004934F001F9356690093536300934F58179356000093530003934F002293567F0093537F00934F70822093530004934F000293560042934F610093536C009356701993530003934F00049356005893567F00934F6C0093537F1B9353000293560001934F005A93566600934F5C009353661B93530000934F000093560021934F6C1E934F001E93567C0093537F1D9353000093560081894B934F690093537F0093567F1D9353000493560000934F001B934F58009353630093566654934F0002935300029356005C93537C0093567000934F7718934F00059353000493560057934F770093537F0093567F8212934F00059353000B93560046934F660093567300935373159353000493560003934F00209353400093565600934F4A0F935300079356002693536E0093566E8208934F0015935300079356004493567000934F6300935373199353000093560004934F001F9356690093536300934F58179356000093530003934F002293567F0093537F00934F70822093530004934F000293560042934F610093536C009356701993530003934F00049356005893567F00934F6C0093537F1B9353000293560001934F005A93566600934F5C009353661B93530000934F000093560021934F6C1E934F001E93567C0093537F1D9353000093560000FF2F004D54726B0000067B00C430AA1894434E7F94455E0D94430068944754139445005F9447000A94486181719448000894454F81539448630B944500833D944800119440587F944854029440006B944800029445566D9445000194434D81009445580E944300834C9445000A94406681719440000594485C816D944553049448008258944500089443616F94430006944A5E6F944A0008944858679448000594454A810094434B019445007C9445530B9443008239944500823194484A03944C4F0094433E1C944C000294480005944300814E94484E0094434302944C532394480001944C0000944300814394485400944C51039443462294430003944C000094480081449448480194434102944C43229448000294430001944C0081469443430094484E01944C4A289443000294480003944C00814594484E00944C4603944545229445000194480002944C00814894484F0094454200944C4E2494480003944C000094450081499448510394454201944C4B1E944C000194450001944800814494484205944C3E029443331E94430003944C0002944800813E9448400394433500944C3F2294430005944C0000944800814494484A00944C4E0394433D2494430003944C0000944800814594484B0194433F00944C492C94430002944C000194480081399448430394433700944C402A94430006944C0001944800814F94475E03944A5400944346199447000294430001944A00814794474B0194433C00944A43209443000394470002944A00A43594484F6D944800039443426394454B08944300409445002794453D81019445000E94434E827D94454F11944300599448540A9445002E9448003694484167944800189445536594484D049445007B944A5C0E9448008115944A00824C944C5E61944C0010944A6369944A000894484B75944C5A0594480064944C0008944A458277944A0006944C4F6D944F6903944C0035944F0042944F5E66944F000F944C5172944A4A04944C007794485A12944A0020944800814A94485300944C6300944F633E944F0002944C00039448009C4294434979944546129443006B94475114944500699448540A94470081639448001094455C816494485A04944500833E9448000A94404A6F94484F089440007794453E0D9448005F94450004944345779445481294430083489445000A94404D817E9440000294485A81659448000894454F82559445001194435A6794430008944A5375944A000694485865944800099445538103944341029445007194454F10944300834D94450010944054815F9440000994484E81719448000894455681649445000A94404A81439440002294404B81059443460E9440006994454A0C944300813E94450021944543833594450035944C548144944C0024944A6377944A00029448566F944A5E0D944800814E944A001194435E816F94455303944300689445001794484869944A54169448008136944A002A944A4D8326944A003594432901944A2A0394472D83199447000394430027944A001294453105944C2902944836831094450003944C00049448003F9448440394433C03944C3F831994480018944C00009443002694432F0194474B02944A45830694430039944A00039447002994473C08944A4900944335831F9447000C944A00029443002694433107944C3F0294485483029448001D94430011944C002594454A059448400294413E8146944100039445000A9448002B944C4F039443330594483D04944A3107944A00850494480037944C002494430081609447730394436100944A6C4D9447000794430004944A00820B94483A0194433502944C392E9448000194430002944C0081399448480394433D01944C422A944C000094430002944800813C94483B03944C33009443332A94430004944C0001944800813E94484D0294433D00944C422994430002944C0003944800813194483903944C310294432C3694430003944C0001944800812D9443290794482202944A210B944D1900944C1917944D0002944C0002944A0003944800049443005F94484E01944C4F0294433C65944C0002944300039448007794433B0094474D00944A4B3494470002944A00039443008123944C40810B944A420E944C0055944A00049448398101944C4B1094480071944A510E944C008300944A000A944C5367944F4E02944C0005943B3402943E2F0094372D8560943B0026943E003B944F001E943700719448450394434900944C4A0794373A0394403600943C318D259443000F94480003944C000A9437000294400003943C0000FF2F004D54726B000003AA00C53A8F0095487F81319548003F95437081369543003A954577249545005495456C3E9545003A95435C7895455E3E9543000895450032954863219548005795487C339548004595457073954500059548635895480020954A698115954A00824B954C4F8141954C002F954A69814D954A0023954873699548000F954C5654954C0024954A586B954A000D95486C6B9548000D9545566795450011954A443F954A003995475E71954700079545567895435C0A9545008229954300812D95485181649548000C95455E814F9545002195485C831F954800419540585B9540001D9548515D9548001B95455E6B9545000D954354789545530D95430083269545002D95405E813D9540003395485C814A954800269545668268954358029545005295430024954A6168954A001095485E5B9548001D95455478954354039545007595456105954300835B95406C0A95450081319540003595485881359548003B95456181479545002995406381359540003B954058789543660A954000379543003795457381379545003995455C831D95450043954C5E8135954C003B954A6C74954A000495486C2C9548004C954A73814F954A0021954369817095456C159543006395485E039545003195480044954A63813F954A0031954A5C8249954A001F954061219540005795405867954000119543612895430050954363349543004495435E3A9543003E9545772D9545004B95456C4D9545002B95435E789545700C954300219545004B95487F289548005095487F5295480026954A5E009545662B954A0026954500811F9547776D9547000B95455C6E9545000A9543568170954A660A95430018954A0056954A7051954A002795486678954A690195480036954A0041954C773B954C003D954C6137954C0041954A6C71954A00079548665B9548001D954566359545004395454E5F954500199548694D9548002B9548397895480000954A6971954A000795486C689548001095455A76954500029548616A9548000E95435C0095435E1B95430000954300834595487F579548002195437C4B9543002D954577239545005595457C3095450048954369826795430001954577369545004295487724954800549548693195480047954566599545001F9548705195480027954A7C8251954A00810F954C7C5E954C001A954A5845954A00339548704B9548002D954C663D954C003B954A618268954C5E05954A0044954C002F954F7729954F004F954F7F26954F0052954C735F954C0019954A6C7895486903954A004995480000FF2F004D54726B00000031C91099226513992200BF4D99224C11992200D96F99226515992200BF4B99224C12992200AC6E99224C1399220000FF2F00&quot;</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">char</span>* Lyrics[] = &#123;<span class="string">&quot;没有共产党就没有新中国&quot;</span>,<span class="string">&quot;没有共产党就没有新中国&quot;</span>,<span class="string">&quot;共产党辛劳为民族&quot;</span>,<span class="string">&quot;共产党他一心救中国&quot;</span>,<span class="string">&quot;他指给了人民解放的道路&quot;</span>,<span class="string">&quot;他领导中国走向光明&quot;</span>,<span class="string">&quot;他坚持了抗战八年多            他改善了人民生活&quot;</span>,<span class="string">&quot;他建设了敌后根据地            他实行了民主好处多&quot;</span>,<span class="string">&quot;没有共产党就没有新中国&quot;</span>,<span class="string">&quot;没有共产党就没有新中国&quot;</span>,<span class="string">&quot;没有共产党就没有新中国&quot;</span>,<span class="string">&quot;没有共产党就没有新中国&quot;</span>,<span class="string">&quot;共产党辛劳为民族&quot;</span>,<span class="string">&quot;共产党他一心救中国&quot;</span>,<span class="string">&quot;他指给了人民解放的道路&quot;</span>,<span class="string">&quot;他领导中国走向光明&quot;</span>,<span class="string">&quot;他坚持了抗战八年多            他改善了人民生活&quot;</span>,<span class="string">&quot;他建设了敌后根据地            他实行了民主好处多&quot;</span>,<span class="string">&quot;没有共产党就没有新中国&quot;</span>,<span class="string">&quot;没有共产党就没有新中国&quot;</span>&#125;;</span><br><span class="line"><span class="type">int</span> SleepTime[] = &#123;<span class="number">4000</span>,<span class="number">4000</span>,<span class="number">4000</span>,<span class="number">4000</span>,<span class="number">4000</span>,<span class="number">4000</span>,<span class="number">4000</span>,<span class="number">4000</span>,<span class="number">5000</span>,<span class="number">4000</span>,<span class="number">4000</span>,<span class="number">4000</span>,<span class="number">4000</span>,<span class="number">4000</span>,<span class="number">4000</span>,<span class="number">4000</span>,<span class="number">4000</span>,<span class="number">4000</span>,<span class="number">5000</span>,<span class="number">4000</span>&#125;;</span><br><span class="line"><span class="type">char</span>* Pointer = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Pos</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintLyrics</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitializeMusic</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">MusicFileCreate</span><span class="params">(TCHAR* n)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PlayMusic</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintASCII</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;color F4&quot;</span>);</span><br><span class="line">	</span><br><span class="line">	HWND hWnd = <span class="built_in">GetConsoleWindow</span>(); <span class="comment">//获得cmd窗口句柄</span></span><br><span class="line">	<span class="built_in">SetWindowPos</span>(hWnd, <span class="literal">NULL</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1500</span>, <span class="number">800</span>, <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">PrintASCII</span>();</span><br><span class="line">	<span class="built_in">Pos</span>(<span class="number">88</span>, <span class="number">4</span>);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;献礼二十大——代码献礼&quot;</span>;</span><br><span class="line">	<span class="built_in">Pos</span>(<span class="number">88</span>, <span class="number">6</span>);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;作者: WinkySpeed&quot;</span>;</span><br><span class="line">	<span class="built_in">Pos</span>(<span class="number">135</span>, <span class="number">4</span>);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Loading...&quot;</span>;</span><br><span class="line">	<span class="built_in">InitializeMusic</span>();</span><br><span class="line">	<span class="built_in">PlayMusic</span>();</span><br><span class="line">	<span class="built_in">PrintLyrics</span>();</span><br><span class="line">	<span class="built_in">free</span>(Pointer);</span><br><span class="line">	<span class="built_in">Pos</span>(<span class="number">135</span>, <span class="number">47</span>);</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Pos</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	COORD pos;</span><br><span class="line">	HANDLE hOutput;</span><br><span class="line">	pos.X = x;</span><br><span class="line">	pos.Y = y;</span><br><span class="line">	hOutput = <span class="built_in">GetStdHandle</span>(STD_OUTPUT_HANDLE);</span><br><span class="line">	<span class="built_in">SetConsoleCursorPosition</span>(hOutput, pos);</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintLyrics</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">Pos</span>(<span class="number">135</span>, <span class="number">4</span>);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;没有共产党就没有新中国&quot;</span>;</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> n = <span class="built_in">sizeof</span>(SleepTime) / <span class="built_in">sizeof</span>(<span class="type">int</span>);</span><br><span class="line">	<span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> j = <span class="number">6</span>;</span><br><span class="line">	<span class="keyword">while</span> (i &lt; n)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">Pos</span>(<span class="number">125</span>, j);</span><br><span class="line">		<span class="built_in">Sleep</span>(SleepTime[i]);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>, Lyrics[i]);</span><br><span class="line">		i++;</span><br><span class="line">		j += <span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">Sleep</span>(<span class="number">10000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitializeMusic</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> length = (<span class="type">int</span>)(<span class="built_in">strlen</span>(MIDImusic));</span><br><span class="line">	Pointer = (<span class="type">char</span>*)<span class="built_in">malloc</span>(length / <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">	<span class="type">char</span> temp[<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; length; i += <span class="number">2</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		temp[<span class="number">0</span>] = *(MIDImusic + i);</span><br><span class="line">		temp[<span class="number">1</span>] = *(MIDImusic + i + <span class="number">1</span>);</span><br><span class="line">		<span class="type">long</span> tmp = <span class="built_in">strtol</span>(temp, <span class="number">0</span>, <span class="number">16</span>);</span><br><span class="line">		<span class="keyword">if</span> (Pointer)</span><br><span class="line">		&#123;</span><br><span class="line">			Pointer[i / <span class="number">2</span>] = (<span class="type">char</span>)tmp;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">MusicFileCreate</span><span class="params">(TCHAR* n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	HANDLE p = <span class="built_in">CreateFile</span>(n, <span class="number">1</span> &lt;&lt; <span class="number">30</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">3</span>, <span class="number">1</span> &lt;&lt; <span class="number">7</span>, <span class="number">0</span>);</span><br><span class="line">	<span class="built_in">WriteFile</span>(p, Pointer, ((<span class="type">int</span>)(<span class="built_in">strlen</span>(MIDImusic)) / <span class="number">2</span>), <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">	<span class="built_in">CloseHandle</span>(p);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PlayMusic</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	TCHAR Path[<span class="number">260</span>];</span><br><span class="line">	TCHAR Name[<span class="number">260</span>];</span><br><span class="line">	TCHAR temp[<span class="string">&#x27;-&#x27;</span> &lt;&lt; <span class="number">2</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	<span class="built_in">GetTempPath</span>(<span class="number">260</span>, Path);</span><br><span class="line">	<span class="built_in">GetTempFileName</span>(Path, <span class="built_in">TEXT</span>(<span class="string">&quot;CCP&quot;</span>), <span class="number">0</span>, Name);</span><br><span class="line">	<span class="built_in">wcscpy</span>(temp, Name);</span><br><span class="line">	<span class="built_in">wcscat</span>(temp, <span class="string">L&quot;.mid&quot;</span>);</span><br><span class="line">	<span class="built_in">MoveFile</span>(Name, temp);</span><br><span class="line">	<span class="built_in">MusicFileCreate</span>(temp);</span><br><span class="line">	HWND MCImusic;</span><br><span class="line">	MCImusic = <span class="built_in">MCIWndCreate</span>(<span class="built_in">GetForegroundWindow</span>(), <span class="built_in">GetModuleHandle</span>(<span class="number">0</span>), WS_CHILD | <span class="number">8</span>, temp);</span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">MCIWndCanPlay</span>(MCImusic))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">MCIWndPlay</span>(MCImusic);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintASCII</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;                                                                                          \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                                                                                                       \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                                                                                                       \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                                                                                                       \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                                                    .75Iv:.                                            \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                                                      .uBBBBQg1:                                       \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                                                          iRBBBBBQK:                                   \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                                                             5QBBBBBQZ:                                \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                                                               1BBQMBBBB2                              \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                                                   :.            RQBgMgBBBS                            \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                                                .LQBB5            7BBggZMQBBu                          \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                                       .QBBQMQBBBBBQQBQ7            BBgDZggBBB.                        \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                                      KBBQBBBBBQMggDgMBBB            RBMgEDDRBBL                       \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                                    7BBQDgDgZgDgEDZgMBQq              QBgDEDZgQBP                      \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                                  :BBQgZgZgEgEDZgZMQBM.                BBgDZDEgMBM                     \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                                 ZBBggZDZDEgEgEggQBBi                   QBZDEDZgMBd                    \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                               jBBQDgEgZDEgEDEgZQBY                     iBRZDZgEgMBY                   \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                             iQBQgZgEDZDEDZDEgZRQ                        QQgZDZgZgQB                   \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                           .QQBggEDEDZDZDEgEgZDDBZ:                      .BggEDZgZgQQ                  \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                          KBBRDDZDEgZgEDZgZDZDZDDBQg                      BBZDEDEDZRB:                 \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                        sBBQgDDEgZDZDZgZgZgEDEDEgDQBB1                    UBgZDEDZDgBd                 \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                         KBBMMZgEDEDEggBBRggZDZDZgZgQBBr                  :BgDEDZDZgQB                 \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                           PBBRDgZgDMQBgPBBggEDEDEDZggBBB.                 BREDZDZDZQB.                \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                            .BQBgggQBBs  :BBQMZDEDZDEDDRBBK                BRgZgZDZDgB:                \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                              7QBQBBP      vBBQDDZgZgZgZgRBBL              BQZDEDZDEMBi                \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                                SBB:         PBBggZDZDZDEggBBB:           .BggZgEDZggB:                \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                                 .            .QBBMZDEgZDZgDRBBg          YBMZDEDEDERB.                \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                                                iBBQggEDEDZgEgMBBI        BBZgZDEDZgQB                 \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                                                  UBBMgZDEDEgEDDBBBi     rBgDEgEDEDgBd                 \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                                                    DBBMDgEgEDZDZMBBQ.   BQgZDZDEDERB:                 \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                                                     :BBBDgEDEDZDZggBB5 QBMZgEDZgZgBQ                  \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                        .r                             vBBMgDgEgZgZgDRBBBMZDEgZgZgQB.                  \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                       2BBM.                             XBBRDDZDZgZDDgDgZgEgZDEgMBY                   \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                     7BBQQBBg:                            .QBBggZDEDEDEDZDEDEDEgMBb                    \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                    BBBMgDMMBBB7                            iQBgDZDZgEgZDZDEDEDDBg                     \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                    .BQBgDEDDRBBBMr                           7BZDZDEDEDEDZDEDZBj                      \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                      sBBDDEDEggQBBBBXr.                    .rKRgEgEDZgEgZgEDEgQP                      \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                        KQZgZgZgDggRBBBBBBb17i..     ..ivqQBBBBgEgEgZDZDEDZDEDZgBBq                    \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                    :vurPQDEgDgZgEgEgZgMBBBBBBBBBBBBBBBBBBBQMggZgEgEDEDEDEgEgEDEMRBB1                  \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                  .BBBBBQgDgBBQBggZDZDEgZDZgDMgMMRMRgRgMggZgZgZDZDZDZgDQggEDEDEDEggBBB                 \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                  BBRDgZgEgBj.PBBBBggDgZgEgZDZgEDZDZDZgZDZgEDZDEDZggBBBQBBRDDEDZgMBBK                  \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                 7BQDDEgZgRB    rRQBBBQMggZgZgZDZgZDZDEDEDZgDggMMBBBBD: :BBBDgDMBBg                    \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                  BBQggDMRBB       :SBBBBBBBQgMggDggMDgggMRQBBBBBBP:      uBBQBBB:                     \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                   BBBBBBBD            :vPRBBBQBBBBBBBBBBBQBBgji            ZBBJ                       \n&quot;</span></span><br><span class="line">		<span class="string">&quot;                     ivvi                     .:r7v7v77i:.                   :.                        \n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">		0 = 黑色       8 = 灰色</span></span><br><span class="line"><span class="comment">		1 = 蓝色       9 = 淡蓝色</span></span><br><span class="line"><span class="comment">		2 = 绿色       A = 淡绿色</span></span><br><span class="line"><span class="comment">		3 = 浅绿色     B = 淡浅绿色</span></span><br><span class="line"><span class="comment">		4 = 红色       C = 淡红色</span></span><br><span class="line"><span class="comment">		5 = 紫色       D = 淡紫色</span></span><br><span class="line"><span class="comment">		6 = 黄色       E = 淡黄色</span></span><br><span class="line"><span class="comment">		7 = 白色       F = 亮白色</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-
-
-<br>
-
-<br>
-
-<br>
-
-<hr>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1N54y1o7m9">『整活』当你把C语言代码写成炮姐的样子</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/3150601355/code_in_paojie">code_in_paojie</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/TJR181/C-learning">利用windows自带api接口来播放midi音乐</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/14/%E4%BB%A3%E7%A0%81%E7%8C%AE%E7%A4%BC%E8%AE%B0%E5%BD%95/" data-id="cldlc0u8700086kvccs0ddsrd" data-title="代码献礼记录" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/midi/" rel="tag">midi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6%E7%94%BB/" rel="tag">字符画</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-基于OpenCV实现的灰度图幻影坦克" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/09/27/%E5%9F%BA%E4%BA%8EOpenCV%E5%AE%9E%E7%8E%B0%E7%9A%84%E7%81%B0%E5%BA%A6%E5%9B%BE%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B/" class="article-date">
-  <time class="dt-published" datetime="2022-09-27T15:03:28.000Z" itemprop="datePublished">2022-09-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/09/27/%E5%9F%BA%E4%BA%8EOpenCV%E5%AE%9E%E7%8E%B0%E7%9A%84%E7%81%B0%E5%BA%A6%E5%9B%BE%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B/">基于OpenCV实现的灰度图幻影坦克</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>对于png透明图片，在QQ，贴吧等平台上，<strong>看缩略图时默认是以白色为背景，而点开看原图时默认是以黑色为背景</strong>，基于此显示逻辑可以实现一种图像，看缩略图时是表图，看原图时是里图，这就是幻影坦克。</p>
-<p>基于图像线性融合原理，公式：<strong>g(x) &#x3D; α×f(x) + (1-α)×h(x)</strong> ，可以假设最后生成图与白色叠加得到表图，最后生成图与黑色叠加得到里图，套用公式即可得到幻影坦克的理论公式：</p>
-<img src="/2022/09/27/%E5%9F%BA%E4%BA%8EOpenCV%E5%AE%9E%E7%8E%B0%E7%9A%84%E7%81%B0%E5%BA%A6%E5%9B%BE%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B/image-20230128213900762.png" class title="image-20230128213900762">
-
-<p>公式和原理都源自B站视频: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kV411v7fR">『整活』幻影坦克 基础版</a>，讲的很细致。</p>
-<p>需要注意的是，公式里α透明度有一项是表图的灰度值减里图灰度值，<strong>必须保证这个值时刻大于0</strong>，不然会出现α值大于255的情况，造成错误，即里图显示时出现表图部分，如图：</p>
-<img src="/2022/09/27/%E5%9F%BA%E4%BA%8EOpenCV%E5%AE%9E%E7%8E%B0%E7%9A%84%E7%81%B0%E5%BA%A6%E5%9B%BE%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B/409448276ee344c983d101569975d24e.png" class>
-
-<p>在我把背景换成橙色以后，图中错误部分也显示为橙色，所以判断为这些地方透明度计算出现问题。</p>
-<img src="/2022/09/27/%E5%9F%BA%E4%BA%8EOpenCV%E5%AE%9E%E7%8E%B0%E7%9A%84%E7%81%B0%E5%BA%A6%E5%9B%BE%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B/1909616ff607481ab40bed983f6a6026.png" class>
-
-<p>经过初步分析得到：显示错误的地方在原图中的灰度值非常低，导致P表-P里小于0，使α超出上限，造成完全透明。</p>
-<p>如何保证P表-P里大于0？我的想法是<em>里图调暗一些，最后保证表图每一像素的灰度大于里图灰度</em>即可。</p>
-<p>经过一段时间的调试，我得到了我的解决办法：以里图尺寸为基准，遍历全部像素点，分别读取表图和里图的灰度，将读取到的里图灰度乘0.35，灰度的范围是0-255，因此最大值255*0.35&#x3D;89.25。对于表图的灰度，如果出现小于上面这个值的灰度，就给他强行赋值为100，这样一定能够保证P表-P里大于0，α正常，里图显示正常。</p>
-<p>可能会有人问：改变了表图灰度，会不会对最终结果造成影响？这个问题我还不清楚，但是根据生成的幻影坦克来看，这点影响可以忽略不计。</p>
-<p>希望大神指点更好的方法以保证α不出问题。</p>
-<p>解决了最基础的幻影坦克功能问题，接着就解决图片后缀名问题</p>
-<p>问老师后得到了一个思路：<strong>C++检验文件是否存在</strong></p>
-<p>查阅他人博客得到了一个简单的方法：用ifstream的good函数可以判断文件是否存在</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">isFileExists_ifstream</span><span class="params">(string&amp; name)</span> </span>&#123;</span><br><span class="line">    <span class="function">ifstream <span class="title">f</span><span class="params">(name.c_str())</span></span>;</span><br><span class="line">    <span class="keyword">return</span> f.<span class="built_in">good</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    string filename = <span class="string">&quot;1.txt&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">bool</span> ret = <span class="built_in">isFileExists_ifstream</span>(filename);</span><br><span class="line">    <span class="keyword">if</span> (ret)</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;文件存在&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;文件不存在&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这个方法实现起来比较省事，就采用这种方法</p>
-<p>大体思路是检查同一文件夹中是否存在jpg, png, bmp, jfif, jpeg这些常见图片后缀名，再通过string加法将存在的后缀名加到图片名后，因为先前固定了表图命名为A，里图命名为B，所以这样可以直接实现</p>
-<p>检查后缀名的总函数采用了C++值传递的特征，传入参数string后，在函数里随便修改也不会影响string本身，于是就利用这点构造了一系列返回值bool的函数，进行文件存在判断，最后再利用C++传入引用的参数，修改string，就得到了实际存在的两张图，再对他们缩放、生成幻影坦克</p>
-<br>
-
-<br>
-
-<h2 id="最后附上源码"><a href="#最后附上源码" class="headerlink" title="最后附上源码"></a>最后附上源码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;opencv2/opencv.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">IsJPG</span><span class="params">(string name)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	name += <span class="string">&quot;.jpg&quot;</span>;</span><br><span class="line">	<span class="function">ifstream <span class="title">f</span><span class="params">(name.c_str())</span></span>;</span><br><span class="line">	<span class="keyword">return</span> f.<span class="built_in">good</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">IsPNG</span><span class="params">(string name)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	name += <span class="string">&quot;.png&quot;</span>;</span><br><span class="line">	<span class="function">ifstream <span class="title">f</span><span class="params">(name.c_str())</span></span>;</span><br><span class="line">	<span class="keyword">return</span> f.<span class="built_in">good</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">IsBMP</span><span class="params">(string name)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	name += <span class="string">&quot;.bmp&quot;</span>;</span><br><span class="line">	<span class="function">ifstream <span class="title">f</span><span class="params">(name.c_str())</span></span>;</span><br><span class="line">	<span class="keyword">return</span> f.<span class="built_in">good</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">IsJFIF</span><span class="params">(string name)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	name += <span class="string">&quot;.jfif&quot;</span>;</span><br><span class="line">	<span class="function">ifstream <span class="title">f</span><span class="params">(name.c_str())</span></span>;</span><br><span class="line">	<span class="keyword">return</span> f.<span class="built_in">good</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">IsJPEG</span><span class="params">(string name)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	name += <span class="string">&quot;.jpeg&quot;</span>;</span><br><span class="line">	<span class="function">ifstream <span class="title">f</span><span class="params">(name.c_str())</span></span>;</span><br><span class="line">	<span class="keyword">return</span> f.<span class="built_in">good</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">AddSuffix</span><span class="params">(string&amp; name)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">IsPNG</span>(name))</span><br><span class="line">	&#123;</span><br><span class="line">		name += <span class="string">&quot;.png&quot;</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">IsJPG</span>(name))</span><br><span class="line">	&#123;</span><br><span class="line">		name += <span class="string">&quot;.jpg&quot;</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">IsJPEG</span>(name))</span><br><span class="line">	&#123;</span><br><span class="line">		name += <span class="string">&quot;.jpeg&quot;</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">IsBMP</span>(name))</span><br><span class="line">	&#123;</span><br><span class="line">		name += <span class="string">&quot;.bmp&quot;</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">IsJFIF</span>(name))</span><br><span class="line">	&#123;</span><br><span class="line">		name += <span class="string">&quot;.jfif&quot;</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	string PICA = <span class="string">&quot;A&quot;</span>;</span><br><span class="line">	string PICB = <span class="string">&quot;B&quot;</span>;</span><br><span class="line">	<span class="built_in">AddSuffix</span>(PICA);						<span class="comment">//给A图添加后缀名</span></span><br><span class="line">	<span class="built_in">AddSuffix</span>(PICB);						<span class="comment">//给B图添加后缀名</span></span><br><span class="line"></span><br><span class="line">	Mat A_origin = <span class="built_in">imread</span>(PICA, <span class="number">0</span>);</span><br><span class="line">	Mat A;</span><br><span class="line">	Mat B = <span class="built_in">imread</span>(PICB, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">resize</span>(A_origin, A, B.<span class="built_in">size</span>());			 <span class="comment">//将表图按里图尺寸缩放</span></span><br><span class="line"></span><br><span class="line">	Mat C = Mat::<span class="built_in">zeros</span>(B.<span class="built_in">size</span>(), CV_8UC4);	  <span class="comment">//生成一张空图，尺寸为里图尺寸</span></span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> PA, PB, PC;</span><br><span class="line">	<span class="type">int</span> Alpha;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; B.rows; i++)		  </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; B.cols; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			PA = (<span class="type">int</span>)A.<span class="built_in">at</span>&lt;uchar&gt;(i, j);	</span><br><span class="line">			PB = ((<span class="type">int</span>)B.<span class="built_in">at</span>&lt;uchar&gt;(i, j)) * <span class="number">0.35</span>;</span><br><span class="line">						</span><br><span class="line">			<span class="keyword">if</span> (PA &lt; <span class="number">100</span>)					<span class="comment">//解决阈值问题的关键</span></span><br><span class="line">			&#123;</span><br><span class="line">				PA = <span class="number">100</span>;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			Alpha = <span class="number">255</span> - (PA - PB);		 <span class="comment">//遍历每一个像素点，获得对应参数</span></span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> (Alpha == <span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				Alpha = <span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			PC = (<span class="type">int</span>)(<span class="number">255</span> * PB / Alpha);	 <span class="comment">//按公式计算出幻影坦克对应位置像素的灰度值</span></span><br><span class="line">            							    </span><br><span class="line"></span><br><span class="line">			C.<span class="built_in">at</span>&lt;Vec4b&gt;(i, j) = <span class="built_in">Vec4b</span>(PC, PC, PC, Alpha);	<span class="comment">//赋值给空图</span></span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">imwrite</span>(<span class="string">&quot;Mirage Tank.png&quot;</span>, C);			 <span class="comment">//储存为png的幻影坦克</span></span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;DONE&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<br>
-
-<br>
-
-<br>
-
-<hr>
-<h2 id="参考教程"><a href="#参考教程" class="headerlink" title="参考教程"></a>参考教程</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kV411v7fR">『整活』幻影坦克 基础版</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/QLeelq/article/details/123360740">介绍几种使用C&#x2F;C++语言判断一个文件是否存在的方法</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/WinkySpeed/article/details/127079909">从CSDN上搬运的我的博客，并进行更新</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/09/27/%E5%9F%BA%E4%BA%8EOpenCV%E5%AE%9E%E7%8E%B0%E7%9A%84%E7%81%B0%E5%BA%A6%E5%9B%BE%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B/" data-id="cldlc0u89000d6kvc9zwi3ydm" data-title="基于OpenCV实现的灰度图幻影坦克" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenCV/" rel="tag">OpenCV</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B/" rel="tag">幻影坦克</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Xenoblade-2通关感想" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/08/04/Xenoblade-2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" class="article-date">
-  <time class="dt-published" datetime="2022-08-04T06:03:34.000Z" itemprop="datePublished">2022-08-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/08/04/Xenoblade-2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/">Xenoblade 2通关感想</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="于是少年遇到了少女"><a href="#于是少年遇到了少女" class="headerlink" title="于是少年遇到了少女"></a>于是少年遇到了少女</h2><h1 id="异度之刃2：热血王道的乐园之旅"><a href="#异度之刃2：热血王道的乐园之旅" class="headerlink" title="异度之刃2：热血王道的乐园之旅"></a>异度之刃2：热血王道的乐园之旅</h1><br>
-
-<p>本作的剧情简单，是标准的王道热血漫。虽然讲述的就是少年遇到少女，然后踏上旅途这样老套的故事，但是搭配上惊艳且完美的演出效果，流畅，连贯，十分富有感染力和代入感，很容易让人沉浸在剧情中。作为一个玩了这么多年，接触了各种游戏的玩家，仔细想想，的确很难在记忆中找出足够多的能达到这种演出水平的游戏作品，说“完美”确实不过分。</p>
- <br>
-
-<p>地图设计令人爱恨交加。基于本作世界观，云海吞没大地，人类只能生存在巨神兽身上，于是不同的巨神兽上有着截然不同的场景：古拉的古代森林，英维迪亚的柳暗花明，斯佩比亚的机械帝国，洛修利亚的冰雪之原……纵横交错的地图设计使每一处都有独具特色的风景，即使受于机能限制，远景细节不足，但还是能感受到场景的恢弘大气。</p>
-<p>尤其是英维迪亚，绝美景色与弦乐合奏给我带来的深刻印象不亚于《摇曳露营》中本栖湖夜晚的富士山，震撼甚至超过了《尼尔：机械纪元》中初见的游园设施。</p>
- <br>
-
-<p>然而，本作的引导系统一言难尽。本就立体感十足的复杂场景，菜单的引导地图却只是平面，任务指引只有任务终点到角色的直线距离，经常遇到的就是跟着指引跑过千山万水，到地方发现任务点在头上。怎么上去？还得自己找路。找路的途中也危机四伏，试想一下，你刚进新手村古拉正在闲逛，81级看守地盘的巴尔巴罗萨突然跑过来，一巴掌把你拍死了。这样的经历，在游戏过程中并不罕见。尤其是迷路的时候，地标传送点比较远，跑了很久也没找到路，突然被精英怪秒了，然后回去重跑，这时真想把手柄隔着屏幕甩在大洋彼岸的monolith soft脸上。好在本作的音乐能够支持着玩家度过漫长的迷路环节。</p>
- <br>
-
-<p>本作战斗系统很有意思，非常耐玩，值得钻研，合理搭配异刃做到四连和挂球破球，一套打出来甚至能越级爆杀怪物，很有成就感，但是这一切都建立在玩懂了的前提下，之所以这么说，是因为游戏的战斗系统复杂，教程却不完整，谜语人般的教学令人摸不着头脑。正因如此，去B站搜索异刃2战斗时会跳出来许多极高播放量的战斗系统详解视频，平均一个十几分钟，教的还是最基础的内容，可见本作的教程糟糕透顶。</p>
- <br>
-
-<p>音乐质量极高，却没有18年的TGA年度游戏音乐提名，然而在国内由玩家评分的bangumi里，ACG音乐排行榜上异刃2的原声集排在top1，看来早在18年，TGA的含金量就有待商榷了。仅从一名游戏玩家的角度出发，异度之刃2有很多音乐能给人留下印象，从反击神曲的燃爆与逆转到跑图曲的华丽与契合，直至ED曲的唯美与安定，也许这就是长流程JRPG的魅力，它总能在最后时刻洗刷玩家在过程中经历的各种不愉快，并让它在心中占据一席之地。</p>
- <br>
-
-<p>接触这款游戏最大的契机就是光焰参战了大乱斗，谁能想到这样一个二次元剑人立回竟然超强，DLC2斗士确实有含金量。除此之外，雷老板一句“我喜欢尼娅，还有大家”也一度把我乐的不行，令人感叹的是，谁能想到雷老板是真的喜欢尼娅还有大家，也算见证了一个梗的结束吧。虽然有很多不合适的设计，异度之刃2仍是一款不容错过的佳作，同时让我对异刃3有所期待。</p>
- <br>
-
-<p><strong>于是，经历了一趟有热血，有欢笑，有感动的乐园之旅后，少年遇到了少女。</strong></p>
-<br>
-
-<hr>
-<img src="/2022/08/04/Xenoblade-2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/01.JPG" class>
-
-<br>
-
-<img src="/2022/08/04/Xenoblade-2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/02.JPG" class>
-
-<br>
-
-<img src="/2022/08/04/Xenoblade-2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/03.JPG" class>
-
-<br>
-
-<img src="/2022/08/04/Xenoblade-2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/04.JPG" class>
-
-<br>
-
-<img src="/2022/08/04/Xenoblade-2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/06.JPG" class>
-
-<br>
-
-<img src="/2022/08/04/Xenoblade-2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/08.JPG" class>
-
-<br>
-
-<img src="/2022/08/04/Xenoblade-2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/05.JPG" class>
-
-<br>
-
-<img src="/2022/08/04/Xenoblade-2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/09.JPG" class>
-
-<br>
-
-<img src="/2022/08/04/Xenoblade-2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/thx.jpg" class title="thx">
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/04/Xenoblade-2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" data-id="cldlc0u8200016kvc9tjgcite" data-title="Xenoblade 2通关感想" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" rel="tag">游戏通关感想</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Ever17通关感想" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/13/Ever17%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" class="article-date">
-  <time class="dt-published" datetime="2022-04-12T23:21:28.000Z" itemprop="datePublished">2022-04-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/13/Ever17%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/">Ever17通关感想</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Ever17：设计精妙，但仍有些许瑕疵的一场“骗局”"><a href="#Ever17：设计精妙，但仍有些许瑕疵的一场“骗局”" class="headerlink" title="Ever17：设计精妙，但仍有些许瑕疵的一场“骗局”"></a>Ever17：设计精妙，但仍有些许瑕疵的一场“骗局”</h1><br>
-
-<p>本作最为人称道的是“叙述性诡计”，准确来说是专属于galgame游戏机制的，独特的叙述性诡计。无论是双主角视角叙事还是meta元素，其他体裁都不能在此基础上还原出galgame独树一帜的体验，所以这是个只能由文字avg讲述，而不可能被改编成其他体裁的“骗局”。</p>
- <br>
-
-<p>整体的悬疑氛围会随着剧情发展显得越来越浓厚，线索越多却越感蹊跷，奇怪的违和感会让玩家对整个故事的疑问不减反增，在到达解密篇之前，营造了良好的悬疑感与神秘感。根据线索尝试推理后发现了整个骗局的冰山一角，等到完全揭开谜底那一刻，即使玩家或多或少猜中了诡计，还是能给玩家带来不小的冲击力。</p>
-  <br>
-
-<p>本作在2002年发售，以现代玩家的眼光来看，的确存在许多瑕疵</p>
-  <br>
-
-<p>其一，就是冗长的重复剧情。在本作中，玩家必须经过至少4次重复才能到达最终的解密线。重复的作品我已经经历很多了，比如《凉宫春日》中漫无止境的八月，《尼尔机械纪元》中一二周目必须要用2B和9S的视角体验同一个故事，我甚至还会在每年冬天重新玩一次《白色相簿2》。这些都是重复，但为什么《E17》的重复给人留下糟糕的体验？</p>
-<p>《WA2》之所以能让人反复游玩，是因为丸户史明细致入微的描写，这些小细节总是能在反复游玩的过程中，不经意间深深戳中玩家；《无尽八月》中京阿尼每次都采用完全不同的分镜，每次都是全新的体验。</p>
-<p>而《E17》是强制多周目才能到达最终的谜底，但是整个游戏都是构建在这个谜底之上的，在接触到谜底之前会一直处于谜语人状态，虽然能在营造悬疑气氛上增色，但是游玩体验实际上还是有所欠缺。</p>
-  <br>
-
-<p>其二，就是粗糙且尴尬的感情线。由于玩过《WA2》，所以在游玩过程中会不自觉地与之前的游玩经历对比，明显感觉到本作感情叙事上是欠点火候的，明显的是以好感度叠加来进行线路选择，比如你帮女A递了个工具，女A好感度就+1，然后按照好感度最高的来进入线路。我个人是不喜欢按这种操作来选择路线的，但是这可能是galgame通病？</p>
-<p>这也间接说明了《WA2》之所以有现在这样的地位，就是因为其每个选项导致了什么后果，产生什么影响，都可以有合理的解释：某个选项决定的是是否有担当和勇气面对三个人的死结，某个选项决定是否背叛……可以说是明面上看不出来好感度叠加的选项设计。</p>
-  <br>
-
-<p>其三，就是没用的伏笔太多，通关了全线路仍有许多悬念没有解释清楚，这个对我来说是致命的减分项。如果说提起这个游戏第一个想到什么，那一定是叙述性诡计，但是第二个想到的，就是这些没有回收的伏笔了。而作为后辈的《命运石之门》则是将伏笔全部回收，没有留下遗憾，这也算是后辈超越了前辈吧。</p>
-  <br>
-
-<p>其四，作品普遍的高评价导致个人期望过高，以至于结束游戏虽然感觉精彩，但仍不到“醍醐灌顶”的程度。尤其是结局这部分的处理，除了感觉“机械降神”以外，更多的是“既视感”。E17算是石头门的老前辈，而我是先接触石头门的，所以结局的既视感很强，只剩下“就这样了吗”的想法。即使是通关了《E17》，我仍然认为石头门结局的处理非常优秀，那是在一个以“不可能的绝望”为大环境下的逆转，给玩家带来的是“绝境逢生”的激动与震撼，而《E17》在此处理的就略显平淡，并没有给玩家带来兴奋感。</p>
-  <br>
-
-<p>但是以上这些都是站在现在的角度指出来的瑕疵，以如今的眼光来看，过时的立绘与系统，还有那一言难尽的3D动画，带来的震撼没有心里预想的那样是正常的，但是如果把目光放回2002年，这个将叙事诡计和meta元素结合如此巧妙，充分开发了galgame叙事可能性的作品，在那个时代无疑是前无古人的；而从那些老宅们口中的评价来看，他们通关《E17》时的震撼与感动，经过时间的冲刷仍然历历在目；如今许多时空轮回作品里也多多少少有《E17》的影子，足以说明本作对于galgame来说意义非凡。</p>
-  <br>
-
-<p><strong>This story is not end yet.</strong></p>
-<p><strong>Because only you are in the infinity loop.</strong></p>
- <br>
-
-<hr>
-<img src="/2022/04/13/Ever17%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/1.jpg" class>
-
-<br>
-
-<img src="/2022/04/13/Ever17%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/2.jpg" class>
-
-<br>
-
-<img src="/2022/04/13/Ever17%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/3.jpg" class>
-
-<br>
-
-<img src="/2022/04/13/Ever17%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/4.jpg" class>
-
-<br>
-
-<img src="/2022/04/13/Ever17%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/5.jpg" class>
-
-<br>
-
-<img src="/2022/04/13/Ever17%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/6.jpg" class>
-
-<br>
-
-<img src="/2022/04/13/Ever17%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/7.jpg" class>
-
-<br>
-
-<img src="/2022/04/13/Ever17%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/8.jpg" class>
-
-<br>
-
-<img src="/2022/04/13/Ever17%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/9.jpg" class>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/13/Ever17%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" data-id="cldlc0u7y00006kvcces8f7ed" data-title="Ever17通关感想" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" rel="tag">游戏通关感想</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Steins-Gate通关感想" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/02/07/Steins-Gate%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" class="article-date">
-  <time class="dt-published" datetime="2022-02-06T18:21:59.000Z" itemprop="datePublished">2022-02-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/02/07/Steins-Gate%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/">Steins;Gate通关感想</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="“你脱离了因果律的束缚，一直以来都孤独地抗争着，所以你内心的痛苦，谁都不知道……”——-牧濑红莉栖"><a href="#“你脱离了因果律的束缚，一直以来都孤独地抗争着，所以你内心的痛苦，谁都不知道……”——-牧濑红莉栖" class="headerlink" title="“你脱离了因果律的束缚，一直以来都孤独地抗争着，所以你内心的痛苦，谁都不知道……”—— 牧濑红莉栖"></a>“你脱离了因果律的束缚，一直以来都孤独地抗争着，所以你内心的痛苦，谁都不知道……”—— 牧濑红莉栖</h2><h1 id="命运石之门：首尾呼应，环环相扣，精彩绝伦的文字AVG"><a href="#命运石之门：首尾呼应，环环相扣，精彩绝伦的文字AVG" class="headerlink" title="命运石之门：首尾呼应，环环相扣，精彩绝伦的文字AVG"></a>命运石之门：首尾呼应，环环相扣，精彩绝伦的文字AVG</h1><br>
-
-<p>先在不剧透的情况下介绍结局，结局给人带来的震撼，不仅在于紧扣住了前面的一切伏笔，那些因为被故事逐渐吸引而稀释了记忆的悬念，在故事的后半段，随着每一个细节都有其合理的解释，因为线索的串联而延伸回去的瞬间，带来的是巨大的冲击力，和问题被完美解决的爽快；更在于结局时的主角是已经克服过困难，得到了一定成长的，所以新出现的几乎不可能解决的冲突才会更加令人印象深刻，所以当主角选择与命运为敌时才会更加令人热血沸腾。</p>
- <br>
-
-<p>本作主角冈部伦太郎，经历了“中二——成长——后中二”的转变。</p>
-<p>最初的中二，实在是无法让人对他产生好感，隔着屏幕都为他的言行举止感到尴尬，很难想象通关以后我竟然对他中二的态度发生了完全的转变。</p>
-<p>随着剧情发展，当他成为观测者，越过每一秒的世界线，只为了守护天真无邪的笑容，孤独的观测者，渐渐被吞没在轮回中。被命运逼上绝境，被迫从“凤凰院凶真”转变为“冈部伦太郎”，被迫成长，那充斥着中二气息的日常直到失去才令人觉得珍贵。</p>
-<p>在最后的绝境面前，振作起来，主动从“冈部伦太郎”转变为“凤凰院凶真”，不能让曾经的经历失去意义，面对着剩下的战斗，孤独的观测者，再也不会犹豫，一句“世界尽在我的掌握之中”着实令人振奋，热血沸腾。</p>
- <br>
-
-<p>介绍完了游戏令我感触最深的部分，我不由得对这个游戏的机制吐槽两句：不看攻略的情况下真就以为这游戏是纯视觉小说，一周目直接一头扎进铃羽线。果然进贴吧一看，“看看今天又有什么新帖子，萌新又进了铃羽线。”这跟《巫师3》吧的凯拉异曲同工。</p>
-<p>而且和《白色相簿2》的冬马和纱TE一样，选项必须全部选对才能够进入游戏的真结局，这在不看攻略的情况下几乎是不可能的，这样的设计也间接反映了主角面对命运的无力感吧。</p>
- <br>
-
-<p>游戏是在除夕那天买的，大年初五的26点全线通关的，然后又看了第一季TV动画和剧场版，可以想象对这部作品的投入力度，（还有我闲的程度）也能说明这个故事的精彩程度吧。</p>
- <br>
-
-<p>游戏通关以后可以看剧场版《命运石之门 负荷领域的既视感》，是对Steins Gate世界线的补充，在这条世界线中，从孤独的既视感中被解救出来，孤独的观测者，不再孑然一身。</p>
- <br>
-
-<p><strong>一切都是命运石之门的选择，El , Psy , Kongroo</strong></p>
-<br>
-
-<hr>
-<img src="/2022/02/07/Steins-Gate%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/5.jpg" class>
-
-<br>
-
-<img src="/2022/02/07/Steins-Gate%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/1.jpg" class>
-
-<br>
-
-<img src="/2022/02/07/Steins-Gate%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/2.jpg" class>
-
-<br>
-
-<img src="/2022/02/07/Steins-Gate%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/3.jpg" class>
-
-<br>
-
-<img src="/2022/02/07/Steins-Gate%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/4.jpg" class>
-
-<br>
-
-<img src="/2022/02/07/Steins-Gate%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/6.jpg" class>
-
-<br>
-
-<img src="/2022/02/07/Steins-Gate%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/7.jpg" class>
-
-<br>
-
-<img src="/2022/02/07/Steins-Gate%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/8.jpg" class>
-
-<br>
-
-<img src="/2022/02/07/Steins-Gate%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/9.jpg" class>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/07/Steins-Gate%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" data-id="cldlc0u8600056kvcdu1l9ec3" data-title="Steins;Gate通关感想" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" rel="tag">游戏通关感想</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-荒野大镖客救赎2通关感想" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/01/09/%E8%8D%92%E9%87%8E%E5%A4%A7%E9%95%96%E5%AE%A2%E6%95%91%E8%B5%8E2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" class="article-date">
-  <time class="dt-published" datetime="2022-01-09T06:12:35.000Z" itemprop="datePublished">2022-01-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/01/09/%E8%8D%92%E9%87%8E%E5%A4%A7%E9%95%96%E5%AE%A2%E6%95%91%E8%B5%8E2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/">荒野大镖客救赎2通关感想</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="“我不想被救赎，我也不值得被救赎，我只是想帮助一些人，至少我做了点什么。”-——亚瑟·摩根"><a href="#“我不想被救赎，我也不值得被救赎，我只是想帮助一些人，至少我做了点什么。”-——亚瑟·摩根" class="headerlink" title="“我不想被救赎，我也不值得被救赎，我只是想帮助一些人，至少我做了点什么。” ——亚瑟·摩根"></a>“我不想被救赎，我也不值得被救赎，我只是想帮助一些人，至少我做了点什么。” ——亚瑟·摩根</h2><h1 id="荒野大镖客救赎2：一个大家庭在时代面前分崩离析的过程"><a href="#荒野大镖客救赎2：一个大家庭在时代面前分崩离析的过程" class="headerlink" title="荒野大镖客救赎2：一个大家庭在时代面前分崩离析的过程"></a>荒野大镖客救赎2：一个大家庭在时代面前分崩离析的过程</h1><br>
-
-<p>R星以帮派为主题塑造角色，游戏一开始就把整个帮派20多个陌生人全都扔出来，只能通过大量对话的细节来理解每个人不同的背景，人与人之间的关系。这个过程是很慢的，但是这样充满铺垫的人物塑造方式，可以逐渐积累对角色的感情，直到最后的爆发点，情绪高涨到极致。从刚开始“这20多个人都是谁？”，到通关之后能够清晰地回忆起每个角色的性格特征，回忆起一起经过的任务，R星在角色塑造这块属于是顶尖。</p>
-<br>
-
-<p>与GTA不同，大表哥2并不是讲述“小角色”逐渐成长为“强者”的过程，主角亚瑟摩根本身就是强者，一个确定了生活方式的强者，处于一个强弩之末的范德林帮。省去了技能上成长的过程，就可以专注于心路历程，更容易关注他内心的矛盾与挣扎。作为一个流落街头后加入匪帮的孤儿，亚瑟在一辈子的犯罪生涯里日渐麻木，但世道的改变和身体状况的恶化，让他得以重新审视自己的人生，遵从自己的感情，试着帮助身边的人，即使改变不了大势，至少也能得到心灵上的救赎，这也是游戏副标题：救赎的极致体现。</p>
-<br>
-
-<p>除开剧情，R星构建了一个无比真实的西部世界，整体效果十分迷人，堪称“生态百科全书”。但是，剧情上带来的感触远远大于整个世界的感触，这里就不多谈了。</p>
-<br>
-
-<p>整个游戏是我在考试周通关的，玩麻了。最后给想接触这款游戏的人提个建议：全程都用亚瑟那顶斑驳的帽子，到了结局，感触一定很深。</p>
-<br>
-
-<hr>
-<img src="/2022/01/09/%E8%8D%92%E9%87%8E%E5%A4%A7%E9%95%96%E5%AE%A2%E6%95%91%E8%B5%8E2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/1.png" class>
-
-<br>
-
-<img src="/2022/01/09/%E8%8D%92%E9%87%8E%E5%A4%A7%E9%95%96%E5%AE%A2%E6%95%91%E8%B5%8E2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/2.png" class>
-
-<br>
-
-<img src="/2022/01/09/%E8%8D%92%E9%87%8E%E5%A4%A7%E9%95%96%E5%AE%A2%E6%95%91%E8%B5%8E2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/3.png" class>
-
-<br>
-
-<img src="/2022/01/09/%E8%8D%92%E9%87%8E%E5%A4%A7%E9%95%96%E5%AE%A2%E6%95%91%E8%B5%8E2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/4.png" class>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/01/09/%E8%8D%92%E9%87%8E%E5%A4%A7%E9%95%96%E5%AE%A2%E6%95%91%E8%B5%8E2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" data-id="cldlc0u8d000x6kvchcuzfamq" data-title="荒野大镖客救赎2通关感想" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" rel="tag">游戏通关感想</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-  </nav>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenCV/" rel="tag">OpenCV</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/" rel="tag">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/midi/" rel="tag">midi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" rel="tag">个人博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/" rel="tag">博客图片显示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6%E7%94%BB/" rel="tag">字符画</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B/" rel="tag">幻影坦克</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" rel="tag">游戏通关感想</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/OpenCV/" style="font-size: 10px;">OpenCV</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/midi/" style="font-size: 10px;">midi</a> <a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">个人博客</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/" style="font-size: 10px;">博客图片显示</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E7%94%BB/" style="font-size: 10px;">字符画</a> <a href="/tags/%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B/" style="font-size: 10px;">幻影坦克</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" style="font-size: 20px;">游戏通关感想</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">October 2021</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/01/28/%E5%9B%BE%E7%89%87%E7%9A%84%E6%98%BE%E7%A4%BA/">解决Hexo博客图片显示问题</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">基于hexo的个人博客搭建教程</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/27/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/15/%E9%80%86%E8%BD%AC%E8%A3%81%E5%88%A41-3%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/">逆转裁判1-3通关感想</a>
-          </li>
-        
-          <li>
-            <a href="/2022/11/14/%E4%BB%A3%E7%A0%81%E7%8C%AE%E7%A4%BC%E8%AE%B0%E5%BD%95/">代码献礼记录</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2023 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+ ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">WinkySpeed</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>GitHub</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/28/%E5%9B%BE%E7%89%87%E7%9A%84%E6%98%BE%E7%A4%BA/" title="解决Hexo博客图片显示问题">解决Hexo博客图片显示问题</a><time datetime="2023-01-28T10:06:30.000Z" title="发表于 2023-01-28 18:06:30">2023-01-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title="基于hexo的个人博客搭建教程">基于hexo的个人博客搭建教程</a><time datetime="2023-01-27T14:45:20.000Z" title="发表于 2023-01-27 22:45:20">2023-01-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/27/hello-world/" title="Hello World">Hello World</a><time datetime="2023-01-27T14:00:00.000Z" title="发表于 2023-01-27 22:00:00">2023-01-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/15/%E9%80%86%E8%BD%AC%E8%A3%81%E5%88%A41-3%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" title="逆转裁判1-3通关感想">逆转裁判1-3通关感想</a><time datetime="2023-01-14T16:00:00.000Z" title="发表于 2023-01-15 00:00:00">2023-01-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/11/14/%E4%BB%A3%E7%A0%81%E7%8C%AE%E7%A4%BC%E8%AE%B0%E5%BD%95/" title="代码献礼记录">代码献礼记录</a><time datetime="2022-11-14T05:45:54.000Z" title="发表于 2022-11-14 13:45:54">2022-11-14</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E6%B8%B8%E6%88%8F%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" style="font-size: 1.45em; color: rgb(64, 129, 62)">游戏通关感想</a><a href="/tags/midi/" style="font-size: 1.15em; color: rgb(56, 200, 61)">midi</a><a href="/tags/%E5%AD%97%E7%AC%A6%E7%94%BB/" style="font-size: 1.15em; color: rgb(107, 189, 30)">字符画</a><a href="/tags/Hexo/" style="font-size: 1.3em; color: rgb(2, 29, 133)">Hexo</a><a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/" style="font-size: 1.15em; color: rgb(198, 165, 181)">博客图片显示</a><a href="/tags/Typora/" style="font-size: 1.15em; color: rgb(43, 50, 166)">Typora</a><a href="/tags/OpenCV/" style="font-size: 1.15em; color: rgb(15, 90, 104)">OpenCV</a><a href="/tags/%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B/" style="font-size: 1.15em; color: rgb(79, 134, 115)">幻影坦克</a><a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" style="font-size: 1.15em; color: rgb(129, 118, 41)">个人博客</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/01/"><span class="card-archive-list-date">一月 2023</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/09/"><span class="card-archive-list-date">九月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/04/"><span class="card-archive-list-date">四月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/02/"><span class="card-archive-list-date">二月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">一月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">十一月 2021</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">12</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-02-01T17:17:06.091Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By WinkySpeed</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2d-widget/autoload.js"></script></body></html>
