@@ -52,7 +52,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2023-02-02 01:17:06'
+  postUpdate: '2023-02-16 21:27:06'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -150,149 +150,174 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="WinkySpeed"><span class="site-name">WinkySpeed</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">WinkySpeed</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/01/28/%E5%9B%BE%E7%89%87%E7%9A%84%E6%98%BE%E7%A4%BA/" title="解决Hexo博客图片显示问题">解决Hexo博客图片显示问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-28T10:06:30.000Z" title="发表于 2023-01-28 18:06:30">2023-01-28</time></span></div><div class="content">纪念第一次成功显示图片
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="WinkySpeed"><span class="site-name">WinkySpeed</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">WinkySpeed</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/02/16/Hexo%E5%8D%9A%E5%AE%A2LaTeX%E5%85%AC%E5%BC%8F%E7%9A%84%E6%98%BE%E7%A4%BA/" title="Hexo博客LaTeX公式的显示">Hexo博客LaTeX公式的显示</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-02-16T05:14:16.000Z" title="发表于 2023-02-16 13:14:16">2023-02-16</time></span></div><div class="content">\[
+\log_2{n^2}
+\]
+npm un hexo-math
+npm un hexo-renderer-marked
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/02/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数据结构复习整理">数据结构复习整理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-02-14T12:12:43.000Z" title="发表于 2023-02-14 20:12:43">2023-02-14</time></span></div><div class="content">数据结构复习整理
+概论
+逻辑结构
+线性
+非线性
+线性表
+逻辑结构
+前驱、后继
+存储结构
+顺序：顺序表
+链式：链表
+链表
+不带头结点
+带头结点
+
+栈与队列
+栈
+后进先出
+应用实例：括号匹配，表达式求值
+表达式求值
+中缀表达式，用运算符优先级表
+栈和递归
+应用：深度优先搜索
+递归工作栈
+将递归转化为非递归
+队列
+先进先出
+假溢出问题：引入循环队列
+循环队列
+进队
+1234if(队满)    return false;data[rear]=x;rear=(rear+1)%maxSize;
+出队
+1234if(队空)    return false;x=data[front];front=(front+1)%maxSize;
+造成浪费一个空间，故判断队满
+123bool SeqQueue::IsFull()&#123;      return (rear+1) % maxSize == front;&#125;;
+队列应用
+广度优先搜索：迷宫最短路径
+数组，串和广义表
+特殊矩阵
+特殊矩阵是指非零元素或零元素的分布有一 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/01/29/Hexo%E4%BF%AE%E6%94%B9%E8%AE%B0%E5%BD%95/" title="Hexo修改记录">Hexo修改记录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-29T05:11:24.000Z" title="发表于 2023-01-29 13:11:24">2023-01-29</time></span></div><div class="content">图片的显示
+更换butterfly主题
+添加live2d
+LaTeX公式的显示
+npm un hexo-math
+npm un hexo-renderer-marked
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/01/28/%E5%9B%BE%E7%89%87%E7%9A%84%E6%98%BE%E7%A4%BA/" title="解决Hexo博客图片显示问题">解决Hexo博客图片显示问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-28T10:06:30.000Z" title="发表于 2023-01-28 18:06:30">2023-01-28</time></span></div><div class="content">纪念第一次成功显示图片
 
 
 
-
-笔者花了很长时间找解决方案，查过官方文档，查过其他许多博客，大多都是安装 hexo-asset-image 插件，还下载了一些魔改版的 hexo-asset-image ，甚至尝试了一些改文件的方法，但都没有成功
+笔者花了很长时间找解决方案，查过官方文档，查过其他许多博客，大多都是安装
+hexo-asset-image 插件，还下载了一些魔改版的 hexo-asset-image
+，甚至尝试了一些改文件的方法，但都没有成功
 终于找到一个方法能够成功在部署的博客上显示图片，很激动，就把第一张成功显示的摇曳露营截图放在这里当做纪念了
 
+方法
+首先修改 _config.yml 中的 post_asset_folder ，改成 true
 
-方法首先修改 _config.yml 中的 post_asset_folder ，改成 true
 
-
-
-当资源文件管理功能打开后，Hexo将会在你每一次通过 hexo new [layout] &lt;title&gt; 命令创建新文章时自动创建一个文件夹。这个资源文件夹将会有与这个文章文件一样的名字。将所有与你的文章有关的资源放在这个关联文件夹中之后，你可以通过相对路径来引用它们，这样你就得到了一个更简单而且方便得多的工作流。		—— 资源文件夹 | Hexo
-
+当资源文件管理功能打开后，Hexo将会在你每一次通过
+hexo new [layout] &lt;title&gt;
+命令创建新文章时自动创建一个文件夹。这个资源文件夹将会有与这个文章文件一样的名字。将所有与你的文章有关的资源放在这个关联文件夹中之后，你可以通过相对路径来引用它们，这样你就得到了一个更简单而且方便得多的工作流。
+—— 资源文件夹 |
+Hexo
 
 
 然后，利用Typora自动保存图片的功能，进行图片的保存
-打开Typora，左上角选择文件，再选择偏好设置，选择图像，进行如图所示的修改
+打开Typora，左上角选择文件，再选择偏好设置，选择图像，进行如图所示的修 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title="基于hexo的个人博客搭建教程">基于hexo的个人博客搭建教程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-27T14:45:20.000Z" title="发表于 2023-01-27 22:45:20">2023-01-27</time></span></div><div class="content">这个教程涵盖了我搭建博客时遇到的所有问题，希望能够帮到你
 
-
-这样会很方便地保存图片，比 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title="基于hexo的个人博客搭建教程">基于hexo的个人博客搭建教程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-27T14:45:20.000Z" title="发表于 2023-01-27 22:45:20">2023-01-27</time></span></div><div class="content">这个教程涵盖了我搭建博客时遇到的所有问题，希望能够帮到你
-
-准备工作需要下载以下软件node.js
+准备工作
+需要下载以下软件
+node.js
 Git
-魔法上网			可以用Steam++访问github 
+魔法上网 可以用Steam++访问github
 
-
-Git的配置装好Git以后，右键菜单就会出现如图选项，进入Git控制台
-
+Git的配置
+装好Git以后，右键菜单就会出现如图选项，进入Git控制台
 
 第一件事就是配置用户名和邮箱
 1234# 配置用户名git config --global user.name WinkySpeed	# 配置邮箱	~~此处邮箱可以实际上不存在~~git config --global user.email WinkySpeed@test.mail	
-
-
 
 如图
 
 
 
 
-
-
-
-进行hexo的配置与搭建查看nodejs是否安装成功以管理员身份打开cmd
-如图，输入	node -v	和	npm -v	查看版本
-
+进行hexo的配置与搭建
+查看nodejs是否安装成功
+以管理员身份打开cmd
+如图，输入 node -v 和 npm -v 查看版本
 
 国内的源可能有些慢，最好利用淘宝的源，控制台输入
 1npm install -g cnpm --registry=https://registry.npm.taobao.org
-
-等安装成功后输入	cnpm -v	如果能查出版本号说明安装成功
-
-
+等安装成功后输入 cnpm -v
+如果能查出版本号说明安装成功
 
 
-下载hexo控制台输入
-1cnpm install -g  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/01/27/hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-27T14:00:00.000Z" title="发表于 2023-01-27 22:00:00">2023-01-27</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;
-
+下载hexo
+ ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/01/27/hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-27T14:00:00.000Z" title="发表于 2023-01-27 22:00:00">2023-01-27</time></span></div><div class="content">Welcome to Hexo! This is your very
+first post. Check documentation for
+more info. If you get any problems when using Hexo, you can find the
+answer in troubleshooting or
+you can ask me on GitHub.
+Quick Start
+Create a new post
+1$ hexo new &quot;My New Post&quot;
 More info: Writing
-Run server1$ hexo server
-
+Run server
+1$ hexo server
 More info: Server
-Generate static files1$ hexo generate
-
+Generate static files
+1$ hexo generate
 More info: Generating
-Deploy to remote sites1$ hexo deploy
-
+Deploy to remote sites
+1$ hexo deploy
 More info: Deployment
 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/01/15/%E9%80%86%E8%BD%AC%E8%A3%81%E5%88%A41-3%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" title="逆转裁判1-3通关感想">逆转裁判1-3通关感想</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-14T16:00:00.000Z" title="发表于 2023-01-15 00:00:00">2023-01-15</time></span></div><div class="content">逆转裁判1-3合集：利用证据和推理的法庭战斗，指出矛盾推动情节的“侦探喜剧”
 
 通关游戏后，成步堂的一句“異議あり”，一声拍桌，一个凌空指都给我留下了相当深刻的印象，而正是这些元素造就了逆转裁判最令人称道的地方——打击感。
- 
 
 作为一名玩家，我对“打击感”这个词汇的浅薄理解就是：游戏给玩家带来反馈的爽快体验。在逆转裁判里，玩家通过手上已有的证据进行思考，发现之前没注意到的细节，恍然大悟后，针对证人的证言发起攻击。伴随着响亮的拍桌和一声清脆的“異議あり！”，成步堂有力地一指，证人的“受击动画”清楚并夸张地展现了情绪状态变化过程，表明了提交的证据确实起了作用，推理正朝着正确的方向前进。在玩家运用辩护和推理不断深究的过程中，证人不断升高的紧张和愤怒就成了玩家的奖赏。不断地对证人施压后，戳穿他们所有的谎言后，游戏会奖励玩家一个精心制作的“崩溃动画”，这正是玩家经历波折才收获的满足结果。整个过程，无不充斥着游戏即时反馈带来的爽快体验，使玩家沉浸在了和检察官酣畅淋漓的法庭交锋中，辩论逐渐白热化，玩家也随之热血沸腾，这可能正是逆转裁判的“打击感”所在。
- 
 
-逆转裁判有着独特的幽默感。虽然本系列以 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/11/14/%E4%BB%A3%E7%A0%81%E7%8C%AE%E7%A4%BC%E8%AE%B0%E5%BD%95/" title="代码献礼记录">代码献礼记录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-11-14T05:45:54.000Z" title="发表于 2022-11-14 13:45:54">2022-11-14</time></span></div><div class="content">代码献礼工程的记录原理：利用windows自带api接口来播放midi音乐本工程的midi音乐由对应十六进制文件生成，所以运行exe时可以在没有midi文件的基础上播放音乐
+逆转裁判有着独特的幽默感。虽然本系 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/11/14/%E4%BB%A3%E7%A0%81%E7%8C%AE%E7%A4%BC%E8%AE%B0%E5%BD%95/" title="代码献礼记录">代码献礼记录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-11-14T05:45:54.000Z" title="发表于 2022-11-14 13:45:54">2022-11-14</time></span></div><div class="content">代码献礼工程的记录
+原理：利用windows自带api接口来播放midi音乐
+本工程的midi音乐由对应十六进制文件生成，所以运行exe时可以在没有midi文件的基础上播放音乐
 
-
-midi音乐转十六进制首先找到一首midi音乐，我在MIDI云 ◇ MIDI音乐下载与分享找到的《没有共产党就没有新中国》质量极高
-把midi文件用010Editor打开，点击左上角File，选Export Hex即可导出十六进制文件，会得到一个txt文本
+midi音乐转十六进制
+首先找到一首midi音乐，我在MIDI云 ◇
+MIDI音乐下载与分享找到的《没有共产党就没有新中国》质量极高
+把midi文件用010Editor打开，点击左上角File，选Export
+Hex即可导出十六进制文件，会得到一个txt文本
 把其中的内容复制，随便找个去除空格和回车的网站，比如文本去空格，去除后得到一个字符串，赋值给MIDImusic数组
 此处字符串一般很长，需要在中间断开，把一整个字符串分隔成3-4个字符串，具体可见下方示例代码
 
-
-三个数组的作用const char* MIDImusic数组存储midi文件十六进制的字符串，注意分隔开，不然会报字符串过长的错
+三个数组的作用
+const char* MIDImusic数组存储midi文件十六进制的字符串，注意分隔开，不然会报字符串过长的错
 const char* Lyrics[]数组存放歌词
 int SleepTime[]数组存放两句歌词之间的间隔时间，单位为毫秒
 
+函数
+void Pos(int x, int y) ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/09/27/%E5%9F%BA%E4%BA%8EOpenCV%E5%AE%9E%E7%8E%B0%E7%9A%84%E7%81%B0%E5%BA%A6%E5%9B%BE%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B/" title="基于OpenCV实现的灰度图幻影坦克">基于OpenCV实现的灰度图幻影坦克</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-27T15:03:28.000Z" title="发表于 2022-09-27 23:03:28">2022-09-27</time></span></div><div class="content">幻影坦克简介
+对于png透明图片，在QQ，贴吧等平台上，看缩略图时默认是以白色为背景，而点开看原图时默认是以黑色为背景，基于此显示逻辑可以实现一种图像，看缩略图时是表图，看原图时是里图，这就是幻影坦克。
+基于图像线性融合原理，公式：g(x) = α×f(x) +
+(1-α)×h(x)
+，可以假设最后生成图与白色叠加得到表图，最后生成图与黑色叠加得到里图，套用公式即可得到幻影坦克的理论公式：
 
-函数void Pos(int x, int y)函数是可以定位小黑框中光标的函数，实现如 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/09/27/%E5%9F%BA%E4%BA%8EOpenCV%E5%AE%9E%E7%8E%B0%E7%9A%84%E7%81%B0%E5%BA%A6%E5%9B%BE%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B/" title="基于OpenCV实现的灰度图幻影坦克">基于OpenCV实现的灰度图幻影坦克</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-27T15:03:28.000Z" title="发表于 2022-09-27 23:03:28">2022-09-27</time></span></div><div class="content">幻影坦克简介对于png透明图片，在QQ，贴吧等平台上，看缩略图时默认是以白色为背景，而点开看原图时默认是以黑色为背景，基于此显示逻辑可以实现一种图像，看缩略图时是表图，看原图时是里图，这就是幻影坦克。
-基于图像线性融合原理，公式：g(x) &#x3D; α×f(x) + (1-α)×h(x) ，可以假设最后生成图与白色叠加得到表图，最后生成图与黑色叠加得到里图，套用公式即可得到幻影坦克的理论公式：
+公式和原理都源自B站视频: 『整活』幻影坦克
+基础版，讲的很细致。
 
+幻影坦克实现过程
+先将表图缩放为里图尺寸，再遍历表图和里图的每个像素，算出幻影坦克图对应位置像素的灰度和透明度，赋值给一张空图，这张图就是最后的幻影坦克了
 
-公式和原理都源自B站视频: 『整活』幻影坦克 基础版，讲的很细致。
-
-
-幻影坦克实现过程先将表图缩放为里图尺寸，再遍历表图和里图的每个像素，算出幻影坦克图对应位置像素的灰度和透明度，赋值给一张空图，这张图就是最后的幻影坦克了
-
-
-Debug记录需要注意的是，公式里α透明度有一项是表图的灰度值减里图灰度值，必须保证这个值时刻大于0，不然会出现α值大于255的情况，造成错误，即里图显示时出现表图部分，如图：
-
+Debug记录
+需要注意的是，公式里α透明度有一项是表图的灰度值减里图灰度值，必须保证这个值时刻大于0，不然会出现α值大于255的情况，造成错误，即里图显示时出现表图部分，如图：
 
 在我把背景换成橙色以后，图中错误部分也显示为橙色，所以判断为这些地方透明度计算出现问题。
 
-
-经过初步分析得到：显示错误的地方在原图中的灰度值非常低，导致P表-P里小于0，使α超出上 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/08/04/Xenoblade-2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" title="Xenoblade 2通关感想">Xenoblade 2通关感想</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-04T06:03:34.000Z" title="发表于 2022-08-04 14:03:34">2022-08-04</time></span></div><div class="content">于是少年遇到了少女异度之刃2：热血王道的乐园之旅
+经过初步分析得到：显示错误的地方在原图中的灰度值非常低，导致P表-P ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/08/04/Xenoblade-2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" title="Xenoblade 2通关感想">Xenoblade 2通关感想</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-04T06:03:34.000Z" title="发表于 2022-08-04 14:03:34">2022-08-04</time></span></div><div class="content">于是少年遇到了少女
+异度之刃2：热血王道的乐园之旅
 
 本作的剧情简单，是标准的王道热血漫。虽然讲述的就是少年遇到少女，然后踏上旅途这样老套的故事，但是搭配上惊艳且完美的演出效果，流畅，连贯，十分富有感染力和代入感，很容易让人沉浸在剧情中。作为一个玩了这么多年，接触了各种游戏的玩家，仔细想想，的确很难在记忆中找出足够多的能达到这种演出水平的游戏作品，说“完美”确实不过分。
- 
 
 地图设计令人爱恨交加。基于本作世界观，云海吞没大地，人类只能生存在巨神兽身上，于是不同的巨神兽上有着截然不同的场景：古拉的古代森林，英维迪亚的柳暗花明，斯佩比亚的机械帝国，洛修利亚的冰雪之原……纵横交错的地图设计使每一处都有独具特色的风景，即使受于机能限制，远景细节不足，但还是能感受到场景的恢弘大气。
 尤其是英维迪亚，绝美景色与弦乐合奏给我带来的深刻印象不亚于《摇曳露营》中本栖湖夜晚的富士山，震撼甚至超过了《尼尔：机械纪元》中初见的游园设施。
- 
 
-然而，本作的引导系统一言难尽。本就立体感十足的复杂场景，菜单的引导地图却只是平面，任务指引只有任务终点到角色的直线距离，经常遇到的就是跟着指引跑过千山万水，到地方发现任 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/04/13/Ever17%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" title="Ever17通关感想">Ever17通关感想</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-04-12T23:21:28.000Z" title="发表于 2022-04-13 07:21:28">2022-04-13</time></span></div><div class="content">Ever17：设计精妙，但仍有些许瑕疵的一场“骗局”
-
-本作最为人称道的是“叙述性诡计”，准确来说是专属于galgame游戏机制的，独特的叙述性诡计。无论是双主角视角叙事还是meta元素，其他体裁都不能在此基础上还原出galgame独树一帜的体验，所以这是个只能由文字avg讲述，而不可能被改编成其他体裁的“骗局”。
- 
-
-整体的悬疑氛围会随着剧情发展显得越来越浓厚，线索越多却越感蹊跷，奇怪的违和感会让玩家对整个故事的疑问不减反增，在到达解密篇之前，营造了良好的悬疑感与神秘感。根据线索尝试推理后发现了整个骗局的冰山一角，等到完全揭开谜底那一刻，即使玩家或多或少猜中了诡计，还是能给玩家带来不小的冲击力。
-  
-
-本作在2002年发售，以现代玩家的眼光来看，的确存在许多瑕疵
-  
-
-其一，就是冗长的重复剧情。在本作中，玩家必须经过至少4次重复才能到达最终的解密线。重复的作品我已经经历很多了，比如《凉宫春日》中漫无止境的八月，《尼尔机械纪元》中一二周目必须要用2B和9S的视角体验同一个故事，我甚至还会在每年冬天重新玩一次《白色相簿2》。这些都是重复，但为什么《E17》的重复给人留下糟糕的体验？ ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/02/07/Steins-Gate%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" title="Steins;Gate通关感想">Steins;Gate通关感想</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-02-06T18:21:59.000Z" title="发表于 2022-02-07 02:21:59">2022-02-07</time></span></div><div class="content">“你脱离了因果律的束缚，一直以来都孤独地抗争着，所以你内心的痛苦，谁都不知道……”—— 牧濑红莉栖命运石之门：首尾呼应，环环相扣，精彩绝伦的文字AVG
-
-先在不剧透的情况下介绍结局，结局给人带来的震撼，不仅在于紧扣住了前面的一切伏笔，那些因为被故事逐渐吸引而稀释了记忆的悬念，在故事的后半段，随着每一个细节都有其合理的解释，因为线索的串联而延伸回去的瞬间，带来的是巨大的冲击力，和问题被完美解决的爽快；更在于结局时的主角是已经克服过困难，得到了一定成长的，所以新出现的几乎不可能解决的冲突才会更加令人印象深刻，所以当主角选择与命运为敌时才会更加令人热血沸腾。
- 
-
-本作主角冈部伦太郎，经历了“中二——成长——后中二”的转变。
-最初的中二，实在是无法让人对他产生好感，隔着屏幕都为他的言行举止感到尴尬，很难想象通关以后我竟然对他中二的态度发生了完全的转变。
-随着剧情发展，当他成为观测者，越过每一秒的世界线，只为了守护天真无邪的笑容，孤独的观测者，渐渐被吞没在轮回中。被命运逼上绝境，被迫从“凤凰院凶真”转变为“冈部伦太郎”，被迫成长，那充斥着中二气息的日常直到失去才令人觉得珍贵。
-在最后的绝境面前 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/01/09/%E8%8D%92%E9%87%8E%E5%A4%A7%E9%95%96%E5%AE%A2%E6%95%91%E8%B5%8E2%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" title="荒野大镖客救赎2通关感想">荒野大镖客救赎2通关感想</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-09T06:12:35.000Z" title="发表于 2022-01-09 14:12:35">2022-01-09</time></span></div><div class="content">“我不想被救赎，我也不值得被救赎，我只是想帮助一些人，至少我做了点什么。” ——亚瑟·摩根荒野大镖客救赎2：一个大家庭在时代面前分崩离析的过程
-
-R星以帮派为主题塑造角色，游戏一开始就把整个帮派20多个陌生人全都扔出来，只能通过大量对话的细节来理解每个人不同的背景，人与人之间的关系。这个过程是很慢的，但是这样充满铺垫的人物塑造方式，可以逐渐积累对角色的感情，直到最后的爆发点，情绪高涨到极致。从刚开始“这20多个人都是谁？”，到通关之后能够清晰地回忆起每个角色的性格特征，回忆起一起经过的任务，R星在角色塑造这块属于是顶尖。
-
-
-与GTA不同，大表哥2并不是讲述“小角色”逐渐成长为“强者”的过程，主角亚瑟摩根本身就是强者，一个确定了生活方式的强者，处于一个强弩之末的范德林帮。省去了技能上成长的过程，就可以专注于心路历程，更容易关注他内心的矛盾与挣扎。作为一个流落街头后加入匪帮的孤儿，亚瑟在一辈子的犯罪生涯里日渐麻木，但世道的改变和身体状况的恶化，让他得以重新审视自己的人生，遵从自己的感情，试着帮助身边的人，即使改变不了大势，至少也能得到心灵上的救赎，这也是游戏副标题：救赎的极致体现。
-
-
- ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">WinkySpeed</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>GitHub</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/28/%E5%9B%BE%E7%89%87%E7%9A%84%E6%98%BE%E7%A4%BA/" title="解决Hexo博客图片显示问题">解决Hexo博客图片显示问题</a><time datetime="2023-01-28T10:06:30.000Z" title="发表于 2023-01-28 18:06:30">2023-01-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title="基于hexo的个人博客搭建教程">基于hexo的个人博客搭建教程</a><time datetime="2023-01-27T14:45:20.000Z" title="发表于 2023-01-27 22:45:20">2023-01-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/27/hello-world/" title="Hello World">Hello World</a><time datetime="2023-01-27T14:00:00.000Z" title="发表于 2023-01-27 22:00:00">2023-01-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/15/%E9%80%86%E8%BD%AC%E8%A3%81%E5%88%A41-3%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" title="逆转裁判1-3通关感想">逆转裁判1-3通关感想</a><time datetime="2023-01-14T16:00:00.000Z" title="发表于 2023-01-15 00:00:00">2023-01-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/11/14/%E4%BB%A3%E7%A0%81%E7%8C%AE%E7%A4%BC%E8%AE%B0%E5%BD%95/" title="代码献礼记录">代码献礼记录</a><time datetime="2022-11-14T05:45:54.000Z" title="发表于 2022-11-14 13:45:54">2022-11-14</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E6%B8%B8%E6%88%8F%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" style="font-size: 1.45em; color: rgb(64, 129, 62)">游戏通关感想</a><a href="/tags/midi/" style="font-size: 1.15em; color: rgb(56, 200, 61)">midi</a><a href="/tags/%E5%AD%97%E7%AC%A6%E7%94%BB/" style="font-size: 1.15em; color: rgb(107, 189, 30)">字符画</a><a href="/tags/Hexo/" style="font-size: 1.3em; color: rgb(2, 29, 133)">Hexo</a><a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/" style="font-size: 1.15em; color: rgb(198, 165, 181)">博客图片显示</a><a href="/tags/Typora/" style="font-size: 1.15em; color: rgb(43, 50, 166)">Typora</a><a href="/tags/OpenCV/" style="font-size: 1.15em; color: rgb(15, 90, 104)">OpenCV</a><a href="/tags/%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B/" style="font-size: 1.15em; color: rgb(79, 134, 115)">幻影坦克</a><a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" style="font-size: 1.15em; color: rgb(129, 118, 41)">个人博客</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
-    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/01/"><span class="card-archive-list-date">一月 2023</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/09/"><span class="card-archive-list-date">九月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/04/"><span class="card-archive-list-date">四月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/02/"><span class="card-archive-list-date">二月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">一月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">十一月 2021</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">12</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-02-01T17:17:06.091Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By WinkySpeed</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2d-widget/autoload.js"></script></body></html>
+然而，本作的引导系统一言难尽。本就立体感十足的复杂场景，菜单的引导地图却只是平面，任务指引只有任务终点到角色的直线距离，经常遇到的就是跟着指引跑过千山万水，到 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">WinkySpeed</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/WinkySpeed"><i class="fab fa-github"></i><span>GitHub</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/02/16/Hexo%E5%8D%9A%E5%AE%A2LaTeX%E5%85%AC%E5%BC%8F%E7%9A%84%E6%98%BE%E7%A4%BA/" title="Hexo博客LaTeX公式的显示">Hexo博客LaTeX公式的显示</a><time datetime="2023-02-16T05:14:16.000Z" title="发表于 2023-02-16 13:14:16">2023-02-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/02/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数据结构复习整理">数据结构复习整理</a><time datetime="2023-02-14T12:12:43.000Z" title="发表于 2023-02-14 20:12:43">2023-02-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/29/Hexo%E4%BF%AE%E6%94%B9%E8%AE%B0%E5%BD%95/" title="Hexo修改记录">Hexo修改记录</a><time datetime="2023-01-29T05:11:24.000Z" title="发表于 2023-01-29 13:11:24">2023-01-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/28/%E5%9B%BE%E7%89%87%E7%9A%84%E6%98%BE%E7%A4%BA/" title="解决Hexo博客图片显示问题">解决Hexo博客图片显示问题</a><time datetime="2023-01-28T10:06:30.000Z" title="发表于 2023-01-28 18:06:30">2023-01-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/27/%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title="基于hexo的个人博客搭建教程">基于hexo的个人博客搭建教程</a><time datetime="2023-01-27T14:45:20.000Z" title="发表于 2023-01-27 22:45:20">2023-01-27</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E6%B8%B8%E6%88%8F%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" style="font-size: 1.45em; color: rgb(103, 59, 87)">游戏通关感想</a><a href="/tags/Hexo/" style="font-size: 1.3em; color: rgb(83, 31, 129)">Hexo</a><a href="/tags/LaTeX/" style="font-size: 1.15em; color: rgb(144, 27, 29)">LaTeX</a><a href="/tags/midi/" style="font-size: 1.15em; color: rgb(55, 116, 145)">midi</a><a href="/tags/%E5%AD%97%E7%AC%A6%E7%94%BB/" style="font-size: 1.15em; color: rgb(29, 27, 57)">字符画</a><a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/" style="font-size: 1.15em; color: rgb(33, 134, 117)">博客图片显示</a><a href="/tags/Typora/" style="font-size: 1.15em; color: rgb(170, 190, 50)">Typora</a><a href="/tags/OpenCV/" style="font-size: 1.15em; color: rgb(130, 179, 182)">OpenCV</a><a href="/tags/%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B/" style="font-size: 1.15em; color: rgb(121, 197, 84)">幻影坦克</a><a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" style="font-size: 1.15em; color: rgb(75, 0, 8)">个人博客</a><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.15em; color: rgb(88, 103, 94)">数据结构</a><a href="/tags/%E5%A4%8D%E4%B9%A0/" style="font-size: 1.15em; color: rgb(33, 190, 156)">复习</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/02/"><span class="card-archive-list-date">二月 2023</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/01/"><span class="card-archive-list-date">一月 2023</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/09/"><span class="card-archive-list-date">九月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/04/"><span class="card-archive-list-date">四月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/02/"><span class="card-archive-list-date">二月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">一月 2022</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">15</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-02-16T13:27:06.181Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By WinkySpeed</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2d-widget/autoload.js"></script></body></html>
