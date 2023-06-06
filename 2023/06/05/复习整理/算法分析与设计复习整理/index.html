@@ -1,0 +1,419 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>算法分析与设计复习整理 | WinkySpeed's Blog</title><meta name="author" content="WinkySpeed"><meta name="copyright" content="WinkySpeed"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="算法分析与设计复习整理 算法引论 算法 算法的定义 （串讲强调） 算法：对于计算机科学来说，算法指的是针对特定问题求解步骤的一种描述，是包含若干条指令的一个有穷序列 算法的特性 输入（0或多个） 输出（至少1个） 确定性（无歧义） 有限性 可行性 算法设计一般过程  算法描述方法——伪代码 算法复杂性分析 时间复杂度 时间复杂性（影响因素包括问题规模n、输入序列I">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法分析与设计复习整理">
+<meta property="og:url" content="http://example.com/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/index.html">
+<meta property="og:site_name" content="WinkySpeed&#39;s Blog">
+<meta property="og:description" content="算法分析与设计复习整理 算法引论 算法 算法的定义 （串讲强调） 算法：对于计算机科学来说，算法指的是针对特定问题求解步骤的一种描述，是包含若干条指令的一个有穷序列 算法的特性 输入（0或多个） 输出（至少1个） 确定性（无歧义） 有限性 可行性 算法设计一般过程  算法描述方法——伪代码 算法复杂性分析 时间复杂度 时间复杂性（影响因素包括问题规模n、输入序列I">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/WinkySpeed%20SP%20-%20Repaired.jpg">
+<meta property="article:published_time" content="2023-06-05T10:22:19.000Z">
+<meta property="article:modified_time" content="2023-06-06T09:48:45.821Z">
+<meta property="article:author" content="WinkySpeed">
+<meta property="article:tag" content="复习">
+<meta property="article:tag" content="算法分析与设计">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/WinkySpeed%20SP%20-%20Repaired.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '算法分析与设计复习整理',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-06-06 17:48:45'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/WinkySpeed%20SP%20-%20Repaired.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/33703665_p0.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="WinkySpeed's Blog"><span class="site-name">WinkySpeed's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">算法分析与设计复习整理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-05T10:22:19.000Z" title="发表于 2023-06-05 18:22:19">2023-06-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-06T09:48:45.821Z" title="更新于 2023-06-06 17:48:45">2023-06-06</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="算法分析与设计复习整理"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="算法分析与设计复习整理">算法分析与设计复习整理</h1>
+<h1 id="算法引论">算法引论</h1>
+<h2 id="算法">算法</h2>
+<h3 id="算法的定义">算法的定义</h3>
+<p>（串讲强调）</p>
+<p>算法：对于计算机科学来说，算法指的是针对特定问题求解步骤的一种描述，是包含若干条指令的一个有穷序列</p>
+<h3 id="算法的特性">算法的特性</h3>
+<p>输入（0或多个）</p>
+<p>输出（至少1个）</p>
+<p>确定性（无歧义）</p>
+<p>有限性</p>
+<p>可行性</p>
+<h3 id="算法设计一般过程">算法设计一般过程</h3>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230605183841025.png" class title="image-20230605183841025">
+<h3 id="算法描述方法伪代码">算法描述方法——伪代码</h3>
+<h3 id="算法复杂性分析">算法复杂性分析</h3>
+<h4 id="时间复杂度">时间复杂度</h4>
+<p>时间复杂性（影响因素包括问题规模n、输入序列I、算法本身A）</p>
+<p>算法的渐近复杂性：</p>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230605185233952.png" class title="image-20230605185233952">
+<h5 id="渐近意义下的记号">渐近意义下的记号</h5>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230605185258318.png" class title="image-20230605185258318">
+<p>渐近上界：<span class="math inline">\(f(n)=O(g(n))\)</span></p>
+<p>即<span class="math inline">\(f(n)\)</span>的阶<strong>不高于</strong><span class="math inline">\(g(n)\)</span>的阶</p>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230605200813119.png" class title="image-20230605200813119">
+<p><br></p>
+<p>渐近下界：<span class="math inline">\(f(n)=\Omega(g(n))\)</span></p>
+<p>即<span class="math inline">\(f(n)\)</span>的阶<strong>不低于</strong><span class="math inline">\(g(n)\)</span>的阶</p>
+<p><br></p>
+<p>渐近紧确界：存在正的常数<span class="math inline">\(c_1,c_2\)</span>，使<span class="math inline">\(n\)</span>大时，满足<span class="math inline">\(c_1g(n)\le f(n)\le c_2g(n)\)</span></p>
+<p>即<span class="math inline">\(f(n)\)</span>与<span class="math inline">\(g(n)\)</span>同阶</p>
+<p><br></p>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230605200656712.png" class title="image-20230605200656712">
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230605200909298.png" class title="image-20230605200909298">
+<h5 id="几类复杂性之间的关系">几类复杂性之间的关系</h5>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230605185420921.png" class title="image-20230605185420921">
+<p>非递归，递归</p>
+<h4 id="空间复杂度">空间复杂度</h4>
+<p>空间复杂度（影响因素包括输入输出数据IO、辅助变量V、算法本身A）</p>
+<p>算辅助变量</p>
+<h1 id="递归与分治策略">递归与分治策略</h1>
+<h2 id="递归">递归</h2>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230605190622246.png" class title="image-20230605190622246">
+<h2 id="递归时间复杂度">递归时间复杂度</h2>
+<h3 id="主定理">主定理</h3>
+<p><span class="math display">\[
+\begin{align*}
+T(n)&amp;=aT(\frac{n}{b})+cn^k\\\\
+T(1)&amp;=c\\\\
+a,b,c,k都是常量，&amp;则
+\begin{cases}
+T(n)\in\Theta(n^k)\qquad &amp;\text{if } (a&lt;b^k)\\\\
+T(n)\in\Theta(n^k\log n)\qquad &amp;\text{if } (a=b^k)\\\\
+T(n)\in\Theta(n^{\log_ba})\qquad &amp;\text{if } (a&gt;b^k)\\
+\end{cases}
+\end{align*}
+\]</span></p>
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42229034/article/details/96463130">主定理</a></p>
+<h3 id="递归树">递归树</h3>
+<p>后向带入法</p>
+<p>代入法</p>
+<h2 id="分治">分治</h2>
+<h3 id="分治法基本步骤">分治法基本步骤</h3>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230605202501231.png" class title="image-20230605202501231">
+<p><br></p>
+<p>用分治必须保证最优子结构性质</p>
+<h3 id="最优子结构性质">最优子结构性质</h3>
+<p>最优子结构性质：一个问题的最优解包含其子问题的最优解</p>
+<h3 id="归并排序">归并排序</h3>
+<h4 id="伪代码">伪代码</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">MergeSort(Arr, Start, End)</span><br><span class="line">输入：Arr数组，起始下标Start，终止下标End</span><br><span class="line">输出：按递增顺序排好的数组</span><br><span class="line">1.	if End &lt;= Start				//当待排序数组只有一个元素时，就是有序，直接退出</span><br><span class="line">2.		return</span><br><span class="line">3.	Mid &lt;- (Start + End) / 2</span><br><span class="line">4.	MergeSort(Arr, Start, Mid)</span><br><span class="line">5.	MergeSort(Arr, Mid + 1, End)</span><br><span class="line">6.	Merge(Arr, Start, Mid, End)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Merge(Arr, Start, Mid, End)</span><br><span class="line">输入：Arr数组，起始下标Start，中间数Mid，终止下标End</span><br><span class="line">输出：合并好的数组</span><br><span class="line">1.	L = Arr[Start...Mid]</span><br><span class="line">2.	R = Arr[Mid + 1...End]</span><br><span class="line">3.	L.append(无穷)		//哨兵，可以保证一个数组遍历完后另一个能继续遍历</span><br><span class="line">4.	R.append(无穷)</span><br><span class="line">5.	i &lt;- 0, j &lt;- 0, k &lt;- Start</span><br><span class="line">6.	while k != End + 1</span><br><span class="line">7.		if L[i] &lt;= R[j]</span><br><span class="line">8.			Arr[k] &lt;- L[i]</span><br><span class="line">9.			i &lt;- i + 1</span><br><span class="line">10.		else</span><br><span class="line">11.			Arr[k] &lt;- R[j]</span><br><span class="line">12.			j &lt;- j + 1</span><br><span class="line">13.		k &lt;- k + 1</span><br></pre></td></tr></table></figure>
+<h4 id="时间复杂度-1">时间复杂度</h4>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230605205025234.png" class title="image-20230605205025234">
+<h4 id="空间复杂度-1">空间复杂度</h4>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230605205156574.png" class title="image-20230605205156574">
+<p>参考：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ma4y1n7E2">归并排序</a></p>
+<h3 id="快速排序">快速排序</h3>
+<h4 id="伪代码-1">伪代码</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">QuickSort(Arr, Start, End)</span><br><span class="line">输入：Arr数组，开始下标Start，结束下标End</span><br><span class="line">输出：升序排序的Arr数组</span><br><span class="line">1. if End &lt;= Start</span><br><span class="line">2.		return</span><br><span class="line">3. Index = Partition(Arr, Start, End)</span><br><span class="line">4. QuickSort(Arr, Start, Index - 1)</span><br><span class="line">5. QuickSort(Arr, Index + 1, End)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Partition(Arr, Start, End)						//经过Partition，有一个元素已经找到位置</span><br><span class="line">输入：Arr数组，开始下标Start，结束下标End</span><br><span class="line">输出：基准元素对应的下标: j (以Arr[End]为基准元素，即没有随机选)</span><br><span class="line">1. for i &lt;- Start to End - 1</span><br><span class="line">2. 		if Arr[i] &lt;= Arr[End]					//从左向右遍历，若小于等于基准元素就交换</span><br><span class="line">3. 			Swap(Arr[j], Arr[i])				//保证j左边元素全是小于等于基准元素的</span><br><span class="line">4. 			j &lt;- j + 1						   //j到i是大于基准元素的</span><br><span class="line">5. Swap(Arr[End], Arr[j])						//此时j的位置就是基准元素对应位置的下标，交换</span><br><span class="line">6. return j</span><br></pre></td></tr></table></figure>
+<h4 id="时间复杂度-2">时间复杂度</h4>
+<p>最坏情况下，时间复杂度为<span class="math inline">\(O(n^2)\)</span></p>
+<p>平均情况和最好情况，时间复杂度为<span class="math inline">\(O(n\log
+n)\)</span></p>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230605211551594.png" class title="image-20230605211551594">
+<h4 id="空间复杂度-2">空间复杂度</h4>
+<p>最坏情况下，递归栈深度为n，空间复杂度为<span class="math inline">\(O(n)\)</span></p>
+<p>平均情况和最好情况，递归栈深度为<span class="math inline">\(\log
+n\)</span>，空间复杂度为<span class="math inline">\(O(\log
+n)\)</span></p>
+<p>参考：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1rV411j7f6">快速排序</a></p>
+<h3 id="循环日程表">循环日程表</h3>
+<p>思路：分治，分到2个人就好划分</p>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230605212425358.png" class title="image-20230605212425358">
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230605212520481.png" class title="image-20230605212520481">
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230605212607477.png" class title="image-20230605212607477">
+<h4 id="伪代码-2">伪代码</h4>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230605211745065.png" class title="image-20230605211745065">
+<h4 id="时间复杂度-3">时间复杂度</h4>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230605212621291.png" class title="image-20230605212621291">
+<p>主定理：<span class="math inline">\(a=1,b=2,k=2,a&lt;b^k,T(n)=O(n^2)\)</span></p>
+<h4 id="空间复杂度-3">空间复杂度</h4>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230605212917971.png" class title="image-20230605212917971">
+<h3 id="棋盘覆盖问题">棋盘覆盖问题</h3>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230605213205923.png" class title="image-20230605213205923">
+<p>注意预处理</p>
+<h1 id="动态规划">动态规划</h1>
+<h2 id="满足条件">满足条件</h2>
+<p>最优子结构性质</p>
+<p>子问题重叠（子问题重复求解）</p>
+<p>自底向上</p>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230606145914057.png" class title="image-20230606145914057">
+<h2 id="动态规划与分治法异同">动态规划与分治法异同</h2>
+<p>相同点：都是基于分治思想</p>
+<p>不同点：分治法各个子问题独立，动态规划中允许子问题重叠</p>
+<h2 id="求解步骤">求解步骤</h2>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230605222457284.png" class title="image-20230605222457284">
+<p>根据最优子结构性质，得到动态规划方程</p>
+<h2 id="最长公共子序列问题">最长公共子序列问题</h2>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230605222529379.png" class title="image-20230605222529379">
+<h3 id="问题分析">问题分析</h3>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230605223753253.png" class title="image-20230605223753253">
+<h3 id="建立方程">建立方程</h3>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230605223811621.png" class title="image-20230605223811621">
+<p>注意<span class="math inline">\(C[i][j]\)</span>的概念：记录的是<span class="math inline">\(X_i\)</span>和<span class="math inline">\(Y_j\)</span>最长公共子序列的<strong>长度</strong></p>
+<p>所以长度为0时，LCS=0</p>
+<p>如果碰到相等的，就加1</p>
+<p>如果不等，就取<span class="math inline">\(X_{i-1}\)</span>和<span class="math inline">\(Y_j\)</span>的LCS与<span class="math inline">\(X_i\)</span>和<span class="math inline">\(Y_{j-1}\)</span>的LCS之间最大值</p>
+<p><span class="math inline">\(b[i][j]\)</span>记录子问题最优解的来源，1，2，3为自己规定的方向</p>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230605224318740.png" class title="image-20230605224318740">
+<h3 id="图示">图示</h3>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230605225101973.png" class title="image-20230605225101973">
+<h3 id="伪代码-3">伪代码</h3>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230605225603874.png" class title="image-20230605225603874">
+<p>时间复杂度：两层循环，<span class="math inline">\(O(n^2)\)</span></p>
+<p>构造解：顺着箭头方向走，遇到斜上方的就是子串序列里的一位</p>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230605225934386.png" class title="image-20230605225934386">
+<h3 id="时间复杂性">时间复杂性</h3>
+<p>求解LCS：<span class="math inline">\(O(n^2)\)</span></p>
+<p>构造解：<span class="math inline">\(O(n)\)</span></p>
+<p>主程序：<span class="math inline">\(O(n^2)\)</span></p>
+<h3 id="空间复杂性">空间复杂性</h3>
+<p>求解LCS：<span class="math inline">\(O(1)\)</span></p>
+<p>构造解：<span class="math inline">\(O(n)\)</span></p>
+<p>主程序：<span class="math inline">\(O(n^2)\)</span></p>
+<h2 id="矩阵连乘">矩阵连乘</h2>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230606160230969.png" class title="image-20230606160230969">
+<h3 id="问题分析-1">问题分析</h3>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230606160304771.png" class title="image-20230606160304771">
+<h3 id="伪代码-4">伪代码</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">Matrix_Chain_DP(Num, P, DP, S)</span><br><span class="line">输入：矩阵个数Num，矩阵维度数组P（P[i-1]为第i个矩阵的行，P[i]为第i个矩阵的列），动态规划表DP（初始值全为正无穷），最优决策表S（用于记录括号位置）</span><br><span class="line">输出：DP数组（DP[i][j]记录了第i个矩阵乘到第j个矩阵乘法次数最小值）和S数组（S[i][j]记录了第i个矩阵乘到第j个矩阵乘法次数最小值时加括号的位置）</span><br><span class="line">1.	for i &lt;- 1 to Num				//先初始化DP[i][i]，单独一个矩阵乘法次数为0次</span><br><span class="line">2.		DP[i][i] &lt;- 0</span><br><span class="line">3.	for L &lt;- 2 to Num				//L为子串长度，从2到Num</span><br><span class="line">4.		for i &lt;- 1 to Num			</span><br><span class="line">5.			j &lt;- i + L - 1			//j靠i与L决定，从填表顺序推出来的，即DP[1][2]到DP[Num-1][Num]后再从DP[1][3]开始</span><br><span class="line">6.			if j &gt; Num</span><br><span class="line">7.				break</span><br><span class="line">8.			for k &lt;- i to j - 1 	//遍历能加括号的所有位置</span><br><span class="line">9.				Min &lt;- DP[i][j]		//可优化掉Min，放Min只是为了比较大小</span><br><span class="line">10.				Temp &lt;- DP[i][k] + DP[k + 1][j] + P[i - 1] * P[k] * P[j]</span><br><span class="line">11.				if Temp &lt; Min</span><br><span class="line">12.					Min &lt;- Temp</span><br><span class="line">13.					DP[i][j] &lt;- Temp</span><br><span class="line">14.					S[i][j] &lt;- k</span><br><span class="line">15.	return DP and S</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Print_Chain(S, i, j)</span><br><span class="line">1.	if i == j</span><br><span class="line">2.		print &quot;A[&quot; + i + &quot;]&quot;</span><br><span class="line">3.	else</span><br><span class="line">4.		print &quot;(&quot;</span><br><span class="line">5.		Print_Chain(S, i, s[i][j])</span><br><span class="line">6.		Print_Chain(S, s[i][j] + 1, j)</span><br><span class="line">7.		print &quot;)&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="时间复杂度-4">时间复杂度</h3>
+<p>DP: <span class="math inline">\(O(n^3)\)</span></p>
+<p>Print: <span class="math inline">\(O(n)\)</span></p>
+<p>主程序：<span class="math inline">\(O(n^3)\)</span></p>
+<h3 id="空间复杂度-4">空间复杂度</h3>
+<p>DP: <span class="math inline">\(O(1)\)</span></p>
+<p>Print: <span class="math inline">\(O(n)\)</span></p>
+<p>主程序：<span class="math inline">\(O(n^2)\)</span></p>
+<p>空间复杂度不考虑输入和输出，但是主程序里创建的DP二维数组和S二维数组仍然是占了空间，所以主程序中空间复杂度为<span class="math inline">\(O(n^2)\)</span></p>
+<p>参考：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1CK411n7y1">矩阵连乘</a></p>
+<h2 id="背包">0-1背包</h2>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230606164008818.png" class title="image-20230606164008818">
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230606164201460.png" class title="image-20230606164201460">
+<p><span class="math inline">\(C[i][j]\)</span> 存的是第 <span class="math inline">\(i\)</span> 件物品，当前背包容量为 <span class="math inline">\(j\)</span> 时的最佳价值</p>
+<h3 id="伪代码-5">伪代码</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Knapsack_01_DP()			//自底向上查找最佳价值</span><br><span class="line">输入: Weight数组，Value数组，C数组（初始值全为0）</span><br><span class="line">输出: C数组 (C[i][j]存的是前i件物品，当前背包容量为j时的最佳价值)</span><br><span class="line">1.	for i &lt;- 1 to N</span><br><span class="line">2.		for j &lt;- 1 to W</span><br><span class="line">3.			if j &gt;= Weight[i]</span><br><span class="line">4.				C[i][j] &lt;- FindMax(C[i - 1][j], C[i - 1][j - Weight[i]] + Value[i])</span><br><span class="line">5.			else</span><br><span class="line">6.				C[i][j] &lt;- C[i - 1][j]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">GetSolution()		//根据二维数组C求解放入背包的物品</span><br><span class="line">输入: C数组</span><br><span class="line">输出: Solution数组</span><br><span class="line">1.	j &lt;- W</span><br><span class="line">2.	for i &lt;- N to 0</span><br><span class="line">3.		if C[i][j] != C[i - 1][j]</span><br><span class="line">4.			Solution[i] &lt;- 1</span><br><span class="line">5.			j &lt;- j - Weight[i]</span><br></pre></td></tr></table></figure>
+<h3 id="时间复杂度-5">时间复杂度</h3>
+<p>DP: <span class="math inline">\(O(nW)\)</span></p>
+<p>GetSolution: <span class="math inline">\(O(n)\)</span></p>
+<p>主程序：<span class="math inline">\(O(nW)\)</span></p>
+<h3 id="空间复杂度-5">空间复杂度</h3>
+<p>DP: <span class="math inline">\(O(1)\)</span></p>
+<p>GetSolution: <span class="math inline">\(O(1)\)</span></p>
+<p>主程序：<span class="math inline">\(O(n^2)\)</span></p>
+<p>主程序里开了C二维数组</p>
+<h1 id="贪心算法">贪心算法</h1>
+<h2 id="满足条件-1">满足条件</h2>
+<p>最优子结构性质</p>
+<p>贪心选择性质</p>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230606172307450.png" class title="image-20230606172307450">
+<h2 id="会场安排问题">会场安排问题</h2>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230606173116905.png" class title="image-20230606173116905">
+<h3 id="伪代码-6">伪代码</h3>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230606173510279.png" class title="image-20230606173510279">
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230606173543455.png" class title="image-20230606173543455">
+<h3 id="时空复杂度">时空复杂度</h3>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230606173638707.png" class title="image-20230606173638707">
+<h2 id="哈夫曼编码">哈夫曼编码</h2>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230606173730435.png" class title="image-20230606173730435">
+<h3 id="伪代码-7">伪代码</h3>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230606173748212.png" class title="image-20230606173748212">
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">BuildTree()</span><br><span class="line">输入: LetterNode类型的List数组</span><br><span class="line">输出: 加入了新节点的List数组</span><br><span class="line">1.	LetterNode* LNode</span><br><span class="line">2.	LetterNode* RNode</span><br><span class="line">3.	while head != tail - 1</span><br><span class="line">4.		MySort()</span><br><span class="line">5.		DeQueue(LNode)</span><br><span class="line">6.		DeQueue(RNode)</span><br><span class="line">7.		LetterNode* NewNode &lt;- new LetterNode(&#x27;0&#x27;, LNode-&gt;num + RNode-&gt;num)</span><br><span class="line">8.		NewNode-&gt;lchild &lt;- LNode</span><br><span class="line">9.		NewNode-&gt;rchild &lt;- RNode</span><br><span class="line">10.		EnQueue(NewNode)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">AddString_Pre(LetterNode* subroot, string str)		//类似前序遍历</span><br><span class="line">输入: subroot, 哈夫曼编码str</span><br><span class="line">输出: Result数组</span><br><span class="line">1.	if subroot == NULL</span><br><span class="line">2.		return</span><br><span class="line">3.	subroot-&gt;Huffman &lt;- str</span><br><span class="line">4.	if subroot-&gt;letter != &#x27;0&#x27;</span><br><span class="line">5.		Result[Result_index] &lt;- *subroot</span><br><span class="line">6.		Result_index++</span><br><span class="line">7.	AddString_Pre(subroot-&gt;lchild, str + &quot;0&quot;)</span><br><span class="line">8.	AddString_Pre(subroot-&gt;rchild, str + &quot;1&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">AddString()</span><br><span class="line">输入: List数组</span><br><span class="line">输出:	Result数组</span><br><span class="line">1.	this-&gt;AddString_Pre(&amp;this-&gt;List[head], &quot;&quot;)</span><br></pre></td></tr></table></figure>
+<h3 id="时空复杂度-1">时空复杂度</h3>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230606174314812.png" class title="image-20230606174314812">
+<h2 id="单源最短路径">单源最短路径</h2>
+<h3 id="特殊路径">特殊路径</h3>
+<p>（串讲强调）</p>
+<p>特殊路径：从源点出发只经过S中的结点到达V-S中的结点的路径</p>
+<img src="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20230606174759434.png" class title="image-20230606174759434">
+<h2 id="最小生成树">最小生成树</h2>
+<h3 id="prim算法">Prim算法</h3>
+<h3 id="kruskal算法">Kruskal算法</h3>
+<h1 id="回溯法">回溯法</h1>
+<h1 id="分支限界法">分支限界法</h1>
+<h1 id="概率算法">概率算法</h1>
+<h1 id="np完全性理论">NP完全性理论</h1>
+<h1 id="串与序列">串与序列</h1>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<hr>
+<h1 id="参考资料">参考资料</h1>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42229034/article/details/96463130">主定理</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ma4y1n7E2">归并排序</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1rV411j7f6">快速排序</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1CK411n7y1">矩阵连乘</a></p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%A4%8D%E4%B9%A0/">复习</a><a class="post-meta__tags" href="/tags/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/">算法分析与设计</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/06/03/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数字信号处理复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">数字信号处理复习整理</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/06/03/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数字信号处理复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-03</div><div class="title">数字信号处理复习整理</div></div></a></div><div><a href="/2023/02/12/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/Java%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="Java复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-12</div><div class="title">Java复习整理</div></div></a></div><div><a href="/2023/02/14/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数据结构复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-14</div><div class="title">数据结构复习整理</div></div></a></div><div><a href="/2023/06/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数据库复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-01</div><div class="title">数据库复习整理</div></div></a></div><div><a href="/2023/05/20/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%94%B5%E8%B7%AF%E4%B8%8E%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="电路与模拟电子技术复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-20</div><div class="title">电路与模拟电子技术复习整理</div></div></a></div><div><a href="/2023/05/30/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="编译原理复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-30</div><div class="title">编译原理复习整理</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/WinkySpeed%20SP%20-%20Repaired.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">WinkySpeed</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/WinkySpeed"><i class="fab fa-github"></i><span>GitHub</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">算法分析与设计复习整理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E5%BC%95%E8%AE%BA"><span class="toc-number">2.</span> <span class="toc-text">算法引论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-number">2.1.</span> <span class="toc-text">算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">2.1.1.</span> <span class="toc-text">算法的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E7%9A%84%E7%89%B9%E6%80%A7"><span class="toc-number">2.1.2.</span> <span class="toc-text">算法的特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%80%E8%88%AC%E8%BF%87%E7%A8%8B"><span class="toc-number">2.1.3.</span> <span class="toc-text">算法设计一般过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E6%8F%8F%E8%BF%B0%E6%96%B9%E6%B3%95%E4%BC%AA%E4%BB%A3%E7%A0%81"><span class="toc-number">2.1.4.</span> <span class="toc-text">算法描述方法——伪代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E6%80%A7%E5%88%86%E6%9E%90"><span class="toc-number">2.1.5.</span> <span class="toc-text">算法复杂性分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-number">2.1.5.1.</span> <span class="toc-text">时间复杂度</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B8%90%E8%BF%91%E6%84%8F%E4%B9%89%E4%B8%8B%E7%9A%84%E8%AE%B0%E5%8F%B7"><span class="toc-number">2.1.5.1.1.</span> <span class="toc-text">渐近意义下的记号</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%87%A0%E7%B1%BB%E5%A4%8D%E6%9D%82%E6%80%A7%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">2.1.5.1.2.</span> <span class="toc-text">几类复杂性之间的关系</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-number">2.1.5.2.</span> <span class="toc-text">空间复杂度</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E4%B8%8E%E5%88%86%E6%B2%BB%E7%AD%96%E7%95%A5"><span class="toc-number">3.</span> <span class="toc-text">递归与分治策略</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%92%E5%BD%92"><span class="toc-number">3.1.</span> <span class="toc-text">递归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-number">3.2.</span> <span class="toc-text">递归时间复杂度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E5%AE%9A%E7%90%86"><span class="toc-number">3.2.1.</span> <span class="toc-text">主定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E6%A0%91"><span class="toc-number">3.2.2.</span> <span class="toc-text">递归树</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%B2%BB"><span class="toc-number">3.3.</span> <span class="toc-text">分治</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%B2%BB%E6%B3%95%E5%9F%BA%E6%9C%AC%E6%AD%A5%E9%AA%A4"><span class="toc-number">3.3.1.</span> <span class="toc-text">分治法基本步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E4%BC%98%E5%AD%90%E7%BB%93%E6%9E%84%E6%80%A7%E8%B4%A8"><span class="toc-number">3.3.2.</span> <span class="toc-text">最优子结构性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F"><span class="toc-number">3.3.3.</span> <span class="toc-text">归并排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%AA%E4%BB%A3%E7%A0%81"><span class="toc-number">3.3.3.1.</span> <span class="toc-text">伪代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6-1"><span class="toc-number">3.3.3.2.</span> <span class="toc-text">时间复杂度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6-1"><span class="toc-number">3.3.3.3.</span> <span class="toc-text">空间复杂度</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F"><span class="toc-number">3.3.4.</span> <span class="toc-text">快速排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%AA%E4%BB%A3%E7%A0%81-1"><span class="toc-number">3.3.4.1.</span> <span class="toc-text">伪代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6-2"><span class="toc-number">3.3.4.2.</span> <span class="toc-text">时间复杂度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6-2"><span class="toc-number">3.3.4.3.</span> <span class="toc-text">空间复杂度</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E6%97%A5%E7%A8%8B%E8%A1%A8"><span class="toc-number">3.3.5.</span> <span class="toc-text">循环日程表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%AA%E4%BB%A3%E7%A0%81-2"><span class="toc-number">3.3.5.1.</span> <span class="toc-text">伪代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6-3"><span class="toc-number">3.3.5.2.</span> <span class="toc-text">时间复杂度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6-3"><span class="toc-number">3.3.5.3.</span> <span class="toc-text">空间复杂度</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%8B%E7%9B%98%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98"><span class="toc-number">3.3.6.</span> <span class="toc-text">棋盘覆盖问题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="toc-number">4.</span> <span class="toc-text">动态规划</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BB%A1%E8%B6%B3%E6%9D%A1%E4%BB%B6"><span class="toc-number">4.1.</span> <span class="toc-text">满足条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B8%8E%E5%88%86%E6%B2%BB%E6%B3%95%E5%BC%82%E5%90%8C"><span class="toc-number">4.2.</span> <span class="toc-text">动态规划与分治法异同</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82%E8%A7%A3%E6%AD%A5%E9%AA%A4"><span class="toc-number">4.3.</span> <span class="toc-text">求解步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97%E9%97%AE%E9%A2%98"><span class="toc-number">4.4.</span> <span class="toc-text">最长公共子序列问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90"><span class="toc-number">4.4.1.</span> <span class="toc-text">问题分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%BA%E7%AB%8B%E6%96%B9%E7%A8%8B"><span class="toc-number">4.4.2.</span> <span class="toc-text">建立方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%A4%BA"><span class="toc-number">4.4.3.</span> <span class="toc-text">图示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%AA%E4%BB%A3%E7%A0%81-3"><span class="toc-number">4.4.4.</span> <span class="toc-text">伪代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E6%80%A7"><span class="toc-number">4.4.5.</span> <span class="toc-text">时间复杂性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E6%80%A7"><span class="toc-number">4.4.6.</span> <span class="toc-text">空间复杂性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E8%BF%9E%E4%B9%98"><span class="toc-number">4.5.</span> <span class="toc-text">矩阵连乘</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90-1"><span class="toc-number">4.5.1.</span> <span class="toc-text">问题分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%AA%E4%BB%A3%E7%A0%81-4"><span class="toc-number">4.5.2.</span> <span class="toc-text">伪代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6-4"><span class="toc-number">4.5.3.</span> <span class="toc-text">时间复杂度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6-4"><span class="toc-number">4.5.4.</span> <span class="toc-text">空间复杂度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E5%8C%85"><span class="toc-number">4.6.</span> <span class="toc-text">0-1背包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%AA%E4%BB%A3%E7%A0%81-5"><span class="toc-number">4.6.1.</span> <span class="toc-text">伪代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6-5"><span class="toc-number">4.6.2.</span> <span class="toc-text">时间复杂度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6-5"><span class="toc-number">4.6.3.</span> <span class="toc-text">空间复杂度</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95"><span class="toc-number">5.</span> <span class="toc-text">贪心算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BB%A1%E8%B6%B3%E6%9D%A1%E4%BB%B6-1"><span class="toc-number">5.1.</span> <span class="toc-text">满足条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%9A%E5%9C%BA%E5%AE%89%E6%8E%92%E9%97%AE%E9%A2%98"><span class="toc-number">5.2.</span> <span class="toc-text">会场安排问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%AA%E4%BB%A3%E7%A0%81-6"><span class="toc-number">5.2.1.</span> <span class="toc-text">伪代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E7%A9%BA%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-number">5.2.2.</span> <span class="toc-text">时空复杂度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81"><span class="toc-number">5.3.</span> <span class="toc-text">哈夫曼编码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%AA%E4%BB%A3%E7%A0%81-7"><span class="toc-number">5.3.1.</span> <span class="toc-text">伪代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E7%A9%BA%E5%A4%8D%E6%9D%82%E5%BA%A6-1"><span class="toc-number">5.3.2.</span> <span class="toc-text">时空复杂度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E6%BA%90%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84"><span class="toc-number">5.4.</span> <span class="toc-text">单源最短路径</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E8%B7%AF%E5%BE%84"><span class="toc-number">5.4.1.</span> <span class="toc-text">特殊路径</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91"><span class="toc-number">5.5.</span> <span class="toc-text">最小生成树</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#prim%E7%AE%97%E6%B3%95"><span class="toc-number">5.5.1.</span> <span class="toc-text">Prim算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#kruskal%E7%AE%97%E6%B3%95"><span class="toc-number">5.5.2.</span> <span class="toc-text">Kruskal算法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9E%E6%BA%AF%E6%B3%95"><span class="toc-number">6.</span> <span class="toc-text">回溯法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E9%99%90%E7%95%8C%E6%B3%95"><span class="toc-number">7.</span> <span class="toc-text">分支限界法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A6%82%E7%8E%87%E7%AE%97%E6%B3%95"><span class="toc-number">8.</span> <span class="toc-text">概率算法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#np%E5%AE%8C%E5%85%A8%E6%80%A7%E7%90%86%E8%AE%BA"><span class="toc-number">9.</span> <span class="toc-text">NP完全性理论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%B2%E4%B8%8E%E5%BA%8F%E5%88%97"><span class="toc-number">10.</span> <span class="toc-text">串与序列</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">11.</span> <span class="toc-text">参考资料</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="算法分析与设计复习整理">算法分析与设计复习整理</a><time datetime="2023-06-05T10:22:19.000Z" title="发表于 2023-06-05 18:22:19">2023-06-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/03/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数字信号处理复习整理">数字信号处理复习整理</a><time datetime="2023-06-03T07:27:40.000Z" title="发表于 2023-06-03 15:27:40">2023-06-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数据库复习整理">数据库复习整理</a><time datetime="2023-06-01T07:27:31.000Z" title="发表于 2023-06-01 15:27:31">2023-06-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/30/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="编译原理复习整理">编译原理复习整理</a><time datetime="2023-05-30T10:56:01.000Z" title="发表于 2023-05-30 18:56:01">2023-05-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/20/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%94%B5%E8%B7%AF%E4%B8%8E%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="电路与模拟电子技术复习整理">电路与模拟电子技术复习整理</a><time datetime="2023-05-20T11:10:22.000Z" title="发表于 2023-05-20 19:10:22">2023-05-20</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By WinkySpeed</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2d-widget/autoload.js"></script></body></html>
