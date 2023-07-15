@@ -1,0 +1,592 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>manim学习记录 | WinkySpeed's Blog</title><meta name="author" content="WinkySpeed"><meta name="copyright" content="WinkySpeed"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="manim学习记录 记录数据结构小学期实习的经历 为什么数据库不记录？因为太水了，我感觉没必要 manim环境配置 所需系统依赖  FFmpeg (Windows 下安装需要自行配置 环境变量 ) OpenGL (包含在 python 包 PyOpenGL 中，无需手动安装) LaTeX (可选，如果需要 \(\LaTeX\) 则必需)  使用 python 环境安装 m">
+<meta property="og:type" content="article">
+<meta property="og:title" content="manim学习记录">
+<meta property="og:url" content="http://example.com/2023/07/04/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/manim%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="WinkySpeed&#39;s Blog">
+<meta property="og:description" content="manim学习记录 记录数据结构小学期实习的经历 为什么数据库不记录？因为太水了，我感觉没必要 manim环境配置 所需系统依赖  FFmpeg (Windows 下安装需要自行配置 环境变量 ) OpenGL (包含在 python 包 PyOpenGL 中，无需手动安装) LaTeX (可选，如果需要 \(\LaTeX\) 则必需)  使用 python 环境安装 m">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/WinkySpeed%20SP%20-%20Repaired.jpg">
+<meta property="article:published_time" content="2023-07-03T23:58:45.000Z">
+<meta property="article:modified_time" content="2023-07-15T11:46:53.251Z">
+<meta property="article:author" content="WinkySpeed">
+<meta property="article:tag" content="manim">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/WinkySpeed%20SP%20-%20Repaired.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/07/04/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/manim%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'manim学习记录',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-15 19:46:53'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/WinkySpeed%20SP%20-%20Repaired.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">30</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/33703665_p0.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="WinkySpeed's Blog"><span class="site-name">WinkySpeed's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">manim学习记录</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-07-03T23:58:45.000Z" title="发表于 2023-07-04 07:58:45">2023-07-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-15T11:46:53.251Z" title="更新于 2023-07-15 19:46:53">2023-07-15</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="manim学习记录"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="manim学习记录">manim学习记录</h1>
+<p>记录数据结构小学期实习的经历</p>
+<p>为什么数据库不记录？因为太水了，我感觉没必要</p>
+<h1 id="manim环境配置">manim环境配置</h1>
+<h2 id="所需系统依赖">所需系统依赖</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://ffmpeg.org/">FFmpeg</a> (Windows 下安装需要自行配置
+<strong>环境变量</strong> )</li>
+<li><a target="_blank" rel="noopener" href="https://www.opengl.org//">OpenGL</a> (包含在 python 包
+<code>PyOpenGL</code> 中，无需手动安装)</li>
+<li><a target="_blank" rel="noopener" href="https://www.latex-project.org/">LaTeX</a> (可选，如果需要
+<span class="math inline">\(\LaTeX\)</span> 则必需)</li>
+</ul>
+<h2 id="使用-python-环境安装-manimgl">使用 python 环境安装 manimgl</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">通过 pip 安装 manimgl</span></span><br><span class="line">pip install manimgl</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">配置运行参数，可选</span></span><br><span class="line">manimgl --config  # 如果想要在 LaTeX 中使用中文，请选择 xelatex 选项</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">测试一下</span></span><br><span class="line">manimgl</span><br></pre></td></tr></table></figure>
+<p>如果出现灰色窗口，控制台中出现一个iPython终端，环境就安装好了</p>
+<h1 id="manim项目结构">manim项目结构</h1>
+<p>根据如下结构创建一个新的 <code>.py</code> 文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">manim/</span><br><span class="line">├── manimlib/</span><br><span class="line">│   ├── animation/</span><br><span class="line">│   ├── ...</span><br><span class="line">│   ├── default_config.yml</span><br><span class="line">│   └── window.py</span><br><span class="line">├── (custom_config.yml)</span><br><span class="line">└── start.py</span><br></pre></td></tr></table></figure>
+<p>即需要将<code>.py</code>文件放在与<code>manimlib</code>同级目录下（但实际测试后发现并不需要这样，<code>manimlib</code>成功<code>import</code>进来就可以了）</p>
+<p>然后在此目录下的控制台运行<code>manimgl start.py</code>，就可以预览效果了</p>
+<p><code>manimlib</code>在<code>pip</code>安装位置，如果不清楚在哪里可以在控制台输入<code>pip list -v</code>来查找目录</p>
+<p>然后将其复制出来，放到对应项目文件夹中即可</p>
+<h1 id="manim命令行">manim命令行</h1>
+<h2 id="命令行界面">命令行界面</h2>
+<p>manim运行动画时，需要在<code>manimlib</code>同级目录下，在命令行中输入：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">manimgl &lt;code&gt;.py &lt;Scene&gt; &lt;flags&gt;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">或</span></span><br><span class="line">manim-render &lt;code&gt;.py &lt;Scene&gt; &lt;flags&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>&lt;code&gt;.py</code> : 写的 python
+文件，可以使用绝对路径或相对于当前命令行所在路径的相对路径</li>
+<li><code>&lt;Scene&gt;</code> :
+想要渲染的场景，或者一些场景。如果没有写或者写错，若文件中只有一个
+Scene，会直接渲染这个类，否则会列出所有让你选择</li>
+<li><code>&lt;flags&gt;</code> : 传入的选项</li>
+</ul>
+<p>如果不加<code>&lt;Scene&gt;</code>且<code>&lt;code&gt;.py</code>中只有一个场景<code>Scene</code>，则会直接渲染这个场景</p>
+<p>如果不加<code>&lt;flags&gt;</code>，默认是低画质渲染并预览</p>
+<h2 id="常用选项">常用选项</h2>
+<ul>
+<li><code>-w</code> 把场景写入文件</li>
+<li><code>-o</code> 把场景写入文件并打开</li>
+<li><code>-s</code> 跳到最后只展示最后一帧
+<ul>
+<li><code>-so</code> 保存最后一帧并打开</li>
+</ul></li>
+<li><code>-n &lt;number&gt;</code> 跳到场景中第 <code>n</code>
+个动画，如<code>-n 3</code></li>
+<li><code>-f</code> 打开窗口全屏</li>
+<li><code>-i</code>生成gif</li>
+</ul>
+<h2 id="全部选项">全部选项</h2>
+<table>
+<colgroup>
+<col style="width: 13%">
+<col style="width: 56%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>选项</th>
+<th>简写</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>--help</code></td>
+<td><code>-h</code></td>
+<td>显示提示信息并退出</td>
+</tr>
+<tr class="even">
+<td><code>--version</code></td>
+<td><code>-v</code></td>
+<td>显示manimgl的版本</td>
+</tr>
+<tr class="odd">
+<td><code>--write_file</code></td>
+<td><code>-w</code></td>
+<td>把场景渲染成视频文件</td>
+</tr>
+<tr class="even">
+<td><code>--skip_animations</code></td>
+<td><code>-s</code></td>
+<td>跳到最后一帧</td>
+</tr>
+<tr class="odd">
+<td><code>--low_quality</code></td>
+<td><code>-l</code></td>
+<td>使用低质量渲染(默认 480p15)</td>
+</tr>
+<tr class="even">
+<td><code>--medium_quality</code></td>
+<td><code>-m</code></td>
+<td>使用中等质量渲染(默认 720p30)</td>
+</tr>
+<tr class="odd">
+<td><code>--hd</code></td>
+<td></td>
+<td>使用高质量渲染(默认 1080p30)</td>
+</tr>
+<tr class="even">
+<td><code>--uhd</code></td>
+<td></td>
+<td>使用 4K 质量渲染</td>
+</tr>
+<tr class="odd">
+<td><code>--full_screen</code></td>
+<td><code>-f</code></td>
+<td>全屏呈现窗口</td>
+</tr>
+<tr class="even">
+<td><code>--presenter_mode</code></td>
+<td><code>-p</code></td>
+<td>场景将会在 wait
+时暂停，等待用户按下空格或右方向键时继续播放（即幻灯片效果）</td>
+</tr>
+<tr class="odd">
+<td><code>--save_pngs</code></td>
+<td><code>-g</code></td>
+<td>把所有帧都保存为 png 文件</td>
+</tr>
+<tr class="even">
+<td><code>--gif</code></td>
+<td><code>-i</code></td>
+<td>把场景输出为 gif 文件</td>
+</tr>
+<tr class="odd">
+<td><code>--transparent</code></td>
+<td><code>-t</code></td>
+<td>渲染 alpha 通道，视频为 mov 格式</td>
+</tr>
+<tr class="even">
+<td><code>--quiet</code></td>
+<td><code>-q</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>--write_all</code></td>
+<td><code>-a</code></td>
+<td>渲染文件中的所有场景</td>
+</tr>
+<tr class="even">
+<td><code>--open</code></td>
+<td><code>-o</code></td>
+<td>保存文件后自动打开</td>
+</tr>
+<tr class="odd">
+<td><code>--finder</code></td>
+<td></td>
+<td>打开保存文件的文件夹</td>
+</tr>
+<tr class="even">
+<td><code>--config</code></td>
+<td></td>
+<td>进入自动配置指南</td>
+</tr>
+<tr class="odd">
+<td><code>--file_name FILE_NAME</code></td>
+<td></td>
+<td>给输出文件重命名</td>
+</tr>
+<tr class="even">
+<td><code>--start_at_animation_number START_AT_ANIMATION_NUMBER</code></td>
+<td><code>-n</code></td>
+<td>后面接两个数(逗号隔开)仅渲染一部分动画，如”3,6”</td>
+</tr>
+<tr class="odd">
+<td><code>--embed [EMBED]</code></td>
+<td><code>-e</code></td>
+<td>创建一个新文件，其中 <code>self.embed</code> 行插入到 Scenes
+构造方法中。如果传入字符串，则该行将插入包含该字符串的最后一行代码下方。</td>
+</tr>
+<tr class="even">
+<td><code>--resolution RESOLUTION</code></td>
+<td><code>-r</code></td>
+<td>分辨率，传入格式为”WxH”, 如”1920x1080”</td>
+</tr>
+<tr class="odd">
+<td><code>--fps FPS</code></td>
+<td></td>
+<td>视频帧率（整数）</td>
+</tr>
+<tr class="even">
+<td><code>--color COLOR</code></td>
+<td><code>-c</code></td>
+<td>背景颜色</td>
+</tr>
+<tr class="odd">
+<td><code>--leave_progress_bars</code></td>
+<td></td>
+<td>保持进度条留在终端中</td>
+</tr>
+<tr class="even">
+<td><code>--video_dir VIDEO_DIR</code></td>
+<td></td>
+<td>存放视频的目录</td>
+</tr>
+<tr class="odd">
+<td><code>--config_file CONFIG_FILE</code></td>
+<td></td>
+<td>使用指定的配置文件</td>
+</tr>
+<tr class="even">
+<td><code>--log-level LOG_LEVEL</code></td>
+<td></td>
+<td>要显示的消息级别，可以是DEBUG / INFO / WARNING / ERROR /
+CRITICAL（调试/信息/警告/错误/严重）</td>
+</tr>
+</tbody>
+</table>
+<h1 id="manim-kindergarten入群问题">Manim Kindergarten入群问题</h1>
+<p>LaTeX方面遇到了问题，尝试加群以获取<code>check_latex_packages.py</code>检查是否有包缺失</p>
+<p><a target="_blank" rel="noopener" href="https://t.bilibili.com/477215585788015609">入群问题</a>有两道考察Python基本语法的题，虽然没有Python语法基础，但在bing的帮助下快速上手了Python语法并且正确解答了问题，入群问题代码如下:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line"><span class="comment"># 巴塞尔问题近似解</span></span><br><span class="line">Sum = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="built_in">int</span>(<span class="number">1e7</span>+<span class="number">1</span>)):</span><br><span class="line">    Sum+=<span class="built_in">float</span>(<span class="number">1</span>/(i*i))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;1:&quot;</span>,Sum)</span><br><span class="line"></span><br><span class="line"><span class="comment"># sqrt(1+2*sqrt(1+3*sqrt(1+4*sqrt(1+...))))的值</span></span><br><span class="line">n = <span class="number">1e7</span>+<span class="number">1</span></span><br><span class="line">Sum = math.sqrt(<span class="number">1</span>+n)</span><br><span class="line"><span class="keyword">while</span> <span class="number">1</span>:</span><br><span class="line">    Sum = math.sqrt(<span class="number">1</span>+(n-<span class="number">1</span>)*Sum)</span><br><span class="line">    <span class="keyword">if</span> n-<span class="number">1</span>==<span class="number">2</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    n-=<span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;2:&quot;</span>,Sum)</span><br></pre></td></tr></table></figure>
+<h1 id="可能遇到的问题">可能遇到的问题</h1>
+<h2 id="关于textmobject">关于TextMobject</h2>
+<p>在一些古早的教程中，能看到<code>TextMobject</code>这个类，在新版已经不存在了</p>
+<p>旧版本中的 <code>TexMobject</code> 和 <code>TextMobject</code>
+改了名字</p>
+<p><code>TexMobject</code> 改为了
+<code>Tex</code>，<code>TextMobject</code> 改为了
+<code>TexText</code></p>
+<blockquote>
+<p><code>TexMobject</code> is renamed to <code>Tex</code>,
+<code>TextMobject</code> is renamed to <code>TexText</code></p>
+<p>——官方开源文档<a target="_blank" rel="noopener" href="https://github.com/3b1b/manim/blob/master/docs/source/getting_started/whatsnew.rst">whatsnew.rst</a></p>
+</blockquote>
+<p><br></p>
+<p><code>Tex</code>、<code>TexText</code>、<code>Text</code>
+三者之间的区别：</p>
+<ul>
+<li><code>Tex</code>: 使用 <span class="math inline">\(LaTeX\)</span>
+的公式环境，使用 <span class="math inline">\(LaTeX\)</span> 语法</li>
+<li><code>TexText</code>: 使用 <span class="math inline">\(LaTeX\)</span> 的正文环境，使用 <span class="math inline">\(LaTeX\)</span> 语法</li>
+<li><code>Text</code>: 使用 <code>manimpango</code> 来生成 svg
+文字，不使用 <span class="math inline">\(LaTeX\)</span>
+语法，可以更换字体</li>
+</ul>
+<h2 id="关于-latex-的报错">关于 LaTeX 的报错</h2>
+<p>在上手manim时，用<code>TexText</code>类出现报错：<code>LaTeX Error!  Not a worry, it happens to the best of us.</code>最后一行还有<code>FileNotFoundError: [Errno 2] No such file or directory</code>的报错</p>
+<p>完整报错信息如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">ManimGL v1.6.1</span><br><span class="line">[10:10:57] INFO     Using the default configuration file, which you can modify in                                                      config.py:265                    `c:\users\winkyspeed\appdata\local\programs\python\python39\lib\site-packages\manimlib\default_config.yml`</span><br><span class="line">           INFO     If you want to create a local configuration file, you can create a file named `custom_config.yml`, or run `manimgl config.py:266                    --config`</span><br><span class="line">           WARNING  You may be using Windows platform and have not specified the path of `temporary_storage`, which may cause OSError. config.py:232                    So it is recommended to specify the `temporary_storage` in the config file (.yml)</span><br><span class="line">[10:10:58] ERROR    LaTeX Error!  Not a worry, it happens to the best of us.                                                  tex_file_writing.py:90Traceback (most recent call last):</span><br><span class="line">  File &quot;C:\Users\WinkySpeed\AppData\Local\Programs\Python\Python39\lib\runpy.py&quot;, line 197, in _run_module_as_main</span><br><span class="line">    return _run_code(code, main_globals, None,</span><br><span class="line">  File &quot;C:\Users\WinkySpeed\AppData\Local\Programs\Python\Python39\lib\runpy.py&quot;, line 87, in _run_code</span><br><span class="line">    exec(code, run_globals)</span><br><span class="line">  File &quot;C:\Users\WinkySpeed\AppData\Local\Programs\Python\Python39\Scripts\manimgl.exe\__main__.py&quot;, line 7, in &lt;module&gt;</span><br><span class="line">  File &quot;C:\Users\WinkySpeed\AppData\Local\Programs\Python\Python39\lib\site-packages\manimlib\__main__.py&quot;, line 25, in main</span><br><span class="line">    scene.run()</span><br><span class="line">  File &quot;C:\Users\WinkySpeed\AppData\Local\Programs\Python\Python39\lib\site-packages\manimlib\scene\scene.py&quot;, line 91, in run</span><br><span class="line">    self.construct()</span><br><span class="line">  File &quot;.\start.py&quot;, line 5, in construct</span><br><span class="line">    text = TexText(&quot;$\cos \pi$&quot;)</span><br><span class="line">  File &quot;C:\Users\WinkySpeed\AppData\Local\Programs\Python\Python39\lib\site-packages\manimlib\mobject\svg\tex_mobject.py&quot;, line 188, in __init__    </span><br><span class="line">    super().__init__(full_string, **kwargs)</span><br><span class="line">  File &quot;C:\Users\WinkySpeed\AppData\Local\Programs\Python\Python39\lib\site-packages\manimlib\mobject\svg\tex_mobject.py&quot;, line 45, in __init__     </span><br><span class="line">    super().__init__(**kwargs)</span><br><span class="line">  File &quot;C:\Users\WinkySpeed\AppData\Local\Programs\Python\Python39\lib\site-packages\manimlib\mobject\svg\svg_mobject.py&quot;, line 65, in __init__     </span><br><span class="line">    self.init_svg_mobject()</span><br><span class="line">  File &quot;C:\Users\WinkySpeed\AppData\Local\Programs\Python\Python39\lib\site-packages\manimlib\mobject\svg\svg_mobject.py&quot;, line 76, in init_svg_mobject</span><br><span class="line">    self.generate_mobject()</span><br><span class="line">  File &quot;C:\Users\WinkySpeed\AppData\Local\Programs\Python\Python39\lib\site-packages\manimlib\mobject\svg\svg_mobject.py&quot;, line 91, in generate_mobject</span><br><span class="line">    file_path = self.get_file_path()</span><br><span class="line">  File &quot;C:\Users\WinkySpeed\AppData\Local\Programs\Python\Python39\lib\site-packages\manimlib\mobject\svg\tex_mobject.py&quot;, line 66, in get_file_path    file_path = tex_to_svg_file(full_tex)</span><br><span class="line">  File &quot;C:\Users\WinkySpeed\AppData\Local\Programs\Python\Python39\lib\site-packages\manimlib\utils\tex_file_writing.py&quot;, line 52, in tex_to_svg_file</span><br><span class="line">    tex_to_svg(tex_file_content, svg_file)</span><br><span class="line">  File &quot;C:\Users\WinkySpeed\AppData\Local\Programs\Python\Python39\lib\site-packages\manimlib\utils\tex_file_writing.py&quot;, line 60, in tex_to_svg    </span><br><span class="line">    svg_file = dvi_to_svg(tex_to_dvi(tex_file))</span><br><span class="line">  File &quot;C:\Users\WinkySpeed\AppData\Local\Programs\Python\Python39\lib\site-packages\manimlib\utils\tex_file_writing.py&quot;, line 91, in tex_to_dvi    </span><br><span class="line">    with open(log_file, &quot;r&quot;, encoding=&quot;utf-8&quot;) as file:</span><br><span class="line">FileNotFoundError: [Errno 2] No such file or directory: &#x27;C:\\Users\\WINKYS~1\\AppData\\Local\\Temp\\Tex\\7f2e7e8c90a46e34.log&#x27;</span><br></pre></td></tr></table></figure>
+<p>我尝试在<a target="_blank" rel="noopener" href="https://stackoverflow.com/">stackoverflow</a>找了解决方案，有一条2021年的回答：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/68810483/latex-error-filenotfounderror-errno-2-no-such-file-or-directory-c-users">LaTex
+Error!
+FileNotFoundError</a>，里面提到了重装<code>MikTex</code>，但是我本来就有<code>texlive 2022</code>，没必要重装，于是就尝试找到解答</p>
+<p>在<a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv13699823">哔哩哔哩专栏</a>里找到一条评论：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_48175117/article/details/118164732">ManimGL折腾笔记</a>，里面涉及到我这个问题的解决方案</p>
+<p>回到问题本身：在ERROR前有一条WARNING，大意为没有指定<code>temporary_storage</code>路径可能会导致错误，推荐设置一下这个路径</p>
+<p>打开<code>manimlib/default_config.yml</code>，第13到17行，Grant已经写的很清楚了：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Manim often generates tex_files or other kinds of serialized data</span></span><br><span class="line"><span class="comment"># to keep from having to generate the same thing too many times.  By</span></span><br><span class="line"><span class="comment"># default, these will be stored at tempfile.gettempdir(), e.g. this might</span></span><br><span class="line"><span class="comment"># return whatever is at to the TMPDIR environment variable.  If you want to</span></span><br><span class="line"><span class="comment"># specify them elsewhere,</span></span><br><span class="line">temporary_storage: <span class="string">&quot;E:\\Lib\\manim media Temp\\&quot;</span></span><br></pre></td></tr></table></figure>
+<p>意思是需要一个Temp文件夹存储临时文件，结合上文报错，就设置这个<code>temporary_storage</code></p>
+<p>还有一个要注意的问题是：我是用<code>pip</code>下载的manim，然后把manimlib复制到别的文件夹中做动画的，更改这个文件应该修改<code>pip</code>下载的manimlib目录下的配置文件，而不是修改项目对应目录的文件，可能是因为执行命令时查找的配置文件为<code>pip</code>路径下的文件吧</p>
+<h2 id="关于字体问题">关于字体问题</h2>
+<p>查看<code>Text</code>中的<code>font</code>有哪些可选项：</p>
+<p>在Python 的终端中使用下面的命令可以查看可用的字体列表：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> manimpango</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>manimpango.list_fonts()</span><br></pre></td></tr></table></figure>
+<p>得到输出:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;Agency FB&#x27;, &#x27;Algerian&#x27;, &#x27;Arial&#x27;, &#x27;Arial Black&#x27;, &#x27;Arial Narrow&#x27;, &#x27;Arial Rounded MT Bold&#x27;, &#x27;Bahnschrift&#x27;, &#x27;Bahnschrift Condensed&#x27;, &#x27;Bahnschrift Light&#x27;, &#x27;Bahnschrift Light Condensed&#x27;, &#x27;Bahnschrift Light SemiCondensed&#x27;, &#x27;Bahnschrift SemiBold&#x27;, &#x27;Bahnschrift SemiBold Condensed&#x27;, &#x27;Bahnschrift SemiBold SemiConden&#x27;, &#x27;Bahnschrift SemiCondensed&#x27;, &#x27;Bahnschrift SemiLight&#x27;, &#x27;Bahnschrift SemiLight Condensed&#x27;, &#x27;Bahnschrift SemiLight SemiConde&#x27;, &#x27;Baskerville Old Face&#x27;, &#x27;Bauhaus 93&#x27;, &#x27;Bell MT&#x27;, &#x27;Berlin Sans FB&#x27;, &#x27;Berlin Sans FB Demi&#x27;, &#x27;Bernard MT Condensed&#x27;, &#x27;Blackadder ITC&#x27;, &#x27;Bodoni MT&#x27;, &#x27;Bodoni MT Black&#x27;, &#x27;Bodoni MT Condensed&#x27;, &#x27;Bodoni MT Poster Compressed&#x27;, &#x27;Book Antiqua&#x27;, &#x27;Bookman Old Style&#x27;, &#x27;Bradley Hand ITC&#x27;, &#x27;Britannic Bold&#x27;, &#x27;Broadway&#x27;, &#x27;Brush Script MT&#x27;, &#x27;Calibri&#x27;, &#x27;Calibri Light&#x27;, &#x27;Californian FB&#x27;, &#x27;Calisto MT&#x27;, &#x27;Cambria&#x27;, &#x27;Cambria Math&#x27;, &#x27;Candara&#x27;, &#x27;Candara Light&#x27;, &#x27;Cascadia Code&#x27;, &#x27;Cascadia Code ExtraLight&#x27;, &#x27;Cascadia Code Light&#x27;, &#x27;Cascadia Code SemiBold&#x27;, &#x27;Cascadia Code SemiLight&#x27;, &#x27;Cascadia Mono&#x27;, &#x27;Cascadia Mono ExtraLight&#x27;, &#x27;Cascadia Mono Light&#x27;, &#x27;Cascadia Mono SemiBold&#x27;, &#x27;Cascadia Mono SemiLight&#x27;, &#x27;Castellar&#x27;, &#x27;Centaur&#x27;, &#x27;Century&#x27;, &#x27;Century Gothic&#x27;, &#x27;Century Schoolbook&#x27;, &#x27;Chiller&#x27;, &#x27;Colonna MT&#x27;, &#x27;Comic Sans MS&#x27;, &#x27;Consolas&#x27;, &#x27;Constantia&#x27;, &#x27;Cooper Black&#x27;, &#x27;Copperplate Gothic Bold&#x27;, &#x27;Copperplate Gothic Light&#x27;, &#x27;Corbel&#x27;, &#x27;Corbel Light&#x27;, &#x27;Courier New&#x27;, &#x27;Curlz MT&#x27;, &#x27;Cursive&#x27;, &#x27;DejaVu Sans Mono&#x27;, &#x27;DengXian&#x27;, &#x27;Dubai&#x27;, &#x27;Dubai Light&#x27;, &#x27;Dubai Medium&#x27;, &#x27;Ebrima&#x27;, &#x27;Edwardian Script ITC&#x27;, &#x27;Elephant&#x27;, &#x27;Engravers MT&#x27;, &#x27;Eras Bold ITC&#x27;, &#x27;Eras Demi ITC&#x27;, &#x27;Eras Light ITC&#x27;, &#x27;Eras Medium ITC&#x27;, &#x27;FZShuTi&#x27;, &#x27;FZYaoTi&#x27;, &#x27;FangSong&#x27;, &#x27;Fantasy&#x27;, &#x27;Felix Titling&#x27;, &#x27;Footlight MT Light&#x27;, &#x27;Forte&#x27;, &#x27;Franklin Gothic Book&#x27;, &#x27;Franklin Gothic Demi&#x27;, &#x27;Franklin Gothic Demi Cond&#x27;, &#x27;Franklin Gothic Heavy&#x27;, &#x27;Franklin Gothic Medium&#x27;, &#x27;Franklin Gothic Medium Cond&#x27;, &#x27;Freestyle Script&#x27;, &#x27;French Script MT&#x27;, &#x27;Gabriola&#x27;, &#x27;Gadugi&#x27;, &#x27;Garamond&#x27;, &#x27;Georgia&#x27;, &#x27;Gigi&#x27;, &#x27;Gill Sans MT&#x27;, &#x27;Gill Sans MT Condensed&#x27;, &#x27;Gill Sans MT Ext Condensed Bold&#x27;, &#x27;Gill Sans Ultra Bold&#x27;, &#x27;Gill Sans Ultra Bold Condensed&#x27;, &#x27;Gloucester MT Extra Condensed&#x27;, &#x27;Goudy Old Style&#x27;, &#x27;Goudy Stout&#x27;, &#x27;Haettenschweiler&#x27;, &#x27;Harlow Solid Italic&#x27;, &#x27;Harrington&#x27;, &#x27;High Tower Text&#x27;, &#x27;HoloLens MDL2 Assets&#x27;, &#x27;Impact&#x27;, &#x27;Imprint MT Shadow&#x27;, &#x27;Informal Roman&#x27;, &#x27;Ink Free&#x27;, &#x27;Javanese Text&#x27;, &#x27;Jokerman&#x27;, &#x27;Juice ITC&#x27;, &#x27;KaiTi&#x27;, &#x27;Kristen ITC&#x27;, &#x27;Kunstler Script&#x27;, &#x27;LXGW WenKai&#x27;, &#x27;LXGW WenKai Mono&#x27;, &#x27;Leelawadee&#x27;, &#x27;Leelawadee UI&#x27;, &#x27;Leelawadee UI Semilight&#x27;, &#x27;LiSu&#x27;, &#x27;Lucida Bright&#x27;, &#x27;Lucida Calligraphy&#x27;, &#x27;Lucida Console&#x27;, &#x27;Lucida Fax&#x27;, &#x27;Lucida Handwriting&#x27;, &#x27;Lucida Sans&#x27;, &#x27;Lucida Sans Typewriter&#x27;, &#x27;Lucida Sans Unicode&#x27;, &#x27;MS Gothic&#x27;, &#x27;MS PGothic&#x27;, &#x27;MS Reference Sans Serif&#x27;, &#x27;MS UI Gothic&#x27;, &#x27;MV Boli&#x27;, &#x27;Magneto&#x27;, &#x27;Maiandra GD&#x27;, &#x27;Malgun Gothic&#x27;, &#x27;Malgun Gothic Semilight&#x27;, &#x27;Matura MT Script Capitals&#x27;, &#x27;Microsoft Himalaya&#x27;, &#x27;Microsoft JhengHei&#x27;, &#x27;Microsoft JhengHei Light&#x27;, &#x27;Microsoft JhengHei UI&#x27;, &#x27;Microsoft JhengHei UI Light&#x27;, &#x27;Microsoft New Tai Lue&#x27;, &#x27;Microsoft PhagsPa&#x27;, &#x27;Microsoft Sans Serif&#x27;, &#x27;Microsoft Tai Le&#x27;, &#x27;Microsoft Uighur&#x27;, &#x27;Microsoft YaHei&#x27;, &#x27;Microsoft YaHei UI&#x27;, &#x27;Microsoft YaHei UI Light&#x27;, &#x27;Microsoft Yi Baiti&#x27;, &#x27;MingLiU-ExtB&#x27;, &#x27;MingLiU_HKSCS-ExtB&#x27;, &#x27;Mistral&#x27;, &#x27;Modern No. 20&#x27;, &#x27;Mongolian Baiti&#x27;, &#x27;Monospace&#x27;, &#x27;Monotype Corsiva&#x27;, &#x27;Myanmar Text&#x27;, &#x27;NSimSun&#x27;, &#x27;Niagara Engraved&#x27;, &#x27;Niagara Solid&#x27;, &#x27;Nirmala UI&#x27;, &#x27;Nirmala UI Semilight&#x27;, &#x27;OCR A Extended&#x27;, &#x27;Old English Text MT&#x27;, &#x27;Onyx&#x27;, &#x27;PMingLiU-ExtB&#x27;, &#x27;Palace Script MT&#x27;, &#x27;Palatino Linotype&#x27;, &#x27;PangMenZhengDao-3&#x27;, &#x27;Papyrus&#x27;, &#x27;Parchment&#x27;, &#x27;Perpetua&#x27;, &#x27;Perpetua Titling MT&#x27;, &#x27;Playbill&#x27;, &#x27;Poor Richard&#x27;, &#x27;Pristina&#x27;, &#x27;Rage Italic&#x27;, &#x27;Ravie&#x27;, &#x27;Rockwell&#x27;, &#x27;Rockwell Condensed&#x27;, &#x27;Rockwell Extra Bold&#x27;, &#x27;STCaiyun&#x27;, &#x27;STFangsong&#x27;, &#x27;STHupo&#x27;, &#x27;STKaiti&#x27;, &#x27;STLiti&#x27;, &#x27;STSong&#x27;, &#x27;STXihei&#x27;, &#x27;STXingkai&#x27;, &#x27;STXinwei&#x27;, &#x27;STZhongsong&#x27;, &#x27;Sans&#x27;, &#x27;Script MT Bold&#x27;, &#x27;Segoe MDL2 Assets&#x27;, &#x27;Segoe Print&#x27;, &#x27;Segoe Script&#x27;, &#x27;Segoe UI&#x27;, &#x27;Segoe UI Black&#x27;, &#x27;Segoe UI Emoji&#x27;, &#x27;Segoe UI Historic&#x27;, &#x27;Segoe UI Light&#x27;, &#x27;Segoe UI Semibold&#x27;, &#x27;Segoe UI Semilight&#x27;, &#x27;Segoe UI Symbol&#x27;, &#x27;Serif&#x27;, &#x27;Showcard Gothic&#x27;, &#x27;SimHei&#x27;, &#x27;SimSun&#x27;, &#x27;SimSun-ExtB&#x27;, &#x27;Sitka Banner&#x27;, &#x27;Sitka Display&#x27;, &#x27;Sitka Heading&#x27;, &#x27;Sitka Small&#x27;, &#x27;Sitka Subheading&#x27;, &#x27;Sitka Text&#x27;, &#x27;Snap ITC&#x27;, &#x27;Stencil&#x27;, &#x27;Sylfaen&#x27;, &#x27;System-ui&#x27;, &#x27;Tahoma&#x27;, &#x27;Tempus Sans ITC&#x27;, &#x27;Times New Roman&#x27;, &#x27;Trebuchet MS&#x27;, &#x27;Tw Cen MT&#x27;, &#x27;Tw Cen MT Condensed&#x27;, &#x27;Tw Cen MT Condensed Extra Bold&#x27;, &#x27;Verdana&#x27;, &#x27;Viner Hand ITC&#x27;, &#x27;Vivaldi&#x27;, &#x27;Vladimir Script&#x27;, &#x27;Wide Latin&#x27;, &#x27;YouYuan&#x27;, &#x27;Yu Gothic&#x27;, &#x27;Yu Gothic Light&#x27;, &#x27;Yu Gothic Medium&#x27;, &#x27;Yu Gothic UI&#x27;, &#x27;Yu Gothic UI Light&#x27;, &#x27;Yu Gothic UI Semibold&#x27;, &#x27;Yu Gothic UI Semilight&#x27;, &#x27;ZWAdobeF&#x27;]</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>微软雅黑：<code>Microsoft YaHei</code></p>
+<p>霞鹜文楷：<code>LXGW WenKai</code></p>
+<p>庞门正道：<code>PangMenZhengDao-3</code></p>
+<p>但是不知道为什么，使用庞门正道字体就会出现报错，使用霞鹜文楷就没事，是字体bug吗？</p>
+<h2 id="关于-python-基础语法的问题">关于 Python 基础语法的问题</h2>
+<p>虽然有 C, C++, Java 语言的基础，但是因为没系统地学过 Python
+这门编程语言，所以涉及到基础语法的问题我会在此记录</p>
+<h3 id="python-中函数调用时传递参数前加和">Python
+中函数调用时传递参数前加<code>*</code>和<code>**</code></h3>
+<p>在 Python 中，<code>*</code> 和 <code>**</code>
+语法用于在函数调用时传递参数</p>
+<ul>
+<li>当一个<strong>可迭代对象</strong>（如列表或元组）作为函数参数传递时，可以在对象前面加上一个星号
+<code>*</code>。这样做会将可迭代对象中的元素作为位置参数（相当于C++中函数的值传递）传递给函数。例如，如果有一个列表
+<code>my_list = [1, 2, 3]</code>，并且希望将其元素作为位置参数传递给函数
+<code>my_function</code>，则可以使用 <code>my_function(*my_list)</code>
+语法</li>
+<li>当一个<strong>字典</strong>作为函数参数传递时，可以在字典前面加上两个星号
+<code>**</code>。这样做会将<strong>字典中的键值对作为关键字参数</strong>传递给函数。例如，如果您有一个字典
+<code>my_dict = &#123;'a': 1, 'b': 2&#125;</code>，并且希望将其键值对作为关键字参数传递给函数
+<code>my_function</code>，则可以使用 <code>my_function(**my_dict)</code>
+语法</li>
+</ul>
+<p>这两种语法都可以让我们更方便地传递多个参数，而不需要显式地指定每个参数的名称和值</p>
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">my_function</span>(<span class="params">a, b, c, d</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;a = <span class="subst">&#123;a&#125;</span>, b = <span class="subst">&#123;b&#125;</span>, c = <span class="subst">&#123;c&#125;</span>, d = <span class="subst">&#123;d&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line">my_list = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">my_dict = &#123;<span class="string">&#x27;c&#x27;</span>: <span class="number">3</span>, <span class="string">&#x27;d&#x27;</span>: <span class="number">4</span>&#125;</span><br><span class="line"></span><br><span class="line">my_function(*my_list, **my_dict)</span><br></pre></td></tr></table></figure>
+<p>输出为</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = 1, b = 2, c = 3, d = 4</span><br></pre></td></tr></table></figure>
+<p>首先看<code>my_function</code>函数，里面只有<code>print()</code>函数</p>
+<p>在 Python 中，<code>f</code> 是格式化字符串的前缀。当在字符串前面加上
+<code>f</code> 字符时，它表示这是一个格式化字符串</p>
+<p>格式化字符串可以让您在字符串中<strong>嵌入表达式</strong>，这些表达式将在运行时被计算并替换为它们的值。要在格式化字符串中嵌入表达式，只需将表达式放在大括号
+<code>&#123;&#125;</code> 中即可</p>
+<p>例如代码中，<code>f'a = &#123;a&#125;, b = &#123;b&#125;, c = &#123;c&#125;, d = &#123;d&#125;'</code>
+是一个格式化字符串。其中，<code>&#123;a&#125;</code>、<code>&#123;b&#125;</code>、<code>&#123;c&#125;</code>
+和 <code>&#123;d&#125;</code> 都是表达式，它们将在运行时被计算并替换为它们的值</p>
+<p>假设变量 <code>a</code>、<code>b</code>、<code>c</code> 和
+<code>d</code> 的值分别为 <code>1</code>、<code>2</code>、<code>3</code>
+和 <code>4</code>，则上面的格式化字符串将被计算为
+<code>'a = 1, b = 2, c = 3, d = 4'</code>。</p>
+<p>格式化字符串是一种非常方便的语法，可以快速地将变量和表达式嵌入到字符串中</p>
+<p><br></p>
+<p>再看调用过程，创建了一个数组和一个字典</p>
+<p>带入函数时，<code>a, b</code>被数组赋值，分别为<code>1, 2</code>；<code>c, d</code>被字典中键值对赋值，分别为<code>3, 4</code></p>
+<p>带入参数的字典必须符合函数中定义的形参，不能多也不能少，如示例中函数给定参数为a,
+b, c,
+d，带入字典就只能有这四个，不能多一个字母，本质上就是拿字典来代替手动输入参数</p>
+<p>但是如果函数的参数中有<code>**</code>，那就是一个可变关键字参数，允许传递任意数量的关键字参数给函数，此时字典里可以有任意个键值对</p>
+<p>如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, text: <span class="built_in">str</span>, **kwargs</span>):</span><br><span class="line">        self.text = text</span><br><span class="line">        self.kwargs = kwargs</span><br><span class="line"></span><br><span class="line">my_dict = &#123;<span class="string">&#x27;a&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;b&#x27;</span>: <span class="number">2</span>, <span class="string">&#x27;c&#x27;</span>: <span class="number">3</span>&#125;</span><br><span class="line">my_instance = MyClass(<span class="string">&#x27;hello&#x27;</span>, **my_dict)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(my_instance.text)  <span class="comment"># 输出 &#x27;hello&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(my_instance.kwargs)  <span class="comment"># 输出 &#123;&#x27;a&#x27;: 1, &#x27;b&#x27;: 2, &#x27;c&#x27;: 3&#125;</span></span><br></pre></td></tr></table></figure>
+<h1 id="prim算法演示动画制作记录">Prim算法演示动画制作记录</h1>
+<p>本次动画制作参考了<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1p54y197cC">Manim
+Kindergarten制作的manim教学系列视频</a></p>
+<p>制作过程中用到了<a target="_blank" rel="noopener" href="https://github.com/manim-kindergarten/manim_sandbox/tree/master/utils">Manim
+Kindergarten的一些实用工具</a>，主要用到了<a target="_blank" rel="noopener" href="https://github.com/manim-kindergarten/manim_sandbox/blob/master/utils/animations/RandomScene.py">随机动画</a>，但其中有些函数，比如<code>Unwrite</code>有问题，所以我给注释掉了，因为年代有点久远，跟现版本有些不相容，在此基础上做了些修改</p>
+<p>修改完的<code>RandomScene.py</code>放在了项目同级目录下，在<code>.py</code>文件中<code>import</code>成功，但是命令行执行过程中失败了，挺奇怪的，在
+VS Code
+中按<code>Ctrl</code>点击这些函数都能正常找到，但就是编译不成功</p>
+<p>可能是<code>manimgl</code>指令的问题，会从<code>pip</code>目录里找</p>
+<p>本次用到的字体有：<a target="_blank" rel="noopener" href="https://github.com/lxgw/LxgwWenKai/">霞鹜文楷</a>，<a target="_blank" rel="noopener" href="https://zfont.cn/cn/font_509.html">庞门正道标题体</a></p>
+<h2 id="文字降噪点">文字降噪点</h2>
+<p>用的霞鹜文楷，文字会出现噪点，如下图第一行</p>
+<p>但是对文字调用<code>set_stroke(width=1.5, color=COLOR)</code>函数，就会发现噪点消失了</p>
+<p>颜色换成背景色或者文字的颜色就看不出来边框</p>
+<img src="/2023/07/04/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/manim%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/image-20230710094855944.png" class title="image-20230710094855944">
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">font_xw = <span class="string">&quot;LXGW WenKai&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Test</span>(<span class="title class_ inherited__">Scene</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">construct</span>(<span class="params">self</span>):</span><br><span class="line">        text1 = Text(<span class="string">&quot;N A&quot;</span>,font=font_xw).scale(<span class="number">3</span>)</span><br><span class="line">        text2 = Text(<span class="string">&quot;N A&quot;</span>,font=font_xw).scale(<span class="number">3</span>)</span><br><span class="line">        text2.next_to(text1,DOWN)</span><br><span class="line">        text2.set_stroke(color=BLACK,width=<span class="number">1.5</span>)</span><br><span class="line">        self.add(text1,text2)</span><br><span class="line">        self.wait()</span><br></pre></td></tr></table></figure>
+<p>我猜原因是设置笔画宽度把噪点部分忽略了</p>
+<p><br></p>
+<p>具体动画制作过程应该没有什么太多需要注意的，一开始本来想调用开源社区的库，但是最后还是算了</p>
+<p><strong>因为更大的问题出现了</strong></p>
+<p><br></p>
+<p>次回予告：</p>
+<p>新的任务，对团队加倍压榨，实习与生活的双重打击将我们几乎彻底压垮，快给予我们希望！</p>
+<p>下一集，致以辉煌之人</p>
+<p><br></p>
+<h1 id="project-gyakuten">Project Gyakuten</h1>
+<p>离最终汇报答辩还有3天，我们被告知项目有问题：不能单纯只做一个视频，需要结合用户输入</p>
+<p>也就是说动画做再好也不满足这次实训的要求</p>
+<p>虽然我们自认为动画做的还是很好的，毕竟用的可是<code>manim</code>，当时看到实训有
+“动画演示”
+这个题目，我想都没想就选这个了，然而他确实不是只做一个动画就行了，哇！哈！哈！这下快寄了</p>
+<p><br></p>
+<p>当然，所谓觉悟并不是看到死线和失败的自暴自弃，而是在现有优秀动画基础上开拓出应当前进的道路</p>
+<p>没办法，只能在有限的时间里尽可能做到极致了</p>
+<h2 id="总体思路">总体思路</h2>
+<p>跟孙海天老师讨论了以后，决定采用以下方法：</p>
+<p>程序开始的时候先把这个图打出来：</p>
+<img src="/2023/07/04/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/manim%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/image-20230710215204833.png" class title="image-20230710215204833">
+<p>然后让用户输入来指定留哪些结点和边，然后可以输入边的权重</p>
+<p>以此为基础，生成最小生成树的动画演示</p>
+<p>或许还能用ffmpeg来把Prim算法和Kruskal算法的两段视频拼起来？可以考虑一下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Project Gyakuten/</span><br><span class="line">├── (custom_config.yml)</span><br><span class="line">├── Prim.py</span><br><span class="line">├── Kruskal.py</span><br><span class="line">├── videos</span><br><span class="line">└──</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>我给项目取名叫Project
+Gyakuten，灵感来自逆转裁判，因为我们现在离答辩已经只剩3天了，而现在又在谷底，如果成功了，就是华丽的逆转</p>
+<p><br></p>
+<h2 id="准备工作">准备工作</h2>
+<p>在一切重新启动，ゼロからonce again之前，需要做充分的准备：</p>
+<h3 id="c调python语句">C++调Python语句</h3>
+<p>首先，可能会用到C++调用Python的情况，问了bing以后得知有<code>&lt;Python.h&gt;</code>这个库可以调用，这个库在Python安装目录的<code>include</code>目录里可以找到，如<code>C:\Users\WinkySpeed\AppData\Local\Programs\Python\Python39\include</code></p>
+<p>给项目添加库，老操作了，可以参照<a target="_blank" rel="noopener" href="https://www.sfml-dev.org/tutorials/2.6/start-vc.php">SFML库安装教程</a>进行项目的配置：</p>
+<p>此处放<code>include</code>目录</p>
+<img src="/2023/07/04/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/manim%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/image-20230710221150826.png" class title="image-20230710221150826">
+<p>此处放<code>libs</code>文件夹，也在Python安装目录下</p>
+<img src="/2023/07/04/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/manim%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/image-20230710221232460.png" class title="image-20230710221232460">
+<p>此处放<code>.lib</code>文件</p>
+<img src="/2023/07/04/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/manim%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/image-20230710221335765.png" class title="image-20230710221335765">
+<p>打开上文的<code>libs</code>目录</p>
+<p>发现只有<code>python39.lib, python3.lib, _tkinter.lib</code>这三个文件，并没有找到名字带<code>-d</code>的文件，那在VS里只能用<code>Release</code>模式了</p>
+<p>将这些文件添加到附加依赖项中，再运行就可以正常执行Python解释器了</p>
+<h3 id="c执行cmd命令行语句">C++执行cmd命令行语句</h3>
+<p>这个还是比较容易的，<code>&lt;cstdlib&gt;</code>中的<code>system()</code>函数就可以做到调用命令行</p>
+<p>测试代码如下</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Python.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdlib&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">Py_Initialize</span>();            <span class="comment">//使用python前要调用此函数，进行初始化</span></span><br><span class="line">    <span class="keyword">if</span> (!<span class="built_in">Py_IsInitialized</span>())    <span class="comment">//如果没有初始化成功</span></span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;fail to initial!&quot;</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">PyRun_SimpleString</span>(<span class="string">&quot;print(&#x27;Hello, Python!&#x27;)&quot;</span>); <span class="comment">// 执行Python代码</span></span><br><span class="line">    <span class="built_in">Py_Finalize</span>();              <span class="comment">//释放资源</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;manimgl Prim.py&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>即用C++启动命令行执行<code>manimgl Prim.py</code>语句</p>
+<p>如下图，成功了</p>
+<img src="/2023/07/04/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/manim%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/image-20230710214532366.png" class title="image-20230710214532366">
+<h3 id="未完待续">未完待续</h3>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<h1 id="参考资料">参考资料</h1>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://docs.manim.org.cn/">Manim Kindergarten</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/3b1b/manim/blob/master/docs/source/getting_started/whatsnew.rst">whatsnew.rst</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_48175117/article/details/118164732">ManimGL折腾笔记</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1p54y197cC">Manim
+Kindergarten制作的manim教学系列视频</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/manim-kindergarten/manim_sandbox/tree/master/utils">Manim
+Kindergarten的一些实用工具</a></p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/manim/">manim</a><a class="post-meta__tags" href="/tags/Python/">Python</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="算法分析与设计复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">算法分析与设计复习整理</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/WinkySpeed%20SP%20-%20Repaired.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">WinkySpeed</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">30</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/WinkySpeed"><i class="fab fa-github"></i><span>GitHub</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#manim%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95"><span class="toc-number">1.</span> <span class="toc-text">manim学习记录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#manim%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text">manim环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%80%E9%9C%80%E7%B3%BB%E7%BB%9F%E4%BE%9D%E8%B5%96"><span class="toc-number">2.1.</span> <span class="toc-text">所需系统依赖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-python-%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85-manimgl"><span class="toc-number">2.2.</span> <span class="toc-text">使用 python 环境安装 manimgl</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#manim%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><span class="toc-number">3.</span> <span class="toc-text">manim项目结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#manim%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="toc-number">4.</span> <span class="toc-text">manim命令行</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%95%8C%E9%9D%A2"><span class="toc-number">4.1.</span> <span class="toc-text">命令行界面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E9%80%89%E9%A1%B9"><span class="toc-number">4.2.</span> <span class="toc-text">常用选项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A8%E9%83%A8%E9%80%89%E9%A1%B9"><span class="toc-number">4.3.</span> <span class="toc-text">全部选项</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#manim-kindergarten%E5%85%A5%E7%BE%A4%E9%97%AE%E9%A2%98"><span class="toc-number">5.</span> <span class="toc-text">Manim Kindergarten入群问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">6.</span> <span class="toc-text">可能遇到的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8Etextmobject"><span class="toc-number">6.1.</span> <span class="toc-text">关于TextMobject</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E-latex-%E7%9A%84%E6%8A%A5%E9%94%99"><span class="toc-number">6.2.</span> <span class="toc-text">关于 LaTeX 的报错</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%AD%97%E4%BD%93%E9%97%AE%E9%A2%98"><span class="toc-number">6.3.</span> <span class="toc-text">关于字体问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E-python-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">6.4.</span> <span class="toc-text">关于 Python 基础语法的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#python-%E4%B8%AD%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E6%97%B6%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0%E5%89%8D%E5%8A%A0%E5%92%8C"><span class="toc-number">6.4.1.</span> <span class="toc-text">Python
+中函数调用时传递参数前加*和**</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#prim%E7%AE%97%E6%B3%95%E6%BC%94%E7%A4%BA%E5%8A%A8%E7%94%BB%E5%88%B6%E4%BD%9C%E8%AE%B0%E5%BD%95"><span class="toc-number">7.</span> <span class="toc-text">Prim算法演示动画制作记录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E5%AD%97%E9%99%8D%E5%99%AA%E7%82%B9"><span class="toc-number">7.1.</span> <span class="toc-text">文字降噪点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#project-gyakuten"><span class="toc-number">8.</span> <span class="toc-text">Project Gyakuten</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E4%BD%93%E6%80%9D%E8%B7%AF"><span class="toc-number">8.1.</span> <span class="toc-text">总体思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">8.2.</span> <span class="toc-text">准备工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#c%E8%B0%83python%E8%AF%AD%E5%8F%A5"><span class="toc-number">8.2.1.</span> <span class="toc-text">C++调Python语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#c%E6%89%A7%E8%A1%8Ccmd%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%AF%AD%E5%8F%A5"><span class="toc-number">8.2.2.</span> <span class="toc-text">C++执行cmd命令行语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD"><span class="toc-number">8.2.3.</span> <span class="toc-text">未完待续</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">9.</span> <span class="toc-text">参考资料</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/04/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/manim%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="manim学习记录">manim学习记录</a><time datetime="2023-07-03T23:58:45.000Z" title="发表于 2023-07-04 07:58:45">2023-07-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="算法分析与设计复习整理">算法分析与设计复习整理</a><time datetime="2023-06-05T10:22:19.000Z" title="发表于 2023-06-05 18:22:19">2023-06-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/03/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数字信号处理复习整理">数字信号处理复习整理</a><time datetime="2023-06-03T07:27:40.000Z" title="发表于 2023-06-03 15:27:40">2023-06-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数据库复习整理">数据库复习整理</a><time datetime="2023-06-01T07:27:31.000Z" title="发表于 2023-06-01 15:27:31">2023-06-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/30/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="编译原理复习整理">编译原理复习整理</a><time datetime="2023-05-30T10:56:01.000Z" title="发表于 2023-05-30 18:56:01">2023-05-30</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By WinkySpeed</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2d-widget/autoload.js"></script></body></html>
