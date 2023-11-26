@@ -1,0 +1,266 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>IEEE Access论文排版 | WinkySpeed's Blog</title><meta name="author" content="WinkySpeed"><meta name="copyright" content="WinkySpeed"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="记录一下打黑工时遇到的问题 排版英文论文用pdflatex 碰到的第一个问题就是，我从官网下的模板我不能用？这是否 首先官网下的模板肯定是没问题的，出问题的肯定是我配置的问题 我本机texlive环境是TeX Live 2022，用的texstudio 4.2.2，默认编译器是xelatex 问了孙红光老师，他推荐用overleaf在线编译。把模板的zip包传上去，一次就正常通过了，证">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IEEE Access论文排版">
+<meta property="og:url" content="http://example.com/2023/09/17/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/IEEE-Access%E8%AE%BA%E6%96%87%E6%8E%92%E7%89%88/index.html">
+<meta property="og:site_name" content="WinkySpeed&#39;s Blog">
+<meta property="og:description" content="记录一下打黑工时遇到的问题 排版英文论文用pdflatex 碰到的第一个问题就是，我从官网下的模板我不能用？这是否 首先官网下的模板肯定是没问题的，出问题的肯定是我配置的问题 我本机texlive环境是TeX Live 2022，用的texstudio 4.2.2，默认编译器是xelatex 问了孙红光老师，他推荐用overleaf在线编译。把模板的zip包传上去，一次就正常通过了，证">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/WinkySpeed%20SP%20-%20Repaired.jpg">
+<meta property="article:published_time" content="2023-09-17T11:37:40.000Z">
+<meta property="article:modified_time" content="2023-09-30T13:46:56.464Z">
+<meta property="article:author" content="WinkySpeed">
+<meta property="article:tag" content="LaTeX">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/WinkySpeed%20SP%20-%20Repaired.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/09/17/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/IEEE-Access%E8%AE%BA%E6%96%87%E6%8E%92%E7%89%88/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'IEEE Access论文排版',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-09-30 21:46:56'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/WinkySpeed%20SP%20-%20Repaired.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">34</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">39</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/33703665_p0.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="WinkySpeed's Blog"><span class="site-name">WinkySpeed's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">IEEE Access论文排版</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-17T11:37:40.000Z" title="发表于 2023-09-17 19:37:40">2023-09-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-30T13:46:56.464Z" title="更新于 2023-09-30 21:46:56">2023-09-30</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="IEEE Access论文排版"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="记录一下打黑工时遇到的问题">记录一下打黑工时遇到的问题</h1>
+<h1 id="排版英文论文用pdflatex">排版英文论文用pdflatex</h1>
+<p>碰到的第一个问题就是，我从官网下的模板我不能用？这是否</p>
+<p>首先官网下的模板肯定是没问题的，出问题的肯定是我配置的问题</p>
+<p>我本机texlive环境是TeX Live 2022，用的texstudio
+4.2.2，默认编译器是xelatex</p>
+<p>问了孙红光老师，他推荐用overleaf在线编译。把模板的zip包传上去，一次就正常通过了，证明了模板没有问题</p>
+<p>问了孙海天老师，他建议先把本地的TeX
+Live升级成最新版，然后用pdflatex编译</p>
+<p>我在overleaf上更改了配置为TeX Live 2022和xelatex，果然报错了</p>
+<p>换成pdflatex就能正常编译</p>
+<p>于是我就在本地用pdflatex编译了两遍，这下成功了</p>
+<p>问题解决方法：本地命令行用<code>pdflatex</code>命令编译，就不去换texstudio的默认编译器了，因为以后排版中文文字可能更多</p>
+<p><br></p>
+<h1 id="特殊字符">特殊字符</h1>
+<p>长时间不用真的忘了</p>
+<p>#，%，&amp;不能直接打出来</p>
+<p>要加<code>\</code></p>
+<p><code># $ % &amp; &#123; &#125; _ ^ ~ \</code></p>
+<p><code>\# \$ \% \&amp; \&#123; \&#125; \_ \^&#123;&#125; \~&#123;&#125; \textbackslash</code></p>
+<p><br></p>
+<h1 id="四级标题以上">四级标题以上</h1>
+<p><span class="math inline">\(\LaTeX\)</span>只支持到三级标题，则四级标题以上就得想办法</p>
+<p>我用<code>\paragraph</code>解决的，但是这样貌似不会被添加到目录中</p>
+<p>庆幸这篇论文用不到目录</p>
+<h1 id="公用编号的多行公式">公用编号的多行公式</h1>
+<p>这个在lshort有，但是我从来没用过</p>
+<p>这次终于用上了</p>
+<p>为了对齐，用了<code>array</code>环境</p>
+<p><code>array</code>环境需要在数学环境中使用</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;equation&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;array&#125;&#123;ccccccccc&#125;</span><br><span class="line">0<span class="built_in">&amp;</span>1<span class="built_in">&amp;</span>2<span class="built_in">&amp;</span>3<span class="built_in">&amp;</span>4<span class="built_in">&amp;</span>5<span class="built_in">&amp;</span>6<span class="built_in">&amp;</span>7<span class="built_in">&amp;</span>8<span class="keyword">\\</span></span><br><span class="line">+<span class="built_in">&amp;</span>*<span class="built_in">&amp;</span>d<span class="built_in">&amp;</span>-<span class="built_in">&amp;</span>b<span class="built_in">&amp;</span>a<span class="built_in">&amp;</span>d<span class="built_in">&amp;</span>c<span class="built_in">&amp;</span>a</span><br><span class="line"><span class="keyword">\end</span>&#123;array&#125;</span><br><span class="line"><span class="keyword">\label</span>&#123;equation2&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;equation&#125;</span><br></pre></td></tr></table></figure>
+<p>如果列数特别多，就不用手动打那么多<code>c</code></p>
+<p>如有39个<code>c</code>：<code>\begin&#123;array&#125;&#123;*&#123;39&#125;&#123;c&#125;&#125;</code></p>
+<h1 id="align环境">align环境</h1>
+<p>如果要用<code>align</code>环境，且每个公式都打上标记，就得在换行前打标记</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;align&#125;</span><br><span class="line">f<span class="built_in">_</span>i<span class="built_in">&amp;</span>=<span class="keyword">\sum</span><span class="built_in">^</span>&#123;C<span class="built_in">_</span>t&#125;<span class="built_in">_</span>&#123;j=1&#125;&#123;(M-|C<span class="built_in">_</span>&#123;(i,j)&#125;-T<span class="built_in">_</span>j)|&#125;<span class="keyword">\label</span>&#123;equation5&#125;<span class="keyword">\\</span></span><br><span class="line">f<span class="built_in">_</span>i<span class="built_in">&amp;</span>=<span class="keyword">\sum</span><span class="built_in">^</span>&#123;C<span class="built_in">_</span>t&#125;<span class="built_in">_</span>&#123;j=1&#125;&#123;(M-|C<span class="built_in">_</span>&#123;(i,j)&#125;-T<span class="built_in">_</span>j)|&#125;<span class="keyword">\label</span>&#123;equation6&#125;<span class="keyword">\\</span></span><br><span class="line"><span class="keyword">\end</span>&#123;align&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h1 id="双列排版时的自适应表格">双列排版时的自适应表格</h1>
+<p>排版遇到表格超出页面的情况，用<code>tabularx</code>宏包解决</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;table*&#125;[htbp]</span><br><span class="line">  <span class="keyword">\centering</span></span><br><span class="line">  <span class="keyword">\caption</span>&#123;Three Transfer Operators and Their Characteristics&#125;</span><br><span class="line">  <span class="keyword">\begin</span>&#123;tabularx&#125;&#123;<span class="keyword">\linewidth</span>&#125;&#123;XXX&#125;</span><br><span class="line">    <span class="keyword">\toprule</span></span><br><span class="line">    Transfer operator <span class="built_in">&amp;</span> Transfer Factor <span class="built_in">&amp;</span> Target location <span class="keyword">\\</span></span><br><span class="line">    <span class="keyword">\midrule</span></span><br><span class="line">    Gene Transfer <span class="built_in">&amp;</span> Entire gene <span class="built_in">&amp;</span> Multigene chromosome <span class="keyword">\\</span></span><br><span class="line">    Insertion sequence elements (IS elements) <span class="built_in">&amp;</span> Short sequences where the first position is a function or endpoint <span class="built_in">&amp;</span> Gene head anywhere except the root <span class="keyword">\\</span></span><br><span class="line">    Root insertion sequence element (RIS element) <span class="built_in">&amp;</span> Short sequence where the first position is a function <span class="built_in">&amp;</span> Root of the gene<span class="keyword">\\</span></span><br><span class="line">    <span class="keyword">\bottomrule</span></span><br><span class="line">  <span class="keyword">\end</span>&#123;tabularx&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;table*&#125;</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，这是表格，不能用<code>figure*</code>环境</p>
+<p>同时因为是双列排版，<code>table*</code>环境会使表格跨越两列，但是<code>tabularx</code>环境的宽度仍然被设置为了单列的宽度，于是就得将<code>tabularx</code>环境的宽度设置为<code>\linewidth</code>来解决</p>
+<p><code>&#123;XXX&#125;</code>表示三列都自适应对齐</p>
+<h1 id="算法排版">算法排版</h1>
+<p>我找到一篇<a target="_blank" rel="noopener" href="https://www.codenong.com/cs106069328/">牛逼文章</a>，但是代码直接粘过来会报错</p>
+<p>感觉含金量不如孙海天</p>
+<p>IEEE Access的环境没有<code>algorithm</code>宏包，所以得加上</p>
+<p>注意：算法环境中有多行变量解释时，需要在<code>\REQUIRE</code>后加<code>\ \\</code>来换行</p>
+<p>第一个<code>\</code>是假行</p>
+<p>第二个<code>\\</code>是换行</p>
+<p>比较复杂的算法排版代码如下：</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;algorithm&#125;[!tb]</span><br><span class="line">		<span class="keyword">\caption</span>&#123;Pseudo-code for GEP-SVM Algorithm&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;alg1&#125;</span><br><span class="line">		<span class="keyword">\begin</span>&#123;algorithmic&#125;[1]</span><br><span class="line">			<span class="keyword">\renewcommand</span>&#123;<span class="keyword">\algorithmicrequire</span>&#125;&#123; <span class="keyword">\textbf</span>&#123;Input:&#125;&#125;</span><br><span class="line">			<span class="keyword">\REQUIRE</span> <span class="keyword">\ </span><span class="keyword">\\</span></span><br><span class="line">                <span class="keyword">\begin</span>&#123;tabularx&#125;&#123;<span class="keyword">\linewidth</span>&#125;&#123;lX&#125;</span><br><span class="line">				<span class="built_in">$</span>cases<span class="built_in">$</span> <span class="built_in">&amp;</span> The sample data set. <span class="keyword">\\</span></span><br><span class="line">				<span class="built_in">$</span>N<span class="built_in">$</span> <span class="built_in">&amp;</span> Population size. <span class="keyword">\\</span></span><br><span class="line">                    <span class="built_in">$</span>h<span class="built_in">$</span> <span class="built_in">&amp;</span> gene head length. <span class="keyword">\\</span></span><br><span class="line">                    <span class="built_in">$</span>e<span class="built_in">$</span> <span class="built_in">&amp;</span> gene tail length. <span class="keyword">\\</span></span><br><span class="line">                    <span class="built_in">$</span>n<span class="built_in">$</span> <span class="built_in">&amp;</span> Maximum number of operations of the function. <span class="keyword">\\</span></span><br><span class="line">                    <span class="built_in">$</span>k<span class="built_in">$</span> <span class="built_in">&amp;</span> The number of genes. <span class="keyword">\\</span></span><br><span class="line">                    <span class="built_in">$</span>MaxGeneration<span class="built_in">$</span> <span class="built_in">&amp;</span> Fitness of termination iteration. <span class="keyword">\\</span></span><br><span class="line">                    <span class="built_in">$</span>P<span class="built_in">_</span>&#123;mu&#125;<span class="built_in">$</span> <span class="built_in">&amp;</span> The mutation probability <span class="keyword">\\</span></span><br><span class="line">	            <span class="built_in">$</span>P<span class="built_in">_</span>&#123;tr&#125;<span class="built_in">$</span> <span class="built_in">&amp;</span> Probability of string insertion <span class="keyword">\\</span></span><br><span class="line">                    <span class="built_in">$</span>P<span class="built_in">_</span>&#123;re&#125;<span class="built_in">$</span> <span class="built_in">&amp;</span> Recombination probability <span class="keyword">\\</span></span><br><span class="line">                    <span class="built_in">$</span>P<span class="built_in">_</span>&#123;ex&#125;<span class="built_in">$</span> <span class="built_in">&amp;</span> Extraction probability</span><br><span class="line">			<span class="keyword">\end</span>&#123;tabularx&#125;</span><br><span class="line"></span><br><span class="line">			</span><br><span class="line">			<span class="keyword">\renewcommand</span>&#123;<span class="keyword">\algorithmicensure</span>&#125;&#123; <span class="keyword">\textbf</span>&#123;Output:&#125;&#125;</span><br><span class="line">			<span class="keyword">\ENSURE</span> <span class="keyword">\ </span><span class="keyword">\\</span></span><br><span class="line">                <span class="keyword">\begin</span>&#123;tabularx&#125;&#123;<span class="keyword">\linewidth</span>&#125;&#123;lX&#125;</span><br><span class="line">				<span class="built_in">$</span>Y<span class="built_in">$</span> <span class="built_in">&amp;</span> Optimal individual (classifier) <span class="keyword">\\</span></span><br><span class="line">			<span class="keyword">\end</span>&#123;tabularx&#125;</span><br><span class="line">   </span><br><span class="line">			<span class="keyword">\STATE</span> Pretreat <span class="built_in">$</span>cases<span class="built_in">$</span>;</span><br><span class="line">                <span class="keyword">\STATE</span> <span class="built_in">$</span>S<span class="built_in">$</span>=InitialPopulation;</span><br><span class="line">                <span class="keyword">\STATE</span> Best<span class="keyword">\_</span>Ind=null;</span><br><span class="line">                <span class="keyword">\STATE</span> <span class="built_in">$</span>m<span class="built_in">$</span>=MaxGeneration;</span><br><span class="line">                <span class="keyword">\STATE</span> repeat</span><br><span class="line">                <span class="keyword">\STATE</span> analyze chromosome;</span><br><span class="line">                <span class="keyword">\STATE</span> fitness();</span><br><span class="line">                <span class="keyword">\STATE</span> <span class="built_in">$</span>S<span class="built_in">$</span>=Selection(<span class="built_in">$</span>S<span class="built_in">$</span>);</span><br><span class="line">                <span class="keyword">\STATE</span> <span class="built_in">$</span>S<span class="built_in">$</span>=Mutation(<span class="built_in">$</span>S<span class="built_in">$</span>) by <span class="built_in">$</span>P<span class="built_in">_</span>&#123;mu&#125;<span class="built_in">$</span>;</span><br><span class="line">                <span class="keyword">\STATE</span> <span class="built_in">$</span>S<span class="built_in">$</span>=Transpostion(<span class="built_in">$</span>S<span class="built_in">$</span>) by <span class="built_in">$</span>P<span class="built_in">_</span>&#123;tr&#125;<span class="built_in">$</span>;</span><br><span class="line">                <span class="keyword">\STATE</span> <span class="built_in">$</span>S<span class="built_in">$</span>=Recombinations(<span class="built_in">$</span>S<span class="built_in">$</span>) by <span class="built_in">$</span>P<span class="built_in">_</span>&#123;re&#125;<span class="built_in">$</span>;</span><br><span class="line">                <span class="keyword">\STATE</span> <span class="built_in">$</span>S<span class="built_in">$</span>=Extraction(<span class="built_in">$</span>S<span class="built_in">$</span>) by <span class="built_in">$</span>P<span class="built_in">_</span>&#123;ex&#125;<span class="built_in">$</span>;</span><br><span class="line">                <span class="keyword">\STATE</span> <span class="built_in">$</span>S<span class="built_in">$</span>=Invertion(<span class="built_in">$</span>S<span class="built_in">$</span>) by <span class="built_in">$</span>P<span class="built_in">_</span>&#123;in&#125;<span class="built_in">$</span>;</span><br><span class="line">                <span class="keyword">\STATE</span> <span class="built_in">$</span>S<span class="built_in">$</span>=Adjustment(<span class="built_in">$</span>S<span class="built_in">$</span>) by <span class="built_in">$</span>P<span class="built_in">_</span>&#123;ad&#125;<span class="built_in">$</span>;</span><br><span class="line">                <span class="keyword">\STATE</span> Retain(Best<span class="keyword">\_</span>Ind);</span><br><span class="line">                <span class="keyword">\STATE</span> <span class="built_in">$</span>m=m-1<span class="built_in">$</span>;</span><br><span class="line">                <span class="keyword">\STATE</span> until <span class="built_in">$</span>m=0<span class="built_in">$</span>;</span><br><span class="line">			<span class="keyword">\STATE</span> return(Best<span class="keyword">\_</span>Ind);</span><br><span class="line">		<span class="keyword">\end</span>&#123;algorithmic&#125;  </span><br><span class="line"><span class="keyword">\end</span>&#123;algorithm&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="一个不好排的表格">一个不好排的表格</h1>
+<p>首先是三线表的线，可以用<code>\cmidrule&#123;2-13&#125;</code></p>
+<p>然后是合并单元格</p>
+<p>换成英文以后真不好排</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;table*&#125;[htbp]</span><br><span class="line"><span class="keyword">\begin</span>&#123;tabularx&#125;&#123;<span class="keyword">\linewidth</span>&#125;&#123;cccccccccccccXXX&#125;</span><br><span class="line"><span class="keyword">\toprule</span></span><br><span class="line">Year <span class="built_in">&amp;</span> <span class="keyword">\multicolumn</span>&#123;6&#125;&#123;c&#125;&#123;Average Temperature&#125;  <span class="built_in">&amp;</span> <span class="keyword">\multicolumn</span>&#123;6&#125;&#123;c&#125;&#123;Average Rainfall&#125;      <span class="built_in">&amp;</span> Accumulated  <span class="built_in">&amp;</span> Total <span class="built_in">&amp;</span> Degrees of   <span class="keyword">\\</span> </span><br><span class="line"><span class="keyword">\cmidrule</span>&#123;2-13&#125;</span><br><span class="line">     <span class="built_in">&amp;</span> Jan. <span class="built_in">&amp;</span> Feb. <span class="built_in">&amp;</span> Mar. <span class="built_in">&amp;</span> Jul. <span class="built_in">&amp;</span> Aug. <span class="built_in">&amp;</span> Sept. <span class="built_in">&amp;</span> Jan. <span class="built_in">&amp;</span> Feb. <span class="built_in">&amp;</span> Mar. <span class="built_in">&amp;</span> Jul.  <span class="built_in">&amp;</span> Aug. <span class="built_in">&amp;</span> Sept. <span class="built_in">&amp;</span>            Temperature                    <span class="built_in">&amp;</span>          Rainfall              <span class="built_in">&amp;</span>           Occurrence            <span class="keyword">\\</span> </span><br><span class="line"><span class="keyword">\midrule</span></span><br><span class="line">1933 <span class="built_in">&amp;</span> -2.4 <span class="built_in">&amp;</span> 3.7  <span class="built_in">&amp;</span> 7.3  <span class="built_in">&amp;</span> 28.3 <span class="built_in">&amp;</span> 27.9 <span class="built_in">&amp;</span> 20.5  <span class="built_in">&amp;</span> 1.8  <span class="built_in">&amp;</span> 0.8  <span class="built_in">&amp;</span> 34.5 <span class="built_in">&amp;</span> 47.4  <span class="built_in">&amp;</span> 77   <span class="built_in">&amp;</span> 48.3  <span class="built_in">&amp;</span> 5409.4                         <span class="built_in">&amp;</span> 285.2                 <span class="built_in">&amp;</span> 1                     <span class="keyword">\\</span></span><br><span class="line">1934 <span class="built_in">&amp;</span> -1.7 <span class="built_in">&amp;</span> 1.8  <span class="built_in">&amp;</span> 7.7  <span class="built_in">&amp;</span> 28.4 <span class="built_in">&amp;</span> 27   <span class="built_in">&amp;</span> 21.3  <span class="built_in">&amp;</span> 3.5  <span class="built_in">&amp;</span> 20.6 <span class="built_in">&amp;</span> 24.7 <span class="built_in">&amp;</span> 98    <span class="built_in">&amp;</span> 75.1 <span class="built_in">&amp;</span> 49.1  <span class="built_in">&amp;</span> 5312.2                         <span class="built_in">&amp;</span> 527.7                 <span class="built_in">&amp;</span> 1                     <span class="keyword">\\</span></span><br><span class="line">…    <span class="built_in">&amp;</span> …    <span class="built_in">&amp;</span> …    <span class="built_in">&amp;</span> …    <span class="built_in">&amp;</span> …    <span class="built_in">&amp;</span> …    <span class="built_in">&amp;</span> …     <span class="built_in">&amp;</span> …    <span class="built_in">&amp;</span> …    <span class="built_in">&amp;</span> …    <span class="built_in">&amp;</span> …     <span class="built_in">&amp;</span> …    <span class="built_in">&amp;</span> …     <span class="built_in">&amp;</span> …                              <span class="built_in">&amp;</span> …                     <span class="built_in">&amp;</span> …                     <span class="keyword">\\</span></span><br><span class="line">2009 <span class="built_in">&amp;</span> 2.5  <span class="built_in">&amp;</span> 6.1  <span class="built_in">&amp;</span> 9.7  <span class="built_in">&amp;</span> 27   <span class="built_in">&amp;</span> 24.9 <span class="built_in">&amp;</span> 22.5  <span class="built_in">&amp;</span> 5.4  <span class="built_in">&amp;</span> 0    <span class="built_in">&amp;</span> 14.8 <span class="built_in">&amp;</span> 155.6 <span class="built_in">&amp;</span> 124  <span class="built_in">&amp;</span> 31.5  <span class="built_in">&amp;</span> 5522.6                         <span class="built_in">&amp;</span> 482.5                 <span class="built_in">&amp;</span> 2                     <span class="keyword">\\</span></span><br><span class="line">2010 <span class="built_in">&amp;</span> -0.5 <span class="built_in">&amp;</span> 3.4  <span class="built_in">&amp;</span> 12   <span class="built_in">&amp;</span> 26.6 <span class="built_in">&amp;</span> 26.4 <span class="built_in">&amp;</span> 22.3  <span class="built_in">&amp;</span> 9.2  <span class="built_in">&amp;</span> 4.9  <span class="built_in">&amp;</span> 9.8  <span class="built_in">&amp;</span> 90.6  <span class="built_in">&amp;</span> 97.4 <span class="built_in">&amp;</span> 49.3  <span class="built_in">&amp;</span> 5534                           <span class="built_in">&amp;</span> 593                   <span class="built_in">&amp;</span> 1                     <span class="keyword">\\</span> </span><br><span class="line"><span class="keyword">\bottomrule</span>                 </span><br><span class="line"><span class="keyword">\end</span>&#123;tabularx&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;table*&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="subcaption宏包">subcaption宏包</h1>
+<p><code>IEEE Access</code>模板貌似与这个宏包冲突，所以用不了这个</p>
+<p>如果用到子图，就可以用<code>subfigure</code>宏包，这个不冲突</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">        <span class="keyword">\subfigure</span>[]&#123;</span><br><span class="line">        <span class="keyword">\includegraphics</span>[width=<span class="keyword">\linewidth</span>]&#123;figures/figure 7-a.png&#125;</span><br><span class="line">        <span class="keyword">\label</span>&#123;fig7a&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">\subfigure</span>[]&#123;</span><br><span class="line">        <span class="keyword">\includegraphics</span>[width=<span class="keyword">\linewidth</span>]&#123;figures/figure 7-b.png&#125;</span><br><span class="line">        <span class="keyword">\label</span>&#123;fig7b&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">\caption</span>&#123;Parameter Optimization Fitness Curve&#125;</span><br><span class="line">        <span class="keyword">\label</span>&#123;figure7&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>期刊论文的第一个字母是较大的大写字母，它在基线以下一行下降。这封信被称为“下沉”字母。第一个单词中的其他字母以大写字母呈现。使用
+IEEEtran 命令<code>\IEEEPARstart&#123;&#125;&#123;&#125;</code>可以实现此效果</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/LaTeX/">LaTeX</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/10/01/%E6%B8%B8%E6%88%8F%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/%E8%A3%85%E7%94%B2%E6%81%B6%E9%AC%BC%E6%9D%91%E6%AD%A3%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" title="装甲恶鬼村正通关感想"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">装甲恶鬼村正通关感想</div></div></a></div><div class="next-post pull-right"><a href="/2023/07/28/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/NJU-PA-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="NJU_PA 学习记录"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">NJU_PA 学习记录</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/02/16/hexo%E7%9B%B8%E5%85%B3/Hexo%E5%8D%9A%E5%AE%A2LaTeX%E5%85%AC%E5%BC%8F%E7%9A%84%E6%98%BE%E7%A4%BA/" title="Hexo博客LaTeX公式的显示"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-16</div><div class="title">Hexo博客LaTeX公式的显示</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/WinkySpeed%20SP%20-%20Repaired.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">WinkySpeed</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">34</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">39</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/WinkySpeed"><i class="fab fa-github"></i><span>GitHub</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B%E6%89%93%E9%BB%91%E5%B7%A5%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">记录一下打黑工时遇到的问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8E%92%E7%89%88%E8%8B%B1%E6%96%87%E8%AE%BA%E6%96%87%E7%94%A8pdflatex"><span class="toc-number">2.</span> <span class="toc-text">排版英文论文用pdflatex</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6"><span class="toc-number">3.</span> <span class="toc-text">特殊字符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E7%BA%A7%E6%A0%87%E9%A2%98%E4%BB%A5%E4%B8%8A"><span class="toc-number">4.</span> <span class="toc-text">四级标题以上</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AC%E7%94%A8%E7%BC%96%E5%8F%B7%E7%9A%84%E5%A4%9A%E8%A1%8C%E5%85%AC%E5%BC%8F"><span class="toc-number">5.</span> <span class="toc-text">公用编号的多行公式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#align%E7%8E%AF%E5%A2%83"><span class="toc-number">6.</span> <span class="toc-text">align环境</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%8C%E5%88%97%E6%8E%92%E7%89%88%E6%97%B6%E7%9A%84%E8%87%AA%E9%80%82%E5%BA%94%E8%A1%A8%E6%A0%BC"><span class="toc-number">7.</span> <span class="toc-text">双列排版时的自适应表格</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E6%8E%92%E7%89%88"><span class="toc-number">8.</span> <span class="toc-text">算法排版</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E4%B8%8D%E5%A5%BD%E6%8E%92%E7%9A%84%E8%A1%A8%E6%A0%BC"><span class="toc-number">9.</span> <span class="toc-text">一个不好排的表格</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#subcaption%E5%AE%8F%E5%8C%85"><span class="toc-number">10.</span> <span class="toc-text">subcaption宏包</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/09/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Raycasting%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="Raycasting学习记录">Raycasting学习记录</a><time datetime="2023-11-09T01:47:32.000Z" title="发表于 2023-11-09 09:47:32">2023-11-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/10/28/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E5%A4%A7%E4%B8%89%E4%B8%93%E4%B8%9A%E8%AF%BE%E4%B8%8A%E6%9C%BA%E5%AE%9E%E9%AA%8C%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%90%88%E9%9B%86/" title="大三专业课上机实验碰到的问题合集">大三专业课上机实验碰到的问题合集</a><time datetime="2023-10-28T09:30:26.000Z" title="发表于 2023-10-28 17:30:26">2023-10-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/10/01/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E9%9A%8F%E6%9C%BA%E5%87%A0%E4%BD%95%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="随机几何项目学习记录">随机几何项目学习记录</a><time datetime="2023-10-01T11:57:52.000Z" title="发表于 2023-10-01 19:57:52">2023-10-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/10/01/%E6%B8%B8%E6%88%8F%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/%E8%A3%85%E7%94%B2%E6%81%B6%E9%AC%BC%E6%9D%91%E6%AD%A3%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" title="装甲恶鬼村正通关感想">装甲恶鬼村正通关感想</a><time datetime="2023-10-01T09:30:54.000Z" title="发表于 2023-10-01 17:30:54">2023-10-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/09/17/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/IEEE-Access%E8%AE%BA%E6%96%87%E6%8E%92%E7%89%88/" title="IEEE Access论文排版">IEEE Access论文排版</a><time datetime="2023-09-17T11:37:40.000Z" title="发表于 2023-09-17 19:37:40">2023-09-17</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By WinkySpeed</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2d-widget/autoload.js"></script></body></html>
