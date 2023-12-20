@@ -52,7 +52,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2023-11-26 20:44:26'
+  postUpdate: '2023-12-20 19:45:55'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -150,7 +150,83 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/WinkySpeed%20SP%20-%20Repaired.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">34</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">39</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/33703665_p0.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="WinkySpeed's Blog"><span class="site-name">WinkySpeed's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">WinkySpeed's Blog</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/05/30/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="编译原理复习整理">编译原理复习整理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-30T10:56:01.000Z" title="发表于 2023-05-30 18:56:01">2023-05-30</time></span></div><div class="content">编译原理复习整理
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/WinkySpeed%20SP%20-%20Repaired.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">37</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">43</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/33703665_p0.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="WinkySpeed's Blog"><span class="site-name">WinkySpeed's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">WinkySpeed's Blog</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/06/05/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="算法分析与设计复习整理">算法分析与设计复习整理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-05T10:22:19.000Z" title="发表于 2023-06-05 18:22:19">2023-06-05</time></span></div><div class="content">算法分析与设计复习整理
+算法引论
+算法
+算法的定义
+（串讲强调）
+算法：对于计算机科学来说，算法指的是针对特定问题求解步骤的一种描述，是包含若干条指令的一个有穷序列
+算法的特性
+输入（0或多个）
+输出（至少1个）
+确定性（无歧义）
+有限性
+可行性
+算法设计一般过程
+
+算法描述方法——伪代码
+算法复杂性分析
+时间复杂度
+时间复杂性（影响因素包括问题规模n、输入序列I、算法本身A）
+算法的渐近复杂性：
+
+渐近意义下的记号
+
+渐近上界：\(f(n)=O(g(n))\)
+即\(f(n)\)的阶不高于\(g(n)\)的阶
+
+
+渐近下界：\(f(n)=\Omega(g(n))\)
+即\(f(n)\)的阶不低于\(g(n)\)的阶
+
+渐近紧确界：存在正的常数\(c_1,c_2\)，使\(n\)大时，满足\(c_1g(n)\le f(n)\le c_2g(n)\)
+即\(f(n)\)与\(g(n)\)同阶
+
+
+
+几类复杂性之间的关系
+
+非递归，递归
+空间复杂度
+空间复杂度（影响因素包括输入输出数据IO、辅助变量V、算法本身A） ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/06/03/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数字信号处理复习整理">数字信号处理复习整理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-03T07:27:40.000Z" title="发表于 2023-06-03 15:27:40">2023-06-03</time></span></div><div class="content">数字信号处理复习整理
+前言
+本次复习整理是针对老师考前串讲内容进行整理，并不是全书所有内容
+第一章
+什么是消息
+消息（ Message
+）：消息是由符号、文字、数字或者语言等组成的序列，一封信、一段文字、新闻
+什么是信息
+信息（ Information
+）：消息中所包含的事先不确定的内容；信息蕴含在不确定中，不确定内容越多信息量越大；消息是信息的载体；信息论中香农用信息熵来描述信源的不确定度
+什么是信号
+信号（ Signal
+）：信号是表示消息的物理量，是运载消息的工具，是消息的载体。信号只是消息的一种物理表现形式（比如用声、光、电等）；信号较之信息的其他表示形式（文字、语言等），更便于被系统接受和处理
+信号通常是一个自变量或多个自变量的函数。如果仅有一个自变量，则称为一维信号；如果有两个以上的自变量，则称为多维信号
+信号描述：时间特性和频域特性
+信号分类：连续时间信号，离散时间信号
+消息，信息，信号之间的联系
+信号是消息的表现形式与传送载体
+消息是信号的传送内容
+信息是人们从消息中得到的、以前不知道的事情、知识等
+什么是模拟信号
+模拟信号：时 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/06/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数据库复习整理">数据库复习整理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-01T07:27:31.000Z" title="发表于 2023-06-01 15:27:31">2023-06-01</time></span></div><div class="content">数据库复习整理
+绪论
+重点问题
+数据和信息的联系与区别
+数据是用以表示信息的符号或载体，信息是经过加工之后并对客观世界和生产活动产生影响的数据，是数据的内涵，是对数据语义的解释
+数据是现象，而信息更反映实质
+数据库概念中的“有组织”指的是什么？
+有组织（有结构）：为了高效地存取数据库中的数据，在存放数据的时候，必须按照某种方式，把数据组织起来
+DBMS和DBS有什么区别？
+DBMS是数据库管理软件，DBS是整个数据库系统，其中包括了硬件、软件和人员，也包括了DBMS
+为什么要建立数据模型，数据模型有什么作用？
+计算机不可能直接处理现实世界中的具体事物，所以人们必须事先把具体事物转换成计算机能够处理的数据，在数据库中用数据模型这个工具来抽象、表示和处理现实世界中的数据和信息
+作用：对现实世界数据特征的抽象，使计算机能够处理
+数据模型分为哪几种？分别有什么作用？
+数据模型分为：概念模型，逻辑模型和物理模型
+概念模型：对现实事物高度抽象，比如把水杯抽象成圆柱，
+逻辑模型：数据模型信息化以后的表达形式，从软件管理角度组织数据
+物理模型：是从数据存储角度组织数据 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/05/30/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="编译原理复习整理">编译原理复习整理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-30T10:56:01.000Z" title="发表于 2023-05-30 18:56:01">2023-05-30</time></span></div><div class="content">编译原理复习整理
 绪论
 重点掌握
 翻译、解释、编译的区别和联系
@@ -285,88 +361,5 @@ emqx无法正常启动，一启动就掉，看status为1秒前退出
 线程同步函数VS标红
 原子操作atomicAdd()函数VS标红
 texture纹理内存版本12以上不可用
-</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/02/16/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="操作系统复习整理">操作系统复习整理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-02-16T13:39:58.000Z" title="发表于 2023-02-16 21:39:58">2023-02-16</time></span></div><div class="content">使用说明
-多关注最后的总结部分
-上面的是知识点整理
-不会的知识点用Ctrl+F查找
-绪论
-操作系统目标和作用
-计算机系统的组成
-
-硬件系统（裸机）：CPU、存储器（主存、辅存）、输入/输出设备等
-软件系统：系统软件、应用软件
-系统软件：管理计算机本身的操作。如操作系统、编译…
-应用软件：提供给用户进行解题。如科学计算、事物管理…
-操作系统定义
-操作系统是计算机系统中的一个系统软件，是一些程序模块的集合——它们能以尽量有效、合理的方式组织和管理计算机的软硬件资源，合理地组织计算机的工作流程，控制程序的执行并向用户提供各种服务功能，使得用户能够灵活、方便、有效地使用计算机，使整个计算机系统能高效地运行，从而在计算机与用户之间起到接口的作用
-计算机系统层次结构
-
-计算机系统由硬件和软件组成
-操作系统是在硬件基础上的第一层软件
-操作系统是其他软件和硬件之间的接口
-操作系统目标
-有效性
-改善资源利用率，提高系统吞吐量
-方便性
-使计算机系统使用起来更方便
-可扩充性
-能够不断适应发展的要求
-开放性
-使来自不同厂家的计算机和设备能够有效地协同工作， ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/02/16/hexo%E7%9B%B8%E5%85%B3/Hexo%E5%8D%9A%E5%AE%A2LaTeX%E5%85%AC%E5%BC%8F%E7%9A%84%E6%98%BE%E7%A4%BA/" title="Hexo博客LaTeX公式的显示">Hexo博客LaTeX公式的显示</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-02-16T05:14:16.000Z" title="发表于 2023-02-16 13:14:16">2023-02-16</time></span></div><div class="content">前言
-整理数据结构和操作系统复习资料时发现，出现了许多公式，想到大一选修课选过LaTeX，就在编辑器Typora试了一下，发现本地是正常显示的，Markdown语法是支持\(\LaTeX\)的
-但是部署到hexo以后，发现公式无法正常显示，只能显示出LaTeX语法对应代码
-于是尝试去对应主题的官网上查找资料，发现Butterfly主题内置了两种LaTeX渲染：mathjax和KaTeX
-把mathjax在config文件中设为true，重新部署，发现仍有一些公式无法正常显示，于是就去找对应解决方案
-以下就是解决方案
-步骤
-卸载已有渲染器
-在博客目录下打开cmd，输入
-123npm un hexo-mathnpm un hexo-renderer-marked
-卸载掉以上两个渲染器
-安装hexo-renderer-pandoc渲染器
-接着在cmd里输入
-1npm i hexo-renderer-pandoc
-下载安装Pandoc
-前往官网Pandoc -
-Installing pandoc，安装最新版Pandoc
-安装好后cmd输入
-1pandoc - ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/02/14/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数据结构复习整理">数据结构复习整理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-02-14T12:12:43.000Z" title="发表于 2023-02-14 20:12:43">2023-02-14</time></span></div><div class="content">数据结构复习整理
-概论
-逻辑结构
-线性
-非线性
-线性表
-逻辑结构
-前驱、后继
-存储结构
-顺序：顺序表
-链式：链表
-链表
-不带头结点
-带头结点
-
-栈与队列
-栈
-后进先出
-应用实例：括号匹配，表达式求值
-表达式求值
-中缀表达式，用运算符优先级表
-中缀表达式转后缀表达式：遇到数字直接输出，遇到运算符，先与栈顶运算符比较
-若比栈顶运算符优先级高，则入栈，若优先级低，则栈顶运算符出栈
-中缀表达式运算：遇到数字直接进数字栈，遇到运算符，先与运算符栈顶运算符比较
-若比栈顶运算符优先级高，则入运算符栈，若优先级低，则运算符栈顶运算符出栈，并从数字运算符栈拿出相应数字计算
-然后把新数压数字栈
-后缀表达式求值：不管优先级，遇到运算符就拿出对应的数运算，然后再把新数压栈
-栈和递归
-应用：深度优先搜索
-递归工作栈
-将递归转化为非递归
-队列
-先进先出
-假溢出问题：引入循环队列
-循环队列
-进队
-1234if(队满)    return false;data[rear]=x;rear=(rear+1)%maxSize;
-出队
-1234if( ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#content-inner">3</a><a class="page-number" href="/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/page/3/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/WinkySpeed%20SP%20-%20Repaired.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">WinkySpeed</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">34</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">39</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/WinkySpeed"><i class="fab fa-github"></i><span>GitHub</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/09/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Raycasting%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="Raycasting学习记录">Raycasting学习记录</a><time datetime="2023-11-09T01:47:32.000Z" title="发表于 2023-11-09 09:47:32">2023-11-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/10/28/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E5%A4%A7%E4%B8%89%E4%B8%93%E4%B8%9A%E8%AF%BE%E4%B8%8A%E6%9C%BA%E5%AE%9E%E9%AA%8C%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%90%88%E9%9B%86/" title="大三专业课上机实验碰到的问题合集">大三专业课上机实验碰到的问题合集</a><time datetime="2023-10-28T09:30:26.000Z" title="发表于 2023-10-28 17:30:26">2023-10-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/10/01/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E9%9A%8F%E6%9C%BA%E5%87%A0%E4%BD%95%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="随机几何项目学习记录">随机几何项目学习记录</a><time datetime="2023-10-01T11:57:52.000Z" title="发表于 2023-10-01 19:57:52">2023-10-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/10/01/%E6%B8%B8%E6%88%8F%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/%E8%A3%85%E7%94%B2%E6%81%B6%E9%AC%BC%E6%9D%91%E6%AD%A3%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" title="装甲恶鬼村正通关感想">装甲恶鬼村正通关感想</a><time datetime="2023-10-01T09:30:54.000Z" title="发表于 2023-10-01 17:30:54">2023-10-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/09/17/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/IEEE-Access%E8%AE%BA%E6%96%87%E6%8E%92%E7%89%88/" title="IEEE Access论文排版">IEEE Access论文排版</a><time datetime="2023-09-17T11:37:40.000Z" title="发表于 2023-09-17 19:37:40">2023-09-17</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Hexo/" style="font-size: 1.3em; color: rgb(141, 37, 117)">Hexo</a><a href="/tags/midi/" style="font-size: 1.15em; color: rgb(15, 99, 144)">midi</a><a href="/tags/%E5%AD%97%E7%AC%A6%E7%94%BB/" style="font-size: 1.15em; color: rgb(145, 83, 62)">字符画</a><a href="/tags/OpenCV/" style="font-size: 1.15em; color: rgb(150, 104, 98)">OpenCV</a><a href="/tags/%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B/" style="font-size: 1.15em; color: rgb(173, 136, 1)">幻影坦克</a><a href="/tags/LaTeX/" style="font-size: 1.22em; color: rgb(184, 67, 48)">LaTeX</a><a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" style="font-size: 1.15em; color: rgb(197, 98, 118)">个人博客</a><a href="/tags/Java/" style="font-size: 1.15em; color: rgb(43, 148, 158)">Java</a><a href="/tags/%E5%A4%8D%E4%B9%A0/" style="font-size: 1.45em; color: rgb(148, 17, 189)">复习</a><a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/" style="font-size: 1.15em; color: rgb(80, 11, 199)">博客图片显示</a><a href="/tags/Typora/" style="font-size: 1.15em; color: rgb(194, 60, 17)">Typora</a><a href="/tags/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/" style="font-size: 1.15em; color: rgb(169, 147, 33)">数字信号处理</a><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.15em; color: rgb(74, 155, 65)">数据结构</a><a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 1.15em; color: rgb(199, 77, 165)">数据库</a><a href="/tags/Oracle/" style="font-size: 1.15em; color: rgb(11, 73, 17)">Oracle</a><a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 1.15em; color: rgb(192, 105, 144)">操作系统</a><a href="/tags/%E6%A8%A1%E7%94%B5/" style="font-size: 1.15em; color: rgb(106, 78, 142)">模电</a><a href="/tags/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 1.15em; color: rgb(39, 140, 101)">算法分析与设计</a><a href="/tags/CUDA/" style="font-size: 1.15em; color: rgb(33, 104, 101)">CUDA</a><a href="/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" style="font-size: 1.15em; color: rgb(60, 95, 100)">并行计算</a><a href="/tags/NEMU/" style="font-size: 1.15em; color: rgb(112, 199, 23)">NEMU</a><a href="/tags/PA/" style="font-size: 1.15em; color: rgb(187, 13, 187)">PA</a><a href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" style="font-size: 1.3em; color: rgb(47, 116, 161)">学习记录</a><a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" style="font-size: 1.15em; color: rgb(181, 139, 153)">编译原理</a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" style="font-size: 1.15em; color: rgb(156, 154, 160)">计算机图形学</a><a href="/tags/Raycasting/" style="font-size: 1.15em; color: rgb(17, 149, 83)">Raycasting</a><a href="/tags/%E4%BC%AA3D/" style="font-size: 1.15em; color: rgb(97, 54, 110)">伪3D</a><a href="/tags/%E5%A4%A9%E6%A2%AF%E8%B5%9B/" style="font-size: 1.15em; color: rgb(141, 34, 182)">天梯赛</a><a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" style="font-size: 1.15em; color: rgb(45, 132, 177)">蓝桥杯</a><a href="/tags/manim/" style="font-size: 1.15em; color: rgb(85, 51, 144)">manim</a><a href="/tags/Python/" style="font-size: 1.22em; color: rgb(96, 71, 167)">Python</a><a href="/tags/%E9%9A%8F%E6%9C%BA%E5%87%A0%E4%BD%95/" style="font-size: 1.15em; color: rgb(88, 121, 35)">随机几何</a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 1.15em; color: rgb(167, 92, 27)">计算机网络</a><a href="/tags/%E6%B8%B8%E6%88%8F%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" style="font-size: 1.38em; color: rgb(45, 154, 151)">游戏通关感想</a><a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 1.15em; color: rgb(132, 147, 188)">机器学习</a><a href="/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" style="font-size: 1.15em; color: rgb(169, 1, 121)">数字图像处理</a><a href="/tags/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/" style="font-size: 1.15em; color: rgb(38, 168, 98)">数值分析</a><a href="/tags/MQTT%E5%8D%8F%E8%AE%AE/" style="font-size: 1.15em; color: rgb(30, 49, 23)">MQTT协议</a><a href="/tags/%E7%89%A9%E8%81%94%E7%BD%91/" style="font-size: 1.15em; color: rgb(171, 93, 52)">物联网</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
-    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/10/"><span class="card-archive-list-date">十月 2023</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">九月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">2</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">34</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-11-26T12:44:25.966Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By WinkySpeed</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2d-widget/autoload.js"></script></body></html>
+</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#content-inner">3</a><a class="page-number" href="/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/page/3/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/WinkySpeed%20SP%20-%20Repaired.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">WinkySpeed</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">37</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">43</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/WinkySpeed"><i class="fab fa-github"></i><span>GitHub</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/20/hexo%E7%9B%B8%E5%85%B3/Hexo_Nunjucks_Error%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" title="Hexo Nunjucks Error解决方法">Hexo Nunjucks Error解决方法</a><time datetime="2023-12-20T10:55:45.000Z" title="发表于 2023-12-20 18:55:45">2023-12-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/12/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="接口技术复习整理">接口技术复习整理</a><time datetime="2023-12-12T02:56:09.000Z" title="发表于 2023-12-12 10:56:09">2023-12-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/06/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/OOAD%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="OOAD复习整理">OOAD复习整理</a><time datetime="2023-12-06T13:07:25.000Z" title="发表于 2023-12-06 21:07:25">2023-12-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/09/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Raycasting%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="Raycasting学习记录">Raycasting学习记录</a><time datetime="2023-11-09T01:47:32.000Z" title="发表于 2023-11-09 09:47:32">2023-11-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/10/28/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E5%A4%A7%E4%B8%89%E4%B8%93%E4%B8%9A%E8%AF%BE%E4%B8%8A%E6%9C%BA%E5%AE%9E%E9%AA%8C%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%90%88%E9%9B%86/" title="大三专业课上机实验碰到的问题合集">大三专业课上机实验碰到的问题合集</a><time datetime="2023-10-28T09:30:26.000Z" title="发表于 2023-10-28 17:30:26">2023-10-28</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Java/" style="font-size: 1.15em; color: rgb(35, 41, 99)">Java</a><a href="/tags/%E5%A4%8D%E4%B9%A0/" style="font-size: 1.45em; color: rgb(76, 163, 197)">复习</a><a href="/tags/OOAD/" style="font-size: 1.15em; color: rgb(107, 132, 62)">OOAD</a><a href="/tags/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" style="font-size: 1.21em; color: rgb(46, 16, 131)">复习整理</a><a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 1.15em; color: rgb(164, 191, 119)">数据库</a><a href="/tags/Oracle/" style="font-size: 1.15em; color: rgb(160, 119, 89)">Oracle</a><a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 1.15em; color: rgb(43, 20, 137)">操作系统</a><a href="/tags/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/" style="font-size: 1.15em; color: rgb(98, 3, 88)">数字信号处理</a><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.15em; color: rgb(162, 159, 139)">数据结构</a><a href="/tags/%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/" style="font-size: 1.15em; color: rgb(144, 175, 22)">接口技术</a><a href="/tags/8086/" style="font-size: 1.15em; color: rgb(119, 190, 67)">8086</a><a href="/tags/%E6%A8%A1%E7%94%B5/" style="font-size: 1.15em; color: rgb(188, 192, 86)">模电</a><a href="/tags/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 1.15em; color: rgb(142, 52, 121)">算法分析与设计</a><a href="/tags/Hexo/" style="font-size: 1.33em; color: rgb(138, 109, 198)">Hexo</a><a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" style="font-size: 1.15em; color: rgb(191, 53, 63)">编译原理</a><a href="/tags/LaTeX/" style="font-size: 1.21em; color: rgb(88, 132, 163)">LaTeX</a><a href="/tags/CUDA/" style="font-size: 1.15em; color: rgb(27, 8, 63)">CUDA</a><a href="/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" style="font-size: 1.15em; color: rgb(50, 186, 121)">并行计算</a><a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/" style="font-size: 1.15em; color: rgb(38, 119, 90)">博客图片显示</a><a href="/tags/Typora/" style="font-size: 1.15em; color: rgb(160, 105, 44)">Typora</a><a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" style="font-size: 1.15em; color: rgb(149, 62, 180)">个人博客</a><a href="/tags/NEMU/" style="font-size: 1.15em; color: rgb(158, 107, 44)">NEMU</a><a href="/tags/PA/" style="font-size: 1.15em; color: rgb(83, 137, 191)">PA</a><a href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" style="font-size: 1.27em; color: rgb(150, 143, 195)">学习记录</a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" style="font-size: 1.15em; color: rgb(138, 98, 187)">计算机图形学</a><a href="/tags/Raycasting/" style="font-size: 1.15em; color: rgb(84, 175, 18)">Raycasting</a><a href="/tags/%E4%BC%AA3D/" style="font-size: 1.15em; color: rgb(149, 125, 176)">伪3D</a><a href="/tags/MQTT%E5%8D%8F%E8%AE%AE/" style="font-size: 1.15em; color: rgb(120, 133, 22)">MQTT协议</a><a href="/tags/%E7%89%A9%E8%81%94%E7%BD%91/" style="font-size: 1.15em; color: rgb(107, 76, 51)">物联网</a><a href="/tags/manim/" style="font-size: 1.15em; color: rgb(169, 107, 7)">manim</a><a href="/tags/Python/" style="font-size: 1.21em; color: rgb(166, 32, 123)">Python</a><a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" style="font-size: 1.15em; color: rgb(165, 108, 42)">蓝桥杯</a><a href="/tags/%E5%A4%A9%E6%A2%AF%E8%B5%9B/" style="font-size: 1.15em; color: rgb(58, 182, 65)">天梯赛</a><a href="/tags/%E9%9A%8F%E6%9C%BA%E5%87%A0%E4%BD%95/" style="font-size: 1.15em; color: rgb(22, 85, 5)">随机几何</a><a href="/tags/OpenCV/" style="font-size: 1.15em; color: rgb(150, 120, 148)">OpenCV</a><a href="/tags/%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B/" style="font-size: 1.15em; color: rgb(6, 64, 47)">幻影坦克</a><a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 1.15em; color: rgb(163, 32, 50)">机器学习</a><a href="/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" style="font-size: 1.15em; color: rgb(62, 104, 15)">数字图像处理</a><a href="/tags/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/" style="font-size: 1.15em; color: rgb(19, 112, 103)">数值分析</a><a href="/tags/%E6%B8%B8%E6%88%8F%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" style="font-size: 1.39em; color: rgb(193, 41, 60)">游戏通关感想</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/10/"><span class="card-archive-list-date">十月 2023</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">九月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><span class="card-archive-list-count">2</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">37</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-12-20T11:45:55.941Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By WinkySpeed</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2d-widget/autoload.js"></script></body></html>
