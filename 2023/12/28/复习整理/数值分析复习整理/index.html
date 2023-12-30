@@ -1,0 +1,1766 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>数值分析复习整理 | WinkySpeed's Blog</title><meta name="author" content="WinkySpeed"><meta name="copyright" content="WinkySpeed"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="数值分析复习整理 秦九韶算法   每次提取一个x出来，这样会减少乘法次数 误差与稳定性分析 误差的定义和来源 误差的定义 人们用误差来描述数值计算中近似解的精确程度 误差的来源 从实际问题中抽象出数学模型——模型误差 通过测量和实验得到模型中的各种数据——观测误差 数学模型的数值求解——截断误差(方法误差) 机器字长有限——舍入误差  数值分析这门课的误差： 总假定">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数值分析复习整理">
+<meta property="og:url" content="http://example.com/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/index.html">
+<meta property="og:site_name" content="WinkySpeed&#39;s Blog">
+<meta property="og:description" content="数值分析复习整理 秦九韶算法   每次提取一个x出来，这样会减少乘法次数 误差与稳定性分析 误差的定义和来源 误差的定义 人们用误差来描述数值计算中近似解的精确程度 误差的来源 从实际问题中抽象出数学模型——模型误差 通过测量和实验得到模型中的各种数据——观测误差 数学模型的数值求解——截断误差(方法误差) 机器字长有限——舍入误差  数值分析这门课的误差： 总假定">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/WinkySpeed%20SP%20-%20Repaired.jpg">
+<meta property="article:published_time" content="2023-12-28T01:35:05.000Z">
+<meta property="article:modified_time" content="2023-12-30T09:51:12.137Z">
+<meta property="article:author" content="WinkySpeed">
+<meta property="article:tag" content="复习整理">
+<meta property="article:tag" content="数值分析">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/WinkySpeed%20SP%20-%20Repaired.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数值分析复习整理',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-12-30 17:51:12'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/WinkySpeed%20SP%20-%20Repaired.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">38</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">44</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/33703665_p0.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="WinkySpeed's Blog"><span class="site-name">WinkySpeed's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">数值分析复习整理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-12-28T01:35:05.000Z" title="发表于 2023-12-28 09:35:05">2023-12-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-12-30T09:51:12.137Z" title="更新于 2023-12-30 17:51:12">2023-12-30</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="数值分析复习整理"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="数值分析复习整理">数值分析复习整理</h1>
+<h2 id="秦九韶算法">秦九韶算法</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228093823763.png" class title="image-20231228093823763">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228093902454.png" class title="image-20231228093902454">
+<p>每次提取一个x出来，这样会减少乘法次数</p>
+<h1 id="误差与稳定性分析">误差与稳定性分析</h1>
+<h2 id="误差的定义和来源">误差的定义和来源</h2>
+<h3 id="误差的定义">误差的定义</h3>
+<p>人们用误差来描述数值计算中近似解的精确程度</p>
+<h3 id="误差的来源">误差的来源</h3>
+<p>从实际问题中抽象出数学模型——<strong>模型误差</strong></p>
+<p>通过测量和实验得到模型中的各种数据——<strong>观测误差</strong></p>
+<p>数学模型的数值求解——<strong>截断误差(方法误差)</strong></p>
+<p>机器字长有限——<strong>舍入误差</strong></p>
+<p><br></p>
+<p>数值分析这门课的误差：</p>
+<p>总假定数学模型是准确的，因而不考虑模型误差和观测误差</p>
+<p>主要研究<strong>截断误差</strong>和<strong>舍入误差</strong>对计算结果的影响</p>
+<p>举例：</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228094329421.png" class title="image-20231228094329421">
+<p>泰勒公式只取前面几项，后面的项不要了，就是截断误差</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228094500454.png" class title="image-20231228094500454">
+<p>无限循环小数，后面不要了，算是四舍五入，是舍入误差</p>
+<h2 id="绝对误差">绝对误差</h2>
+<p><span class="math inline">\(x\)</span>为精确值，<span class="math inline">\(x^*\)</span>为近似值，<span class="math inline">\(e^*\)</span>就是绝对误差 <span class="math display">\[
+e^*=x^*-x
+\]</span> <strong>绝对误差 = 近似值 - 精确值</strong></p>
+<p>绝对误差，简称误差</p>
+<p><br></p>
+<p>说明：</p>
+<p>绝对误差可正可负</p>
+<p>绝对误差通常是<strong>不可知</strong>的</p>
+<h2 id="绝对误差限">绝对误差限</h2>
+<p>存在一个正数<span class="math inline">\(\varepsilon^*\)</span>，使得： <span class="math display">\[
+|e^*|=|x^*-x|\le\varepsilon^*
+\]</span> 则<span class="math inline">\(\varepsilon^*\)</span>称为绝对误差限，简称：误差限</p>
+<p>精确值<span class="math inline">\(x=x^*\pm\varepsilon^*\)</span></p>
+<p>误差限，实际上就是绝对误差绝对值最大时的取值</p>
+<p><br></p>
+<p>说明</p>
+<p>做误差估计时所求的是<strong>绝对误差限</strong>，越小越好</p>
+<p>绝对误差限<strong>不能</strong>很好地表示近似值的精确程度</p>
+<h2 id="相对误差">相对误差</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228095208308.png" class title="image-20231228095208308">
+<p>相对误差<span class="math inline">\(e_r^*\)</span>比绝对误差多除了一个精确值<span class="math inline">\(x\)</span></p>
+<p>但是实际计算中，精确值难以求出，则也可以除近似值<span class="math inline">\(x^*\)</span></p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228095331858.png" class title="image-20231228095331858">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228095426988.png" class title="image-20231228095426988">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228095449032.png" class title="image-20231228095449032">
+<p>近似值的精确程度，取决于<strong>相对误差</strong>的大小</p>
+<h2 id="相对误差限">相对误差限</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228095537798.png" class title="image-20231228095537798">
+<p>实际计算中我们所能得到的是<strong>误差限</strong></p>
+<p>相对误差限，实际上就是相对误差绝对值最大时的取值</p>
+<h3 id="例题">例题</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228095656297.png" class title="image-20231228095656297">
+<p>近似值<span class="math inline">\(x^*=41\)</span>，精确值<span class="math inline">\(x=40\)</span></p>
+<p>误差为：<span class="math inline">\(e^*=41-40=1 min\)</span></p>
+<p>相对误差为：<span class="math inline">\(e^*_r=\dfrac{41-40}{40}=0.025\)</span></p>
+<p>误差最大时，<span class="math inline">\(x^*=50min\)</span></p>
+<p>此时的相对误差为：<span class="math inline">\(e^*_r=\dfrac{50-40}{40}=0.25\)</span></p>
+<p>最大的相对误差就是0.25，即<span class="math inline">\(|e^*_r|\le\varepsilon^*_r=0.25\)</span></p>
+<h2 id="有效数字">有效数字</h2>
+<h3 id="有效数字与绝对误差限">有效数字与绝对误差限</h3>
+<p>定义太麻烦，看描述：</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228101112742.png" class title="image-20231228101112742">
+<p>这个描述的意思是：</p>
+<p><strong>给定一个数字，判断它的误差限</strong></p>
+<p><span class="math inline">\(n\)</span>为写成科学计数法以后数字的位数</p>
+<p><span class="math inline">\(m\)</span>为写成科学计数法以后10的阶数</p>
+<p>比如<span class="math inline">\(385.6\)</span>这个数，写成科学计数法就是<span class="math inline">\(3.856\times10^2\)</span>，对应的n为4，m为2</p>
+<p>就可以通过m和n求出这个数的绝对误差限：<span class="math inline">\(|x^*-x|\le0.5\times10^{m-n+1}=0.5\times10^{2-4+1}=0.5\times10^{-1}\)</span></p>
+<p><br></p>
+<h4 id="例题-1">例题</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228101707474.png" class title="image-20231228101707474">
+<p>先看给出的两个数，3.1415和3.1416，都是5位</p>
+<p>但是这两个数都已知了精确值<span class="math inline">\(\pi=3.1415926...\)</span>，这个精确值如果四舍五入只剩5个数就是<span class="math inline">\(3.1416\)</span></p>
+<p>很明显<span class="math inline">\(3.1415\)</span>这个就是没有四舍五入的数，所以最后一位没用，看成<span class="math inline">\(3.141\)</span>就行</p>
+<p>这样处理之后，有效数字的个数就是数的个数：<span class="math inline">\(3.141\)</span>有4个数，<span class="math inline">\(n\)</span>为4；<span class="math inline">\(3.1416\)</span>有5个数，n为5</p>
+<p>注意：只有给出精确值了才能这样处理，否则都是先写成科学计数法，然后看数字位数</p>
+<p><br></p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228102221933.png" class title="image-20231228102221933">
+<p>保留有效数字的原则，就是写成科学计数法，然后保留到对应位数</p>
+<p>比如第二个数：0.03785551，写成科学计数法就是<span class="math inline">\(3.785551\times10^{-2}\)</span>，数出5位四舍五入就是<span class="math inline">\(3.7856\times10^{-2}\)</span>，即0.037856</p>
+<p><br></p>
+<p>说明：</p>
+<p>按四舍五入原则得到的数字是有效数字</p>
+<p>一个数末尾的 0 不可以随意添加或省略</p>
+<h3 id="有效数字与相对误差限">有效数字与相对误差限</h3>
+<h4 id="有效数字推相对误差限">有效数字推相对误差限</h4>
+<p><strong>给定一个数字，判断它的相对误差限</strong></p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228102925906.png" class title="image-20231228102925906">
+<p><span class="math inline">\(a_1\)</span>就是写成科学计数法的第一位，不能是0</p>
+<h5 id="例题-2">例题</h5>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228103338385.png" class title="image-20231228103338385">
+<p><span class="math display">\[
+\begin{align*}
+&amp;1234.5678=1.2345678\times10^{3}\\
+&amp;n=8,m=3\\
+绝对误差限&amp;: \varepsilon^*\le0.5\times10^{m-n+1}=0.5\times10^{-4}\\
+相对误差限&amp;: \varepsilon^*_r\le\frac{1}{2\times
+a_1}\times10^{1-n}=\frac{1}{2}\times10^{-7}
+\end{align*}
+\]</span></p>
+<h4 id="相对误差限推有效数字">相对误差限推有效数字</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228104315391.png" class title="image-20231228104315391">
+<p>这个公式是给出一个相对误差限，判断有效数字位数</p>
+<p>注意，一般都是用有效数字推相对误差限，用上面公式更多<span class="math inline">\(\varepsilon^*_r\le\dfrac{1}{2\times
+a_1}\times10^{1-n}\)</span></p>
+<p>注意对比：</p>
+<p>有效数字推相对误差限</p>
+<p>相对误差限推有效数字</p>
+<p><br></p>
+<p>有效数字推绝对误差限</p>
+<p>绝对误差限推有效数字（给定一个误差限，我们也得不到这个数字，只能得到有效数字位数）</p>
+<h2 id="误差估计">误差估计</h2>
+<h3 id="简单算术运算">简单算术运算</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228104615413.png" class title="image-20231228104615413">
+<p><strong>两个数的加减法</strong>的绝对误差限，是这两个数的绝对误差限相加</p>
+<p>两个数的乘法的绝对误差限，跟乘法求导公式很像，只不过求导换成了求绝对误差限，并且原数要加绝对值</p>
+<p>两个数的除法的绝对误差限，和除法求导公式不完全一致，分子是加法</p>
+<h4 id="例题-3">例题</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228105758597.png" class title="image-20231228105758597">
+<p>先把每个数写成科学计数法，求m和n，再求对应的绝对误差限，最后套公式</p>
+<p>着重注意一下<span class="math inline">\(56.430\)</span>这个数，换成科学计数法是<span class="math inline">\(5.6430\times10^1\)</span>，<strong>n为5</strong>，m为1，绝对误差为<span class="math inline">\(0.5\times10^{1-5+1}=0.5\times10^{-3}\)</span></p>
+<p><strong>最后这个0也需要考虑到有效数字里，不能随意增删</strong></p>
+<h3 id="一元可微函数">一元可微函数</h3>
+<p>一元可微函数f(x)的误差估计</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228111745775.png" class title="image-20231228111745775">
+<p>所谓一元函数的绝对误差限<span class="math inline">\(\varepsilon[f(x^*)]\)</span>就是<span class="math inline">\(f(x^*)-f(x)\)</span>，即估计值代入函数求值，减去精确值代入函数求值</p>
+<p>所谓一元函数的相对误差限<span class="math inline">\(\varepsilon_r[f(x^*)]\)</span>就是<span class="math inline">\(|\dfrac{f(x^*)-f(x)}{f(x)}|\)</span></p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228111727129.png" class title="image-20231228111727129">
+<p>公式整合如下： <span class="math display">\[
+\begin{align*}
+绝对误差限&amp;:\varepsilon[f(x^*)]=f(x^*)-f(x)\approx
+|f&#39;(x)|\varepsilon(x^*)\\\\
+相对误差限&amp;:\varepsilon_r[f(x^*)]=|\dfrac{f(x^*)-f(x)}{f(x)}|\approx
+C_p\cdot\varepsilon_r(x^*)=|\frac{xf&#39;(x^*)}{f(x)}|\cdot\varepsilon_r(x^*)
+\end{align*}
+\]</span></p>
+<p>公式的解释：</p>
+<p>第一个式子给出了一元可微函数<strong>绝对</strong>误差限与<strong>自变量绝对误差限</strong>的关系</p>
+<p>第一个式子给出了一元可微函数<strong>相对</strong>误差限与<strong>自变量相对误差限</strong>的关系</p>
+<p>比如作业的第三个题，就是问的自变量相对误差限，就要用<span class="math inline">\(C_p\)</span>，记法：在第一个式子系数<span class="math inline">\(|f&#39;(x)|\)</span>的基础上，分子乘x，分母除f(x)</p>
+<h3 id="多元可微函数">多元可微函数</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228112655063.png" class title="image-20231228112655063">
+<p>多元可微函数的绝对误差限与一元可微函数类似，只是把每个x的绝对误差限加起来</p>
+<p>多元可微函数的相对误差限与一元可微函数类似，在绝对误差限的基础上除以<span class="math inline">\(|A^*|\)</span>函数值即可</p>
+<h4 id="例题-4">例题</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228113256980.png" class title="image-20231228113256980">
+<p><span class="math display">\[
+\begin{align*}
+S&amp;=L\cdot D，其中L和D都是变量\\\\
+\varepsilon(S^*)&amp;\approx|(\frac{\partial S}{\partial
+L})^*|\cdot\varepsilon(L^*)+|(\frac{\partial S}{\partial
+D})^*|\cdot\varepsilon(D^*)\\
+&amp;=D^*\cdot0.2+L^*\cdot0.1\\
+&amp;=80*0.2+110*0.1\\
+&amp;=27(m^2)\\
+\\
+\varepsilon_r(S^*)&amp;\approx\frac{\varepsilon(S^*)}{|S^*|}\\
+&amp;=\frac{27}{L^*D^*}\\
+&amp;=\frac{27}{110*80}\\
+&amp;=0.31\%
+\end{align*}
+\]</span></p>
+<h2 id="误差分析">误差分析</h2>
+<p>在计算过程中，误差会传播、积累、对消</p>
+<h3 id="数值算法的稳定性">数值算法的稳定性</h3>
+<p>病态问题：如果输入数据的微小扰动会引起输出数据(即计算结果)
+的很大变化(误差)，则称该数值问题是病态的</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228114932255.png" class title="image-20231228114932255">
+<h3 id="一元可微函数的稳定性">一元可微函数的稳定性</h3>
+<p>条件数<span class="math inline">\(C_p=|\dfrac{xf&#39;(x^*)}{f(x)}|\)</span></p>
+<p>一般认为，条件数大于10就是病态</p>
+<h3 id="误差累积">误差累积</h3>
+<p>图一乐，看看就好</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228115257743.png" class title="image-20231228115257743">
+<h3 id="数值计算注意事项">数值计算注意事项</h3>
+<p>避免相近的数相减</p>
+<p>可能会把有效数字位数减没了</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228115454619.png" class title="image-20231228115454619">
+<p>所以如果碰到相近的数相减，做一步处理：</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228115553360.png" class title="image-20231228115553360">
+<h4 id="例题-5">例题</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228115622644.png" class title="image-20231228115622644">
+<p>先按求根公式求，发现有效数字位数不够</p>
+<p>因为出现了相近的数相减：28 - 27.982</p>
+<p>需要处理：</p>
+<p>两个相近数相减，就在分子分母同时乘这两个数相加 <span class="math display">\[
+\begin{align*}
+\sqrt{x+\varepsilon}-\sqrt{x}&amp;=\frac{(\sqrt{x+\varepsilon}-\sqrt{x})(\sqrt{x+\varepsilon}+\sqrt{x})}{\sqrt{x+\varepsilon}+\sqrt{x}}\\
+&amp;=\frac{\varepsilon}{\sqrt{x+\varepsilon}+\sqrt{x}}\\\\
+28-\sqrt{783}&amp;=\frac{(28-\sqrt{783})(28+\sqrt{783})}{28+\sqrt{783}}\\
+&amp;=\frac{1}{28+\sqrt{783}}\\
+&amp;\approx0.01786
+\end{align*}
+\]</span></p>
+<h2 id="误差总结">误差总结</h2>
+<p><span class="math display">\[
+\begin{align*}
+精确值:&amp;x，近似值:x^*\\
+绝对误差:&amp;e^*=x^*-x\\
+绝对误差限:&amp;|x^*-x|\le\varepsilon^*\\
+相对误差:&amp;e^*_r=\frac{x^*-x}{x}，实际上用\frac{x^*-x}{x^*}\\
+相对误差限:&amp;\frac{|x^*-x|}{x}\le\varepsilon_r^*\\\\
+已知一个数，求绝对误差限&amp;:\\
+|x^*-x|&amp;\le0.5\times10^{m-n+1}，先写成科学计数法，m为10的阶数，n为数字位数\\
+求相对误差限&amp;:\\
+\varepsilon_r^*&amp;\le\frac{1}{2\cdot
+a_1}\times10^{1-n}，先写成科学计数法，a_1为第一个数，n为数字位数\\\\
+\varepsilon(x_1^*\pm
+x_2^*)&amp;\le\varepsilon(x_1^*)+\varepsilon(x_2^*)\\
+\varepsilon(x_1^* x_2^*)&amp;\le \varepsilon(x_1^*)|x_2^*| +
+|x_1^*|\varepsilon(x_2^*)\\
+\varepsilon(\frac{x_1^*}{x_2^*})&amp;\le \frac{\varepsilon(x_1^*)|x_2^*|
++ |x_1^*|\varepsilon(x_2^*)}{|x_2^*|^2}\\\\
+一元可微函数绝对误差限:&amp;\varepsilon[f(x^*)]=f(x^*)-f(x)\approx
+|f&#39;(x)|\varepsilon(x^*)\\
+一元可微函数相对误差限:&amp;\varepsilon_r[f(x^*)]=|\dfrac{f(x^*)-f(x)}{f(x)}|\approx
+C_p\cdot\varepsilon_r(x^*)=|\frac{xf&#39;(x^*)}{f(x)}|\cdot\varepsilon_r(x^*)\\\\
+多元可微函数绝对误差限:&amp;\varepsilon(A^*)\approx\sum_{k=1}^{n}|(\frac{\partial
+A}{\partial x_k})^*|\cdot\varepsilon(x_k^*)\\
+多元可微函数相对误差限:&amp;\varepsilon_r(A^*)=\frac{\varepsilon(A^*)}{|A^*|}\approx\frac{\sum_{k=1}^{n}|(\frac{\partial
+A}{\partial x_k})^*|\cdot\varepsilon(x_k^*)}{|A^*|}\\\\
+相近的数相减:&amp;\\
+\sqrt{x+\varepsilon}-\sqrt{x}&amp;=\frac{\varepsilon}{\sqrt{x+\varepsilon}+\sqrt{x}}\\
+\ln{(x+\varepsilon)}-\ln{x}&amp;=\ln{(1+\frac{\varepsilon}{x})}
+\end{align*}
+\]</span></p>
+<h2 id="误差作业">误差作业</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228122644692.png" class title="image-20231228122644692">
+<p><span class="math display">\[
+\begin{align*}
+    \text{已知:}\\
+    \varepsilon_r(x)&amp;=\delta\\
+    \frac{x^*-x}{x}&amp;=\delta\\\\
+    \text{则：}\\
+    e^*(\ln{x})&amp;\approx|f&#39;(x)|\cdot\varepsilon(x^*)\\
+    &amp;=\frac{1}{x}\cdot(x^*-x)\\
+    &amp;=\frac{x^*-x}{x}\\
+    &amp;=\delta
+    \end{align*}
+\]</span> 搞清楚相对误差的公式，和一元可微函数绝对误差限的求法即可</p>
+<p><br></p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228162158482.png" class title="image-20231228162158482">
+<p>先求每一个数对应的绝对误差限： <span class="math display">\[
+\begin{align*}
+    x_1^*&amp;=1.1021\times10^0\\
+    &amp;m=0,n=5\\
+    \varepsilon(x_1^*)&amp;=0.5\times10^{m-n+1}\\
+    &amp;=0.5\times10^{-4}\\\\
+    x_2^*&amp;=3.1\times10^{-2}\\
+    &amp;m=-2,n=2\\
+    \varepsilon(x_2^*)&amp;=0.5\times10^{m-n+1}\\
+    &amp;=0.5\times10^{-3}\\\\
+    x_3^*&amp;=3.856\times10^2\\
+    &amp;m=2,n=4\\
+    \varepsilon(x_3^*)&amp;=0.5\times10^{m-n+1}\\
+    &amp;=0.5\times10^{-1}\\\\
+    x_4^*&amp;=5.6430\times10^1\\
+    &amp;m=1,n=5\\
+    \varepsilon(x_4^*)&amp;=0.5\times10^{m-n+1}\\
+    &amp;=0.5\times10^{-3}\\\\
+    \end{align*}
+\]</span> 再开始根据公式求解答案： <span class="math display">\[
+\begin{align*}
+    (1):\qquad\qquad\qquad\qquad&amp;\\
+    \varepsilon(x_1^*+x_2^*+x_4^*)&amp;\le0.5\times10^{-4}+0.5\times10^{-3}+0.5\times10^{-3}\\
+    &amp;=1.05\times10^{-3}\\\\
+    (2):\qquad\qquad\qquad\qquad&amp;\\
+    \varepsilon(x_1^*x_2^*)&amp;\le|x_1^*|\varepsilon(x_2^*)+|x_2^*|\varepsilon(x_1^*)\\
+    &amp;=5.526\times10^{-4}\\
+    x_1^*\cdot x_2^*&amp;=3.41651\times10^{-2}\\
+    \varepsilon(x_1^*x_2^*x_3^*)&amp;\le|x_1^*x_2^*|\varepsilon(x_3^*)+|x_3^*|\varepsilon(x_1^*x_2^*)\\
+    &amp;=0.214791\\\\
+    (3):\qquad\qquad\qquad\qquad&amp;\\
+    \varepsilon(\frac{x_2^*}{x_4^*})&amp;\le\frac{|x_2^*|\varepsilon(x_4^*)+|x_4^*|\varepsilon(x_2^*)}{|x_2^*|^2}\\
+    &amp;=8.8654\times10^{-6}
+\end{align*}
+\]</span> <br></p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228211844885.png" class title="image-20231228211844885">
+<p>注意题目的要求：</p>
+<p>一元函数，给的是相对误差限，求的也是相对误差限，就要用到<span class="math inline">\(C_p\)</span> <span class="math display">\[
+\begin{align*}
+    f(R)&amp;=\frac{4}{3}\pi R^3\\
+    f&#39;(R)&amp;=4\pi R^2\\\\
+    C_P&amp;=|\frac{R\cdot f&#39;(R^*)}{f(R)}|\\
+    &amp;=3
+    \end{align*}
+\]</span> 则： <span class="math display">\[
+\begin{align*}
+    \begin{cases}
+        \varepsilon_r[f(R^*)]&amp;\approx C_P\cdot
+\varepsilon_r(R^*)\\\\
+        \varepsilon_r[f(R^*)]&amp;\le 1\\
+    \end{cases}
+\end{align*}
+\]</span> 即： <span class="math display">\[
+\begin{align*}
+3*\varepsilon_r(R^*)&amp;\le1\\
+\varepsilon_r(R^*)&amp;\le\frac{1}{3}
+\end{align*}
+\]</span> <br></p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228212943003.png" class title="image-20231228212943003">
+<p>多元函数，两个误差限都要求 <span class="math display">\[
+\begin{align*}
+        \text{先得到两个变量的误差限：}\\
+    \varepsilon(a^*)&amp;=0.05\\
+    \varepsilon(b^*)&amp;=0.15\\
+    \\ \text{再求面积的绝对误差限：}\\
+    \varepsilon(\pi ab)&amp;=(\frac{\partial S}{\partial
+a})^*\cdot\varepsilon(a)+(\frac{\partial S}{\partial
+b})^*\cdot\varepsilon(b)\\
+    &amp;=\frac{25}{2}\pi\\\\
+    \text{最后求面积的相对误差限：}\\
+    \varepsilon_r(S)&amp;=\frac{\varepsilon(S)}{S}\\
+    &amp;=0.25\%
+    \end{align*}
+\]</span></p>
+<p><br></p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228213501206.png" class title="image-20231228213501206">
+<p>一看就是会出现两个近似数相减的问题</p>
+<p>用求根公式求解：<span class="math inline">\(x=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}\)</span> <span class="math display">\[
+\begin{align*}
+x&amp;=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\\
+&amp;=\frac{16\pm\sqrt{252}}{2}\\\\
+x_1&amp;=8+\sqrt{63}\\
+&amp;=15.94\\
+&amp;=15.9\\\\
+x_2&amp;=8-\sqrt{63}\\
+&amp;=0.06 \qquad\text{不满足3位有效数字}\\\\
+8-\sqrt{63}&amp;=\frac{8+\sqrt{63}\cdot8-\sqrt{63}}{8+\sqrt{63}}\\
+&amp;=\frac{1}{8+\sqrt{63}}\\
+x_2&amp;=6.27\times10^{-2}
+\end{align*}
+\]</span></p>
+<h1 id="拉格朗日与牛顿插值">拉格朗日与牛顿插值</h1>
+<h2 id="多项式插值">多项式插值</h2>
+<h3 id="插值的基本概念">插值的基本概念</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228214616432.png" class title="image-20231228214616432">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228214700239.png" class title="image-20231228214700239">
+<h3 id="多项式插值的定义">多项式插值的定义</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228214753440.png" class title="image-20231228214753440">
+<p>用<span class="math inline">\([a,b]\)</span>上<span class="math inline">\(n+1\)</span>个点插n次多项式</p>
+<h3 id="多项式插值唯一性">多项式插值唯一性</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228215013052.png" class title="image-20231228215013052">
+<p>这个定理还是很重要的，说明了后面遇到的拉格朗日，牛顿前插后插，最后插值的结果是相同的</p>
+<h2 id="拉格朗日插值">拉格朗日插值</h2>
+<h3 id="基函数插值法">基函数插值法</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228220843811.png" class title="image-20231228220843811">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228220859265.png" class title="image-20231228220859265">
+<h4 id="基函数的定义">基函数的定义</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228220949852.png" class title="image-20231228220949852">
+<p>插值基函数，就是插值中用到的函数集合</p>
+<h3 id="拉格朗日插值基函数">拉格朗日插值基函数</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228221152163.png" class title="image-20231228221152163">
+<p><span class="math display">\[
+\begin{align*}
+l_k(x)&amp;=\frac{(x-x_0)(x-x_1)...(x-x_{k-1})(x-x_{k+1})...(x-x_{n})}{(x_k-x_0)(x_k-x_1)...(x_k-x_{k-1})(x_k-x_{k+1})...(x_k-x_{n})}\\
+&amp;=\prod_{i=0,i\ne k}^n\frac{x-x_i}{x_k-x_i}
+\end{align*}
+\]</span></p>
+<p>这个还是比较好记的，分子分母形式一致，因为分母不能为0，所以连乘中少一项<span class="math inline">\(x-x_k\)</span>，然后从0到n，少一项，共n项</p>
+<p>拉格朗日基函数与插值节点x有关，与f(x)无关</p>
+<p><br></p>
+<p>有了拉格朗日基函数，就能用这个基函数求插值多项式<span class="math inline">\(P(x)\)</span> <span class="math display">\[
+P(x)=y_0l_0(x)+y_1l_1(x)+...+y_nl_n(x)=L_n(x)
+\]</span></p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228221908242.png" class title="image-20231228221908242">
+<p>可以看到，插值多项式里，<strong>项的个数比n多1</strong>，即下标从0到n</p>
+<p>每一项中，<strong><span class="math inline">\(x\)</span>都是<span class="math inline">\(n\)</span>次方</strong></p>
+<h4 id="例题-6">例题</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228222020855.png" class title="image-20231228222020855">
+<p>很基础的计算，我宣布卡西欧计算器嘎嘎乱杀</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228230612162.png" class title="image-20231228230612162">
+<h3 id="拉格朗日插值余项">拉格朗日插值余项</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228225801862.png" class title="image-20231228225801862">
+<p>余项的<span class="math inline">\(\xi\)</span>无法确定，一般算的都是<span class="math inline">\(f^{(n+1)}(\xi)\)</span>的上界<span class="math inline">\(M_{n+1}\)</span>，可以根据导数的单调性确定最大值</p>
+<p>拉格朗日插值余项 <span class="math display">\[
+R_n(x)\le\frac{M_{n+1}}{(n+1)!}\omega_{n+1}(x)=\frac{M_{n+1}}{(n+1)!}(x-x_0)(x-x_1)...(x-x_n)，M_{n+1}是f^{(n+1)}(\xi)的上界
+\]</span> 这个余项的计算公式也很好记，相关项全部跟<span class="math inline">\(n+1\)</span>有关：</p>
+<p>分子<span class="math inline">\(M_{n+1}\)</span>是是<span class="math inline">\(f^{(n+1)}(\xi)\)</span>的上界，求的时候要加<strong>绝对值</strong></p>
+<p>分母是<span class="math inline">\((n+1)!\)</span></p>
+<p>最右边乘一个连乘，从<span class="math inline">\((x-x_0)\)</span>到<span class="math inline">\((x-x_n)\)</span>，共<span class="math inline">\(n+1\)</span>项</p>
+<h4 id="例题-7">例题</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229082853418.png" class title="image-20231229082853418">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229084124677.png" class title="image-20231229084124677">
+<p>可见，高次插值<strong>通常</strong>优于低次</p>
+<p>但绝对不是次数越高就越好</p>
+<h3 id="拉格朗日基函数性质">拉格朗日基函数性质</h3>
+<p>两条性质：</p>
+<p>性质1：</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229084517770.png" class title="image-20231229084517770">
+<p>注意：f(x)要是<strong>多项式</strong></p>
+<p>性质2：同样是因为<span class="math inline">\(x^k\)</span>求导多次会导致余项为0</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229084611780.png" class title="image-20231229084611780">
+<p>f(x)要是<span class="math inline">\(x^k\)</span>这种形式</p>
+<p><span class="math inline">\(k=0\)</span>时，即<span class="math inline">\(\sum\limits_{j=0}^nl_j(x)=1\)</span>，即拉格朗日插值基函数求和为1</p>
+<h4 id="例题-8">例题</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229084902261.png" class title="image-20231229084902261">
+<p>这道题利用了性质</p>
+<p>注意：累加的性质一定是用在跟<span class="math inline">\(i\)</span>有关的项上</p>
+<h2 id="牛顿均差插值多项式">牛顿均差插值多项式</h2>
+<p>拉格朗日插值法，加一个节点很麻烦：全部拉格朗日基函数重新计算</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229085811071.png" class title="image-20231229085811071">
+<h3 id="均差">均差</h3>
+<p>均差又叫“差商”</p>
+<h4 id="均差定义">均差定义</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229085931692.png" class title="image-20231229085931692">
+<h4 id="均差性质">均差性质</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229090252408.png" class title="image-20231229090252408">
+<p>一般列均差表都是用红框方法算</p>
+<p><span class="math inline">\(f(x)\in
+C^k[a,b]\)</span>的意思是：在<span class="math inline">\([a,b]\)</span>上<span class="math inline">\(n\)</span>阶可导</p>
+<h4 id="均差表">均差表</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229090604604.png" class title="image-20231229090604604">
+<h5 id="例题-9">例题</h5>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229090620993.png" class title="image-20231229090620993">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229090908629.png" class title="image-20231229090908629">
+<p>注意均差表的计算：最上面的是我们后面要用的</p>
+<p>一阶均差：<span class="math inline">\(\dfrac{3-5}{-1+2}=-2\)</span>，<span class="math inline">\(\dfrac{17-3}{1+1}=7\)</span>，<span class="math inline">\(\dfrac{21-17}{2-1}=4\)</span></p>
+<p>二阶均差：<span class="math inline">\(\dfrac{7+2}{1+2}=3\)</span>（这个的分母减的是<span class="math inline">\(x_0\)</span>，即<span class="math inline">\(x_2-x_0=1-(-2)\)</span>，后面的分母都是隔了一个<span class="math inline">\(x\)</span>，比如<span class="math inline">\(x_3-x_1\)</span>，<span class="math inline">\(x_4-x_2\)</span>）</p>
+<p><span class="math inline">\(\dfrac{4-7}{2+1}=-1\)</span></p>
+<p>三阶均差：<span class="math inline">\(\dfrac{-1-3}{2+2}=-1\)</span>（这个的分母减的是<span class="math inline">\(x_0\)</span>，即<span class="math inline">\(x_3-x_0=2-(-2)\)</span></p>
+<h3 id="牛顿后插公式">牛顿后插公式</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229091631023.png" class title="image-20231229091631023">
+<p>可见，我们需要的均差就是均差表最上面的一系列</p>
+<p>牛顿后插公式： <span class="math display">\[
+\begin{align*}
+N_n(x)=&amp;f(x_0)+ &amp;\hspace{1cm} 第0项，x次数为0\\
+&amp;f[x_0,x_1](x-x_0)+&amp;\hspace{1cm} 第1项，x次数为1\\
+&amp;f[x_0,x_1,x_2](x-x_0)(x-x_1)+&amp;\hspace{1cm}第2项，x次数为2\\
+&amp;...+\\
+&amp;f[x_0,x_1,...x_n](x-x_0)(x-x_1)...(x-x_{n-1})&amp;\hspace{1cm}第n项，x次数为n
+\end{align*}
+\]</span></p>
+<p>公式也挺好记，总共<span class="math inline">\(n+1\)</span>个项，每一项<span class="math inline">\(x\)</span>的阶数从<span class="math inline">\(0\)</span>到<span class="math inline">\(n\)</span></p>
+<h4 id="余项">余项</h4>
+<p>注意：并不是最后一项多乘一个<span class="math inline">\((x-x_{n})\)</span>，因为均差的系数不一样，前面是<span class="math inline">\(f[x,x_0,x_1,...x_n]\)</span></p>
+<p>余项：<span class="math inline">\(f[x,x_0,x_1,...x_n](x-x_0)(x-x_1)...(x-x_{n-1})(x-x_{n})\)</span></p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229093237367.png" class title="image-20231229093237367">
+<h4 id="例题-10">例题</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229093254634.png" class title="image-20231229093254634">
+<p>牛顿后插公式与顺序无关，所以均差表要看情况列</p>
+<p>比如这个求的0.54，靠近0.5和0.6，那么线性插值就只用这两个</p>
+<p>抛物线插值时，用0.4,0.5,0.6三个点，在后面直接添加0.4这个点就行</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229094920834.png" class title="image-20231229094920834">
+<h2 id="差分与牛顿前插公式">差分与牛顿前插公式</h2>
+<h3 id="向前差分">向前差分</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229095254243.png" class title="image-20231229095254243">
+<h4 id="差分的定义">差分的定义</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229095307652.png" class title="image-20231229095307652">
+<p>可见差分的计算非常简单，只用求个差就行</p>
+<h4 id="n阶差分表达式">n阶差分表达式</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229095330377.png" class title="image-20231229095330377">
+<p>推导一眼麻，图一乐就好</p>
+<h4 id="差分与均差与导数">差分与均差与导数</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229095357353.png" class title="image-20231229095357353">
+<h4 id="差分表">差分表</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229095406247.png" class title="image-20231229095406247">
+<p>用两个低阶差分算出高阶差分</p>
+<p>后面用到的差分就是<strong>第一行</strong>计算的结果</p>
+<h3 id="牛顿前插公式">牛顿前插公式</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229095415476.png" class title="image-20231229095415476">
+<p>牛顿前插公式: <span class="math display">\[
+N_n(x)=f_0+t\Delta f_0+\frac{t(t-1)}{2!}\Delta^2
+f_0+...+\frac{t(t-1)...(t-n+1)}{n!}\Delta^n f_0
+\]</span> 误差限： <span class="math display">\[
+R_n(x)=\frac{t(t-1)...(t-n)}{(n+1)!}h^{n+1}f^{(n+1)}(\xi)
+\]</span></p>
+<p><span class="math inline">\(h\)</span>为间隔</p>
+<p><span class="math inline">\(t\)</span>为间隔的个数</p>
+<p>总共<span class="math inline">\(n+1\)</span>项，每项<span class="math inline">\(t\)</span>的阶数从<span class="math inline">\(0\)</span>到<span class="math inline">\(n\)</span></p>
+<h4 id="例题-11">例题</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229100129571.png" class title="image-20231229100129571">
+<p>4次，即5个点就够</p>
+<p>牛顿前插与前两种的不同在于：<strong>必须是等距节点</strong>，而且节点排列要有顺序</p>
+<p>用<span class="math inline">\(x_0\)</span>算出偏移<span class="math inline">\(t\)</span>： <span class="math display">\[
+\begin{align*}
+0+0.1t&amp;=0.048\\
+t&amp;=0.48
+\end{align*}
+\]</span> 然后套公式： <span class="math display">\[
+\begin{align*}
+N_4(x)&amp;=f_0+t\Delta f_0+\frac{t(t-1)}{2!}\Delta^2
+f_0+\frac{t(t-1)(t-2)}{3!}\Delta^3
+f_0+\frac{t(t-1)(t-2)(t-3)}{4!}\Delta^4f_0\\
+&amp;=0.99884
+\end{align*}
+\]</span></p>
+<p>算误差，这三个插值方法算的误差限必相同</p>
+<p>所以让你算误差，你就<strong>拿拉格朗日插值的误差算</strong>，这个最好算</p>
+<h2 id="拉格朗日牛顿插值总结">拉格朗日牛顿插值总结</h2>
+<p><span class="math display">\[
+\begin{align*}
+拉格朗日插值基函数：\\
+l_k(x)&amp;=\frac{(x-x_0)(x-x_1)...(x-x_{k-1})(x-x_{k+1})...(x-x_{n})}{(x_k-x_0)(x_k-x_1)...(x_k-x_{k-1})(x_k-x_{k+1})...(x_k-x_{n})}\\
+&amp;=\prod_{i=0,i\ne k}^n\frac{x-x_i}{x_k-x_i}\\\\
+拉格朗日插值法：\\
+L_n(x)&amp;=y_0l_0(x)+y_1l_1(x)+...+y_nl_n(x)\\
+拉格朗日插值法余项：\\
+R_n(x)&amp;\le\frac{M_{n+1}}{(n+1)!}\omega_{n+1}(x)\\
+&amp;=\frac{M_{n+1}}{(n+1)!}(x-x_0)(x-x_1)...(x-x_n)，M_{n+1}是f^{(n+1)}(\xi)的上界\\\\
+牛顿后插公式：\\
+N_n(x)=&amp;f(x_0)+ &amp;\hspace{1cm} 第0项，x次数为0\\
+&amp;f[x_0,x_1](x-x_0)+&amp;\hspace{1cm} 第1项，x次数为1\\
+&amp;f[x_0,x_1,x_2](x-x_0)(x-x_1)+&amp;\hspace{1cm}第2项，x次数为2\\
+&amp;...+\\
+&amp;f[x_0,x_1,...x_n](x-x_0)(x-x_1)...(x-x_{n-1})&amp;\hspace{1cm}第n项，x次数为n\\
+牛顿后插余项：\\
+&amp;f[x,x_0,x_1,...x_n](x-x_0)(x-x_1)...(x-x_{n-1})(x-x_{n})\\\\
+牛顿前插公式：\\
+N_n(x)&amp;=f_0+t\Delta f_0+\frac{t(t-1)}{2!}\Delta^2
+f_0+...+\frac{t(t-1)...(t-n+1)}{n!}\Delta^n f_0\\
+&amp;t为间隔的个数\\
+牛顿前插余项：\\
+R_n(x)&amp;=\frac{t(t-1)...(t-n)}{(n+1)!}h^{n+1}f^{(n+1)}(\xi)，可以用M_{n+1}计算f^{(n+1)}(\xi)的上界\\
+&amp;h为间隔
+\end{align*}
+\]</span></p>
+<h2 id="拉格朗日牛顿插值作业">拉格朗日牛顿插值作业</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229101946464.png" class title="image-20231229101946464">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231228220859265.png" class title="image-20231228220859265">
+<p><span class="math display">\[
+\begin{align*}
+&amp;\text{设三个点为:  }(x_0,y_0),(x_1,y_1),(x_2,y_2)\\
+&amp;\text{设: }
+    \begin{cases}
+    l_0=a_0x^2+b_0x+c_0\\
+    l_1=a_1x^2+b_1x+c_1\\
+    l_2=a_2x^2+b_2x+c_2\\
+    \end{cases}\\\\
+&amp;\text{则:  }P(x)=y_0l_0(x)+y_1l_1(x)+y_2l_2(x)\\
+        &amp;\text{使得: }
+        \begin{pmatrix}
+        l_0(x_0)=1 &amp; l_1(x_0)=0 &amp; l_2(x_0)=0 \\
+        l_0(x_1)=0 &amp; l_1(x_1)=1 &amp; l_2(x_1)=0 \\
+        l_0(x_2)=0 &amp; l_1(x_2)=0 &amp; l_2(x_2)=1 \\
+        \end{pmatrix}\\\\\\
+&amp;\text{则}l_0\text{过}(x_0,1),(x_1,0),(x_2,0)\text{三点}\\
+&amp;\text{根据: }\begin{cases}
+    1=a_0x_0^2+b_0x_0+c_0\\
+    0=a_0x_1^2+b_0x_1+c_0\\
+    0=a_0x_2^2+b_0x_2+c_0\\
+    \end{cases}\\
+&amp;解得\begin{cases}
+    a_0=\frac{1}{(x_0-x_1)\cdot(x_0-x_2)}\\
+    b_0=-\frac{x_1+x_2}{(x_0-x_1)\cdot(x_0-x_2)}\\
+    c_0=\frac{x_1\cdot x_2}{(x_0-x_1)\cdot(x_0-x_2)}
+    \end{cases}\\
+&amp;\text{故：}&amp;\\
+    l_0&amp;=\frac{x^2-(x_1+x_2)x+x_1x_2}{(x_0-x_1)\cdot(x_0-x_2)}\\
+    \text{同理：}&amp;\\
+    l_1&amp;=\frac{x^2-(x_0+x_2)x+x_0x_2}{(x_1-x_0)\cdot(x_1-x_2)}\\
+    l_2&amp;=\frac{x^2-(x_0+x_1)x+x_0x_1}{(x_2-x_0)\cdot(x_2-x_1)}\\
+\end{align*}
+\]</span></p>
+<p><br></p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229104429643.png" class title="image-20231229104429643">
+<p><span class="math display">\[
+\begin{align*}
+    \text{设:}&amp;f(x)=x^k\qquad k&lt;n\\
+    \text{构建}L_n(x)&amp;=y_0l_0(x)+y_1l_1(x)+\cdots+y_nl_n(x)\\
+    &amp;=x_0^kl_0(x)+\cdots+x_n^kl_n(x)\\\\
+    \text{误差}R_n(x)&amp;=\frac{f^{(n+1)}(\xi)}{(n+1)!}\omega_{n+1}(x)\\
+    \text{根据}k&lt;n\text{得:}\qquad R_n(x)&amp;=0\\
+    \text{即}f(x)&amp;=L_n(x)\\
+    x^k&amp;=\sum_{j=0}^{n}x_j^kl_j(x)\\
+    \text{得证}
+\end{align*}
+\]</span> <br></p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229104719951.png" class title="image-20231229104719951">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229112936309.png" class title="image-20231229112936309">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229151754375.png" class title="image-20231229151754375">
+<p>注意：误差估计时都要加绝对值</p>
+<p>拉格朗日插值和牛顿插值的误差估计必须是一样的，因为多项式插值唯一性</p>
+<h1 id="埃尔米特插值和分段插值">埃尔米特插值和分段插值</h1>
+<h2 id="埃尔米特插值">埃尔米特插值</h2>
+<h3 id="重节点均差">重节点均差</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229150159197.png" class title="image-20231229150159197">
+<h3 id="泰勒插值多项式">泰勒插值多项式</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229150229502.png" class title="image-20231229150229502">
+<h3 id="三点三次埃尔米特插值">三点三次埃尔米特插值</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229150310939.png" class title="image-20231229150310939">
+<p>埃尔米特插值，是我们缺点才用的插值</p>
+<p>我们可以把牛顿后插公式先写出来：</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229150420552.png" class title="image-20231229150420552">
+<p>我们少一个点，就算不了最后一个均差，就设为A</p>
+<p>因为插值条件是<span class="math inline">\(P(x_i)=f(x_i),
+P&#39;(x_1)=f&#39;(x_1)\)</span></p>
+<p>利用中间这个点导数和插值多项式导数相等，来解出A：</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229150534932.png" class title="image-20231229150534932">
+<p>三点三次埃尔米特插值： <span class="math display">\[
+\begin{align*}
+P(x)&amp;=f(x_0)+f[x_0,x_1](x-x_0)+f[x_0,x_1,x_2](x-x_0)(x-x_1)+A(x-x_0)(x-x_1)(x-x_2)\\\\
+A&amp;=\frac{f&#39;(x_1)-f[x_0,x_1]-(x_1-x_0)f[x_0,x_1,x_2]}{(x_1-x_0)(x_1-x_2)}\\\\
+余项：\\
+R(x)&amp;=\frac{1}{4!}f^{(4)}(\xi)(x-x_0)(x-x_1)^2(x-x_2)
+\end{align*}
+\]</span> 注意余项里面有个平方</p>
+<h4 id="例题-12">例题</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229152331205.png" class title="image-20231229152331205">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229154740759.png" class title="image-20231229154740759">
+<p>可惜卡西欧计算器并不是万能的，多项式化简这一步就不行</p>
+<p>顺序化简容易化错，我建议按照项化简</p>
+<p>你一个多项式说到底就是<span class="math inline">\(ax^3+bx^2+cx+d\)</span>，我们直接算出这些系数就行了，不需要一步一步化简，又慢又容易错</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229155751951.png" class title="image-20231229155751951">
+<p>卡西欧框框按，算的飞快</p>
+<p>考试要是代值那将绝杀</p>
+<h3 id="两点三次埃尔米特插值">两点三次埃尔米特插值</h3>
+<p>你现在只有两个点，让你插值一个三次多项式</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229160431002.png" class title="image-20231229160431002">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229160443235.png" class title="image-20231229160443235">
+<p>公式，背！</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229160457022.png" class title="image-20231229160457022">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229161757089.png" class title="image-20231229161757089">
+<p><span class="math display">\[
+\begin{align*}
+两点三次埃尔米特插值：\\
+H_3(x)&amp;=y_0\alpha_0(x)+y_1\alpha_1(x)+m_0\beta_0(x)+m_1\beta_1(x)\\\\
+\alpha_0(x)&amp;=(1+2\frac{x-x_0}{x_1-x_0})(\frac{x-x_1}{x_0-x_1})^2\\
+\alpha_1(x)&amp;=(1+2\frac{x-x_1}{x_0-x_1})(\frac{x-x_0}{x_1-x_0})^2\\\\
+\beta_0(x)&amp;=(x-x_0)(\frac{x-x_1}{x_0-x_1})^2\\
+\beta_1(x)&amp;=(x-x_1)(\frac{x-x_0}{x_1-x_0})^2\\\\
+余项：\\
+R_3(x)&amp;=\frac{1}{4!}f^{(4)}(\xi)(x-x_0)^2(x-x_1)^2
+\end{align*}
+\]</span></p>
+<h2 id="分段低次插值">分段低次插值</h2>
+<h3 id="分段线性插值">分段线性插值</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229162008191.png" class title="image-20231229162008191">
+<h3 id="分段两点三次埃尔米特插值">分段两点三次埃尔米特插值</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229162719112.png" class title="image-20231229162719112">
+<p><span class="math display">\[
+\begin{align*}
+分段两点三次埃尔米特插值：\\
+对每个小区间x_k,x_{k+1}有：\\
+I_h(x)&amp;=y_k\alpha_k(x)+y_{k+1}\alpha_{k+1}(x)+m_k\beta_k(x)+m_{k+1}\beta_{k+1}(x)\\\\
+\alpha_k(x)&amp;=(1+2\frac{x-x_k}{x_{k+1}-x_k})(\frac{x-x_{k+1}}{x_{k}-x_{k+1}})^2\\
+\alpha_{k+1}(x)&amp;=(1+2\frac{x-x_{k+1}}{x_{k}-x_{k+1}})(\frac{x-x_{k}}{x_{k+1}-x_{k}})^2\\
+\beta_k(x)&amp;=(x-x_k)(\frac{x-x_{k+1}}{x_k-x_{k+1}})^2\\
+\beta_{k+1}(x)&amp;=(x-x_{k+1})(\frac{x-x_k}{x_{k+1}-x_k})^2\\\\
+余项：\\
+|R(x)|&amp;\le\frac{M_4}{384}h^4\\
+M_4&amp;=\max_{a\le x\le b}|f^{(4)}(\xi)|\\
+h&amp;=\max_{0\le k\le n-1}(x_{k+1}-x_k)
+\end{align*}
+\]</span></p>
+<h2 id="三次样条插值">三次样条插值</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229164047577.png" class title="image-20231229164047577">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229164142061.png" class title="image-20231229164142061">
+<p>知道边界条件就好</p>
+<h2 id="埃尔米特插值分段插值总结">埃尔米特插值分段插值总结</h2>
+<p><span class="math display">\[
+\begin{align*}
+三点三次埃尔米特插值：\\
+P(x)&amp;=f(x_0)+f[x_0,x_1](x-x_0)+f[x_0,x_1,x_2](x-x_0)(x-x_1)+A(x-x_0)(x-x_1)(x-x_2)\\\\
+A&amp;=\frac{f&#39;(x_1)-f[x_0,x_1]-(x_1-x_0)f[x_0,x_1,x_2]}{(x_1-x_0)(x_1-x_2)}\\\\
+余项：\\
+R(x)&amp;=\frac{1}{4!}f^{(4)}(\xi)(x-x_0)(x-x_1)^2(x-x_2)\\\\
+两点三次埃尔米特插值：\\
+H_3(x)&amp;=y_0\alpha_0(x)+y_1\alpha_1(x)+m_0\beta_0(x)+m_1\beta_1(x)\\\\
+\alpha_0(x)&amp;=(1+2\frac{x-x_0}{x_1-x_0})(\frac{x-x_1}{x_0-x_1})^2\\
+\alpha_1(x)&amp;=(1+2\frac{x-x_1}{x_0-x_1})(\frac{x-x_0}{x_1-x_0})^2\\\\
+\beta_0(x)&amp;=(x-x_0)(\frac{x-x_1}{x_0-x_1})^2\\
+\beta_1(x)&amp;=(x-x_1)(\frac{x-x_0}{x_1-x_0})^2\\\\
+余项：\\
+R_3(x)&amp;=\frac{1}{4!}f^{(4)}(\xi)(x-x_0)^2(x-x_1)^2\\\\
+分段两点三次埃尔米特插值：\\
+对每个小区间x_k,x_{k+1}有：\\
+I_h(x)&amp;=y_k\alpha_k(x)+y_{k+1}\alpha_{k+1}(x)+m_k\beta_k(x)+m_{k+1}\beta_{k+1}(x)\\\\
+\alpha_k(x)&amp;=(1+2\frac{x-x_k}{x_{k+1}-x_k})(\frac{x-x_{k+1}}{x_{k}-x_{k+1}})^2\\
+\alpha_{k+1}(x)&amp;=(1+2\frac{x-x_{k+1}}{x_{k}-x_{k+1}})(\frac{x-x_{k}}{x_{k+1}-x_{k}})^2\\
+\beta_k(x)&amp;=(x-x_k)(\frac{x-x_{k+1}}{x_k-x_{k+1}})^2\\
+\beta_{k+1}(x)&amp;=(x-x_{k+1})(\frac{x-x_k}{x_{k+1}-x_k})^2\\\\
+余项：\\
+|R(x)|&amp;\le\frac{M_4}{384}h^4\\
+M_4&amp;=\max_{a\le x\le b}|f^{(4)}(\xi)|\\
+h&amp;=\max_{0\le k\le n-1}(x_{k+1}-x_k)\\\\\\
+&amp;注意样条插值边界条件
+\end{align*}
+\]</span></p>
+<h1 id="逼近概念与正交多项式">逼近概念与正交多项式</h1>
+<p>插值：穿过所有给定点</p>
+<p>逼近：不需要穿过所有点</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229164315106.png" class title="image-20231229164315106">
+<h2 id="逼近基本概念">逼近基本概念</h2>
+<h3 id="范数">范数</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229164632601.png" class title="image-20231229164632601">
+<p>范数3个性质：正定性，齐次性，三角不等式</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229164830120.png" class title="image-20231229164830120">
+<p>解释：</p>
+<p><span class="math inline">\(R^n\)</span>为<span class="math inline">\(n\)</span>阶实数，对向量说的</p>
+<p><span class="math inline">\(C[a,b]\)</span>为在<span class="math inline">\([a,b]\)</span>上连续，对函数说的 <span class="math display">\[
+\begin{align*}
+向量的范数：\\
+1-范数:||x||_1&amp;=\sum_{i=1}^n|x_i|=|x_1|+|x_2|+...+|x_n|\\
+2-范数:||x||_2&amp;=(\sum_{i=1}^nx_i^2)^{\frac{1}{2}}=\sqrt{x_1^2+x_2^2+...+x_n^2}\\
+p-范数:||x||_p&amp;=(\sum_{i=1}^nx_i^p)^{\frac{1}{p}}\\
+\infty-范数:||x||_\infty&amp;=\max_{1\le i\le n}{|x_i|}\\\\
+函数的范数：\\
+1-范数:||f||_1&amp;=\int_a^b|f(x)|dx\\
+2-范数:||f||_2&amp;=(\int_a^b|f(x)|^2dx)^{\frac{1}{2}}\\
+p-范数:||f||_p&amp;=(\int_a^b|f(x)|^pdx)^{\frac{1}{p}}\\
+\infty-范数:||f||_\infty&amp;=\max_{a\le x\le b}{|f(x)|}\\\\
+\end{align*}
+\]</span></p>
+<p><br></p>
+<h3 id="内积">内积</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229165941993.png" class title="image-20231229165941993">
+<p>注意写法：<span class="math inline">\((x,y)\)</span>表示内积</p>
+<p>内积为0，则正交</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229170147996.png" class title="image-20231229170147996">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229170419143.png" class title="image-20231229170419143">
+<p>内积导出范数：<span class="math inline">\(||u||_2=\sqrt{(u,u)}\)</span></p>
+<h3 id="权函数">权函数</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229170444575.png" class title="image-20231229170444575">
+<p>记住： <span class="math display">\[
+\begin{align*}
+\rho(x)&amp;=1&amp;(-1\le x\le1)\\
+\rho(x)&amp;=\frac{1}{\sqrt{1-x^2}}&amp;(-1\le x\le1)
+\end{align*}
+\]</span> 这两个权函数</p>
+<h3 id="带权内积">带权内积</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229170709809.png" class title="image-20231229170709809">
+<p><span class="math display">\[
+\begin{align*}
+\rho(x)为权函数，带权内积：\\
+(f(x),g(x))_\rho&amp;=\int_a^b\rho(x)f(x)g(x)dx\\
+导出范数：\\
+||f(x)||_2&amp;=\sqrt{\int_a^b\rho(x)f^2(x)dx}
+\end{align*}
+\]</span></p>
+<h2 id="最佳逼近多项式">最佳逼近多项式</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229171409958.png" class title="image-20231229171409958">
+<p>就是用一个多项式<span class="math inline">\(P^*(x)\)</span>逼近一个多项式<span class="math inline">\(f(x)\)</span>，要让他们差函数的范数最小</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229171508554.png" class title="image-20231229171508554">
+<h2 id="正交多项式">正交多项式</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229171808528.png" class title="image-20231229171808528">
+<p>带权正交： <span class="math display">\[
+(f(x),g(x))_\rho=\int_a^b\rho(x)f(x)g(x)dx=0\\
+\]</span></p>
+<p>即，仅自己和自己带权内积不为0，在这个函数族内任意两个带权内积都为0</p>
+<h3 id="正交多项式定义">正交多项式定义</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229171932611.png" class title="image-20231229171932611">
+<h3 id="正交多项式性质">正交多项式性质</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229172016867.png" class title="image-20231229172016867">
+<h2 id="勒让德多项式">勒让德多项式</h2>
+<h3 id="勒让德多项式定义">勒让德多项式定义</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229172221541.png" class title="image-20231229172221541">
+<h3 id="勒让德多项式性质">勒让德多项式性质</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229172304494.png" class title="image-20231229172304494">
+<p>注意：勒让德多项式是在<span class="math inline">\([-1,1]\)</span>上，后面用勒让德多项式求逼近，如果自变量范围不在<span class="math inline">\([-1,1]\)</span>则需要变换</p>
+<h3 id="用勒让德多项式求最佳平方逼近">用勒让德多项式求最佳平方逼近</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229172329903.png" class title="image-20231229172329903">
+<p>注：<span class="math inline">\(H_n\)</span>为<span class="math inline">\(n\)</span>阶多项式，<span class="math inline">\(C[-1,1]\)</span>是在<span class="math inline">\([-1,1]\)</span>连续</p>
+<p>n会当做条件给你</p>
+<p>规定了<span class="math inline">\(\rho(x)=1\)</span> <span class="math display">\[
+\begin{align*}
+f(x)\in C[-1,1]在H_n中的最佳平方逼近多项式为：\\
+P^*(x)&amp;=\sum_{j=0}^na_jP_j(x)\\\\
+其中：\\
+a_j&amp;=\frac{2j+1}{2}\int_{-1}^1f(x)P_j(x)dx
+\end{align*}
+\]</span></p>
+<h4 id="例题-13">例题</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229173518594.png" class title="image-20231229173518594">
+<p>注意：x的范围并不在[-1,1]，所以要先换元，使定义域在[-1,1]</p>
+<p><span class="math inline">\(P_i(x)\)</span>考试会给</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229180313756.png" class title="image-20231229180313756">
+<h2 id="切比雪夫多项式">切比雪夫多项式</h2>
+<h3 id="切比雪夫多项式定义">切比雪夫多项式定义</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229180357785.png" class title="image-20231229180357785">
+<h3 id="切比雪夫多项式性质">切比雪夫多项式性质</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229180810980.png" class title="image-20231229180810980">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229180919267.png" class title="image-20231229180919267">
+<h3 id="用n-1次多项式最优一致逼近n次多项式">用<span class="math inline">\(n-1\)</span>次多项式最优一致逼近<span class="math inline">\(n\)</span>次多项式</h3>
+<p>就是给定一个<span class="math inline">\(n\)</span>次多项式<span class="math inline">\(f(x)\)</span>，让你求一个<span class="math inline">\(n-1\)</span>次多项式<span class="math inline">\(P_{n-1}(x)\)</span>，逼近<span class="math inline">\(f(x)\)</span> <span class="math display">\[
+\begin{align*}
+f(x)\in H_n且首项系数a_n\ne0\\
+则f(x)在[-1,1]上的n-1次最优一致逼近为：\\
+P_{n-1}(x)&amp;=f(x)-a_n\tilde{T}_n(x)\\\\
+其中：\\
+\tilde{T}_n(x)&amp;=\frac{T_n(x)}{2^{n-1}}，即首项系数为1(简称首1)，\tilde{H}_n为\le
+n次的首1多项式集
+\end{align*}
+\]</span></p>
+<p>为什么是<span class="math inline">\(2^{n-1}\)</span>：</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229182345787.png" class title="image-20231229182345787">
+<p>比如<span class="math inline">\(n=2\)</span>时，<span class="math inline">\(T_2(x)=2x^2-1\)</span>，<span class="math inline">\(\tilde{T}_2(x)=\dfrac{T_2(x)}{2^{2-1}}=x^2-\dfrac{1}{2}\)</span>，首项系数就是1了</p>
+<p>这样能够保证减法过程中<span class="math inline">\(f(x)-a_n\tilde{T}_n(x)\)</span>能把<span class="math inline">\(f(x)\)</span>的最高次减掉，就会从<span class="math inline">\(n\)</span>次多项式变成<span class="math inline">\(n-1\)</span>次多项式</p>
+<h4 id="例题-14">例题</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229182630113.png" class title="image-20231229182630113">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229183410730.png" class title="image-20231229183410730">
+<p>考试出题的时候可能会给你多个<span class="math inline">\(T_n(x)\)</span>，我们的目的是把最高次项减掉，所以只用最高次项对应的<span class="math inline">\(T_n(x)\)</span>即可</p>
+<h2 id="切比雪夫零点插值">切比雪夫零点插值</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229183743006.png" class title="image-20231229183743006">
+<p>这个还是很重要的</p>
+<p>切比雪夫多项式零点插值：就是<strong>把这些零点当做插值节点</strong>进行插值，这肯定不是等距节点，所以不能用牛顿前插公式</p>
+<p>注意区分<span class="math inline">\(n\)</span>的含义：切比雪夫零点公式里的<span class="math inline">\(n\)</span>是点的个数，比如我现在要求拉格朗日插值<span class="math inline">\(L_4(x)\)</span>，4阶的拉格朗日插值需要5个点，所以就应该在公式<span class="math inline">\(x_k=\cos{(\dfrac{2k-1}{2n}\pi)}\qquad
+k=1,2,...n\)</span>带入<span class="math inline">\(n=5\)</span>，<strong>而不是4</strong></p>
+<p>除了用这些零点当插值节点，更重要的是：误差限的算法变了，唯一的变化在于<span class="math inline">\(\omega_{n+1}(x)\)</span>的求法，最大值就是<span class="math inline">\(\dfrac{1}{2^n}\)</span> <span class="math display">\[
+\begin{align*}
+T_n(x)在(-1,1)上有n个切比雪夫零点：\\
+x_k&amp;=\cos{(\frac{2k-1}{2n}\pi)}\qquad k=1,2,...n\\\\
+切比雪夫多项式零点插值对应的误差限：\\
+\max{|R_n(x)|}&amp;\le\frac{M_{n+1}}{(n+1)!}\max{|\omega_{n+1}(x)|}\\\\
+M_{n+1}&amp;=||f^{(n+1)(x)}||_\infty\\
+\max{|\omega_{n+1}(x)|}&amp;=\max{|\tilde{T}_{n+1}|}=\frac{1}{2^n}\\\\
+所以切比雪夫插值对应的误差限：\\
+\max{|R_n(x)|}&amp;\le\frac{M_{n+1}}{(n+1)!}\max{|\omega_{n+1}(x)|}\\
+&amp;=\frac{||f^{(n+1)(x)}||_\infty}{2^n(n+1)!}
+\end{align*}
+\]</span></p>
+<p>变量替换的情况：</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229192401792.png" class title="image-20231229192401792">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229192553391.png" class title="image-20231229192553391">
+<p>误差限会多乘一个<span class="math inline">\(\dfrac{(b-a)^{n+1}}{2^{n+1}}\)</span></p>
+<h3 id="例题-15">例题</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229185129314.png" class title="image-20231229185129314">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229193140643.png" class title="image-20231229193140643">
+<p>考试不可能出这么离谱的，这真不可能算出来</p>
+<p>只需要知道如果切比雪夫零点插值，则误差限的分析就要重新计算</p>
+<p>如果在此基础上又他妈换一个元，把变量换到<span class="math inline">\([-1,1]\)</span>，误差限分析的时候又要多乘一个<span class="math inline">\(\dfrac{(b-a)^{n+1}}{2^{n+1}}\)</span></p>
+<h2 id="逼近总结">逼近总结</h2>
+<p><span class="math display">\[
+\begin{align*}
+5种线性空间：\\
+R^n&amp;:n阶实数\\
+C^n&amp;:n阶复数\\
+H_n&amp;:n阶多项式\\
+C[a,b]&amp;:在[a,b]上连续\\
+C^n[a,b]&amp;:在[a,b]上n阶可导\\\\
+范数三个性质：\\
+&amp;正定性，齐次性，三角不等式\\\\
+向量的范数：\\
+1-范数:||x||_1&amp;=\sum_{i=1}^n|x_i|=|x_1|+|x_2|+...+|x_n|\\
+2-范数:||x||_2&amp;=(\sum_{i=1}^nx_i^2)^{\frac{1}{2}}=\sqrt{x_1^2+x_2^2+...+x_n^2}\\
+p-范数:||x||_p&amp;=(\sum_{i=1}^nx_i^p)^{\frac{1}{p}}\\
+\infty-范数:||x||_\infty&amp;=\max_{1\le i\le n}{|x_i|}\\\\
+函数的范数：\\
+1-范数:||f||_1&amp;=\int_a^b|f(x)|dx\\
+2-范数:||f||_2&amp;=(\int_a^b|f(x)|^2dx)^{\frac{1}{2}}\\
+p-范数:||f||_p&amp;=(\int_a^b|f(x)|^pdx)^{\frac{1}{p}}\\
+\infty-范数:||f||_\infty&amp;=\max_{a\le x\le b}{|f(x)|}\\\\
+x=(x_1,x_2,...,x_n)^T\\y=(y_1,y_2,...,y_n)^T\\
+内积：\\
+(x,y)&amp;=x_1y_1+x_2y_2+...+x_ny_n\\
+内积导出范数：\\
+||u||_2&amp;=\sqrt{(u,u)}\\\\
+两个要记的权函数：\\
+\rho(x)&amp;=1&amp;(-1\le x\le1)\\
+\rho(x)&amp;=\frac{1}{\sqrt{1-x^2}}&amp;(-1\le x\le1)\\\\
+\rho(x)为权函数，带权内积：\\
+(f(x),g(x))_\rho&amp;=\int_a^b\rho(x)f(x)g(x)dx\\
+导出范数：\\
+||f(x)||_2&amp;=\sqrt{\int_a^b\rho(x)f^2(x)dx}\\\\
+带权正交：\\
+(f(x),g(x))_\rho&amp;=\int_a^b\rho(x)f(x)g(x)dx=0\\\\
+\end{align*}
+\]</span></p>
+<p>太长了，换一个公式块 <span class="math display">\[
+\begin{align*}
+用勒让德多项式求最佳平方逼近：\\
+f(x)\in C[-1,1]在H_n中的最佳平方逼近多项式为：\\
+P^*(x)&amp;=\sum_{j=0}^na_jP_j(x)\\\\
+其中：\\
+a_j&amp;=\frac{2j+1}{2}\int_{-1}^1f(x)P_j(x)dx\\\\
+用n-1次多项式最优一致逼近n次多项式：\\
+f(x)\in H_n且首项系数a_n\ne0\\
+则f(x)在[-1,1]上的n-1次最优一致逼近为：\\
+P_{n-1}(x)&amp;=f(x)-a_n\tilde{T}_n(x)\\\\
+其中：\\
+\tilde{T}_n(x)&amp;=\frac{T_n(x)}{2^{n-1}}，即首项系数为1(简称首1)，\tilde{H}_n为\le
+n次的首1多项式集\\\\
+T_n(x)在(-1,1)上有n个切比雪夫零点：\\
+x_k&amp;=\cos{(\frac{2k-1}{2n}\pi)}\qquad k=1,2,...n\\\\
+切比雪夫多项式零点插值对应的误差限：\\
+\max{|R_n(x)|}&amp;\le\frac{M_{n+1}}{(n+1)!}\max{|\omega_{n+1}(x)|}\\
+&amp;=\frac{||f^{(n+1)(x)}||_\infty}{2^n(n+1)!}\\
+如果出现变量代换的情况\\
+（即从[a,b]变换到[-1,1]）\\
+\max{|R_n(x)|}&amp;\le\frac{||f^{(n+1)(x)}||_\infty}{2^n(n+1)!}\cdot\frac{(b-a)^{n+1}}{2^{n+1}}\\
+\end{align*}
+\]</span></p>
+<h2 id="逼近作业">逼近作业</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229195534410.png" class title="image-20231229195534410">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229201259953.png" class title="image-20231229201259953">
+<p>比较基础，卡西欧积分嘎嘎杀</p>
+<p><br></p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229201339638.png" class title="image-20231229201339638">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229202941350.png" class title="image-20231229202941350">
+<p>变量不在[-1,1]，先换元，最后再换回来</p>
+<p>容易算错，用我之前说到的方法：一个多项式说到底就是<span class="math inline">\(ax^3+bx^2+cx+d\)</span>，我们直接算出这些系数就行了，不需要一步一步化简，又慢又容易错</p>
+<p>刚好计算器支持分数运算，简直嘎嘎乱杀，注意别按错就行</p>
+<p>这种题最好一遍算对，毕竟这课考试时间太紧了，可能都写不完</p>
+<p>我估计草稿纸都得用2张以上</p>
+<h1 id="最小二乘法">最小二乘法</h1>
+<h2 id="曲线拟合方法">曲线拟合方法</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229203527494.png" class title="image-20231229203527494">
+<p>残差就是误差</p>
+<p>矛盾方程组，就是求残差，然后列到一起</p>
+<h2 id="最小二乘法-1">最小二乘法</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229204219745.png" class title="image-20231229204219745">
+<p>让所有残差的平方和加和起来最小，就是最小二乘法</p>
+<h3 id="直线拟合">直线拟合</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229204559981.png" class title="image-20231229204559981">
+<p>正规方程组，是对残差平方和求偏导得来的，两个变量就是两个方程，多个变量就是多个方程</p>
+<p><span class="math inline">\(m\)</span>为数据点的个数 <span class="math display">\[
+\begin{align*}
+设\phi(x)&amp;=a_0+a_1x\\\\
+则正规方程组为：&amp;
+\begin{cases}
+a_0m+a_1\sum\limits_{i=1}^mx_i=\sum\limits_{i=1}^my_i\\
+a_0\sum\limits_{i=1}^mx_i+a_1\sum\limits_{i=1}^mx_i^2=\sum\limits_{i=1}^mx_iy_i
+\end{cases}\\\\
+需要计算的值有：&amp;\begin{cases}
+\sum\limits_{i=1}^mx_i\\
+\sum\limits_{i=1}^my_i\\
+\sum\limits_{i=1}^mx_i^2\\
+\sum\limits_{i=1}^mx_iy_i
+\end{cases}
+\end{align*}
+\]</span> 可以这样记：第二个式子是在第一个式子的基础上多乘了一个<span class="math inline">\(\sum\limits_{i=1}^mx_i\)</span>，只是第一项少了一个<span class="math inline">\(m\)</span></p>
+<h4 id="例题-16">例题</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229204729421.png" class title="image-20231229204729421">
+<p>这个不可能手算，看看就行</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229204923822.png" class title="image-20231229204923822">
+<h4 id="手算的例题">手算的例题</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229220720816.png" class title="image-20231229220720816">
+<p>最小二乘拟合的时候，先把数据点描在图上，来确定用什么函数拟合</p>
+<p>这个就可以用直线拟合</p>
+<p>我很倾向于用解方程的方法求解，只是可能会算错，注意计算器别按错就好了</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229222510987.png" class title="image-20231229222510987">
+<p>如果你是个蓝狗，也可以试试用矛盾方程组系数矩阵求解的方式：</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229223852232.png" class title="image-20231229223852232">
+<p>你要做的工作仅仅只有把系数矩阵A和向量b输入计算器</p>
+<p>然后用转置矩阵、求逆这样的方法求解</p>
+<p>这种方法仅适用于4个数据点，因为卡西欧计算器最高只支持到4x4的矩阵运算，很可惜</p>
+<p>不过一开始的解方程法就不用担心数据点过多，问题不大</p>
+<h3 id="多项式拟合">多项式拟合</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230084122137.png" class title="image-20231230084122137">
+<p>给定<span class="math inline">\(m\)</span>个数据点，设多项式最高次为<span class="math inline">\(n\)</span>次，<span class="math inline">\(n&lt;&lt;m\)</span> <span class="math display">\[
+\begin{align*}
+多项式拟合，设y&amp;=a_0+a_1x+a_2x^2+...+a_nx^n\\\\
+法方程组&amp;\begin{cases}
+a_0m+a_1\sum\limits_{i=1}^mx_i+...+a_n\sum\limits_{i=1}^mx_i^n=\sum\limits_{i=1}^my_i\\
+a_0\sum\limits_{i=1}^mx_i+a_1\sum\limits_{i=1}^mx_i^2+...+a_n\sum\limits_{i=1}^mx_i^{n+1}=\sum\limits_{i=1}^mx_iy_i\\
+\qquad\qquad\vdots\\
+a_0\sum\limits_{i=1}^mx_i^n+a_1\sum\limits_{i=1}^mx_i^{n+1}+...+a_n\sum\limits_{i=1}^mx_i^{2n}=\sum\limits_{i=1}^mx_i^ny_i\\
+\end{cases}
+\end{align*}
+\]</span> 这个还是比较好记的，总共<span class="math inline">\(n+1\)</span>个方程，每次在上一个的基础上多乘一个<span class="math inline">\(\sum\limits_{i=1}^mx_i\)</span>，只是第一个方程的第一项少了一个<span class="math inline">\(m\)</span></p>
+<p>最高次为<span class="math inline">\(x^{2n}\)</span>次</p>
+<h4 id="例题-17">例题</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230085741358.png" class title="image-20231230085741358">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230091203176.png" class title="image-20231230091203176">
+<p><br></p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230091317428.png" class title="image-20231230091317428">
+<p>这个如果用矩阵写，卡西欧就不能解决了，所以还是按一开始的方法解</p>
+<p><br></p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230091503745.png" class title="image-20231230091503745">
+<p>如果告诉你其中一个系数为0，那也挺好算的，列方程的时候少列一个项就好</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230092651260.png" class title="image-20231230092651260">
+<h3 id="多项式拟合变体">多项式拟合变体</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230092734573.png" class title="image-20231230092734573">
+<p>只要能变化到<span class="math inline">\(\bar{y}=a_0+a_1\bar{x}\)</span>或者<span class="math inline">\(\bar{y}=a_0+a_1\bar{x}+a_2\bar{x}^2\)</span>即可</p>
+<h4 id="例题-18">例题</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230093214441.png" class title="image-20231230093214441">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230095118036.png" class title="image-20231230095118036">
+<p>PPT给的答案是：</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230095139388.png" class title="image-20231230095139388">
+<p>还是有一定误差的</p>
+<h2 id="最小二乘法总结">最小二乘法总结</h2>
+<p><span class="math display">\[
+\begin{align*}
+线性拟合：\\
+设\phi(x)&amp;=a_0+a_1x\\\\
+正规方程组：&amp;
+\begin{cases}
+a_0m+a_1\sum\limits_{i=1}^mx_i=\sum\limits_{i=1}^my_i\\
+a_0\sum\limits_{i=1}^mx_i+a_1\sum\limits_{i=1}^mx_i^2=\sum\limits_{i=1}^mx_iy_i
+\end{cases}\\\\
+需要计算的值有：&amp;\begin{cases}
+\sum\limits_{i=1}^mx_i\\
+\sum\limits_{i=1}^my_i\\
+\sum\limits_{i=1}^mx_i^2\\
+\sum\limits_{i=1}^mx_iy_i
+\end{cases}\\\\\\
+多项式拟合：\\
+设y&amp;=a_0+a_1x+a_2x^2+...+a_nx^n\\\\
+法方程组：&amp;\begin{cases}
+a_0m+a_1\sum\limits_{i=1}^mx_i+...+a_n\sum\limits_{i=1}^mx_i^n=\sum\limits_{i=1}^my_i\\
+a_0\sum\limits_{i=1}^mx_i+a_1\sum\limits_{i=1}^mx_i^2+...+a_n\sum\limits_{i=1}^mx_i^{n+1}=\sum\limits_{i=1}^mx_iy_i\\
+\qquad\qquad\vdots\\
+a_0\sum\limits_{i=1}^mx_i^n+a_1\sum\limits_{i=1}^mx_i^{n+1}+...+a_n\sum\limits_{i=1}^mx_i^{2n}=\sum\limits_{i=1}^mx_i^ny_i\\
+\end{cases}\\\\
+多项式拟合还会有变体：\\
+只要能变化到：&amp;\bar{y}=a_0+a_1\bar{x}\quad或者\quad\bar{y}=a_0+a_1\bar{x}+a_2\bar{x}^2
+\end{align*}
+\]</span></p>
+<h1 id="数值积分">数值积分</h1>
+<h2 id="机械求积公式">机械求积公式</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230100333318.png" class title="image-20231230100333318">
+<p><span class="math display">\[
+\begin{align*}
+机械求积公式：\\
+\int_a^bf(x)dx&amp;\approx\sum_{i=0}^nA_if(x_i)\\
+\end{align*}
+\]</span></p>
+<h2 id="代数精度">代数精度</h2>
+<h3 id="代数精度定义">代数精度定义</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230102356317.png" class title="image-20231230102356317">
+<h3 id="验证代数精度的方法">验证代数精度的方法</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230102417910.png" class title="image-20231230102417910">
+<h4 id="例题-19">例题</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230102522513.png" class title="image-20231230102522513">
+<p>给定一个机械求积公式，求代数精度：</p>
+<p>把<span class="math inline">\(f(x)=1,x,x^2,x^3...\)</span>往里代</p>
+<p>如题，要解出3个未知数<span class="math inline">\(A_0A_1A_2\)</span>，就需要列3个方程</p>
+<p>依次将<span class="math inline">\(f(x)=1,x,x^2\)</span>代入即可得出三个<span class="math inline">\(A\)</span></p>
+<p>算出来： <span class="math display">\[
+\int_{-1}^1f(x)dx\approx\frac{f(-1)+4f(0)+f(1)}{3}
+\]</span> 把<span class="math inline">\(f(x)=x^3\)</span>代入，<span class="math inline">\(0=0\)</span>精确成立</p>
+<p>把<span class="math inline">\(f(x)=x^4\)</span>代入，<span class="math inline">\(\dfrac{2}{5}\ne\dfrac{2}{3}\)</span>，不精确成立</p>
+<p>所以有3次代数精度</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230103323607.png" class title="image-20231230103323607">
+<h3 id="求积公式系数的性质">求积公式系数的性质</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230103921909.png" class title="image-20231230103921909">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230103934108.png" class title="image-20231230103934108">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230103947907.png" class title="image-20231230103947907">
+<h2 id="插值型求积">插值型求积</h2>
+<h3 id="定义">定义</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230104114073.png" class title="image-20231230104114073">
+<p>已知f(x)，对其进行拉格朗日插值，然后用拉格朗日插值的结果代替f(x)，可以得到机械求积公式</p>
+<h3 id="插值求积公式定理">插值求积公式定理</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230104234098.png" class title="image-20231230104234098">
+<h2 id="求积公式收敛性">求积公式收敛性</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230104311126.png" class title="image-20231230104311126">
+<h2 id="求积公式稳定性">求积公式稳定性</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230104407889.png" class title="image-20231230104407889">
+<h3 id="求积公式稳定性定理">求积公式稳定性定理</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230104445372.png" class title="image-20231230104445372">
+<h2 id="牛柯求积公式">牛柯求积公式</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230104720845.png" class title="image-20231230104720845">
+<p><span class="math display">\[
+\begin{align*}
+牛顿柯特斯求积公式：\\
+积分区间：&amp;[a,b]\\
+求积间距：&amp;h=\frac{b-a}{n}\\
+求积节点：&amp;x_i=a+ih\\
+\int_a^bf(x)dx&amp;\approx(b-a)\sum_{i=0}^nC_i^{(n)}f(x_i)\\
+&amp;C_i^{(n)}为柯特斯系数
+\end{align*}
+\]</span></p>
+<h3 id="要记住的牛顿柯特斯求积公式">要记住的牛顿柯特斯求积公式</h3>
+<p><span class="math display">\[
+\begin{align*}
+n=1，梯形公式，代数精度1：\\
+\int_a^bf(x)dx&amp;\approx\frac{b-a}{2}[f(a)+f(b)]\\\\
+n=2，抛物线公式（辛普森公式），代数精度3：\\
+\int_a^bf(x)dx&amp;\approx\frac{(b-a)}{6}[f(a)+4f(\frac{a+b}{2})+f(b)]\\
+\end{align*}
+\]</span></p>
+<p>还是很好理解的，拿<span class="math inline">\(n=2\)</span>为例：</p>
+<p>积分区间<span class="math inline">\([a,b]\)</span>，求积间隔<span class="math inline">\(h=\dfrac{b-a}{n}=\dfrac{b-a}{2}\)</span></p>
+<p>所以就用这三个点：<span class="math inline">\(a,\quad
+a+1\cdot\dfrac{b-a}{2}=\dfrac{a+b}{2},\quad
+a+2\cdot\dfrac{b-a}{2}=b\)</span></p>
+<p>每一项的函数值再乘以对应的柯特斯系数，加和，最后乘以间距<span class="math inline">\((b-a)\)</span>就行了</p>
+<p><br></p>
+<p><span class="math inline">\(n=3\)</span>同理，间隔<span class="math inline">\(h=\dfrac{b-a}{n}=\dfrac{b-a}{3}\)</span></p>
+<p>就用四个点：<span class="math inline">\(a,\quad
+a+1\cdot\dfrac{b-a}{3}=\dfrac{2a+b}{3},\quad
+a+2\cdot\dfrac{b-a}{3}=\dfrac{2b+a}{3},\quad
+a+3\cdot\dfrac{b-a}{3}=b\)</span></p>
+<h3 id="柯特斯系数">柯特斯系数</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230110508211.png" class title="image-20231230110508211">
+<p>可见，<span class="math inline">\(n\ge8\)</span>以后出现了负数，即求积<strong>不稳定</strong></p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230110618671.png" class title="image-20231230110618671">
+<h3 id="牛柯求积公式代数精度定理">牛柯求积公式代数精度定理</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230110741388.png" class title="image-20231230110741388">
+<h4 id="例题-20">例题</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230110852961.png" class title="image-20231230110852961">
+<h2 id="复合求积公式">复合求积公式</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230111519063.png" class title="image-20231230111519063">
+<h2 id="高斯求积公式">高斯求积公式</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230111845435.png" class title="image-20231230111845435">
+<p>打错了，应该是<span class="math inline">\(f(x)=x^4\)</span>最后代入</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230111940077.png" class title="image-20231230111940077">
+<h2 id="数值积分总结">数值积分总结</h2>
+<p><span class="math display">\[
+\begin{align*}
+机械求积公式：\\
+\int_a^bf(x)dx&amp;\approx\sum_{i=0}^nA_if(x_i)\\\\
+机械求积公式性质：\\
+\sum_{i=0}^nA_i&amp;=A_0+...+A_n\\
+&amp;=b-a\\\\
+牛顿柯特斯求积公式：\\
+积分区间：&amp;[a,b]\\
+求积间距：&amp;h=\frac{b-a}{n}\\
+求积节点：&amp;x_i=a+ih\\
+\int_a^bf(x)dx&amp;\approx(b-a)\sum_{i=0}^nC_i^{(n)}f(x_i)\\
+&amp;C_i^{(n)}为柯特斯系数\\\\
+n=1，梯形公式，代数精度1：\\
+\int_a^bf(x)dx&amp;\approx\frac{b-a}{2}[f(a)+f(b)]\\\\
+n=2，抛物线公式（辛普森公式），代数精度3：\\
+\int_a^bf(x)dx&amp;\approx\frac{(b-a)}{6}[f(a)+4f(\frac{a+b}{2})+f(b)]\\\\\\
+高斯求积公式&amp;在所有机械求积公式中代数精度最高
+\end{align*}
+\]</span></p>
+<h2 id="数值积分作业">数值积分作业</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230112613385.png" class title="image-20231230112613385">
+<p>柯特斯系数如下：</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230112715069.png" class title="image-20231230112715069">
+<p><span class="math display">\[
+\begin{align*}
+\text{n=3时，步长为}&amp;(12-0)\div3=4\\
+\int_{0}^{12}\frac{x}{6+5x^2}dx&amp;=12\times(\frac{1}{8}f(0)+\frac{3}{8}f(4)+\frac{3}{8}f(8)+\frac{1}{8}f(12))\\
+&amp;=\frac{12}{8}(0+3\times0.046511627+3\times0.024539877+0.016528925)\\
+&amp;=0.344525155\\\\
+\text{n=4时，步长为}&amp;(12-0)\div4=3\\
+\int_{0}^{12}\frac{x}{6+5x^2}dx&amp;=12\times(\frac{7}{90}f(0)+\frac{32}{90}f(3)+\frac{12}{90}f(6)+\frac{32}{90}f(9)+\frac{7}{90}f(12))\\
+&amp;=\frac{12}{90}(7\times0+32\times0.058823529+12\times0.032258064+32\times0.02189781+7\times0.016528925)\\
+&amp;=0.411450945
+\end{align*}
+\]</span> <span class="math inline">\(n=4\)</span>时，代数精度为5</p>
+<h1 id="高斯消去法">高斯消去法</h1>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230113650636.png" class title="image-20231230113650636">
+<p>矩阵的谱：矩阵的所有特征值</p>
+<p>矩阵的谱半径：<span class="math inline">\(\rho(A)\)</span>是矩阵<strong>特征值绝对值</strong>的最大值</p>
+<h2 id="高斯消去法-1">高斯消去法</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230114232834.png" class title="image-20231230114232834">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230113836333.png" class title="image-20231230113836333">
+<h2 id="列主元高斯消去法">列主元高斯消去法</h2>
+<p>定义：<span class="math inline">\(a_{ii}\)</span>为主元</p>
+<p>注意区分列主元：当前列到最低列中最大值</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230114344254.png" class title="image-20231230114344254">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230114457856.png" class title="image-20231230114457856">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230114835287.png" class title="image-20231230114835287">
+<h1 id="矩阵的三角分解">矩阵的三角分解</h1>
+<h2 id="一般线性方程组">一般线性方程组</h2>
+<p>矩阵分解手算：<strong>待定系数法</strong></p>
+<h3 id="lu分解">LU分解</h3>
+<p>先分解，再回代</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230115739373.png" class title="image-20231230115739373">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230115955336.png" class title="image-20231230115955336">
+<p><span class="math display">\[
+\begin{align*}
+Ax&amp;=b\\
+LUx&amp;=b\\\\
+令y&amp;=Ux\\
+先解Ly&amp;=b，得到y\\
+再解Ux&amp;=y，求得x
+\end{align*}
+\]</span></p>
+<p>来看L和U的特征：</p>
+<p>L矩阵对角线上的元素一定为1</p>
+<p>U矩阵第一行元素一定是A的第一行元素</p>
+<h4 id="例题-21">例题</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230120453695.png" class title="image-20231230120453695">
+<p>L矩阵对角线上的元素一定为1</p>
+<p>U矩阵第一行元素一定是A的第一行元素</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230122043329.png" class title="image-20231230122043329">
+<h3 id="plu分解">PLU分解</h3>
+<p>列主元高斯消去法</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230122501899.png" class title="image-20231230122501899">
+<h2 id="对称正定线性方程组">对称正定线性方程组</h2>
+<p>注意：此处出现的所有A都是<strong>对称矩阵</strong></p>
+<h3 id="楚列斯基分解法平方根法">楚列斯基分解法（平方根法）</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230122642534.png" class title="image-20231230122642534">
+<p><span class="math display">\[
+\begin{align*}
+把U的主对角线拿出来变成D：U&amp;=DU_0\\
+A&amp;=LU\\
+&amp;=LDU_0\\\\
+又因为A为对称矩阵，则A&amp;=A^T\\
+A&amp;=U_0^T(DL^T)\\\\
+LU分解有唯一性，所以U_0^T&amp;=L\\
+即对称矩阵A&amp;=LDL^T
+\end{align*}
+\]</span></p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230144041023.png" class title="image-20231230144041023">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230144133153.png" class title="image-20231230144133153">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230144201023.png" class title="image-20231230144201023">
+<p>楚列斯基分解法，就是在对称矩阵分解的基础上，把中间的<span class="math inline">\(D\)</span>矩阵变成<span class="math inline">\(D^{\frac{1}{2}}D^{\frac{1}{2}}\)</span>，分别乘到<span class="math inline">\(L\)</span>和<span class="math inline">\(L^T\)</span>中 <span class="math display">\[
+\begin{align*}
+对称矩阵A&amp;=LDL^T\\\\
+如果A是对称正定矩阵：\\
+D&amp;=D^{\frac{1}{2}}D^{\frac{1}{2}}\\\\
+A&amp;=LD^{\frac{1}{2}}D^{\frac{1}{2}}L^T\\
+&amp;=(LD^{\frac{1}{2}})(D^{\frac{1}{2}}L^T)\\
+&amp;=(LD^{\frac{1}{2}})(LD^{\frac{1}{2}})^T\\
+&amp;=L_1L_1^T
+\end{align*}
+\]</span></p>
+<h4 id="例题-22">例题</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230144340321.png" class title="image-20231230144340321">
+<p>楚列斯基分解不是很好算，头大</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230150657736.png" class title="image-20231230150657736">
+<h2 id="对角占优的三对角线性方程组">对角占优的三对角线性方程组</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230150730807.png" class title="image-20231230150730807">
+<p>本质仍然是LU分解</p>
+<h3 id="追赶法">追赶法</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230150759733.png" class title="image-20231230150759733">
+<p>还得是待定系数法</p>
+<h4 id="例题-23">例题</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230150856791.png" class title="image-20231230150856791">
+<p>先建立对应的L和U</p>
+<p>追赶法的L：主对角线下面一列跟原来的完全一样，只有主对角线是变量</p>
+<p>追赶法的U：主对角线全是1，只有主对角线上面一列是变量</p>
+<p>容易算错</p>
+<p>最后回代也容易错，计算量还是有点大的</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230153201856.png" class title="image-20231230153201856">
+<h2 id="向量和矩阵的范数">向量和矩阵的范数</h2>
+<h3 id="矩阵范数定义">矩阵范数定义</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230153428354.png" class title="image-20231230153428354">
+<h3 id="常见范数">常见范数</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230153443594.png" class title="image-20231230153443594">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230153449658.png" class title="image-20231230153449658">
+<p><span class="math display">\[
+\begin{align*}
+矩阵的范数：\\
+F-范数：\\
+||A||_F&amp;=(\sum_{i=1}^n\sum_{j=1}^na_{ij}^2)^{\frac{1}{2}}&amp;即矩阵每一项元素平方求和再开根号\\
+1-范数（列范数）：\\
+||A||_1&amp;=\max_{1\le j\le
+n}\sum_{i=1}^n|a_{ij}|&amp;即矩阵列元素绝对值相加，最大的和\\
+2-范数（谱范数）：\\
+||A||_2&amp;=\sqrt{\rho(A^TA)}&amp;即矩阵转置乘本身，求出谱半径再开根\\
+\infty-范数（行范数）：\\
+||A||_\infty&amp;=\max_{1\le i\le
+n}\sum_{j=1}^n|a_{ij}|&amp;即矩阵行元素绝对值相加，最大的和\\
+\end{align*}
+\]</span></p>
+<p>矩阵的谱半径：<span class="math inline">\(\rho(A)\)</span>是矩阵<strong>特征值绝对值</strong>的最大值，注意：是<strong>绝对值</strong></p>
+<p>1范数是列范数，就是列元素<strong>绝对值</strong>相加，最大的和</p>
+<p>无穷范数是行范数，就是行元素<strong>绝对值</strong>相加，最大的和</p>
+<p><br></p>
+<p>矩阵的范数，除了行列范数，都要开根</p>
+<p>矩阵的范数，基本都是<strong>绝对值运算</strong>（乘方相当于绝对值），仅有2范数不用绝对值</p>
+<h4 id="例题-24">例题</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230153651384.png" class title="image-20231230153651384">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230160128154.png" class title="image-20231230160128154">
+<p>虽然卡西欧不能算特征值，但是我们可以解方程</p>
+<p>先用矩阵运算，求出<span class="math inline">\(A^TA\)</span>，再手算出特征值的方程</p>
+<p>卡西欧用的牛顿法解方程，所以我们初始值带一个很大的数，他肯定能够找到最大的特征值，这个就是我们要找的值，开个根就是2范数</p>
+<h2 id="矩阵条件数和误差分析">矩阵条件数和误差分析</h2>
+<h3 id="病态矩阵">病态矩阵</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230160407744.png" class title="image-20231230160407744">
+<p>判断矩阵是不是病态矩阵：条件数</p>
+<h3 id="矩阵条件数">矩阵条件数</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230160446544.png" class title="image-20231230160446544">
+<p>2范数太难算了，还是用行范数或者列范数好一些</p>
+<p><span class="math display">\[
+\begin{align*}
+矩阵条件数：\\
+Cond(A)_2&amp;=||A^{-1}||\cdot||A||
+\end{align*}
+\]</span></p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230160540775.png" class title="image-20231230160540775">
+<h2 id="矩阵三角分解总结">矩阵三角分解总结</h2>
+<p><span class="math display">\[
+\begin{align*}
+LU分解：\\
+A&amp;=LU\\
+&amp;所有方阵都可以LU分解\\
+&amp;L矩阵对角线上的元素一定为1\\
+&amp;U矩阵第一行元素一定是A的第一行元素\\
+&amp;LU分解唯一\\\\
+对称矩阵A&amp;=LDL^T\\
+&amp;对称矩阵这个分解，只要是对称矩阵都行\\\\
+如果A是对称正定矩阵：\\
+楚列斯基分解：\\
+A&amp;=L_1L_1^T\\
+&amp;楚列斯基分解，仅有对称正定矩阵可以\\\\\\
+矩阵的范数：\\
+F-范数：\\
+||A||_F&amp;=(\sum_{i=1}^n\sum_{j=1}^na_{ij}^2)^{\frac{1}{2}}&amp;即矩阵每一项元素平方求和再开根号\\
+1-范数（列范数）：\\
+||A||_1&amp;=\max_{1\le j\le
+n}\sum_{i=1}^n|a_{ij}|&amp;即矩阵列元素绝对值相加，最大的和\\
+2-范数（谱范数）：\\
+||A||_2&amp;=\sqrt{\rho(A^TA)}&amp;即矩阵转置乘本身，求出谱半径再开根\\
+\infty-范数（行范数）：\\
+||A||_\infty&amp;=\max_{1\le i\le
+n}\sum_{j=1}^n|a_{ij}|&amp;即矩阵行元素绝对值相加，最大的和\\\\
+矩阵条件数：\\
+Cond(A)_2&amp;=||A^{-1}||\cdot||A||
+\end{align*}
+\]</span></p>
+<h1 id="解线性方程组的迭代法">解线性方程组的迭代法</h1>
+<h2 id="迭代法定义">迭代法定义</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230161639345.png" class title="image-20231230161639345">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230161655467.png" class title="image-20231230161655467">
+<h2 id="雅可比迭代法">雅可比迭代法</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230161804463.png" class title="image-20231230161804463">
+<p>迭代形式很容易，把每个变量单独放在等号左边，等号右边全是上一次迭代的值</p>
+<h3 id="雅克比迭代法矩阵形式">雅克比迭代法矩阵形式</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230161830598.png" class title="image-20231230161830598">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230161943458.png" class title="image-20231230161943458">
+<p>注意：不要跟矩阵三角分解的LU矩阵弄混了</p>
+<p>迭代法的矩阵仅仅是<strong>简单的加减法</strong>，三角分解里LU<strong>是乘法关系</strong></p>
+<p>雅克比迭代法： <span class="math display">\[
+\begin{align*}
+把矩阵A分解为：\\
+A&amp;=D-L-U\\
+&amp;D为主对角线元素，L为下三角矩阵，U为上三角矩阵\\
+&amp;因为减法，所以L和U里的元素符号和A是反的\\\\
+对Ax=b：\\
+雅克比迭代法：\\
+x^{(k+1)}&amp;=B_Jx^{(k)}+f\\
+B_J&amp;=D^{-1}(L+U)\\
+f&amp;=D^{-1}b
+\end{align*}
+\]</span></p>
+<h2 id="高斯塞德尔迭代法">高斯塞德尔迭代法</h2>
+<p>G-S法</p>
+<p>由雅克比迭代法改进而来</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230162610404.png" class title="image-20231230162610404">
+<h3 id="高斯塞德尔迭代法矩阵形式">高斯塞德尔迭代法矩阵形式</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230162643727.png" class title="image-20231230162643727">
+<p><span class="math display">\[
+\begin{align*}
+把矩阵A分解为：\\
+A&amp;=D-L-U\\
+&amp;D为主对角线元素，L为下三角矩阵，U为上三角矩阵\\
+&amp;因为减法，所以L和U里的元素符号和A是反的\\\\
+对Ax=b：\\
+高斯塞德尔迭代法：\\
+x^{(k+1)}&amp;=B_{GS}x^{(k)}+f\\
+B_{GS}&amp;=(D-L)^{-1}U\\
+f&amp;=(D-L)^{-1}b
+\end{align*}
+\]</span></p>
+<h3 id="例题-25">例题</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230162834389.png" class title="image-20231230162834389">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230163024000.png" class title="image-20231230163024000">
+<p>这个例子可以看出G-S法对雅可比迭代法的改进：把上面算到的最新值代入求解</p>
+<h2 id="迭代法收敛条件">迭代法收敛条件</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230163119867.png" class title="image-20231230163119867">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230163133590.png" class title="image-20231230163133590">
+<p>判断迭代法收敛条件的<strong>充要条件</strong>是看<strong>迭代矩阵的谱半径是否小于1</strong></p>
+<h3 id="例题-26">例题</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230163216118.png" class title="image-20231230163216118">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230163308167.png" class title="image-20231230163308167">
+<p><br></p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230163322911.png" class title="image-20231230163322911">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230164248928.png" class title="image-20231230164248928">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230164259774.png" class title="image-20231230164259774">
+<p>通过这个题发现，谱半径太难算了</p>
+<p><span class="math inline">\(\rho(B)\)</span>是迭代矩阵<strong>特征值绝对值</strong>的最大值</p>
+<p>既然是绝对值，那我是不是只要找到特征值的大致范围就行了？</p>
+<p>这就可以通过Gershgorin圆盘定理实现</p>
+<h4 id="圆盘定理">圆盘定理</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230172824838.png" class title="image-20231230172824838">
+<p>说人话，就是一个矩阵的特征值分布在几个圆盘里</p>
+<p>圆盘的圆心为<strong>矩阵对角线元素</strong></p>
+<p>圆盘的半径为矩阵<span class="math inline">\(A\)</span>的<strong>第<span class="math inline">\(i\)</span>行元素，去掉</strong><span class="math inline">\(a_{ii}\)</span>以后<strong>的绝对值之和</strong></p>
+<p>比如：</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230172322932.png" class title="image-20231230172322932">
+<p>第一个圆盘，圆心为4，半径为1+0=1</p>
+<p>第二个圆盘，圆心为0，半径为1+1=2</p>
+<p>第三个圆盘，圆心为-4，半径为1+1=2</p>
+<p>如果这个矩阵是一个迭代矩阵，那很明显这个迭代矩阵不收敛</p>
+<h3 id="迭代法收敛充分条件">迭代法收敛充分条件</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230164657519.png" class title="image-20231230164657519">
+<p>如果任意一个范数小于1，就可以认为是收敛的</p>
+<p>如果要判断矩阵是否发散，只能用谱半径</p>
+<h4 id="例题-27">例题</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230165526427.png" class title="image-20231230165526427">
+<h2 id="sor迭代法">SOR迭代法</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230165540803.png" class title="image-20231230165540803">
+<h3 id="矩阵形式">矩阵形式</h3>
+<p><span class="math display">\[
+\begin{align*}
+对Ax=b：\\
+SOR法：\\
+x^{(k+1)}&amp;=(D-\omega L)^{-1}[(1-\omega)D+\omega U]x^{(k)}+\omega
+(D-\omega L)^{-1}b\\
+SOR迭代矩阵L_\omega：\\
+L_\omega&amp;=(D-\omega L)^{-1}[(1-\omega)D+\omega U]\\\\
+f&amp;=\omega (D-\omega L)^{-1}b
+\end{align*}
+\]</span></p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230170027304.png" class title="image-20231230170027304">
+<p>经验上取<span class="math inline">\(\omega\)</span>为<span class="math inline">\(1.4&lt;\omega&lt;1.6\)</span></p>
+<h4 id="例题-28">例题</h4>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230174409729.png" class title="image-20231230174409729">
+<h3 id="sor收敛性">SOR收敛性</h3>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230170127764.png" class title="image-20231230170127764">
+<h2 id="迭代法总结">迭代法总结</h2>
+<p><span class="math display">\[
+\begin{align*}
+迭代法：\\
+x^{(k+1)}&amp;=Bx^{(k)}+f\\\\
+对Ax=b：\\
+把矩阵A分解为：\\
+A&amp;=D-L-U\\
+&amp;D为主对角线元素，L为下三角矩阵，U为上三角矩阵\\
+&amp;因为减法，所以L和U里的元素符号和A是反的\\\\\\
+对Ax=b：\\
+雅克比迭代法：\\
+x^{(k+1)}&amp;=B_Jx^{(k)}+f\\
+B_J&amp;=D^{-1}(L+U)\\
+f&amp;=D^{-1}b\\\\
+对Ax=b：\\
+高斯塞德尔迭代法：\\
+x^{(k+1)}&amp;=B_{GS}x^{(k)}+f\\
+B_{GS}&amp;=(D-L)^{-1}U\\
+f&amp;=(D-L)^{-1}b\\\\
+迭代法收敛充要条件：\\
+\rho(B)&amp;&lt;1\\\\
+&amp;但是谱半径太难算了\\
+&amp;如果任意一个范数||B||小于1，就可以认为是收敛的\\
+&amp;如果要判断收敛法是否发散，只能用\rho(B)\\\\
+对Ax=b：\\
+SOR法：\\
+x^{(k+1)}&amp;=(D-\omega L)^{-1}[(1-\omega)D+\omega U]x^{(k)}+\omega
+(D-\omega L)^{-1}b\\
+SOR迭代矩阵L_\omega：\\
+L_\omega&amp;=(D-\omega L)^{-1}[(1-\omega)D+\omega U]\\
+f&amp;=\omega (D-\omega L)^{-1}b\\
+\end{align*}
+\]</span></p>
+<h1 id="复习课习题">复习课习题</h1>
+<h2 id="有效数字-1">有效数字</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229113133728.png" class title="image-20231229113133728">
+<p>先看给出的两个数，3.1415和3.1416，都是5位</p>
+<p>但是这两个数都已知了精确值<span class="math inline">\(\pi=3.1415926...\)</span>，这个精确值如果四舍五入只剩5个数就是<span class="math inline">\(3.1416\)</span></p>
+<p>很明显<span class="math inline">\(3.1415\)</span>这个就是没有四舍五入的数，所以最后一位没用，看成<span class="math inline">\(3.141\)</span>就行</p>
+<p>这样处理之后，有效数字的个数就是数的个数：<span class="math inline">\(3.141\)</span>有4个数，<span class="math inline">\(n\)</span>为4；<span class="math inline">\(3.1416\)</span>有5个数，<span class="math inline">\(n\)</span>为5</p>
+<p>注意：只有给出精确值了才能这样处理，否则都是先写成科学计数法，然后看数字位数</p>
+<h2 id="多元可微函数绝对误差限相对误差限">多元可微函数绝对误差限相对误差限</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229113233383.png" class title="image-20231229113233383">
+<p><span class="math display">\[
+\begin{align*}
+S&amp;=L\cdot D，其中L和D都是变量\\\\
+\varepsilon(S^*)&amp;\approx|(\frac{\partial S}{\partial
+L})^*|\cdot\varepsilon(L^*)+|(\frac{\partial S}{\partial
+D})^*|\cdot\varepsilon(D^*)\\
+&amp;=D^*\cdot0.2+L^*\cdot0.1\\
+&amp;=80*0.2+110*0.1\\
+&amp;=27(m^2)\\
+\\
+\varepsilon_r(S^*)&amp;\approx\frac{\varepsilon(S^*)}{|S^*|}\\
+&amp;=\frac{27}{L^*D^*}\\
+&amp;=\frac{27}{110*80}\\
+&amp;=0.31\%
+\end{align*}
+\]</span></p>
+<h2 id="拉格朗日插值误差限">拉格朗日插值误差限</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229141201519.png" class title="image-20231229141201519">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229112936309.png" class title="image-20231229112936309">
+<h2 id="均差表-1">均差表</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229141251421.png" class title="image-20231229141251421">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229090908629.png" class title="image-20231229090908629">
+<p>一阶均差：<span class="math inline">\(\dfrac{3-5}{-1+2}=-2\)</span>，<span class="math inline">\(\dfrac{17-3}{1+1}=7\)</span>，<span class="math inline">\(\dfrac{21-17}{2-1}=4\)</span></p>
+<p>二阶均差：<span class="math inline">\(\dfrac{7+2}{1+2}=3\)</span>（这个的分母减的是<span class="math inline">\(x_0\)</span>，即<span class="math inline">\(x_2-x_0=1-(-2)\)</span>，后面的分母都是隔了一个<span class="math inline">\(x\)</span>，比如<span class="math inline">\(x_3-x_1\)</span>，<span class="math inline">\(x_4-x_2\)</span>）</p>
+<p><span class="math inline">\(\dfrac{4-7}{2+1}=-1\)</span></p>
+<p>三阶均差：<span class="math inline">\(\dfrac{-1-3}{2+2}=-1\)</span>（这个的分母减的是<span class="math inline">\(x_0\)</span>，即<span class="math inline">\(x_3-x_0=2-(-2)\)</span></p>
+<h2 id="牛顿前插公式-1">牛顿前插公式</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229142930301.png" class title="image-20231229142930301">
+<p>题目意思：从0开始，间隔0.1，取到0.5</p>
+<p>4次插值，只用5个点</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229145726424.png" class title="image-20231229145726424">
+<p>注意别把数字抄错了，不然差分表白列了</p>
+<h2 id="三点三次埃尔米特插值-1">三点三次埃尔米特插值</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229152331205.png" class title="image-20231229152331205">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229154740759.png" class title="image-20231229154740759">
+<p>可惜卡西欧计算器并不是万能的，多项式化简这一步就不行</p>
+<p>顺序化简容易化错，我建议按照项化简</p>
+<p>你一个多项式说到底就是<span class="math inline">\(ax^3+bx^2+cx+d\)</span>，我们直接算出这些系数就行了，不需要一步一步化简，又慢又容易错</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229155751951.png" class title="image-20231229155751951">
+<p>卡西欧框框按，算的飞快</p>
+<p>考试要是代值那将绝杀</p>
+<h2 id="切比雪夫零点插值加换元">切比雪夫零点插值加换元</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229203947338.png" class title="image-20231229203947338">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229193140643.png" class title="image-20231229193140643">
+<p>考试不可能出这么离谱的，这真不可能算出来</p>
+<p>只需要知道如果切比雪夫零点插值，则误差限的分析就要重新计算</p>
+<p>如果在此基础上又他妈换一个元，把变量换到<span class="math inline">\([-1,1]\)</span>，误差限分析的时候又要多乘一个<span class="math inline">\(\dfrac{(b-a)^{n+1}}{2^{n+1}}\)</span></p>
+<h2 id="切比雪夫多项式性质n-1次最优一致逼近n次">切比雪夫多项式性质：<span class="math inline">\(n-1\)</span>次最优一致逼近<span class="math inline">\(n\)</span>次</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229204059144.png" class title="image-20231229204059144">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229183410730.png" class title="image-20231229183410730">
+<p>考试出题的时候可能会给你多个<span class="math inline">\(T_n(x)\)</span>，我们的目的是把最高次项减掉，所以只用最高次项对应的<span class="math inline">\(T_n(x)\)</span>即可</p>
+<h2 id="直线拟合-1">直线拟合</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229220720816.png" class title="image-20231229220720816">
+<p>最小二乘拟合的时候，先把数据点描在图上，来确定用什么函数拟合</p>
+<p>这个就可以用直线拟合</p>
+<p>我很倾向于用解方程的方法求解，只是可能会算错，注意计算器别按错就好了</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229222510987.png" class title="image-20231229222510987">
+<p>如果你是个蓝狗，也可以试试用矛盾方程组系数矩阵求解的方式：</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229223852232.png" class title="image-20231229223852232">
+<p>你要做的工作仅仅只有把系数矩阵A和向量b输入计算器</p>
+<p>然后用转置矩阵、求逆这样的方法求解</p>
+<p>这种方法仅适用于4个数据点，因为卡西欧计算器最高只支持到4x4的矩阵运算，很可惜</p>
+<p>不过一开始的解方程法就不用担心数据点过多，问题不大</p>
+<h2 id="多项式拟合-1">多项式拟合</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230085741358.png" class title="image-20231230085741358">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230091203176.png" class title="image-20231230091203176">
+<h2 id="变体多项式拟合">变体多项式拟合</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230093214441.png" class title="image-20231230093214441">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230095118036.png" class title="image-20231230095118036">
+<p>PPT给的答案是：</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230095139388.png" class title="image-20231230095139388">
+<p>还是有一定误差的</p>
+<h2 id="数值积分-1">数值积分</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230110852961.png" class title="image-20231230110852961">
+<h2 id="牛顿柯特斯求积公式">牛顿柯特斯求积公式</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230112613385.png" class title="image-20231230112613385">
+<p>柯特斯系数如下：</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230112715069.png" class title="image-20231230112715069">
+<p><span class="math display">\[
+\begin{align*}
+\text{n=3时，步长为}&amp;(12-0)\div3=4\\
+\int_{0}^{12}\frac{x}{6+5x^2}dx&amp;=12\times(\frac{1}{8}f(0)+\frac{3}{8}f(4)+\frac{3}{8}f(8)+\frac{1}{8}f(12))\\
+&amp;=\frac{12}{8}(0+3\times0.046511627+3\times0.024539877+0.016528925)\\
+&amp;=0.344525155\\\\
+\text{n=4时，步长为}&amp;(12-0)\div4=3\\
+\int_{0}^{12}\frac{x}{6+5x^2}dx&amp;=12\times(\frac{7}{90}f(0)+\frac{32}{90}f(3)+\frac{12}{90}f(6)+\frac{32}{90}f(9)+\frac{7}{90}f(12))\\
+&amp;=\frac{12}{90}(7\times0+32\times0.058823529+12\times0.032258064+32\times0.02189781+7\times0.016528925)\\
+&amp;=0.411450945
+\end{align*}
+\]</span> <span class="math inline">\(n=4\)</span>时，代数精度为5</p>
+<h2 id="高斯消去法-2">高斯消去法</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230173822001.png" class title="image-20231230173822001">
+<h2 id="列主元高斯消去法-1">列主元高斯消去法</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230173838212.png" class title="image-20231230173838212">
+<h2 id="lu分解-1">LU分解</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230120453695.png" class title="image-20231230120453695">
+<p>L矩阵对角线上的元素一定为1</p>
+<p>U矩阵第一行元素一定是A的第一行元素</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230122043329.png" class title="image-20231230122043329">
+<h2 id="楚列斯基分解法">楚列斯基分解法</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230144340321.png" class title="image-20231230144340321">
+<p>楚列斯基分解不是很好算，头大</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230150657736.png" class title="image-20231230150657736">
+<h2 id="矩阵范数计算">矩阵范数计算</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230153651384.png" class title="image-20231230153651384">
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230160128154.png" class title="image-20231230160128154">
+<p>虽然卡西欧不能算特征值，但是我们可以解方程</p>
+<p>先用矩阵运算，求出<span class="math inline">\(A^TA\)</span>，再手算出特征值的方程</p>
+<p>卡西欧用的牛顿法解方程，所以我们初始值带一个很大的数，他肯定能够找到最大的特征值，这个就是我们要找的值，开个根就是2范数</p>
+<h2 id="迭代法收敛">迭代法收敛</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230174144401.png" class title="image-20231230174144401">
+<h2 id="sor迭代法-1">SOR迭代法</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230174435823.png" class title="image-20231230174435823">
+<h2 id="证明题">证明题</h2>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230174456181.png" class title="image-20231230174456181">
+<p>函数的范数三条性质：正定性，齐次性，三角不等式</p>
+<p>这里仅用到三角不等式</p>
+<p><br></p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231230174632291.png" class title="image-20231230174632291">
+<p>差分的定义</p>
+<img src="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20231229095307652.png" class title="image-20231229095307652">
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<hr>
+<h1 id="参考资料">参考资料</h1>
+<p>课程PPT</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/">复习整理</a><a class="post-meta__tags" href="/tags/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/">数值分析</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/12/20/hexo%E7%9B%B8%E5%85%B3/Hexo_Nunjucks_Error%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" title="Hexo Nunjucks Error解决方法"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Hexo Nunjucks Error解决方法</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/12/06/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/OOAD%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="OOAD复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-06</div><div class="title">OOAD复习整理</div></div></a></div><div><a href="/2023/12/12/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="接口技术复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-12</div><div class="title">接口技术复习整理</div></div></a></div><div><a href="/2023/10/28/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E5%A4%A7%E4%B8%89%E4%B8%93%E4%B8%9A%E8%AF%BE%E4%B8%8A%E6%9C%BA%E5%AE%9E%E9%AA%8C%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%90%88%E9%9B%86/" title="大三专业课上机实验碰到的问题合集"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-28</div><div class="title">大三专业课上机实验碰到的问题合集</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/WinkySpeed%20SP%20-%20Repaired.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">WinkySpeed</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">38</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">44</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/WinkySpeed"><i class="fab fa-github"></i><span>GitHub</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">数值分析复习整理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%A6%E4%B9%9D%E9%9F%B6%E7%AE%97%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text">秦九韶算法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%AF%E5%B7%AE%E4%B8%8E%E7%A8%B3%E5%AE%9A%E6%80%A7%E5%88%86%E6%9E%90"><span class="toc-number">2.</span> <span class="toc-text">误差与稳定性分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AF%E5%B7%AE%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E6%9D%A5%E6%BA%90"><span class="toc-number">2.1.</span> <span class="toc-text">误差的定义和来源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AF%E5%B7%AE%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">2.1.1.</span> <span class="toc-text">误差的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AF%E5%B7%AE%E7%9A%84%E6%9D%A5%E6%BA%90"><span class="toc-number">2.1.2.</span> <span class="toc-text">误差的来源</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%9D%E5%AF%B9%E8%AF%AF%E5%B7%AE"><span class="toc-number">2.2.</span> <span class="toc-text">绝对误差</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%9D%E5%AF%B9%E8%AF%AF%E5%B7%AE%E9%99%90"><span class="toc-number">2.3.</span> <span class="toc-text">绝对误差限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E8%AF%AF%E5%B7%AE"><span class="toc-number">2.4.</span> <span class="toc-text">相对误差</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E8%AF%AF%E5%B7%AE%E9%99%90"><span class="toc-number">2.5.</span> <span class="toc-text">相对误差限</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-number">2.5.1.</span> <span class="toc-text">例题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E6%95%88%E6%95%B0%E5%AD%97"><span class="toc-number">2.6.</span> <span class="toc-text">有效数字</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E6%95%88%E6%95%B0%E5%AD%97%E4%B8%8E%E7%BB%9D%E5%AF%B9%E8%AF%AF%E5%B7%AE%E9%99%90"><span class="toc-number">2.6.1.</span> <span class="toc-text">有效数字与绝对误差限</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-1"><span class="toc-number">2.6.1.1.</span> <span class="toc-text">例题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E6%95%88%E6%95%B0%E5%AD%97%E4%B8%8E%E7%9B%B8%E5%AF%B9%E8%AF%AF%E5%B7%AE%E9%99%90"><span class="toc-number">2.6.2.</span> <span class="toc-text">有效数字与相对误差限</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%89%E6%95%88%E6%95%B0%E5%AD%97%E6%8E%A8%E7%9B%B8%E5%AF%B9%E8%AF%AF%E5%B7%AE%E9%99%90"><span class="toc-number">2.6.2.1.</span> <span class="toc-text">有效数字推相对误差限</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-2"><span class="toc-number">2.6.2.1.1.</span> <span class="toc-text">例题</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E8%AF%AF%E5%B7%AE%E9%99%90%E6%8E%A8%E6%9C%89%E6%95%88%E6%95%B0%E5%AD%97"><span class="toc-number">2.6.2.2.</span> <span class="toc-text">相对误差限推有效数字</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AF%E5%B7%AE%E4%BC%B0%E8%AE%A1"><span class="toc-number">2.7.</span> <span class="toc-text">误差估计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97"><span class="toc-number">2.7.1.</span> <span class="toc-text">简单算术运算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-3"><span class="toc-number">2.7.1.1.</span> <span class="toc-text">例题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E5%85%83%E5%8F%AF%E5%BE%AE%E5%87%BD%E6%95%B0"><span class="toc-number">2.7.2.</span> <span class="toc-text">一元可微函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E5%85%83%E5%8F%AF%E5%BE%AE%E5%87%BD%E6%95%B0"><span class="toc-number">2.7.3.</span> <span class="toc-text">多元可微函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-4"><span class="toc-number">2.7.3.1.</span> <span class="toc-text">例题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AF%E5%B7%AE%E5%88%86%E6%9E%90"><span class="toc-number">2.8.</span> <span class="toc-text">误差分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E7%AE%97%E6%B3%95%E7%9A%84%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="toc-number">2.8.1.</span> <span class="toc-text">数值算法的稳定性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E5%85%83%E5%8F%AF%E5%BE%AE%E5%87%BD%E6%95%B0%E7%9A%84%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="toc-number">2.8.2.</span> <span class="toc-text">一元可微函数的稳定性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AF%E5%B7%AE%E7%B4%AF%E7%A7%AF"><span class="toc-number">2.8.3.</span> <span class="toc-text">误差累积</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">2.8.4.</span> <span class="toc-text">数值计算注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-5"><span class="toc-number">2.8.4.1.</span> <span class="toc-text">例题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AF%E5%B7%AE%E6%80%BB%E7%BB%93"><span class="toc-number">2.9.</span> <span class="toc-text">误差总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AF%E5%B7%AE%E4%BD%9C%E4%B8%9A"><span class="toc-number">2.10.</span> <span class="toc-text">误差作业</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B8%8E%E7%89%9B%E9%A1%BF%E6%8F%92%E5%80%BC"><span class="toc-number">3.</span> <span class="toc-text">拉格朗日与牛顿插值</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%8F%92%E5%80%BC"><span class="toc-number">3.1.</span> <span class="toc-text">多项式插值</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%80%BC%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">3.1.1.</span> <span class="toc-text">插值的基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%8F%92%E5%80%BC%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">3.1.2.</span> <span class="toc-text">多项式插值的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%8F%92%E5%80%BC%E5%94%AF%E4%B8%80%E6%80%A7"><span class="toc-number">3.1.3.</span> <span class="toc-text">多项式插值唯一性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%8F%92%E5%80%BC"><span class="toc-number">3.2.</span> <span class="toc-text">拉格朗日插值</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E5%87%BD%E6%95%B0%E6%8F%92%E5%80%BC%E6%B3%95"><span class="toc-number">3.2.1.</span> <span class="toc-text">基函数插值法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">3.2.1.1.</span> <span class="toc-text">基函数的定义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%8F%92%E5%80%BC%E5%9F%BA%E5%87%BD%E6%95%B0"><span class="toc-number">3.2.2.</span> <span class="toc-text">拉格朗日插值基函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-6"><span class="toc-number">3.2.2.1.</span> <span class="toc-text">例题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%8F%92%E5%80%BC%E4%BD%99%E9%A1%B9"><span class="toc-number">3.2.3.</span> <span class="toc-text">拉格朗日插值余项</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-7"><span class="toc-number">3.2.3.1.</span> <span class="toc-text">例题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%9F%BA%E5%87%BD%E6%95%B0%E6%80%A7%E8%B4%A8"><span class="toc-number">3.2.4.</span> <span class="toc-text">拉格朗日基函数性质</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-8"><span class="toc-number">3.2.4.1.</span> <span class="toc-text">例题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%9B%E9%A1%BF%E5%9D%87%E5%B7%AE%E6%8F%92%E5%80%BC%E5%A4%9A%E9%A1%B9%E5%BC%8F"><span class="toc-number">3.3.</span> <span class="toc-text">牛顿均差插值多项式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%87%E5%B7%AE"><span class="toc-number">3.3.1.</span> <span class="toc-text">均差</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9D%87%E5%B7%AE%E5%AE%9A%E4%B9%89"><span class="toc-number">3.3.1.1.</span> <span class="toc-text">均差定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9D%87%E5%B7%AE%E6%80%A7%E8%B4%A8"><span class="toc-number">3.3.1.2.</span> <span class="toc-text">均差性质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9D%87%E5%B7%AE%E8%A1%A8"><span class="toc-number">3.3.1.3.</span> <span class="toc-text">均差表</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-9"><span class="toc-number">3.3.1.3.1.</span> <span class="toc-text">例题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%9B%E9%A1%BF%E5%90%8E%E6%8F%92%E5%85%AC%E5%BC%8F"><span class="toc-number">3.3.2.</span> <span class="toc-text">牛顿后插公式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%99%E9%A1%B9"><span class="toc-number">3.3.2.1.</span> <span class="toc-text">余项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-10"><span class="toc-number">3.3.2.2.</span> <span class="toc-text">例题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%AE%E5%88%86%E4%B8%8E%E7%89%9B%E9%A1%BF%E5%89%8D%E6%8F%92%E5%85%AC%E5%BC%8F"><span class="toc-number">3.4.</span> <span class="toc-text">差分与牛顿前插公式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E5%89%8D%E5%B7%AE%E5%88%86"><span class="toc-number">3.4.1.</span> <span class="toc-text">向前差分</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%AE%E5%88%86%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">3.4.1.1.</span> <span class="toc-text">差分的定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#n%E9%98%B6%E5%B7%AE%E5%88%86%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">3.4.1.2.</span> <span class="toc-text">n阶差分表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%AE%E5%88%86%E4%B8%8E%E5%9D%87%E5%B7%AE%E4%B8%8E%E5%AF%BC%E6%95%B0"><span class="toc-number">3.4.1.3.</span> <span class="toc-text">差分与均差与导数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%AE%E5%88%86%E8%A1%A8"><span class="toc-number">3.4.1.4.</span> <span class="toc-text">差分表</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%9B%E9%A1%BF%E5%89%8D%E6%8F%92%E5%85%AC%E5%BC%8F"><span class="toc-number">3.4.2.</span> <span class="toc-text">牛顿前插公式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-11"><span class="toc-number">3.4.2.1.</span> <span class="toc-text">例题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E7%89%9B%E9%A1%BF%E6%8F%92%E5%80%BC%E6%80%BB%E7%BB%93"><span class="toc-number">3.5.</span> <span class="toc-text">拉格朗日牛顿插值总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E7%89%9B%E9%A1%BF%E6%8F%92%E5%80%BC%E4%BD%9C%E4%B8%9A"><span class="toc-number">3.6.</span> <span class="toc-text">拉格朗日牛顿插值作业</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%83%E5%B0%94%E7%B1%B3%E7%89%B9%E6%8F%92%E5%80%BC%E5%92%8C%E5%88%86%E6%AE%B5%E6%8F%92%E5%80%BC"><span class="toc-number">4.</span> <span class="toc-text">埃尔米特插值和分段插值</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%83%E5%B0%94%E7%B1%B3%E7%89%B9%E6%8F%92%E5%80%BC"><span class="toc-number">4.1.</span> <span class="toc-text">埃尔米特插值</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E8%8A%82%E7%82%B9%E5%9D%87%E5%B7%AE"><span class="toc-number">4.1.1.</span> <span class="toc-text">重节点均差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%B0%E5%8B%92%E6%8F%92%E5%80%BC%E5%A4%9A%E9%A1%B9%E5%BC%8F"><span class="toc-number">4.1.2.</span> <span class="toc-text">泰勒插值多项式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%82%B9%E4%B8%89%E6%AC%A1%E5%9F%83%E5%B0%94%E7%B1%B3%E7%89%B9%E6%8F%92%E5%80%BC"><span class="toc-number">4.1.3.</span> <span class="toc-text">三点三次埃尔米特插值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-12"><span class="toc-number">4.1.3.1.</span> <span class="toc-text">例题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E7%82%B9%E4%B8%89%E6%AC%A1%E5%9F%83%E5%B0%94%E7%B1%B3%E7%89%B9%E6%8F%92%E5%80%BC"><span class="toc-number">4.1.4.</span> <span class="toc-text">两点三次埃尔米特插值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%AE%B5%E4%BD%8E%E6%AC%A1%E6%8F%92%E5%80%BC"><span class="toc-number">4.2.</span> <span class="toc-text">分段低次插值</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%AE%B5%E7%BA%BF%E6%80%A7%E6%8F%92%E5%80%BC"><span class="toc-number">4.2.1.</span> <span class="toc-text">分段线性插值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%AE%B5%E4%B8%A4%E7%82%B9%E4%B8%89%E6%AC%A1%E5%9F%83%E5%B0%94%E7%B1%B3%E7%89%B9%E6%8F%92%E5%80%BC"><span class="toc-number">4.2.2.</span> <span class="toc-text">分段两点三次埃尔米特插值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E6%AC%A1%E6%A0%B7%E6%9D%A1%E6%8F%92%E5%80%BC"><span class="toc-number">4.3.</span> <span class="toc-text">三次样条插值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%83%E5%B0%94%E7%B1%B3%E7%89%B9%E6%8F%92%E5%80%BC%E5%88%86%E6%AE%B5%E6%8F%92%E5%80%BC%E6%80%BB%E7%BB%93"><span class="toc-number">4.4.</span> <span class="toc-text">埃尔米特插值分段插值总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%BC%E8%BF%91%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%AD%A3%E4%BA%A4%E5%A4%9A%E9%A1%B9%E5%BC%8F"><span class="toc-number">5.</span> <span class="toc-text">逼近概念与正交多项式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BC%E8%BF%91%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">5.1.</span> <span class="toc-text">逼近基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8C%83%E6%95%B0"><span class="toc-number">5.1.1.</span> <span class="toc-text">范数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E7%A7%AF"><span class="toc-number">5.1.2.</span> <span class="toc-text">内积</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%83%E5%87%BD%E6%95%B0"><span class="toc-number">5.1.3.</span> <span class="toc-text">权函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%A6%E6%9D%83%E5%86%85%E7%A7%AF"><span class="toc-number">5.1.4.</span> <span class="toc-text">带权内积</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E4%BD%B3%E9%80%BC%E8%BF%91%E5%A4%9A%E9%A1%B9%E5%BC%8F"><span class="toc-number">5.2.</span> <span class="toc-text">最佳逼近多项式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E5%A4%9A%E9%A1%B9%E5%BC%8F"><span class="toc-number">5.3.</span> <span class="toc-text">正交多项式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E5%A4%9A%E9%A1%B9%E5%BC%8F%E5%AE%9A%E4%B9%89"><span class="toc-number">5.3.1.</span> <span class="toc-text">正交多项式定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%80%A7%E8%B4%A8"><span class="toc-number">5.3.2.</span> <span class="toc-text">正交多项式性质</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8B%92%E8%AE%A9%E5%BE%B7%E5%A4%9A%E9%A1%B9%E5%BC%8F"><span class="toc-number">5.4.</span> <span class="toc-text">勒让德多项式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8B%92%E8%AE%A9%E5%BE%B7%E5%A4%9A%E9%A1%B9%E5%BC%8F%E5%AE%9A%E4%B9%89"><span class="toc-number">5.4.1.</span> <span class="toc-text">勒让德多项式定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8B%92%E8%AE%A9%E5%BE%B7%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%80%A7%E8%B4%A8"><span class="toc-number">5.4.2.</span> <span class="toc-text">勒让德多项式性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E5%8B%92%E8%AE%A9%E5%BE%B7%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%B1%82%E6%9C%80%E4%BD%B3%E5%B9%B3%E6%96%B9%E9%80%BC%E8%BF%91"><span class="toc-number">5.4.3.</span> <span class="toc-text">用勒让德多项式求最佳平方逼近</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-13"><span class="toc-number">5.4.3.1.</span> <span class="toc-text">例题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E6%AF%94%E9%9B%AA%E5%A4%AB%E5%A4%9A%E9%A1%B9%E5%BC%8F"><span class="toc-number">5.5.</span> <span class="toc-text">切比雪夫多项式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%AF%94%E9%9B%AA%E5%A4%AB%E5%A4%9A%E9%A1%B9%E5%BC%8F%E5%AE%9A%E4%B9%89"><span class="toc-number">5.5.1.</span> <span class="toc-text">切比雪夫多项式定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%AF%94%E9%9B%AA%E5%A4%AB%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%80%A7%E8%B4%A8"><span class="toc-number">5.5.2.</span> <span class="toc-text">切比雪夫多项式性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8n-1%E6%AC%A1%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%9C%80%E4%BC%98%E4%B8%80%E8%87%B4%E9%80%BC%E8%BF%91n%E6%AC%A1%E5%A4%9A%E9%A1%B9%E5%BC%8F"><span class="toc-number">5.5.3.</span> <span class="toc-text">用\(n-1\)次多项式最优一致逼近\(n\)次多项式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-14"><span class="toc-number">5.5.3.1.</span> <span class="toc-text">例题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E6%AF%94%E9%9B%AA%E5%A4%AB%E9%9B%B6%E7%82%B9%E6%8F%92%E5%80%BC"><span class="toc-number">5.6.</span> <span class="toc-text">切比雪夫零点插值</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-15"><span class="toc-number">5.6.1.</span> <span class="toc-text">例题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BC%E8%BF%91%E6%80%BB%E7%BB%93"><span class="toc-number">5.7.</span> <span class="toc-text">逼近总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BC%E8%BF%91%E4%BD%9C%E4%B8%9A"><span class="toc-number">5.8.</span> <span class="toc-text">逼近作业</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95"><span class="toc-number">6.</span> <span class="toc-text">最小二乘法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B2%E7%BA%BF%E6%8B%9F%E5%90%88%E6%96%B9%E6%B3%95"><span class="toc-number">6.1.</span> <span class="toc-text">曲线拟合方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95-1"><span class="toc-number">6.2.</span> <span class="toc-text">最小二乘法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E7%BA%BF%E6%8B%9F%E5%90%88"><span class="toc-number">6.2.1.</span> <span class="toc-text">直线拟合</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-16"><span class="toc-number">6.2.1.1.</span> <span class="toc-text">例题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%8B%E7%AE%97%E7%9A%84%E4%BE%8B%E9%A2%98"><span class="toc-number">6.2.1.2.</span> <span class="toc-text">手算的例题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%8B%9F%E5%90%88"><span class="toc-number">6.2.2.</span> <span class="toc-text">多项式拟合</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-17"><span class="toc-number">6.2.2.1.</span> <span class="toc-text">例题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%8B%9F%E5%90%88%E5%8F%98%E4%BD%93"><span class="toc-number">6.2.3.</span> <span class="toc-text">多项式拟合变体</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-18"><span class="toc-number">6.2.3.1.</span> <span class="toc-text">例题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E6%80%BB%E7%BB%93"><span class="toc-number">6.3.</span> <span class="toc-text">最小二乘法总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E7%A7%AF%E5%88%86"><span class="toc-number">7.</span> <span class="toc-text">数值积分</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%BA%E6%A2%B0%E6%B1%82%E7%A7%AF%E5%85%AC%E5%BC%8F"><span class="toc-number">7.1.</span> <span class="toc-text">机械求积公式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E6%95%B0%E7%B2%BE%E5%BA%A6"><span class="toc-number">7.2.</span> <span class="toc-text">代数精度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E6%95%B0%E7%B2%BE%E5%BA%A6%E5%AE%9A%E4%B9%89"><span class="toc-number">7.2.1.</span> <span class="toc-text">代数精度定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81%E4%BB%A3%E6%95%B0%E7%B2%BE%E5%BA%A6%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">7.2.2.</span> <span class="toc-text">验证代数精度的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-19"><span class="toc-number">7.2.2.1.</span> <span class="toc-text">例题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82%E7%A7%AF%E5%85%AC%E5%BC%8F%E7%B3%BB%E6%95%B0%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-number">7.2.3.</span> <span class="toc-text">求积公式系数的性质</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E5%80%BC%E5%9E%8B%E6%B1%82%E7%A7%AF"><span class="toc-number">7.3.</span> <span class="toc-text">插值型求积</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">7.3.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%80%BC%E6%B1%82%E7%A7%AF%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86"><span class="toc-number">7.3.2.</span> <span class="toc-text">插值求积公式定理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82%E7%A7%AF%E5%85%AC%E5%BC%8F%E6%94%B6%E6%95%9B%E6%80%A7"><span class="toc-number">7.4.</span> <span class="toc-text">求积公式收敛性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82%E7%A7%AF%E5%85%AC%E5%BC%8F%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="toc-number">7.5.</span> <span class="toc-text">求积公式稳定性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82%E7%A7%AF%E5%85%AC%E5%BC%8F%E7%A8%B3%E5%AE%9A%E6%80%A7%E5%AE%9A%E7%90%86"><span class="toc-number">7.5.1.</span> <span class="toc-text">求积公式稳定性定理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%9B%E6%9F%AF%E6%B1%82%E7%A7%AF%E5%85%AC%E5%BC%8F"><span class="toc-number">7.6.</span> <span class="toc-text">牛柯求积公式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A6%81%E8%AE%B0%E4%BD%8F%E7%9A%84%E7%89%9B%E9%A1%BF%E6%9F%AF%E7%89%B9%E6%96%AF%E6%B1%82%E7%A7%AF%E5%85%AC%E5%BC%8F"><span class="toc-number">7.6.1.</span> <span class="toc-text">要记住的牛顿柯特斯求积公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%AF%E7%89%B9%E6%96%AF%E7%B3%BB%E6%95%B0"><span class="toc-number">7.6.2.</span> <span class="toc-text">柯特斯系数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%9B%E6%9F%AF%E6%B1%82%E7%A7%AF%E5%85%AC%E5%BC%8F%E4%BB%A3%E6%95%B0%E7%B2%BE%E5%BA%A6%E5%AE%9A%E7%90%86"><span class="toc-number">7.6.3.</span> <span class="toc-text">牛柯求积公式代数精度定理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-20"><span class="toc-number">7.6.3.1.</span> <span class="toc-text">例题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E5%90%88%E6%B1%82%E7%A7%AF%E5%85%AC%E5%BC%8F"><span class="toc-number">7.7.</span> <span class="toc-text">复合求积公式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E6%96%AF%E6%B1%82%E7%A7%AF%E5%85%AC%E5%BC%8F"><span class="toc-number">7.8.</span> <span class="toc-text">高斯求积公式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E7%A7%AF%E5%88%86%E6%80%BB%E7%BB%93"><span class="toc-number">7.9.</span> <span class="toc-text">数值积分总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E7%A7%AF%E5%88%86%E4%BD%9C%E4%B8%9A"><span class="toc-number">7.10.</span> <span class="toc-text">数值积分作业</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%AB%98%E6%96%AF%E6%B6%88%E5%8E%BB%E6%B3%95"><span class="toc-number">8.</span> <span class="toc-text">高斯消去法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E6%96%AF%E6%B6%88%E5%8E%BB%E6%B3%95-1"><span class="toc-number">8.1.</span> <span class="toc-text">高斯消去法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%97%E4%B8%BB%E5%85%83%E9%AB%98%E6%96%AF%E6%B6%88%E5%8E%BB%E6%B3%95"><span class="toc-number">8.2.</span> <span class="toc-text">列主元高斯消去法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E4%B8%89%E8%A7%92%E5%88%86%E8%A7%A3"><span class="toc-number">9.</span> <span class="toc-text">矩阵的三角分解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84"><span class="toc-number">9.1.</span> <span class="toc-text">一般线性方程组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#lu%E5%88%86%E8%A7%A3"><span class="toc-number">9.1.1.</span> <span class="toc-text">LU分解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-21"><span class="toc-number">9.1.1.1.</span> <span class="toc-text">例题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#plu%E5%88%86%E8%A7%A3"><span class="toc-number">9.1.2.</span> <span class="toc-text">PLU分解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E6%AD%A3%E5%AE%9A%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84"><span class="toc-number">9.2.</span> <span class="toc-text">对称正定线性方程组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A5%9A%E5%88%97%E6%96%AF%E5%9F%BA%E5%88%86%E8%A7%A3%E6%B3%95%E5%B9%B3%E6%96%B9%E6%A0%B9%E6%B3%95"><span class="toc-number">9.2.1.</span> <span class="toc-text">楚列斯基分解法（平方根法）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-22"><span class="toc-number">9.2.1.1.</span> <span class="toc-text">例题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%A7%92%E5%8D%A0%E4%BC%98%E7%9A%84%E4%B8%89%E5%AF%B9%E8%A7%92%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84"><span class="toc-number">9.3.</span> <span class="toc-text">对角占优的三对角线性方程组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%BD%E8%B5%B6%E6%B3%95"><span class="toc-number">9.3.1.</span> <span class="toc-text">追赶法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-23"><span class="toc-number">9.3.1.1.</span> <span class="toc-text">例题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5%E7%9A%84%E8%8C%83%E6%95%B0"><span class="toc-number">9.4.</span> <span class="toc-text">向量和矩阵的范数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E8%8C%83%E6%95%B0%E5%AE%9A%E4%B9%89"><span class="toc-number">9.4.1.</span> <span class="toc-text">矩阵范数定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E8%8C%83%E6%95%B0"><span class="toc-number">9.4.2.</span> <span class="toc-text">常见范数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-24"><span class="toc-number">9.4.2.1.</span> <span class="toc-text">例题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E6%9D%A1%E4%BB%B6%E6%95%B0%E5%92%8C%E8%AF%AF%E5%B7%AE%E5%88%86%E6%9E%90"><span class="toc-number">9.5.</span> <span class="toc-text">矩阵条件数和误差分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%97%85%E6%80%81%E7%9F%A9%E9%98%B5"><span class="toc-number">9.5.1.</span> <span class="toc-text">病态矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E6%9D%A1%E4%BB%B6%E6%95%B0"><span class="toc-number">9.5.2.</span> <span class="toc-text">矩阵条件数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E4%B8%89%E8%A7%92%E5%88%86%E8%A7%A3%E6%80%BB%E7%BB%93"><span class="toc-number">9.6.</span> <span class="toc-text">矩阵三角分解总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%A3%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E8%BF%AD%E4%BB%A3%E6%B3%95"><span class="toc-number">10.</span> <span class="toc-text">解线性方程组的迭代法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E6%B3%95%E5%AE%9A%E4%B9%89"><span class="toc-number">10.1.</span> <span class="toc-text">迭代法定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%85%E5%8F%AF%E6%AF%94%E8%BF%AD%E4%BB%A3%E6%B3%95"><span class="toc-number">10.2.</span> <span class="toc-text">雅可比迭代法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%85%E5%85%8B%E6%AF%94%E8%BF%AD%E4%BB%A3%E6%B3%95%E7%9F%A9%E9%98%B5%E5%BD%A2%E5%BC%8F"><span class="toc-number">10.2.1.</span> <span class="toc-text">雅克比迭代法矩阵形式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E6%96%AF%E5%A1%9E%E5%BE%B7%E5%B0%94%E8%BF%AD%E4%BB%A3%E6%B3%95"><span class="toc-number">10.3.</span> <span class="toc-text">高斯塞德尔迭代法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E6%96%AF%E5%A1%9E%E5%BE%B7%E5%B0%94%E8%BF%AD%E4%BB%A3%E6%B3%95%E7%9F%A9%E9%98%B5%E5%BD%A2%E5%BC%8F"><span class="toc-number">10.3.1.</span> <span class="toc-text">高斯塞德尔迭代法矩阵形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-25"><span class="toc-number">10.3.2.</span> <span class="toc-text">例题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E6%B3%95%E6%94%B6%E6%95%9B%E6%9D%A1%E4%BB%B6"><span class="toc-number">10.4.</span> <span class="toc-text">迭代法收敛条件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-26"><span class="toc-number">10.4.1.</span> <span class="toc-text">例题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%86%E7%9B%98%E5%AE%9A%E7%90%86"><span class="toc-number">10.4.1.1.</span> <span class="toc-text">圆盘定理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E6%B3%95%E6%94%B6%E6%95%9B%E5%85%85%E5%88%86%E6%9D%A1%E4%BB%B6"><span class="toc-number">10.4.2.</span> <span class="toc-text">迭代法收敛充分条件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-27"><span class="toc-number">10.4.2.1.</span> <span class="toc-text">例题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sor%E8%BF%AD%E4%BB%A3%E6%B3%95"><span class="toc-number">10.5.</span> <span class="toc-text">SOR迭代法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E5%BD%A2%E5%BC%8F"><span class="toc-number">10.5.1.</span> <span class="toc-text">矩阵形式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-28"><span class="toc-number">10.5.1.1.</span> <span class="toc-text">例题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sor%E6%94%B6%E6%95%9B%E6%80%A7"><span class="toc-number">10.5.2.</span> <span class="toc-text">SOR收敛性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E6%B3%95%E6%80%BB%E7%BB%93"><span class="toc-number">10.6.</span> <span class="toc-text">迭代法总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%8D%E4%B9%A0%E8%AF%BE%E4%B9%A0%E9%A2%98"><span class="toc-number">11.</span> <span class="toc-text">复习课习题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E6%95%88%E6%95%B0%E5%AD%97-1"><span class="toc-number">11.1.</span> <span class="toc-text">有效数字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E5%85%83%E5%8F%AF%E5%BE%AE%E5%87%BD%E6%95%B0%E7%BB%9D%E5%AF%B9%E8%AF%AF%E5%B7%AE%E9%99%90%E7%9B%B8%E5%AF%B9%E8%AF%AF%E5%B7%AE%E9%99%90"><span class="toc-number">11.2.</span> <span class="toc-text">多元可微函数绝对误差限相对误差限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%8F%92%E5%80%BC%E8%AF%AF%E5%B7%AE%E9%99%90"><span class="toc-number">11.3.</span> <span class="toc-text">拉格朗日插值误差限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9D%87%E5%B7%AE%E8%A1%A8-1"><span class="toc-number">11.4.</span> <span class="toc-text">均差表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%9B%E9%A1%BF%E5%89%8D%E6%8F%92%E5%85%AC%E5%BC%8F-1"><span class="toc-number">11.5.</span> <span class="toc-text">牛顿前插公式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E7%82%B9%E4%B8%89%E6%AC%A1%E5%9F%83%E5%B0%94%E7%B1%B3%E7%89%B9%E6%8F%92%E5%80%BC-1"><span class="toc-number">11.6.</span> <span class="toc-text">三点三次埃尔米特插值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E6%AF%94%E9%9B%AA%E5%A4%AB%E9%9B%B6%E7%82%B9%E6%8F%92%E5%80%BC%E5%8A%A0%E6%8D%A2%E5%85%83"><span class="toc-number">11.7.</span> <span class="toc-text">切比雪夫零点插值加换元</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E6%AF%94%E9%9B%AA%E5%A4%AB%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%80%A7%E8%B4%A8n-1%E6%AC%A1%E6%9C%80%E4%BC%98%E4%B8%80%E8%87%B4%E9%80%BC%E8%BF%91n%E6%AC%A1"><span class="toc-number">11.8.</span> <span class="toc-text">切比雪夫多项式性质：\(n-1\)次最优一致逼近\(n\)次</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B4%E7%BA%BF%E6%8B%9F%E5%90%88-1"><span class="toc-number">11.9.</span> <span class="toc-text">直线拟合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%8B%9F%E5%90%88-1"><span class="toc-number">11.10.</span> <span class="toc-text">多项式拟合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E4%BD%93%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%8B%9F%E5%90%88"><span class="toc-number">11.11.</span> <span class="toc-text">变体多项式拟合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E7%A7%AF%E5%88%86-1"><span class="toc-number">11.12.</span> <span class="toc-text">数值积分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%9B%E9%A1%BF%E6%9F%AF%E7%89%B9%E6%96%AF%E6%B1%82%E7%A7%AF%E5%85%AC%E5%BC%8F"><span class="toc-number">11.13.</span> <span class="toc-text">牛顿柯特斯求积公式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E6%96%AF%E6%B6%88%E5%8E%BB%E6%B3%95-2"><span class="toc-number">11.14.</span> <span class="toc-text">高斯消去法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%97%E4%B8%BB%E5%85%83%E9%AB%98%E6%96%AF%E6%B6%88%E5%8E%BB%E6%B3%95-1"><span class="toc-number">11.15.</span> <span class="toc-text">列主元高斯消去法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lu%E5%88%86%E8%A7%A3-1"><span class="toc-number">11.16.</span> <span class="toc-text">LU分解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A5%9A%E5%88%97%E6%96%AF%E5%9F%BA%E5%88%86%E8%A7%A3%E6%B3%95"><span class="toc-number">11.17.</span> <span class="toc-text">楚列斯基分解法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E8%8C%83%E6%95%B0%E8%AE%A1%E7%AE%97"><span class="toc-number">11.18.</span> <span class="toc-text">矩阵范数计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E6%B3%95%E6%94%B6%E6%95%9B"><span class="toc-number">11.19.</span> <span class="toc-text">迭代法收敛</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sor%E8%BF%AD%E4%BB%A3%E6%B3%95-1"><span class="toc-number">11.20.</span> <span class="toc-text">SOR迭代法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%81%E6%98%8E%E9%A2%98"><span class="toc-number">11.21.</span> <span class="toc-text">证明题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">12.</span> <span class="toc-text">参考资料</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数值分析复习整理">数值分析复习整理</a><time datetime="2023-12-28T01:35:05.000Z" title="发表于 2023-12-28 09:35:05">2023-12-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/20/hexo%E7%9B%B8%E5%85%B3/Hexo_Nunjucks_Error%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" title="Hexo Nunjucks Error解决方法">Hexo Nunjucks Error解决方法</a><time datetime="2023-12-20T10:55:45.000Z" title="发表于 2023-12-20 18:55:45">2023-12-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/12/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="接口技术复习整理">接口技术复习整理</a><time datetime="2023-12-12T02:56:09.000Z" title="发表于 2023-12-12 10:56:09">2023-12-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/06/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/OOAD%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="OOAD复习整理">OOAD复习整理</a><time datetime="2023-12-06T13:07:25.000Z" title="发表于 2023-12-06 21:07:25">2023-12-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/09/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Raycasting%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="Raycasting学习记录">Raycasting学习记录</a><time datetime="2023-11-09T01:47:32.000Z" title="发表于 2023-11-09 09:47:32">2023-11-09</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By WinkySpeed</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2d-widget/autoload.js"></script></body></html>
