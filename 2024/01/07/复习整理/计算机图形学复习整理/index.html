@@ -1,0 +1,528 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>计算机图形学复习整理 | WinkySpeed's Blog</title><meta name="author" content="WinkySpeed"><meta name="copyright" content="WinkySpeed"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="计算机图形学复习整理 引言 计算机图形学的起源  计算机图形学的发展 四大块支柱 几何造型理论与技术 参数曲线曲面（Bezier，B-spline） 隐式曲线曲面 多面体模型 设计与重建（CAD软件，点云重建） 分形表现 自相似 自然属性（面积&#x2F;周长，体积&#x2F;表面积） 分形维数 粒子系统 流体特性（遵从流体力学规律） 海量数据（处理耗时） 物理的和数学的 渲染理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机图形学复习整理">
+<meta property="og:url" content="http://example.com/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/index.html">
+<meta property="og:site_name" content="WinkySpeed&#39;s Blog">
+<meta property="og:description" content="计算机图形学复习整理 引言 计算机图形学的起源  计算机图形学的发展 四大块支柱 几何造型理论与技术 参数曲线曲面（Bezier，B-spline） 隐式曲线曲面 多面体模型 设计与重建（CAD软件，点云重建） 分形表现 自相似 自然属性（面积&#x2F;周长，体积&#x2F;表面积） 分形维数 粒子系统 流体特性（遵从流体力学规律） 海量数据（处理耗时） 物理的和数学的 渲染理">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/WinkySpeed%20SP%20-%20Repaired.jpg">
+<meta property="article:published_time" content="2024-01-07T13:06:54.000Z">
+<meta property="article:modified_time" content="2024-01-08T01:24:40.158Z">
+<meta property="article:author" content="WinkySpeed">
+<meta property="article:tag" content="复习整理">
+<meta property="article:tag" content="计算机图形学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/WinkySpeed%20SP%20-%20Repaired.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '计算机图形学复习整理',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-01-08 09:24:40'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/WinkySpeed%20SP%20-%20Repaired.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">48</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/33703665_p0.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="WinkySpeed's Blog"><span class="site-name">WinkySpeed's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">计算机图形学复习整理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-01-07T13:06:54.000Z" title="发表于 2024-01-07 21:06:54">2024-01-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-01-08T01:24:40.158Z" title="更新于 2024-01-08 09:24:40">2024-01-08</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="计算机图形学复习整理"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="计算机图形学复习整理">计算机图形学复习整理</h1>
+<h1 id="引言">引言</h1>
+<h2 id="计算机图形学的起源">计算机图形学的起源</h2>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107211535619.png" class title="image-20240107211535619">
+<h2 id="计算机图形学的发展">计算机图形学的发展</h2>
+<p>四大块支柱</p>
+<h3 id="几何造型理论与技术">几何造型理论与技术</h3>
+<p><strong>参数</strong>曲线曲面（Bezier，B-spline）</p>
+<p><strong>隐式</strong>曲线曲面</p>
+<p><strong>多面体</strong>模型</p>
+<p><strong>设计</strong>与<strong>重建</strong>（CAD软件，点云重建）</p>
+<h3 id="分形表现">分形表现</h3>
+<p><strong>自相似</strong></p>
+<p>自然属性（面积/周长，体积/表面积）</p>
+<p><strong>分形维数</strong></p>
+<h3 id="粒子系统">粒子系统</h3>
+<p>流体特性（遵从流体力学规律）</p>
+<p>海量数据（处理耗时）</p>
+<p>物理的和数学的</p>
+<h3 id="渲染理论与技术">渲染理论与技术</h3>
+<p>材质（物体自身特性）</p>
+<p>纹理（物体表面模样）</p>
+<p>颜色（与光谱相关）</p>
+<p>光照（环境影响因素）</p>
+<h2 id="计算机图形学的现在">计算机图形学的现在</h2>
+<h3 id="虚拟现实技术视觉主导">虚拟现实技术（视觉主导）</h3>
+<p>视觉，听觉，触觉，嗅觉，思维活动等的融合</p>
+<p>多媒体/超媒体</p>
+<h3 id="计算机仿真物理主导">计算机仿真（物理主导）</h3>
+<p>核试验，风洞试验，车辆安全试验，环境评估等</p>
+<p>传感器/现实环境/仿真</p>
+<h2 id="计算机图形学的未来">计算机图形学的未来</h2>
+<h3 id="机器制造领域">机器制造领域</h3>
+<p>CAD/CAM/CAF+计算机网络</p>
+<p>高速无纸化自动化作业</p>
+<h3 id="日常生活领域">日常生活领域</h3>
+<p>现实世界+网络+3D虚拟世界</p>
+<p>高效超媒体(置身其中)</p>
+<h2 id="与计算机图形学相关的难题">与计算机图形学相关的难题</h2>
+<p>拓扑重构：庞加莱猜想与霍奇猜想</p>
+<p>偏微分方程组：纳维-斯托克斯方程</p>
+<p>偏微分方程：分形与混沌</p>
+<p>离散点的空间分布：2D流形上的规律</p>
+<p>算法设计：P与NP问题</p>
+<h2 id="小结">小结</h2>
+<h3 id="研究对象">研究对象</h3>
+<p>刚体/弹性体、流体、分形结构物体</p>
+<h3 id="研究内容和方法">研究内容和方法</h3>
+<p>建模方法、真实感绘制方法、插值方法</p>
+<h2 id="图形和图像的区别">图形和图像的区别</h2>
+<p>处理的对象是图像image本身，信息全部存在像素上，RGB，坐标就是二维坐标（位图）</p>
+<p>图形学用的，是矢量图，存储物体外表结构（特征点），中间全部用插值形成（保存的是数据本身，和对数据的操作）</p>
+<h1 id="图形变换与观察">图形变换与观察</h1>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107213028742.png" class title="image-20240107213028742">
+<h2 id="图形变换">图形变换</h2>
+<h3 id="什么是变换">什么是变换</h3>
+<p>描述的东西是同一个，其中的一个是另一个的变换</p>
+<h3 id="什么是几何变换什么是图形变换">什么是几何变换，什么是图形变换</h3>
+<p>几何变换：只做几何上的操作，平移旋转等</p>
+<h3 id="数学变换的作用有哪些">数学变换的作用有哪些</h3>
+<p>有一系列表达形式，找哪一种表达形式是最快，消耗最少资源</p>
+<h3 id="变换的分类">变换的分类</h3>
+<p>基本变换</p>
+<p>组合变换</p>
+<h3 id="变换的表达方法">变换的表达方法</h3>
+<p>矩阵</p>
+<h2 id="齐次坐标">齐次坐标</h2>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107214700725.png" class title="image-20240107214700725">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107214824957.png" class title="image-20240107214824957">
+<p>三维坐标为什么要多一个w？</p>
+<p>是因为数学上表达的便利性（透视投影）</p>
+<p>涉及到投影，就会丢失一个维度</p>
+<p>w也可以表示不同位置的深度</p>
+<p>只有确定一个w时，才对应的一个实际的点</p>
+<p>在四元组中如果只用xyz，那就给w赋值为1</p>
+<h2 id="典型的图形变换">典型的图形变换</h2>
+<p>线性变换（仅改变尺度）</p>
+<p>平移变换（仅改变位置）</p>
+<p>仿射变换（改变位置和尺度）</p>
+<p>旋转变换（仅改变方向）</p>
+<p>投影变换（正投影和透视投影）</p>
+<h3 id="线性变换">线性变换</h3>
+<p>线性变换本质上是<strong>缩放变换</strong></p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107215405581.png" class title="image-20240107215405581">
+<h3 id="平移变换">平移变换</h3>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107215428454.png" class title="image-20240107215428454">
+<p>平移变换和线性变换是最简单的两种基本变换</p>
+<h3 id="仿射变换">仿射变换</h3>
+<p>任何仿射变换都是<strong>线性变换和平移变换</strong>的组合运算</p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107215455876.png" class title="image-20240107215455876">
+<p>把齐次坐标的w赋值为1</p>
+<h3 id="旋转变换">旋转变换</h3>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107215537630.png" class title="image-20240107215537630">
+<p>对应旋转矩阵</p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107215608501.png" class title="image-20240107215608501">
+<h3 id="刚体变换">刚体变换</h3>
+<p>旋转和平移的组合</p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107215913056.png" class title="image-20240107215913056">
+<h3 id="欧拉变换">欧拉变换</h3>
+<p>旋转变换的组合</p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107220011091.png" class title="image-20240107220011091">
+<p>万向节锁：丢失一个自由度</p>
+<p>绕一个轴旋转90°会丢失一个自由度</p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107220241326.png" class title="image-20240107220241326">
+<p>解锁万向节：从正交矩阵提取欧拉参数</p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107220439312.png" class title="image-20240107220439312">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107220445656.png" class title="image-20240107220445656">
+<p>cosp可能会作为分母存在，就不能为0</p>
+<p><br></p>
+<p>张志毅名言：我们根本不知道什么东西是为什么，我们只知道事物的一个片段，人的认知是有边界的，一直问为什么是不恰当的做法</p>
+<p>科学是探究事物之间的联系，只是探求ABCD之间的关系，并不是解释ABCD谁是谁的原因</p>
+<h3 id="投影变换">投影变换</h3>
+<p>正投影：由6个垂直于坐标轴的面围成立方体</p>
+<p>透视投影：由6个面围成四棱锥台</p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107220628062.png" class title="image-20240107220628062">
+<p>透视投影因为深度不一样会变形</p>
+<h2 id="观察及其实现原理">观察及其实现原理</h2>
+<h3 id="opengl绘制流水线四个阶段">OpenGL绘制流水线四个阶段</h3>
+<p>建模，视图选择，透视除法，显示</p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107221230179.png" class title="image-20240107221230179">
+<h3 id="映射到像素">映射到像素</h3>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107221243776.png" class title="image-20240107221243776">
+<p>计算会有小数，但是要求是整数</p>
+<p>向下取整会有截断误差，不管怎么做都会有误差</p>
+<p>画出来的图不可能是光滑的图，因为显示设备本来就是离散的</p>
+<p>这种无法避免的必然结果叫“走样”，因为数值计算误差和取整的原因</p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107221736682.png" class title="image-20240107221736682">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107222029239.png" class title="image-20240107222029239">
+<p>只给定3个点</p>
+<p>其他点用插值的方法做出来</p>
+<h1 id="真实感图形绘制">真实感图形绘制</h1>
+<h2 id="颜色模型简介">颜色模型简介</h2>
+<h3 id="色彩感知">色彩感知</h3>
+<p>视觉三原色理论（RGB）</p>
+<p>视觉对立色彩理论（明暗，红绿，蓝黄）</p>
+<p>关于三色刺激（三原色强度混合）</p>
+<p>物理模型（光源色度差异，多种单色）</p>
+<h3 id="加色法和减色法">加色法和减色法</h3>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107222852031.png" class title="image-20240107222852031">
+<h3 id="rgb颜色表示">RGB颜色表示</h3>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107222933344.png" class title="image-20240107222933344">
+<h3 id="色调饱和度亮度hsl体系">色调，饱和度，亮度（HSL体系）</h3>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107222957900.png" class title="image-20240107222957900">
+<h2 id="phone光照模型">Phone光照模型</h2>
+<p>渲染要考虑颜色纹理光照材质等</p>
+<p><strong>光照和着色</strong>可使图形看起来<strong>更真实、易理解</strong>。还可提供表面曲率和朝向信息，在形成图形的<strong>三维观感</strong>方面非常重要</p>
+<p>通过分别指定<strong>光源位置和属性</strong>，及<strong>物体表面材质</strong>，来产生相应的光照、颜色和明暗变化</p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107223342305.png" class title="image-20240107223342305">
+<h3 id="光照模型的要素">光照模型的要素</h3>
+<p>漫反射，镜面反射，环境反射和发射光</p>
+<p>多种光源和颜色</p>
+<p>Gouraud和Phong渲染</p>
+<p>表面法向，仿射变换和法向量</p>
+<h3 id="简单例子">简单例子</h3>
+<p>Phong光照模型的核心是一个光线如何从表面反射的模型</p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107223634957.png" class title="image-20240107223634957">
+<h3 id="反射光照材料属性">反射光照材料属性</h3>
+<p>两种反射：漫反射，镜面反射</p>
+<p>三种光照：漫反射光，镜面反射光，环境光</p>
+<p>四种表面材料属性：镜面反射属性，漫反射属性，环境反射属性，发射属性</p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107224031266.png" class title="image-20240107224031266">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108082903210.png" class title="image-20240108082903210">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108082910721.png" class title="image-20240108082910721">
+<h3 id="引入二分向量进行化简">引入二分向量进行化简</h3>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108083017650.png" class title="image-20240108083017650">
+<p>优点：当使用方向光源和非局部观察者时，l和v为常数，因此h也为常数，镜面反射光计算<strong>仅需知道每个顶点处的法向量n</strong></p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108083110308.png" class title="image-20240108083110308">
+<p>环境光是来自所有方向的光，光照和反射都与方向无关</p>
+<p>发射光不作为照射其他物体的光源</p>
+<h3 id="叠加原理">叠加原理</h3>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108083201545.png" class title="image-20240108083201545">
+<p>叠加定理叠加反射光和发射光</p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108083246388.png" class title="image-20240108083246388">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108083254929.png" class title="image-20240108083254929">
+<p>注意：材质属性与光的波长有关，镜面反射指数 f 与光的波长无关</p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108083320806.png" class title="image-20240108083320806">
+<h3 id="gouraud渲染">Gouraud渲染</h3>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108083357038.png" class title="image-20240108083357038">
+<h2 id="法向量计算">法向量计算</h2>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108083436365.png" class title="image-20240108083436365">
+<p>对几何模型进行仿射变换时需将法向量正确变换</p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108083453135.png" class title="image-20240108083453135">
+<h2 id="消隐算法和深度缓存算法">消隐算法和深度缓存算法</h2>
+<h3 id="消隐的本质和必要性">消隐的本质和必要性</h3>
+<p>消隐：把三维模型投影到平面上，观察者看不见的数据就不用计算，节省存储空间和运算时间</p>
+<p>需要符合视觉特征</p>
+<p>目的：<strong>计算量的减少</strong></p>
+<p><br></p>
+<p>物体表面反射的光线进入眼睛就是可见的</p>
+<p>反射光线和视线的方向夹角小于90度，就可见</p>
+<h3 id="深度缓存的作用">深度缓存的作用</h3>
+<p>存储量的减少</p>
+<h2 id="纹理映射">纹理映射</h2>
+<p>为解决表面建模时使用大量多边形处理效率低，复杂度高的问题，可将纹理图“贴到(<strong>映射</strong>)”光滑模型表面达到同样的视觉效果</p>
+<p><br></p>
+<p><strong>纹理映射</strong>最简单的形式是将一幅图像贴到物体的表面</p>
+<p>该图像<strong>可从文件读入</strong>，也可在<strong>程序内部定义</strong>或<strong>从颜色缓存中复制</strong></p>
+<p>纹理图像是一张<strong>查找表</strong>，可保存影响表面外观的<strong>任何信息</strong></p>
+<p><br></p>
+<p>程序中的图像是数字图像，即用m×n的像素数组保存。用该图像创建纹理后，将其视为连续数组，其坐标范围为[0,1]</p>
+<p>在建模时为每个顶点都定义纹理坐标(s,t)，s和t取值都在[0,1]。这样可得到每个顶点对应的纹理像素颜色</p>
+<p>多边形内部像素的纹理坐标在显示阶段由<strong>插值</strong>得到</p>
+<h3 id="使用纹理映射的步骤">使用纹理映射的步骤</h3>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108084238941.png" class title="image-20240108084238941">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108084254294.png" class title="image-20240108084254294">
+<h3 id="圆柱面球面环面">圆柱面球面环面</h3>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108084316377.png" class title="image-20240108084316377">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108084346628.png" class title="image-20240108084346628">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108084414784.png" class title="image-20240108084414784">
+<h3 id="多级渐进纹理">多级渐进纹理</h3>
+<p>多级渐进纹理是为解决<strong>当纹理像素分辨率高于屏幕像素分辨率时</strong>的纹理映射走样问题</p>
+<p>其思想是根据原始纹理图创建不同细节等级的<strong>多个纹理图</strong>，在映射时根据映射表面对应的屏幕像素分辨率选择<strong>最适纹理图</strong>进行映射</p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108084510647.png" class title="image-20240108084510647">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108084519350.png" class title="image-20240108084519350">
+<h3 id="凹凸纹理">凹凸纹理</h3>
+<p>凹凸贴图通过修改表面法向的“高度纹理” 达到该效果</p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108084544635.png" class title="image-20240108084544635">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108084607264.png" class title="image-20240108084607264">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108084615998.png" class title="image-20240108084615998">
+<h2 id="光线追踪简介">光线追踪简介</h2>
+<p>光线跟踪：通过统一的方法，计算全局光照和阴影，表面消隐，光的反射和折射，投影及其他效果的技术</p>
+<p>计算量大，比较耗时</p>
+<p>基本思想是跟踪三维场景中光线行进路径</p>
+<p>跟踪方向为：观察者-&gt;<strong>物体-&gt;反(透)射</strong>-&gt;光源</p>
+<p>基本方法有：反射，阴影，透明和折射</p>
+<p>OpenGL不支持光线追踪，需自写代码</p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108085039433.png" class title="image-20240108085039433">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108085044427.png" class title="image-20240108085044427">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108085049547.png" class title="image-20240108085049547">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108085059377.png" class title="image-20240108085059377">
+<h3 id="算法整合">算法整合</h3>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108084804779.png" class title="image-20240108084804779">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108084817448.png" class title="image-20240108084817448">
+<h1 id="几何建模基础">几何建模基础</h1>
+<h2 id="线性插值">线性插值</h2>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108085614582.png" class title="image-20240108085614582">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108085641117.png" class title="image-20240108085641117">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108085652075.png" class title="image-20240108085652075">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108085726313.png" class title="image-20240108085726313">
+<h2 id="bezier曲线">Bezier曲线</h2>
+<p>来源：<strong>线性插值</strong></p>
+<p>性质：凸包性，端点性，连续性，对称性，相似性</p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108085805951.png" class title="image-20240108085805951">
+<p>计算机中用这个方法计算Bezier曲线</p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108090235984.png" class title="image-20240108090235984">
+<p>算法和方法</p>
+<p>算法Algorithm：一个复杂的问题拆分成很多最基本步骤，是算法</p>
+<p>方法Method</p>
+<h3 id="分割方法">分割方法</h3>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108090314136.png" class title="image-20240108090314136">
+<p>C连续：参数连续，对参数求导的时候，一阶，二阶，三阶导数</p>
+<p>G连续：几何连续，直观的方向</p>
+<p>G1：切向量方向一致</p>
+<p>曲线是光滑的，满足C1, G1, C2, G2任何一个就行</p>
+<h3 id="升阶方法">升阶方法</h3>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108090737672.png" class title="image-20240108090737672">
+<p>任何贝塞尔曲线都可以升阶，但是不是任何贝塞尔曲线都可以降阶</p>
+<p>只有满足特殊情况下贝塞尔曲线才能降阶</p>
+<h3 id="有理bezier曲线">有理Bezier曲线</h3>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108090929577.png" class title="image-20240108090929577">
+<p>绘制自由度大，更灵活，可定义圆锥曲线段</p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091019886.png" class title="image-20240108091019886">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091039492.png" class title="image-20240108091039492">
+<h2 id="b-spline曲线">B-spline曲线</h2>
+<p>来源：分段多项式</p>
+<p>4个点可以做一个贝塞尔曲线</p>
+<p>每一段只与对应的控制点有关</p>
+<p>可以调节曲线中某一段的形状</p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091100649.png" class title="image-20240108091100649">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091108351.png" class title="image-20240108091108351">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091115470.png" class title="image-20240108091115470">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091121338.png" class title="image-20240108091121338">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091154996.png" class title="image-20240108091154996">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091204534.png" class title="image-20240108091204534">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091446090.png" class title="image-20240108091446090">
+<h2 id="nurbs曲线">NURBS曲线</h2>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091456012.png" class title="image-20240108091456012">
+<h2 id="bezier曲线插值与b-spline曲线插值">Bezier曲线插值与B-spline曲线插值</h2>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091503858.png" class title="image-20240108091503858">
+<h2 id="细分割曲线简介">细分割曲线简介</h2>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091515308.png" class title="image-20240108091515308">
+<h2 id="bezier曲面">Bezier曲面</h2>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091524263.png" class title="image-20240108091524263">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091530417.png" class title="image-20240108091530417">
+<h2 id="b-spline曲面与nurbs曲面">B-spline曲面与NURBS曲面</h2>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091537450.png" class title="image-20240108091537450">
+<h2 id="其他参数曲面简介">其他参数曲面简介</h2>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091545888.png" class title="image-20240108091545888">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091554926.png" class title="image-20240108091554926">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091604606.png" class title="image-20240108091604606">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091610740.png" class title="image-20240108091610740">
+<h1 id="三维形体的表示">三维形体的表示</h1>
+<h2 id="立体模型表示法概要">立体模型表示法概要</h2>
+<p>线框模型</p>
+<p>表面模型</p>
+<p>实体模型</p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091651683.png" class title="image-20240108091651683">
+<h2 id="构造实体几何表示法">构造实体几何表示法</h2>
+<p>基本思想是设定一些可用数学表达的基本形状，其它复杂形状可以通过基本形状的集合运算操作来获得</p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091752216.png" class title="image-20240108091752216">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091845322.png" class title="image-20240108091845322">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091825406.png" class title="image-20240108091825406">
+<h2 id="边界表示法">边界表示法</h2>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091833600.png" class title="image-20240108091833600">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091900372.png" class title="image-20240108091900372">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091908527.png" class title="image-20240108091908527">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091922453.png" class title="image-20240108091922453">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091929770.png" class title="image-20240108091929770">
+<h2 id="分形几何简介">分形几何简介</h2>
+<p>本质特征是压缩变换</p>
+<p>操作规则是一定的，所以只记录操作规则的数字，用对数的形式给出维数</p>
+<p>三分康托尔集合：分为三等分，剩下两份，维数就是<span class="math inline">\(\log_32\)</span></p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091941743.png" class title="image-20240108091941743">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091947617.png" class title="image-20240108091947617">
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108091952972.png" class title="image-20240108091952972">
+<h2 id="粒子系统简介">粒子系统简介</h2>
+<p>随机粒子系统，流体粒子系统，方向粒子系统，结构化粒子系统</p>
+<img src="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108092003734.png" class title="image-20240108092003734">
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<hr>
+<h1 id="参考资料">参考资料</h1>
+<p>课程PPT</p>
+<p>课程录播</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/">复习整理</a><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/">计算机图形学</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数字图像处理复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">数字图像处理复习整理</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/12/06/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/OOAD%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="OOAD复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-06</div><div class="title">OOAD复习整理</div></div></a></div><div><a href="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数值分析复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-28</div><div class="title">数值分析复习整理</div></div></a></div><div><a href="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数字图像处理复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-01</div><div class="title">数字图像处理复习整理</div></div></a></div><div><a href="/2023/12/12/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="接口技术复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-12</div><div class="title">接口技术复习整理</div></div></a></div><div><a href="/2023/12/30/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%BC%96%E7%A8%8B%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="计算机硬件编程复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-30</div><div class="title">计算机硬件编程复习整理</div></div></a></div><div><a href="/2023/11/09/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Raycasting%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="Raycasting学习记录"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-09</div><div class="title">Raycasting学习记录</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/WinkySpeed%20SP%20-%20Repaired.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">WinkySpeed</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">48</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/WinkySpeed"><i class="fab fa-github"></i><span>GitHub</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">计算机图形学复习整理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-number">2.</span> <span class="toc-text">引言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E7%9A%84%E8%B5%B7%E6%BA%90"><span class="toc-number">2.1.</span> <span class="toc-text">计算机图形学的起源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E7%9A%84%E5%8F%91%E5%B1%95"><span class="toc-number">2.2.</span> <span class="toc-text">计算机图形学的发展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%A0%E4%BD%95%E9%80%A0%E5%9E%8B%E7%90%86%E8%AE%BA%E4%B8%8E%E6%8A%80%E6%9C%AF"><span class="toc-number">2.2.1.</span> <span class="toc-text">几何造型理论与技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%BD%A2%E8%A1%A8%E7%8E%B0"><span class="toc-number">2.2.2.</span> <span class="toc-text">分形表现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.2.3.</span> <span class="toc-text">粒子系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%B2%E6%9F%93%E7%90%86%E8%AE%BA%E4%B8%8E%E6%8A%80%E6%9C%AF"><span class="toc-number">2.2.4.</span> <span class="toc-text">渲染理论与技术</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E7%9A%84%E7%8E%B0%E5%9C%A8"><span class="toc-number">2.3.</span> <span class="toc-text">计算机图形学的现在</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E7%8E%B0%E5%AE%9E%E6%8A%80%E6%9C%AF%E8%A7%86%E8%A7%89%E4%B8%BB%E5%AF%BC"><span class="toc-number">2.3.1.</span> <span class="toc-text">虚拟现实技术（视觉主导）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BB%BF%E7%9C%9F%E7%89%A9%E7%90%86%E4%B8%BB%E5%AF%BC"><span class="toc-number">2.3.2.</span> <span class="toc-text">计算机仿真（物理主导）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E7%9A%84%E6%9C%AA%E6%9D%A5"><span class="toc-number">2.4.</span> <span class="toc-text">计算机图形学的未来</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E5%88%B6%E9%80%A0%E9%A2%86%E5%9F%9F"><span class="toc-number">2.4.1.</span> <span class="toc-text">机器制造领域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB%E9%A2%86%E5%9F%9F"><span class="toc-number">2.4.2.</span> <span class="toc-text">日常生活领域</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E7%9B%B8%E5%85%B3%E7%9A%84%E9%9A%BE%E9%A2%98"><span class="toc-number">2.5.</span> <span class="toc-text">与计算机图形学相关的难题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">2.6.</span> <span class="toc-text">小结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.6.1.</span> <span class="toc-text">研究对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E5%86%85%E5%AE%B9%E5%92%8C%E6%96%B9%E6%B3%95"><span class="toc-number">2.6.2.</span> <span class="toc-text">研究内容和方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%BD%A2%E5%92%8C%E5%9B%BE%E5%83%8F%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.7.</span> <span class="toc-text">图形和图像的区别</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E5%BD%A2%E5%8F%98%E6%8D%A2%E4%B8%8E%E8%A7%82%E5%AF%9F"><span class="toc-number">3.</span> <span class="toc-text">图形变换与观察</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%BD%A2%E5%8F%98%E6%8D%A2"><span class="toc-number">3.1.</span> <span class="toc-text">图形变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8F%98%E6%8D%A2"><span class="toc-number">3.1.1.</span> <span class="toc-text">什么是变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%BE%E5%BD%A2%E5%8F%98%E6%8D%A2"><span class="toc-number">3.1.2.</span> <span class="toc-text">什么是几何变换，什么是图形变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%8F%98%E6%8D%A2%E7%9A%84%E4%BD%9C%E7%94%A8%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-number">3.1.3.</span> <span class="toc-text">数学变换的作用有哪些</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E6%8D%A2%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">3.1.4.</span> <span class="toc-text">变换的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E6%8D%A2%E7%9A%84%E8%A1%A8%E8%BE%BE%E6%96%B9%E6%B3%95"><span class="toc-number">3.1.5.</span> <span class="toc-text">变换的表达方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87"><span class="toc-number">3.2.</span> <span class="toc-text">齐次坐标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B8%E5%9E%8B%E7%9A%84%E5%9B%BE%E5%BD%A2%E5%8F%98%E6%8D%A2"><span class="toc-number">3.3.</span> <span class="toc-text">典型的图形变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2"><span class="toc-number">3.3.1.</span> <span class="toc-text">线性变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E7%A7%BB%E5%8F%98%E6%8D%A2"><span class="toc-number">3.3.2.</span> <span class="toc-text">平移变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%BF%E5%B0%84%E5%8F%98%E6%8D%A2"><span class="toc-number">3.3.3.</span> <span class="toc-text">仿射变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%8B%E8%BD%AC%E5%8F%98%E6%8D%A2"><span class="toc-number">3.3.4.</span> <span class="toc-text">旋转变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9A%E4%BD%93%E5%8F%98%E6%8D%A2"><span class="toc-number">3.3.5.</span> <span class="toc-text">刚体变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AC%A7%E6%8B%89%E5%8F%98%E6%8D%A2"><span class="toc-number">3.3.6.</span> <span class="toc-text">欧拉变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%95%E5%BD%B1%E5%8F%98%E6%8D%A2"><span class="toc-number">3.3.7.</span> <span class="toc-text">投影变换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%82%E5%AF%9F%E5%8F%8A%E5%85%B6%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="toc-number">3.4.</span> <span class="toc-text">观察及其实现原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#opengl%E7%BB%98%E5%88%B6%E6%B5%81%E6%B0%B4%E7%BA%BF%E5%9B%9B%E4%B8%AA%E9%98%B6%E6%AE%B5"><span class="toc-number">3.4.1.</span> <span class="toc-text">OpenGL绘制流水线四个阶段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%A0%E5%B0%84%E5%88%B0%E5%83%8F%E7%B4%A0"><span class="toc-number">3.4.2.</span> <span class="toc-text">映射到像素</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9C%9F%E5%AE%9E%E6%84%9F%E5%9B%BE%E5%BD%A2%E7%BB%98%E5%88%B6"><span class="toc-number">4.</span> <span class="toc-text">真实感图形绘制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%9C%E8%89%B2%E6%A8%A1%E5%9E%8B%E7%AE%80%E4%BB%8B"><span class="toc-number">4.1.</span> <span class="toc-text">颜色模型简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%89%B2%E5%BD%A9%E6%84%9F%E7%9F%A5"><span class="toc-number">4.1.1.</span> <span class="toc-text">色彩感知</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E8%89%B2%E6%B3%95%E5%92%8C%E5%87%8F%E8%89%B2%E6%B3%95"><span class="toc-number">4.1.2.</span> <span class="toc-text">加色法和减色法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rgb%E9%A2%9C%E8%89%B2%E8%A1%A8%E7%A4%BA"><span class="toc-number">4.1.3.</span> <span class="toc-text">RGB颜色表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%89%B2%E8%B0%83%E9%A5%B1%E5%92%8C%E5%BA%A6%E4%BA%AE%E5%BA%A6hsl%E4%BD%93%E7%B3%BB"><span class="toc-number">4.1.4.</span> <span class="toc-text">色调，饱和度，亮度（HSL体系）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#phone%E5%85%89%E7%85%A7%E6%A8%A1%E5%9E%8B"><span class="toc-number">4.2.</span> <span class="toc-text">Phone光照模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%89%E7%85%A7%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%A6%81%E7%B4%A0"><span class="toc-number">4.2.1.</span> <span class="toc-text">光照模型的要素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E4%BE%8B%E5%AD%90"><span class="toc-number">4.2.2.</span> <span class="toc-text">简单例子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E5%85%89%E7%85%A7%E6%9D%90%E6%96%99%E5%B1%9E%E6%80%A7"><span class="toc-number">4.2.3.</span> <span class="toc-text">反射光照材料属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E5%85%A5%E4%BA%8C%E5%88%86%E5%90%91%E9%87%8F%E8%BF%9B%E8%A1%8C%E5%8C%96%E7%AE%80"><span class="toc-number">4.2.4.</span> <span class="toc-text">引入二分向量进行化简</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%A0%E5%8A%A0%E5%8E%9F%E7%90%86"><span class="toc-number">4.2.5.</span> <span class="toc-text">叠加原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gouraud%E6%B8%B2%E6%9F%93"><span class="toc-number">4.2.6.</span> <span class="toc-text">Gouraud渲染</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%95%E5%90%91%E9%87%8F%E8%AE%A1%E7%AE%97"><span class="toc-number">4.3.</span> <span class="toc-text">法向量计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B6%88%E9%9A%90%E7%AE%97%E6%B3%95%E5%92%8C%E6%B7%B1%E5%BA%A6%E7%BC%93%E5%AD%98%E7%AE%97%E6%B3%95"><span class="toc-number">4.4.</span> <span class="toc-text">消隐算法和深度缓存算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E9%9A%90%E7%9A%84%E6%9C%AC%E8%B4%A8%E5%92%8C%E5%BF%85%E8%A6%81%E6%80%A7"><span class="toc-number">4.4.1.</span> <span class="toc-text">消隐的本质和必要性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E7%BC%93%E5%AD%98%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">4.4.2.</span> <span class="toc-text">深度缓存的作用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%B9%E7%90%86%E6%98%A0%E5%B0%84"><span class="toc-number">4.5.</span> <span class="toc-text">纹理映射</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%BA%B9%E7%90%86%E6%98%A0%E5%B0%84%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-number">4.5.1.</span> <span class="toc-text">使用纹理映射的步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%86%E6%9F%B1%E9%9D%A2%E7%90%83%E9%9D%A2%E7%8E%AF%E9%9D%A2"><span class="toc-number">4.5.2.</span> <span class="toc-text">圆柱面球面环面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%BA%A7%E6%B8%90%E8%BF%9B%E7%BA%B9%E7%90%86"><span class="toc-number">4.5.3.</span> <span class="toc-text">多级渐进纹理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%B9%E5%87%B8%E7%BA%B9%E7%90%86"><span class="toc-number">4.5.4.</span> <span class="toc-text">凹凸纹理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%89%E7%BA%BF%E8%BF%BD%E8%B8%AA%E7%AE%80%E4%BB%8B"><span class="toc-number">4.6.</span> <span class="toc-text">光线追踪简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E6%95%B4%E5%90%88"><span class="toc-number">4.6.1.</span> <span class="toc-text">算法整合</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1%E5%9F%BA%E7%A1%80"><span class="toc-number">5.</span> <span class="toc-text">几何建模基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%8F%92%E5%80%BC"><span class="toc-number">5.1.</span> <span class="toc-text">线性插值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bezier%E6%9B%B2%E7%BA%BF"><span class="toc-number">5.2.</span> <span class="toc-text">Bezier曲线</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%89%B2%E6%96%B9%E6%B3%95"><span class="toc-number">5.2.1.</span> <span class="toc-text">分割方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%87%E9%98%B6%E6%96%B9%E6%B3%95"><span class="toc-number">5.2.2.</span> <span class="toc-text">升阶方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E7%90%86bezier%E6%9B%B2%E7%BA%BF"><span class="toc-number">5.2.3.</span> <span class="toc-text">有理Bezier曲线</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#b-spline%E6%9B%B2%E7%BA%BF"><span class="toc-number">5.3.</span> <span class="toc-text">B-spline曲线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nurbs%E6%9B%B2%E7%BA%BF"><span class="toc-number">5.4.</span> <span class="toc-text">NURBS曲线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bezier%E6%9B%B2%E7%BA%BF%E6%8F%92%E5%80%BC%E4%B8%8Eb-spline%E6%9B%B2%E7%BA%BF%E6%8F%92%E5%80%BC"><span class="toc-number">5.5.</span> <span class="toc-text">Bezier曲线插值与B-spline曲线插值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%86%E5%88%86%E5%89%B2%E6%9B%B2%E7%BA%BF%E7%AE%80%E4%BB%8B"><span class="toc-number">5.6.</span> <span class="toc-text">细分割曲线简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bezier%E6%9B%B2%E9%9D%A2"><span class="toc-number">5.7.</span> <span class="toc-text">Bezier曲面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#b-spline%E6%9B%B2%E9%9D%A2%E4%B8%8Enurbs%E6%9B%B2%E9%9D%A2"><span class="toc-number">5.8.</span> <span class="toc-text">B-spline曲面与NURBS曲面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%8F%82%E6%95%B0%E6%9B%B2%E9%9D%A2%E7%AE%80%E4%BB%8B"><span class="toc-number">5.9.</span> <span class="toc-text">其他参数曲面简介</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E7%BB%B4%E5%BD%A2%E4%BD%93%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="toc-number">6.</span> <span class="toc-text">三维形体的表示</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AB%8B%E4%BD%93%E6%A8%A1%E5%9E%8B%E8%A1%A8%E7%A4%BA%E6%B3%95%E6%A6%82%E8%A6%81"><span class="toc-number">6.1.</span> <span class="toc-text">立体模型表示法概要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%AE%9E%E4%BD%93%E5%87%A0%E4%BD%95%E8%A1%A8%E7%A4%BA%E6%B3%95"><span class="toc-number">6.2.</span> <span class="toc-text">构造实体几何表示法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%B9%E7%95%8C%E8%A1%A8%E7%A4%BA%E6%B3%95"><span class="toc-number">6.3.</span> <span class="toc-text">边界表示法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%BD%A2%E5%87%A0%E4%BD%95%E7%AE%80%E4%BB%8B"><span class="toc-number">6.4.</span> <span class="toc-text">分形几何简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B"><span class="toc-number">6.5.</span> <span class="toc-text">粒子系统简介</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">7.</span> <span class="toc-text">参考资料</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="计算机图形学复习整理">计算机图形学复习整理</a><time datetime="2024-01-07T13:06:54.000Z" title="发表于 2024-01-07 21:06:54">2024-01-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数字图像处理复习整理">数字图像处理复习整理</a><time datetime="2024-01-01T07:03:37.000Z" title="发表于 2024-01-01 15:03:37">2024-01-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/30/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%BC%96%E7%A8%8B%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="计算机硬件编程复习整理">计算机硬件编程复习整理</a><time datetime="2023-12-30T11:24:04.000Z" title="发表于 2023-12-30 19:24:04">2023-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数值分析复习整理">数值分析复习整理</a><time datetime="2023-12-28T01:35:05.000Z" title="发表于 2023-12-28 09:35:05">2023-12-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/20/hexo%E7%9B%B8%E5%85%B3/Hexo_Nunjucks_Error%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" title="Hexo Nunjucks Error解决方法">Hexo Nunjucks Error解决方法</a><time datetime="2023-12-20T10:55:45.000Z" title="发表于 2023-12-20 18:55:45">2023-12-20</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By WinkySpeed</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2d-widget/autoload.js"></script></body></html>

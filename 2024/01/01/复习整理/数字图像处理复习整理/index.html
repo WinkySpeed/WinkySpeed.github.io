@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>数字图像处理复习整理 | WinkySpeed's Blog</title><meta name="author" content="WinkySpeed"><meta name="copyright" content="WinkySpeed"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="数字图像处理复习整理 按老师发的复习提纲进行整理 数字图像处理基础 什么是数字图像 数字图像是指以数字格式存放的图像 对于二维灰度图像，通常用一个二维数组来描述f(x,y)，x和y表示图像中点的位置，f 则代表图像在该点的值，一般是指亮度或颜色 数字图像的表示方式  数字化：采样和量化 为了在计算机上能够进行存储，须同时将空间坐标和颜色值进行离散化，这一过程称为数字化 空间坐">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>数字图像处理复习整理 | WinkySpeed's Blog</title><meta name="author" content="WinkySpeed"><meta name="copyright" content="WinkySpeed"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="数字图像处理复习整理 按老师发的复习提纲进行整理 图像处理&#x2F;计算机视觉顶级会议期刊 深度学习顶级会议：ICLR, NeurIPS, ICML, AAAI, ACM MM CV国际会议： A类 ICCV, CVPR, ECCV 重要的学术会议：PRCV(Pattern Recognition and Computer Vision)，由CCCV和CCPR合并而成，每年举办一次 数字图像">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数字图像处理复习整理">
 <meta property="og:url" content="http://example.com/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/index.html">
 <meta property="og:site_name" content="WinkySpeed&#39;s Blog">
-<meta property="og:description" content="数字图像处理复习整理 按老师发的复习提纲进行整理 数字图像处理基础 什么是数字图像 数字图像是指以数字格式存放的图像 对于二维灰度图像，通常用一个二维数组来描述f(x,y)，x和y表示图像中点的位置，f 则代表图像在该点的值，一般是指亮度或颜色 数字图像的表示方式  数字化：采样和量化 为了在计算机上能够进行存储，须同时将空间坐标和颜色值进行离散化，这一过程称为数字化 空间坐">
+<meta property="og:description" content="数字图像处理复习整理 按老师发的复习提纲进行整理 图像处理&#x2F;计算机视觉顶级会议期刊 深度学习顶级会议：ICLR, NeurIPS, ICML, AAAI, ACM MM CV国际会议： A类 ICCV, CVPR, ECCV 重要的学术会议：PRCV(Pattern Recognition and Computer Vision)，由CCCV和CCPR合并而成，每年举办一次 数字图像">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/WinkySpeed%20SP%20-%20Repaired.jpg">
 <meta property="article:published_time" content="2024-01-01T07:03:37.000Z">
-<meta property="article:modified_time" content="2024-01-01T09:45:59.505Z">
+<meta property="article:modified_time" content="2024-01-07T14:44:20.986Z">
 <meta property="article:author" content="WinkySpeed">
 <meta property="article:tag" content="复习整理">
 <meta property="article:tag" content="数字图像处理">
@@ -58,7 +58,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2024-01-01 17:45:59'
+  postUpdate: '2024-01-07 22:44:20'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -156,8 +156,13 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/WinkySpeed%20SP%20-%20Repaired.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">48</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/33703665_p0.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="WinkySpeed's Blog"><span class="site-name">WinkySpeed's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">数字图像处理复习整理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-01-01T07:03:37.000Z" title="发表于 2024-01-01 15:03:37">2024-01-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-01-01T09:45:59.505Z" title="更新于 2024-01-01 17:45:59">2024-01-01</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="数字图像处理复习整理"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="数字图像处理复习整理">数字图像处理复习整理</h1>
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/WinkySpeed%20SP%20-%20Repaired.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">48</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/33703665_p0.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="WinkySpeed's Blog"><span class="site-name">WinkySpeed's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">数字图像处理复习整理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-01-01T07:03:37.000Z" title="发表于 2024-01-01 15:03:37">2024-01-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-01-07T14:44:20.986Z" title="更新于 2024-01-07 22:44:20">2024-01-07</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="数字图像处理复习整理"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="数字图像处理复习整理">数字图像处理复习整理</h1>
 <p>按老师发的复习提纲进行整理</p>
+<h1 id="图像处理计算机视觉顶级会议期刊">图像处理/计算机视觉顶级会议期刊</h1>
+<p>深度学习顶级会议：ICLR, NeurIPS, ICML, AAAI, ACM MM</p>
+<p>CV国际会议： A类 ICCV, CVPR, ECCV</p>
+<p>重要的学术会议：PRCV(Pattern Recognition and Computer
+Vision)，由CCCV和CCPR合并而成，每年举办一次</p>
 <h1 id="数字图像处理基础">数字图像处理基础</h1>
 <h2 id="什么是数字图像">什么是数字图像</h2>
 <p>数字图像是指以<strong>数字格式</strong>存放的图像</p>
@@ -369,6 +374,7 @@
 <p>缩放系数为-1的同时，还加了一个<span class="math inline">\(f_{Width}\)</span>，就能实现新的x就是图像宽度减去对应x坐标，实现水平镜像</p>
 <h2 id="图像旋转">图像旋转</h2>
 <img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240101171145698.png" class title="image-20240101171145698">
+<p>公式推导：</p>
 <img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240101171154244.png" class title="image-20240101171154244">
 <p>图像旋转的变换矩阵很容易，因为图形学的课程设计已经用过旋转矩阵了</p>
 <h2 id="图像错切shear">图像错切（shear）</h2>
@@ -393,12 +399,851 @@
 <p>错切矩阵：</p>
 <img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240101171945387.png" class title="image-20240101171945387">
 <h1 id="频域处理">频域处理</h1>
-<p>品预处理的背景和必要性，和空域处理的区别是什么？</p>
+<p>最重要的用处：图像压缩</p>
+<p>把麻烦的问题换一个空间解决</p>
+<p><br></p>
+<p>频域处理的背景和必要性，和空域处理的区别是什么？</p>
+<p>空域图像增强---在<strong>原始图像空间</strong>中，对图像进行直接处理，改善视觉效果</p>
+<p>频域图像处理---首先将图像变换到<strong>频域空间</strong>，在频空间处理后，再进行<strong>逆变换</strong>，得到频域变换结果</p>
+<p><br></p>
 <p>频域处理主要方法：傅里叶变换，一维傅里叶变换，频谱和相位</p>
+<p><br></p>
+<p>二维傅里叶变换是两次连续的一维傅里叶变换，理解一维傅里叶变换是关键</p>
+<p><br></p>
+<p>傅里叶变换的性质，仅从数学上证明即可，结果可以应用到频域图像处理中</p>
+<p>傅里叶变换性质：线性性质，比例性质，可分离性，平移性质（时移频移），周期性，共轭对称性，旋转不变性，平均值，卷积定理，互相关，自相关</p>
+<p><br></p>
+<p>离散余弦变换与离散傅里叶变换的区别</p>
+<p>傅里叶变换的图像，能量集中在四个角；离散余弦变换，能量集中在左上角</p>
+<p>傅里叶变换用的变换核为<span class="math inline">\(e^{j\theta}\)</span>相关式子，是复数；离散余弦变换的变换核是余弦函数，是实数</p>
+<p><br></p>
+<p>理解频谱图</p>
+<p>数字图像频移后的频谱中，图像的能量将集中到<strong>频谱中心（低频成分）</strong>，图像上的边缘、线条细节信息（高频成分）将分散在<strong>图像频谱的边缘</strong></p>
+<p>频谱中低频成分代表了图像的概貌，高频成分代表了图像中的细节</p>
+<p><br></p>
+<p>频域图像处理的一般方式</p>
+<p>在频域中进行图像处理的步骤如下：</p>
+<p>（1）计算图像的DFT，得到F(u,v)</p>
+<p>（2）用滤波函数H(u,v)乘以F(u,v)，得到处理结果G(u,v)</p>
+<p>（3）计算滤波后的IDFT</p>
+<p>（4）取IDFT变换结果中的实部，得到处理后的图像</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106233301442.png" class title="image-20240106233301442">
+<h2 id="频域与频域变换">频域与频域变换</h2>
+<p>傅里叶变换可认为是描述函数的第二种语言</p>
+<p>能讲两种语言的人通常会发现，在表达某些观点时，一种语言比另一种语言优越</p>
+<p>图像处理的分析在解决某一问题时在空域和频域来回切换</p>
+<p>欧拉公式：<span class="math inline">\(e^{j\theta}=\cos\theta+j\sin\theta\)</span></p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106212525546.png" class title="image-20240106212525546">
+<p>频域变换的理论基础——任意波形都可用单纯的正弦波的加权和表示</p>
+<p>如图：</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106212657290.png" class title="image-20240106212657290">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106212722866.png" class title="image-20240106212722866">
+<p>可以把一个波分解成多个波相加，然后把这些波对应的幅频图（幅值频率图）和相频图（相位频率图）画出来</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106212916764.png" class title="image-20240106212916764">
+<h2 id="傅里叶变换">傅里叶变换</h2>
+<h3 id="离散傅里叶变换">离散傅里叶变换</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106214645613.png" class title="image-20240106214645613">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106214657677.png" class title="image-20240106214657677">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106214708836.png" class title="image-20240106214708836">
+<h4 id="举例">举例</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106214725851.png" class title="image-20240106214725851">
+<p>图里少打个j</p>
+<p>只用记住，给的向量是几维的，对应的傅里叶变换矩阵就是几维的方阵</p>
+<p>对应的值就是<span class="math inline">\(e^{-j(\frac{2\pi}{N})u\cdot
+i}\)</span>，<span class="math inline">\(u\)</span>是行号，从0到N-1，i是列号，从0到N-1
+<span class="math display">\[
+\begin{align*}
+e^{-j(\frac{2\pi}{N})u\cdot i}&amp;=\cos{(-(\frac{2\pi}{N})u\cdot
+i)}+j\sin{(-(\frac{2\pi}{N})u\cdot i)}\\
+&amp;=\cos{((\frac{2\pi}{N})u\cdot i)}-j\sin{((\frac{2\pi}{N})u\cdot
+i)}\\
+\end{align*}
+\]</span> <img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106220235300.png" class title="image-20240106220235300"></p>
+<p>由于三角函数的性质，第一行和第一列一定是1，因为第一行的行号是0，第一列的列号是0，所以对应的<span class="math inline">\(\cos{((\frac{2\pi}{N})u\cdot
+i)}-j\sin{((\frac{2\pi}{N})u\cdot i)}\)</span>就是<span class="math inline">\(\cos{0}-j\sin{0}=1\)</span></p>
+<p>然后根据公式计算对应的值就好</p>
+<p>最后可以得到三张图：</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106221208810.png" class title="image-20240106221208810">
+<p>分别是信号值与时间轴的图、频谱幅值与频率轴的图、相位值与频率轴的图</p>
+<p>信号值，就是原向量的值</p>
+<p>频谱幅值，就是求计算出来复数的模，即<span class="math inline">\(\sqrt{R^2+I^2}\)</span></p>
+<p>相位值，就是对应的点与原点的连线，与实轴的夹角，取值为<span class="math inline">\([0,2\pi]\)</span>，比如第一个值，11，就在实轴上，所以夹角为0；第三个值，-5，在实轴的负半轴，夹角为<span class="math inline">\(\pi\)</span>，就是3.14，另外两个同理</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106224903451.png" class title="image-20240106224903451">
+<h3 id="傅里叶变换性质">傅里叶变换性质</h3>
+<h4 id="线性性质">线性性质</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106224945956.png" class title="image-20240106224945956">
+<h4 id="比例性质">比例性质</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106225001787.png" class title="image-20240106225001787">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106225012659.png" class title="image-20240106225012659">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106225025999.png" class title="image-20240106225025999">
+<h4 id="可分离性">可分离性</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106225043767.png" class title="image-20240106225043767">
+<p>可分离性，就把一个二维傅里叶变换变成了两个一维傅里叶变换</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106225256994.png" class title="image-20240106225256994">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106230011493.png" class title="image-20240106230011493">
+<p>如图，先行变换再列变换和先列变换再行变换的结果<strong>是一样的</strong></p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106230354941.png" class title="image-20240106230354941">
+<h4 id="平移性质">平移性质</h4>
+<h5 id="时移">时移</h5>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106230429170.png" class title="image-20240106230429170">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106230436897.png" class title="image-20240106230436897">
+<p>如图，空间域平移图像，频谱幅度不变，相位变</p>
+<h5 id="频移">频移</h5>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106230531534.png" class title="image-20240106230531534">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106230604486.png" class title="image-20240106230604486">
+<p>如图，频移就是把频谱图移动，对应的相位图也会跟着变，原图也变</p>
+<h4 id="周期性">周期性</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106234622551.png" class title="image-20240106234622551">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106234629210.png" class title="image-20240106234629210">
+<h4 id="共轭对称性">共轭对称性</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106234651876.png" class title="image-20240106234651876">
+<h4 id="旋转不变性">旋转不变性</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106234656627.png" class title="image-20240106234656627">
+<h4 id="平均值">平均值</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106234723581.png" class title="image-20240106234723581">
+<h4 id="卷积定理">卷积定理</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106234735055.png" class title="image-20240106234735055">
+<h4 id="相关">相关</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106234748331.png" class title="image-20240106234748331">
+<h2 id="频域变换的一般表达式">频域变换的一般表达式</h2>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106231308187.png" class title="image-20240106231308187">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106231421984.png" class title="image-20240106231421984">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106231426860.png" class title="image-20240106231426860">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106231432640.png" class title="image-20240106231432640">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106231439129.png" class title="image-20240106231439129">
+<h2 id="离散余弦变换">离散余弦变换</h2>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106231453306.png" class title="image-20240106231453306">
+<p>变换核为<strong>余弦函数</strong></p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106231542872.png" class title="image-20240106231542872">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106231550296.png" class title="image-20240106231550296">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106231559545.png" class title="image-20240106231559545">
+<p>傅里叶变换的图像，能量集中在四个角</p>
+<p>离散余弦变换，能量集中在左上角</p>
+<h2 id="频域变换中图像处理的实现">频域变换中图像处理的实现</h2>
+<h3 id="数字图像的频谱图">数字图像的频谱图</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106232858111.png" class title="image-20240106232858111">
+<p>数字图像频移后的频谱中，图像的能量将集中到<strong>频谱中心（低频成分）</strong>，图像上的边缘、线条细节信息（高频成分）将分散在<strong>图像频谱的边缘</strong></p>
+<p>频谱中低频成分代表了图像的概貌，高频成分代表了图像中的细节</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106233126971.png" class title="image-20240106233126971">
+<h3 id="频域图像处理步骤">频域图像处理步骤</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106233208958.png" class title="image-20240106233208958">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106233301442.png" class title="image-20240106233301442">
+<h4 id="滤波器">滤波器</h4>
+<p>低通滤波器：保留小于等于D0的频谱图</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106233345016.png" class title="image-20240106233345016">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106233352205.png" class title="image-20240106233352205">
+<p><br></p>
+<p>高通滤波器：保留大于D0的频谱图</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106233455432.png" class title="image-20240106233455432">
+<p><br></p>
+<p>带通滤波器：允许指定范围频域保留</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106233530442.png" class title="image-20240106233530442">
+<p><br></p>
+<p>带阻滤波器：抑制指定范围的频率成分</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106233558935.png" class title="image-20240106233558935">
+<p><br></p>
+<p>巴特沃斯滤波器</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106234139996.png" class title="image-20240106234139996">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106234159241.png" class title="image-20240106234159241">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106234235029.png" class title="image-20240106234235029">
+<h2 id="小波变换了解">小波变换（了解）</h2>
+<p>数学显微镜</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106234302980.png" class title="image-20240106234302980">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240106234315730.png" class title="image-20240106234315730">
 <h1 id="数学形态学基础">数学形态学基础</h1>
+<p>利用集合论的方法处理图像，主要是二值图像，扩充到灰度图像</p>
+<p><br></p>
+<p>集合论的基本概念</p>
+<p>一幅图像称为一个集合</p>
+<p>交集并集补集</p>
+<p>击中击不中（交集是否为空）</p>
+<p><br></p>
+<p>结构元素，参考点，利用结构元素处理图像的基本方式</p>
+<p>目标图像：被处理的图像</p>
+<p>结构元素：考察目标图像各部分之间的关系时，需要设计一种收集信息的“探针”</p>
+<p>基本方式：腐蚀膨胀</p>
+<p><br></p>
+<p>基本的形态学运算，腐蚀和膨胀，二者的结合开运算和闭运算</p>
+<p>二值形态学的4种基本运算，即腐蚀、膨胀、开和闭运算</p>
+<p>腐蚀对应的集合运算：<span class="math inline">\(X\ominus
+S=\{x|S+x\subseteq X\}\)</span></p>
+<p>膨胀对应的集合运算：<span class="math inline">\(X\oplus S=\{X+s|s\in
+S\}\)</span>或<span class="math inline">\(X\oplus S=\{S+x|x\in
+X\}\)</span></p>
+<p>开运算：<span class="math inline">\(X\circ S=(X\ominus S)\oplus
+S\)</span>，即先腐蚀后膨胀</p>
+<p>闭运算：<span class="math inline">\(X\bullet S = (X\oplus S)\ominus
+S\)</span>，即先膨胀后腐蚀</p>
+<p><br></p>
+<p>击中与击不中变换，了解骨架提取，等形态学应用</p>
+<p>击中击不中变换，就是2个结构元素，必须保证S1覆盖前景，S2覆盖背景，两个都要满足</p>
+<p>骨架提取用的快速形态学细化算法，考试会提供细则</p>
+<h2 id="引言">引言</h2>
+<p>数学形态学可用于<strong>获取图像边界、提取骨架、去除噪声和检测角点</strong>，其应用覆盖文字识别、视觉检测、医学图像处理等领域</p>
+<p>数学形态学采用具有一定形态的结构元素去<strong>度量和提取图像中的对应形状</strong>，以达到图像分析和识别的目的</p>
+<p>数学形态学由一组形态学的<strong>代数运算子</strong>组成，其基本运算有：<strong>膨胀、腐蚀、开和闭运算</strong></p>
+<p><br></p>
+<p>数学形态学具有完备的数学基础——<strong>集合论</strong>，为形态学用于图像分析和处理、形态滤波器的特性分析和系统设计奠定了基础</p>
+<h3 id="基本符号和术语">基本符号和术语</h3>
+<p>前景：取值为1</p>
+<p>背景：取值为0</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107090832321.png" class title="image-20240107090832321">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107090851077.png" class title="image-20240107090851077">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107090903922.png" class title="image-20240107090903922">
+<p>平移和反射：</p>
+<p>平移：</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107090947279.png" class title="image-20240107090947279">
+<p>反射：</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107091045605.png" class title="image-20240107091045605">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107091119061.png" class title="image-20240107091119061">
+<h2 id="二值形态学">二值形态学</h2>
+<p>用结构元素S对图像集合A操作</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107091314052.png" class title="image-20240107091314052">
+<h3 id="腐蚀">腐蚀</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107091342499.png" class title="image-20240107091342499">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107091540789.png" class title="image-20240107091540789">
+<h4 id="腐蚀举例">腐蚀举例</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107091557912.png" class title="image-20240107091557912">
+<p>对（2,2）这个点，将其与S相加，得到三个点：{（2,2），（3,2），（2,3）}，其中（2,3）不在原图像X中，则（2,2）这个点舍弃</p>
+<p>相当于：把结构元素S的参考点与（2,2）这个点重合，结构元素（0,1）这个点没有与原图重合，则参考点对应的（2,2）就被舍弃</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107092046410.png" class title="image-20240107092046410">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107092109632.png" class title="image-20240107092109632">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107092121330.png" class title="image-20240107092121330">
+<p>可见，结构元素越大，腐蚀结果越强</p>
+<h3 id="膨胀">膨胀</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107092150949.png" class title="image-20240107092150949">
+<h4 id="膨胀举例">膨胀举例</h4>
+<p>对S中的第一个点（1,0）</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107092240528.png" class title="image-20240107092240528">
+<p>对S中的第二个点（0,1）</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107092258661.png" class title="image-20240107092258661">
+<p>对S中的第三个点（0,0）</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107092332479.png" class title="image-20240107092332479">
+<p>最后求并集即可：</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107092355196.png" class title="image-20240107092355196">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107092456538.png" class title="image-20240107092456538">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107092544322.png" class title="image-20240107092544322">
+<h3 id="膨胀和腐蚀的作用">膨胀和腐蚀的作用</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107092618610.png" class title="image-20240107092618610">
+<p>腐蚀：符号为<span class="math inline">\(\ominus\)</span></p>
+<p>膨胀：符号为<span class="math inline">\(\oplus\)</span></p>
+<h3 id="开运算和闭运算">开运算和闭运算</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107092852744.png" class title="image-20240107092852744">
+<p>开运算：先腐蚀再膨胀</p>
+<p>闭运算：先膨胀再腐蚀</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107092928090.png" class title="image-20240107092928090">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107092940120.png" class title="image-20240107092940120">
+<h4 id="开运算和闭运算的性质了解">开运算和闭运算的性质（了解）</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107093152188.png" class title="image-20240107093152188">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107093155776.png" class title="image-20240107093155776">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107093159685.png" class title="image-20240107093159685">
+<h3 id="击中击不中变换">击中/击不中变换</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107093321044.png" class title="image-20240107093321044">
+<h4 id="击中击不中变换举例">击中/击不中变换举例</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107093450226.png" class title="image-20240107093450226">
+<p>解释：必须保证S1覆盖前景（1），S2覆盖背景（0）</p>
+<p>比如（1,2）这个点，对应的S1是（1,1），是前景点，对应的S2是（0,1），是背景点，完美符合，就保留（1,2）这个点</p>
+<p>再比如（2,2）这个点，对应的S1是（2,1），是背景点0，并不是前景点，不满足要求，不保留（2,2）</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107094330997.png" class title="image-20240107094330997">
+<p>还是有点不好算的，我感觉容易错</p>
+<h4 id="击中击不中变换另一种表达形式">击中/击不中变换另一种表达形式</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107094414309.png" class title="image-20240107094414309">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107094505202.png" class title="image-20240107094505202">
+<h4 id="击中击不中变换可以用于形状识别和端点定位">击中/击不中变换可以用于形状识别和端点定位</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107101016624.png" class title="image-20240107101016624">
+<h2 id="灰值形态学">灰值形态学</h2>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107101105854.png" class title="image-20240107101105854">
+<h3 id="灰值腐蚀">灰值腐蚀</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107101153674.png" class title="image-20240107101153674">
+<p>比如取灰度图的（1,4）这个点进行灰度腐蚀</p>
+<p>结构元素腐蚀，得到3个点：（1,4），（0,4），（1,5）</p>
+<p>对应的灰度分别是：10,3,5</p>
+<p>取最小的灰度值3，作为（1,4）的腐蚀结果</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107101210068.png" class title="image-20240107101210068">
+<p>会把结构元素模板覆盖到的像素最小灰度赋值为腐蚀结果</p>
+<p>所以黑色区域会变大，白色区域会收缩</p>
+<p>即斑点变大</p>
+<h3 id="灰度膨胀">灰度膨胀</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107102355814.png" class title="image-20240107102355814">
+<p>注意：灰度膨胀需要将结构元素反射</p>
+<p>取原图像（1,3）为例</p>
+<p>结构元素（0,0）进行反射得到（0,0），则对应灰度图的点是（1,3），灰度为0</p>
+<p>结构元素（-1,0）进行反射得到（1,0），则对应灰度图的点是（2,3），灰度为40</p>
+<p>结构元素（0,1）进行反射得到（0,-1），则对应灰度图的点是（1,2），灰度为7</p>
+<p>取最大值40作为（1,3）灰度膨胀结果</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107102705237.png" class title="image-20240107102705237">
+<p>会把结构元素模板<strong>反射后</strong>覆盖到的像素最大灰度赋值为膨胀结果</p>
+<p>所以白色区域会变大，黑色区域会收缩</p>
+<h3 id="灰度膨胀腐蚀之间关系了解">灰度膨胀腐蚀之间关系（了解）</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107102911221.png" class title="image-20240107102911221">
+<h3 id="灰值开闭运算">灰值开闭运算</h3>
+<p>开运算：先腐蚀后膨胀</p>
+<p>闭运算：先膨胀后腐蚀</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107102958061.png" class title="image-20240107102958061">
+<p>举例：</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107103020150.png" class title="image-20240107103020150">
+<p>先腐蚀后膨胀，会导致波峰被削弱，因为先进行腐蚀运算，取最小值</p>
+<p>先膨胀后腐蚀，会导致波谷被提升，因为先进行膨胀运算，取最大值</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107103429630.png" class title="image-20240107103429630">
+<p>先腐蚀后膨胀的开运算，会把亮的部分变暗</p>
+<p>先膨胀后腐蚀的闭运算，会把暗的部分变亮</p>
+<h3 id="膨胀和腐蚀结合">膨胀和腐蚀结合</h3>
+<p>膨胀结果减腐蚀结果可以提取边界</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107103644145.png" class title="image-20240107103644145">
+<h2 id="形态学应用">形态学应用</h2>
+<h3 id="形态学滤波">形态学滤波</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107103817066.png" class title="image-20240107103817066">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107104154532.png" class title="image-20240107104154532">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107104159648.png" class title="image-20240107104159648">
+<h3 id="骨架提取">骨架提取</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107104239009.png" class title="image-20240107104239009">
+<h4 id="快速形态学细化算法">快速形态学细化算法</h4>
+<p>重复删除图像边缘满足一定条件的像素，最终得到单像素宽带骨架</p>
+<p>逐像素判别即可</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107104314083.png" class title="image-20240107104314083">
+<p>删除像素的条件：</p>
+<p>规则考试会给的</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107104322625.png" class title="image-20240107104322625">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107105407448.png" class title="image-20240107105407448">
+<h5 id="举例-1">举例</h5>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107105416202.png" class title="image-20240107105416202">
+<p>这两个规则满足一个就可以删</p>
+<p>满足一个，指这一个规则里对应的4条都满足</p>
+<p>看不可删除情况1：</p>
+<p>第一条满足，因为P1周围非零点个数为4</p>
+<p>第二条不满足，因为<strong>0到1</strong>出现了2次（注意：是0到1，1到0就不算），分别是P7到P8，P9到P2</p>
+<p>有一条不满足就不能删</p>
+<p><br></p>
+<p>看不可删除情况2：</p>
+<p>第一条都不满足，因为因为P1周围非零点个数为1</p>
+<p><br></p>
+<p>看不可删除情况3：</p>
+<p>第一条满足，因为P1周围非零点个数为5</p>
+<p>第二条不满足，因为<strong>0到1</strong>出现了3次，分别是P2到P3，P4到P5，P8到P9</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107110400419.png" class title="image-20240107110400419">
+<h3 id="角点检测">角点检测</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107110416782.png" class title="image-20240107110416782">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107110426132.png" class title="image-20240107110426132">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107110452229.png" class title="image-20240107110452229">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107110458864.png" class title="image-20240107110458864">
 <h1 id="图像分割">图像分割</h1>
+<p>图像分割的基本概念，本章包含图像的区域分割，边界检测，结果都是二值图像</p>
+<p>图像分割就是指把图像分成一系列<strong>有意义的</strong>、各具<strong>特征</strong>的目标或区域的技术和过程</p>
+<p>图像分割一般基于像素灰度(颜色)值的两个性质：不连续性和相似性</p>
+<p><br></p>
+<p>经典图像分割，借助简单的理论对图像分割，阈值法，迭代阈值法，Otsu
+阈值法，区域生长，区域分裂与合并</p>
+<p>阈值分割：二值分割，多阈值分割，极小值阈值法，迭代阈值法，最优阈值法，Otsu阈值法，直方图变换法，动态阈值分割</p>
+<p>基于区域分割：区域生长，区域分裂与合并，分水岭分割</p>
+<p><br></p>
+<p>分水岭分割，利用地理学的分水岭概念，基本的处理过程。分水岭算法的主要用途</p>
+<p>概念：低洼，集水盆地，分水线</p>
+<p>基本过程：降雨法和淹没法，主要目的就是<strong>找出集水盆地之间的分水线</strong></p>
+<p>主要用于图像分割、目标识别、图像处理</p>
+<p><br></p>
+<p>边界检测：</p>
+<ol type="1">
+<li>简单边界检测，采用常用的微分模板，对图像进行滤波，得到梯度响应，设定一个阈值，大于阈值的认为是边界，但效果较差</li>
+</ol>
+<p>常用的模板（算子）：Roberts，Prewitt，Sobel，Krisch，Isotropic
+Sobel</p>
+<ol start="2" type="1">
+<li>Canny 算子，一个较为复杂的边界检测方法</li>
+</ol>
+<p><br></p>
+<p>几何对象检测：Hough
+变换，在原始空间中检测直线非常困难，将图像中二维的直线在参数空间中用一个点表示，极坐标表示直线具有的优点，二维数组累加器，局部最大响应检测特定直线</p>
+<p>极坐标表示直线优点：在参数空间用一个点就能表示一条直线，用一根正弦函数就能表示所有过同一个点的直线</p>
+<p>二维数组累加器：用于确定参数空间中多条正弦函数的交点，即找出原始空间中过这些点的一条直线</p>
+<p>图像空间中特定几何形状的检测转化为寻找其曲线方程参数空间中局部极大值点的问题</p>
+<p><br></p>
+<p>了解现代图像分割方法</p>
+<ol type="1">
+<li>Mean shift，概率密度梯度估计，设计适用于图像处理的核函数</li>
+</ol>
+<p>(2)超像素，将图像分割成大致相同面积的小区域，初始种子，局部聚类</p>
+<ol start="3" type="1">
+<li><p>Graph
+Cut，基于图的分割方法，将像素看作是图的结点，再加上两个特殊的结果，构成了一个图，运用最大流最小切（max
+flow/min cut）方法对像素进行分类</p></li>
+<li><p>Active contour model：基本思想，内部能量和外部能量和特点</p></li>
+</ol>
+<h2 id="阈值分割">阈值分割</h2>
+<h3 id="图像分割基础">图像分割基础</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107112852503.png" class title="image-20240107112852503">
+<h4 id="连通和8连通">4连通和8连通</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107112813983.png" class title="image-20240107112813983">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107112830796.png" class title="image-20240107112830796">
+<h3 id="阈值分割-1">阈值分割</h3>
+<h4 id="固定阈值">固定阈值</h4>
+<h5 id="二值分割">二值分割</h5>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107113035351.png" class title="image-20240107113035351">
+<h5 id="多阈值分割">多阈值分割</h5>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107113047601.png" class title="image-20240107113047601">
+<h3 id="阈值分割一般公式">阈值分割一般公式</h3>
+<p>阈值分为<strong>全局阈值</strong>，<strong>局部阈值</strong>和<strong>动态阈值</strong>（自适应阈值）</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107113214805.png" class title="image-20240107113214805">
+<h3 id="全局阈值">全局阈值</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107113235619.png" class title="image-20240107113235619">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107113241074.png" class title="image-20240107113241074">
+<h4 id="极小值阈值法">极小值阈值法</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107113510848.png" class title="image-20240107113510848">
+<p>若在求极小值点之前对直方图进行平滑处理，则效果会更好。例如3点平滑，平滑后的灰度级i的相对频数用灰度级i-1，i，i+1的相对频数的平均值代替</p>
+<h4 id="迭代阈值法">迭代阈值法</h4>
+<p>迭代阈值法思想：最佳阈值到两类均值的距离是相等的</p>
+<p>迭代法没有理论依据</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107113542730.png" class title="image-20240107113542730">
+<p>类似于“二分法解方程”</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107113751695.png" class title="image-20240107113751695">
+<h5 id="设置迭代阈值法的初始阈值">设置迭代阈值法的初始阈值</h5>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107113835200.png" class title="image-20240107113835200">
+<h4 id="最优阈值法了解">最优阈值法（了解）</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107113952326.png" class title="image-20240107113952326">
+<h4 id="otsu法">Otsu法</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107114015487.png" class title="image-20240107114015487">
+<p>了解公式即可，不需要推导</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107114433040.png" class title="image-20240107114433040">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107114735566.png" class title="image-20240107114735566">
+<h3 id="局部阈值">局部阈值</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107114751213.png" class title="image-20240107114751213">
+<h4 id="直方图变换法">直方图变换法</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107114958332.png" class title="image-20240107114958332">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107115002779.png" class title="image-20240107115002779">
+<h3 id="动态阈值">动态阈值</h3>
+<p>在许多情况下，由于光照不均匀等因素的影响，图像背景的<strong>灰度值并不恒定</strong>，目标与背景的对比度在图像中也会有变化，图像中还可能存在不同的阴影</p>
+<p>使阈值随图像中的位置缓慢变化，可以将整幅图像分解成一系列子图像，对不同的子图像使用<strong>不同的阈值</strong>进行分割</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107115100343.png" class title="image-20240107115100343">
+<h2 id="基于区域的分割">基于区域的分割</h2>
+<h3 id="区域生长">区域生长</h3>
+<p>从一个种子像素出发，将相似的逐渐合并</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107115232321.png" class title="image-20240107115232321">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107115300766.png" class title="image-20240107115300766">
+<h3 id="区域分裂与合并">区域分裂与合并</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107115423261.png" class title="image-20240107115423261">
+<h4 id="分裂与合并的准则">分裂与合并的准则</h4>
+<p>分裂时的一致性准则为：如果某个子区域的<strong>灰度均方差大于1.5</strong>，则将其分裂为<strong>4个子区域</strong>，否则不分裂</p>
+<p>合并时的相似性准则为：如果相邻两个子区域的<strong>灰度均值之差不大于2.5</strong>，则合并为一个区域</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107115513005.png" class title="image-20240107115513005">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107115555420.png" class title="image-20240107115555420">
+<p>先分裂，再合并</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107115637601.png" class title="image-20240107115637601">
+<h3 id="分水岭分割">分水岭分割</h3>
+<p>把图像看作是一幅地形图（二维曲面）</p>
+<p>灰度图像可以看作是一片地形图，像素的灰度值代表该点的地形高度，在地形中有低洼、分水线、集水盆地等地貌特征</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107115820115.png" class title="image-20240107115820115">
+<p>弄清楚“低洼”，“集水盆地”，“分水线”概念</p>
+<p>局部最小点，称为低洼</p>
+<p>流向一个确定的低洼的点，称为集水盆地</p>
+<p>等概率地流向不同低洼的点，称为分水线</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107115924784.png" class title="image-20240107115924784">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107120124124.png" class title="image-20240107120124124">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107144008521.png" class title="image-20240107144008521">
+<h4 id="分水岭算法">分水岭算法</h4>
+<p>常用降雨法和淹没法</p>
+<p>虽然这两种的思想很简单，但是设计算法很难</p>
+<h5 id="降雨法">降雨法</h5>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107144113386.png" class title="image-20240107144113386">
+<h5 id="淹没法">淹没法</h5>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107144120605.png" class title="image-20240107144120605">
+<p>从下往上涌</p>
+<h4 id="分水岭分割vincent-soille算法">分水岭分割Vincent-Soille算法</h4>
+<p>基于淹没法的思想</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107144451124.png" class title="image-20240107144451124">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107144446215.png" class title="image-20240107144446215">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107144500806.png" class title="image-20240107144500806">
+<h3 id="基于标记的分割">基于标记的分割</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107144601801.png" class title="image-20240107144601801">
+<p>算分水岭的改进</p>
+<h2 id="边缘检测">边缘检测</h2>
+<p>图像的边缘是图像的最基本特征，它是<strong>灰度不连续</strong>的结果</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107144620948.png" class title="image-20240107144620948">
+<h3 id="微分算子">微分算子</h3>
+<p>用导数可以检测边界</p>
+<p>通过计算一阶导数或二阶导数可以方便地检测出图像中每个像素在其邻域内的灰度变化，从而检测出边缘</p>
+<h4 id="一阶差分">一阶差分</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107144833267.png" class title="image-20240107144833267">
+<p>梯度就是一阶偏导数</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107145123134.png" class title="image-20240107145123134">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107145021820.png" class title="image-20240107145021820">
+<h4 id="二阶差分">二阶差分</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107145147978.png" class title="image-20240107145147978">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107145200676.png" class title="image-20240107145200676">
+<h4 id="一阶导数和二阶导数">一阶导数和二阶导数</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107145337836.png" class title="image-20240107145337836">
+<h3 id="梯度算子-1">梯度算子</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107145403311.png" class title="image-20240107145403311">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107145409519.png" class title="image-20240107145409519">
+<h4 id="一阶导数">一阶导数</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107145503656.png" class title="image-20240107145503656">
+<p>其实这个需要画图理解</p>
+<p>卷积结果如图所示</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107151353534.png" class title="image-20240107151353534">
+<p>故sobel垂直方向模板可以检测水平边界</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107145517991.png" class title="image-20240107145517991">
+<p><br></p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107145610709.png" class title="image-20240107145610709">
+<p>同理</p>
+<p>水平方向模板可以检测垂直边界</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107145617020.png" class title="image-20240107145617020">
+<p><br></p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107145640942.png" class title="image-20240107145640942">
+<h4 id="二阶导数">二阶导数</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107151518992.png" class title="image-20240107151518992">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107151529230.png" class title="image-20240107151529230">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107151718611.png" class title="image-20240107151718611">
+<p>效果都不是很好</p>
+<h3 id="canny边缘检测算子">Canny边缘检测算子</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107151842987.png" class title="image-20240107151842987">
+<p>步骤如下：</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107151859040.png" class title="image-20240107151859040">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107151933406.png" class title="image-20240107151933406">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107152002956.png" class title="image-20240107152002956">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107152015886.png" class title="image-20240107152015886">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107152029303.png" class title="image-20240107152029303">
+<p>Canny算子检测过程：</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107152040506.png" class title="image-20240107152040506">
+<h4 id="边界连接">边界连接</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107152444285.png" class title="image-20240107152444285">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107152527098.png" class title="image-20240107152527098">
+<h3 id="hough变换">Hough变换</h3>
+<p>可以检测几何特征</p>
+<p>Hough变换反映的是图像空间的<strong>几何形状与其在参数空间</strong>中的映射关系</p>
+<p>直观点的说法就是，图像空间中由某特定曲线方程表示的几何形状，在曲线方程的参数空间中<strong>对应于一个点</strong></p>
+<p>图像空间中特定几何形状的检测转化为寻找其曲线方程参数空间中局部极大值点的问题</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107152952956.png" class title="image-20240107152952956">
+<p>把直线对应到参数空间的一个点</p>
+<p>变换公式：</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107153429665.png" class title="image-20240107153429665">
+<p>在参数空间中，<span class="math inline">\(\theta\in[-\frac{\pi}{2},\frac{\pi}{2}]\)</span></p>
+<p>可以构建一个二维数组空间，初始化为0，称为“累加器”</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107153546587.png" class title="image-20240107153546587">
+<p>过一点的全部直线，在参数空间形成一条正弦曲线</p>
+<p>所以，同时过两个点的曲线，在参数空间中就是两条正弦曲线的<strong>交点</strong></p>
+<p>这就是Hough的检测过程</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107154251015.png" class title="image-20240107154251015">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107154308548.png" class title="image-20240107154308548">
+<h2 id="聚类分割">聚类分割</h2>
+<h3 id="mean-shift分割">Mean Shift分割</h3>
+<p>概率密度梯度估计</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107154621217.png" class title="image-20240107154621217">
+<h3 id="超像素分割">超像素分割</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107154705386.png" class title="image-20240107154705386">
+<p>把图像分为大致相等面积的小区域</p>
+<p>初始种子</p>
+<p>局部聚类</p>
+<h2 id="图论分割">图论分割</h2>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107155136180.png" class title="image-20240107155136180">
+<p>基于图分割方法</p>
+<p>将像素看做图的结点，用户手动标记前景和背景信息</p>
+<p>最大流最小切方法对像素分类</p>
+<h2 id="活动轮廓分割">活动轮廓分割</h2>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107155354048.png" class title="image-20240107155354048">
+<p>基本思想：内部能量和外部能量特点</p>
 <h1 id="图像特征与理解">图像特征与理解</h1>
+<p>经过图像处理后（例如梯度响应、图像分割、边界检测），如何从分割的区域和边界中提取特征，用于后续的图像分析</p>
+<p><br></p>
+<p>几何基本特征：几何特征和形状特征</p>
+<p>几何特征：位置方向、周长（隙码，链码，边界面积）、面积（像素，格林公式）、长轴短轴、距离</p>
+<p>形状特征：矩形度、圆形度、球性状、偏心率、形状描述子（边界链码，一阶差分链码，傅里叶描述子）</p>
+<p><br></p>
+<p>角点特征：Moravec 算法、Harris 算法，区别与联系，Harris
+算法的基本过程；在不同图像特征区域Harris角点响应的区别</p>
+<p>Harris算法是在Moravec算法的基础上改进的，因为Moravec算法计算复杂度太高，Harris算法在Moravec算法基础上多加了一个窗口函数，通常是高斯函数，将算法改写成矩阵相乘的形式，就能用对应的矩阵求出角点</p>
+<p>Harris算法基本过程：先求Harris响应；找到具有较大响应的阈值:
+R&gt;threshold，大于的保留，小于的丢弃；提取角点响应的局部极大值；把这些点对应到原图，就是角点</p>
+<p>不同图像特征区域Harris角点响应的区别：当该点周围为一个光滑区域时，其在各个方向的灰度变化都小；当该点周围为边结构时，沿着边界方向的灰度值变化较小；而当该点周围为一个角结构时，其在各个方向的灰度值都有较大的变化</p>
+<p><br></p>
+<p>纹理分析：统计法（灰度差分统计法，行程长度统计法，联合概率矩阵法，都挺好算）</p>
+<p>频谱法、联合概率矩阵</p>
+<p><br></p>
+<p>不变矩特征：</p>
+<ol type="1">
+<li>不变矩特征要解决的问题是什么，在什么情况下具有不变性</li>
+</ol>
+<p>不变矩特征在数字图像处理中主要解决的问题是如何在图像发生变化（如平移、旋转、缩放等）的情况下，仍能准确地描述和识别图像的特征。这种特性使得不变矩特征在图像识别、目标跟踪、图像配准等领域中具有重要的应用价值</p>
+<p>由于图像区域的某些矩对于<strong>平移、旋转、尺度</strong>等几何变换具有一些不变的特性，因此，矩的表示方法在物体分类、识别方面具有重要意义</p>
+<p>(2)不变矩的基本概念，质心坐标与中心矩，归一化中心矩</p>
+<p>不变矩：利用归一化的中心矩，可以获得6个不变矩组合，它们对平移、旋转和尺度等变换都是不变的</p>
+<p>质心坐标：</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107184003712.png" class title="image-20240107184003712">
+<p>其中，对于二值图像，M00为1的个数，M10是所有非0点x坐标之和，M01是所有非0点y坐标之和</p>
+<p>中心矩：</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107184026113.png" class title="image-20240107184026113">
+<p>归一化中心矩：</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107184044505.png" class title="image-20240107184044505">
+<p><br></p>
+<p>图像匹配：</p>
+<ol type="1">
+<li>基本概念及过程</li>
+</ol>
+<p>基本概念：将给定的两幅图像中相同或者相似的内容对应起来</p>
+<p>过程：模板匹配就是把模板放在原图上滑动，搜索匹配的相关系数最大时所在的位置；直方图匹配就是利用图像的颜色特征描述图像，可借助图像特征的统计直方图进行图像的匹配</p>
+<ol start="2" type="1">
+<li>常见的图像匹配方法</li>
+</ol>
+<p>模板法：相关法、误差法</p>
+<p>直方图匹配：直方图相交法，欧几里德距离法，中心矩法，闵可夫斯基距离法</p>
+<p><br></p>
+<p>局部不变特征点提取：</p>
+<ol type="1">
+<li>什么是局部特征点？具备的主要特性</li>
+</ol>
+<p>稳定出现并且具有良好的可分性的点（称为局部特征）对目标识别能够起到关键作用</p>
+<p>特性：</p>
+<p>重复度高：不同角度拍摄下的同一场景的两幅图像的
+重叠区域中，同一特征点能被检测的重复程度高</p>
+<p>独特性：检测到的特征点应与周围有明显的区别</p>
+<p>局部性：特征具有局部性</p>
+<p>数量多：特征点的数目应该足够，增加匹配的可靠性</p>
+<p>准确性：检测到的特征点应该在位置、尺度等方面具有很高的准确性</p>
+<p>高效性：特征检测算法效率高，满足实际应用需求</p>
+<ol start="2" type="1">
+<li>SIFT 的基本过程(了解)</li>
+</ol>
+<ol type="a">
+<li><p>尺度空间</p></li>
+<li><p>特征点提取</p></li>
+<li><p>特征点描述子</p></li>
+<li><p>特征点匹配</p></li>
+</ol>
+<ol start="3" type="1">
+<li>SURF 主要特点 (b-d 了解)</li>
+</ol>
+<ol type="a">
+<li><p>积分图像的基本概念</p></li>
+<li><p>建立尺度空间</p></li>
+<li><p>利用非极值抑制确定特征点</p></li>
+<li><p>选取特征点的主方向</p></li>
+</ol>
+<p>其中，积分图像需要理解</p>
+<p>很简单，就是原点到所选点所构成的矩形区域，算灰度之和，然后赋值到所选点</p>
+<p>有了积分图像，就可以快速算出灰度之和</p>
+<h2 id="图像的基本特征">图像的基本特征</h2>
+<h3 id="几何特征">几何特征</h3>
+<h4 id="位置和方向">位置和方向</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107160716403.png" class title="image-20240107160716403">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107160730193.png" class title="image-20240107160730193">
+<h4 id="周长">周长</h4>
+<h5 id="隙码">隙码</h5>
+<p>隙码：数边界个数就行，横平竖直</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107161302063.png" class title="image-20240107161302063">
+<h5 id="链码">链码</h5>
+<p>链码：把像素看做一个点，8个方向，计算点到点的距离，横着的方向算1，斜着的方向算<span class="math inline">\(\sqrt{2}\)</span></p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107161323710.png" class title="image-20240107161323710">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107161336425.png" class title="image-20240107161336425">
+<h5 id="边界面积之和表示周长">边界面积之和表示周长</h5>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107161743483.png" class title="image-20240107161743483">
+<h4 id="面积">面积</h4>
+<h5 id="像素计数">像素计数</h5>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107161847586.png" class title="image-20240107161847586">
+<h5 id="封闭曲线格林公式">封闭曲线格林公式</h5>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107161928777.png" class title="image-20240107161928777">
+<h4 id="长轴和短轴">长轴和短轴</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107162127283.png" class title="image-20240107162127283">
+<h4 id="距离">距离</h4>
+<p>欧几里得距离，市区距离，棋盘距离</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107162327382.png" class title="image-20240107162327382">
+<p>欧几里得距离，就是正常的距离计算</p>
+<p>市区距离，就是只能用横平竖直的长度计算</p>
+<p>棋盘距离，就是在市区距离的基础上，求出最大的横或竖的距离</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107162430295.png" class title="image-20240107162430295">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107162437482.png" class title="image-20240107162437482">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107162443440.png" class title="image-20240107162443440">
+<h3 id="形状特征">形状特征</h3>
+<h4 id="矩形度">矩形度</h4>
+<p>反映物体对其外接矩形的充满程度</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107162947228.png" class title="image-20240107162947228">
+<h4 id="圆形度">圆形度</h4>
+<p>用来刻画物体边界的复杂程度</p>
+<p>致密度、边界能量、圆形性、面积与平均距离平方的比值</p>
+<p>理解致密度、边界能量，后面两个图一乐</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107163146734.png" class title="image-20240107163146734">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107163159465.png" class title="image-20240107163159465">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107163206925.png" class title="image-20240107163206925">
+<h4 id="球性状">球性状</h4>
+<p>刻画物体接近于球的程度</p>
+<p>要会算：内切圆与外切圆半径之比</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107163439215.png" class title="image-20240107163439215">
+<h4 id="偏心率">偏心率</h4>
+<p>描述了区域的紧凑性</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107163558529.png" class title="image-20240107163558529">
+<h4 id="形状描述子">形状描述子</h4>
+<p>形状描述子能对物体形进行简洁的描述</p>
+<h5 id="边界链码">边界链码</h5>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107163837278.png" class title="image-20240107163837278">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107164021015.png" class title="image-20240107164021015">
+<p>注意最后没回到起点，而是在起点前的一个</p>
+<h5 id="一阶差分链码">一阶差分链码</h5>
+<p>不做要求，了解</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107164217876.png" class title="image-20240107164217876">
+<h5 id="傅里叶描述子">傅里叶描述子</h5>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107164244978.png" class title="image-20240107164244978">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107164442111.png" class title="image-20240107164442111">
+<p>结论：用少量的低频分量的傅里叶系数足以近似描述边界形状</p>
+<h2 id="角点特征">角点特征</h2>
+<p>定义
+：通常指二维图像亮度<strong>变化最剧烈</strong>或图像边缘曲线上曲率值最大的像素点</p>
+<p>性质：作为一个重要的局部特征，角点利用<strong>极少的像素</strong>，集中了图像很多重要的形状信息，具有<strong>旋转不变</strong>的特点，且对光照不敏感</p>
+<p>应用：在图像匹配、摄像机标定、三维重建、运动物体的跟踪及模式识别等领域有着重要的应用</p>
+<p>角点检测算法的准则：检测性、定位性、稳定性和复杂性</p>
+<h3 id="moravec算法">Moravec算法</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107165142070.png" class title="image-20240107165142070">
+<p>相邻元素相减，各个方向都变化大，认为存在一个角点</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107165531132.png" class title="image-20240107165531132">
+<h3 id="harris算法">Harris算法</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107165811988.png" class title="image-20240107165811988">
+<p>能改写成矩阵的形式</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107170021452.png" class title="image-20240107170021452">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107170124058.png" class title="image-20240107170124058">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107170151557.png" class title="image-20240107170151557">
+<h4 id="步骤">步骤</h4>
+<p>先求Harris响应</p>
+<p>找到具有较大响应的阈值: R&gt;threshold，大于的保留，小于的丢弃</p>
+<p>提取角点响应的局部极大值</p>
+<p>把这些点对应到原图，就是角点</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107170607450.png" class title="image-20240107170607450">
+<p>对亮度变化不敏感，对尺度变化敏感</p>
+<h2 id="纹理分析">纹理分析</h2>
+<p>纹理(Texture)一词最初指纤维物的外观，一般来说，可以认为纹理是由许多相互接近的、互相编织的元素构成，它们富有<strong>周期性</strong></p>
+<p>与图像分析直接有关的定义是：一种反映一个区域中像素灰度级的空间分布的属性。纹理是图像中一个重要的特征，呈现为某种图案在图像上有规律的重复</p>
+<p>纹理分为人工纹理和自然纹理</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107171017418.png" class title="image-20240107171017418">
+<h3 id="统计法">统计法</h3>
+<p>利用灰度直方图的矩来描述纹理的，又可分为灰度差分统计法和行程长度统计法</p>
+<h4 id="灰度差分统计法">灰度差分统计法</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107171824245.png" class title="image-20240107171824245">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107171834252.png" class title="image-20240107171834252">
+<p>水平方向两个临近的点相减</p>
+<p>每个像素与他右边的像素相减就行了</p>
+<p>右边减不了就不考虑</p>
+<p>相当于就是梯度</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107171904715.png" class title="image-20240107171904715">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107171920100.png" class title="image-20240107171920100">
+<h4 id="行程长度统计法">行程长度统计法</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107171940734.png" class title="image-20240107171940734">
+<p>很好理解，p的下标指明了方向，第二个括号表示一个像素连续出现几次</p>
+<p>比如<span class="math inline">\(p_{(1,0)}(8,2)\)</span>就是沿（1,0）方向，像素值为8，连续出现2次的次数：就是5次</p>
+<h4 id="联合概率矩阵法">联合概率矩阵法</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107172948223.png" class title="image-20240107172948223">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107173249900.png" class title="image-20240107173249900">
+<p>还是刚刚一样的，只是这次指定ab就指定了方向，a为行方向，b为列方向</p>
+<p>第一个矩阵，0行1列是10，说明01连续出现，有10次</p>
+<p>后面同理</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107173606662.png" class title="image-20240107173606662">
+<h2 id="不变矩特征">不变矩特征</h2>
+<p>由于图像区域的某些矩对于平移、旋转、尺度等几何变换具有一些不变的特性，因此，矩的表示方法在物体分类、识别方面具有重要意义</p>
+<h3 id="矩的定义">矩的定义</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107173716162.png" class title="image-20240107173716162">
+<p>零阶矩就是1的个数</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107173933841.png" class title="image-20240107173933841">
+<p>二值图像，f(x,y)为0或1</p>
+<p>所以M10就是所有取值为1的x坐标总和</p>
+<p>所以M01就是所有取值为1的y坐标总和</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107174016487.png" class title="image-20240107174016487">
+<h3 id="不变矩">不变矩</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107180648770.png" class title="image-20240107180648770">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107180700342.png" class title="image-20240107180700342">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107180705607.png" class title="image-20240107180705607">
+<h2 id="图像匹配">图像匹配</h2>
+<p>图像匹配：将给定的两幅图像中相同或者相似的内容对应起来</p>
+<h3 id="模板匹配">模板匹配</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107180811568.png" class title="image-20240107180811568">
+<h4 id="相关法">相关法</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107180851016.png" class title="image-20240107180851016">
+<p>相关法：模板放在原图上平移搜索</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107180927126.png" class title="image-20240107180927126">
+<h4 id="误差法">误差法</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107180941508.png" class title="image-20240107180941508">
+<h3 id="直方图匹配">直方图匹配</h3>
+<p>直方图匹配：为利用图像的颜色特征描述图像，可借助图像特征的统计直方图进行图像的匹配</p>
+<h4 id="直方图相交法">直方图相交法</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107181035370.png" class title="image-20240107181035370">
+<h4 id="欧几里得距离法">欧几里得距离法</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107181057267.png" class title="image-20240107181057267">
+<h4 id="中心矩法">中心矩法</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107181106129.png" class title="image-20240107181106129">
+<h4 id="闵可夫斯基距离法">闵可夫斯基距离法</h4>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107181227773.png" class title="image-20240107181227773">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107181239486.png" class title="image-20240107181239486">
+<h2 id="局部不变特征提取">局部不变特征提取</h2>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107181251259.png" class title="image-20240107181251259">
+<p>局部特征：稳定出现并且具有良好的<strong>可分性</strong>的点（称为局部特征）对目标识别能够起到关键作用</p>
+<p>局部不变特征点的提取方法应具备特点</p>
+<ol type="1">
+<li><p>重复度高：不同角度拍摄下的同一场景的两幅图像的重叠区域中，同一特征点能被检测的重复程度高</p></li>
+<li><p>独特性：检测到的特征点应与周围有明显的区别</p></li>
+<li><p>局部性：特征具有局部性</p></li>
+<li><p>数量多：特征点的数目应该足够，增加匹配的可靠性</p></li>
+<li><p>准确性：检测到的特征点应该在位置、尺度等方面具有很高的准确性</p></li>
+<li><p>高效性：特征检测算法效率高，满足实际应用需求</p></li>
+</ol>
+<h3 id="sift">SIFT</h3>
+<p>基本过程：</p>
+<p>建立尺度空间</p>
+<p>特征点的提取</p>
+<p>特征点描述子</p>
+<p>特征点匹配</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107181745481.png" class title="image-20240107181745481">
+<h3 id="surf">SURF</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107181825465.png" class title="image-20240107181825465">
+<h4 id="积分图像">积分图像</h4>
+<p>理解积分图像：</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107181838052.png" class title="image-20240107181838052">
+<p>原点为左上角的点</p>
+<p>很简单，就是原点到所选点所构成的矩形区域，算灰度之和，然后赋值到所选点</p>
+<p>有了积分图像，就可以快速算出灰度之和</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107182327757.png" class title="image-20240107182327757">
 <h1 id="图像压缩">图像压缩</h1>
+<p>图像编码的原因是什么？定义，图像的常见冗余类型</p>
+<p>原因：海量图像、视频数据及多媒体数据处理的应用需求，对存储容量、信道带宽和计算能力提出了更高要求，迫切需要针对图像和视频的特点对其数据进行压缩编码，以提高存储、传输和处理效率</p>
+<p>定义：一种在满足一定<strong>保真度</strong>条件下，通过<strong>编码和变换</strong>等方式<strong>去除冗余或无关数据</strong>而减少表示图像所需数据量的技术</p>
+<p>常见冗余类型：空间冗余，时间冗余，编码冗余，结构冗余，视觉冗余和知识冗余</p>
+<p><br></p>
+<p>图像编码的主要术语及其意义？</p>
+<p>编码效率：定义为信源的熵除以平均码字长</p>
+<p>冗余度：冗余度与编码效率成反比，编码效率越高，冗余度越低</p>
+<p>压缩比：压缩比为自然编码时的码长m与编码的平均码字长的比值</p>
+<p>变字长编码定理：对出现概率大的灰度级（信源符号）赋予短字码，而对概率较小的灰度级赋予长码字</p>
+<p><br></p>
+<p>图像压缩的基本过程，图像压缩质量的评价</p>
+<p>图像输入进编码器，压缩图像，图像从解码器输出</p>
+<p>度量解码图像与原始图像偏离度的准则称为保真度准则，可分为<strong>主观保真度</strong>和<strong>客观保真度</strong>准则，用于评价压缩图像质量</p>
+<p><strong>客观质量评价</strong>以解压后的图像和压缩前的原图像之差为基础，采用一定的指标度量保真度</p>
+<p><strong>主观质量评价</strong>能够与人的视觉效果相匹配，是指由一批观察者对压缩图像进行观察并打分，然后综合所有人的评判结果给出质量评价</p>
+<p><br></p>
+<p>图像编码的常见定理</p>
+<p>基本编码定理</p>
+<p>变字长编码定理</p>
+<p>无损编码原理</p>
+<p>无失真变长编码定理</p>
+<p><br></p>
+<p>图像编码的类型，常见的无损和有损编码方法（了解）</p>
+<p>无损压缩编码类型：霍夫曼编码，香农编码，算术编码，LZW编码</p>
+<p>有损编码：JPEG</p>
+<h2 id="图像编码概述">图像编码概述</h2>
+<p>定义：一种在满足一定<strong>保真度</strong>条件下，通过<strong>编码和变换</strong>等方式<strong>去除冗余或无关数据</strong>而减少表示图像所需数据量的技术</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107205551690.png" class title="image-20240107205551690">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107210216528.png" class title="image-20240107210216528">
+<h2 id="图像数据冗余">图像数据冗余</h2>
+<h3 id="空间冗余">空间冗余</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107210242157.png" class title="image-20240107210242157">
+<h3 id="时间冗余">时间冗余</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107210250199.png" class title="image-20240107210250199">
+<h3 id="编码冗余">编码冗余</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107210309855.png" class title="image-20240107210309855">
+<h3 id="结构冗余">结构冗余</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107210321678.png" class title="image-20240107210321678">
+<h3 id="视觉冗余和知识冗余">视觉冗余和知识冗余</h3>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107210334680.png" class title="image-20240107210334680">
+<h2 id="图像压缩基本过程">图像压缩基本过程</h2>
+<p>图像输入进编码器，压缩图像，图像从解码器输出</p>
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107210354597.png" class title="image-20240107210354597">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107210359953.png" class title="image-20240107210359953">
+<img src="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107210415053.png" class title="image-20240107210415053">
+<h2 id="图像压缩质量评价">图像压缩质量评价</h2>
+<p>度量解码图像与原始图像偏离度的准则称为保真度准则，可分为主观保真度和客观保真度准则，用于评价压缩图像质量</p>
+<p>客观质量评价以解压后的图像和压缩前的原图像之差为基础，采用一定的指标度量保真度</p>
+<p>主观质量评价能够与人的视觉效果相匹配，是指由一批观察者对压缩图像进行观察并打分，然后综合所有人的评判结果给出质量评价</p>
 <p><br></p>
 <p><br></p>
 <p><br></p>
@@ -406,7 +1251,7 @@
 <h1 id="参考资料">参考资料</h1>
 <p>课程PPT</p>
 <p>数字图像处理-辅导讲解提纲</p>
-</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/">复习整理</a><a class="post-meta__tags" href="/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">数字图像处理</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/12/30/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%BC%96%E7%A8%8B%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="计算机硬件编程复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">计算机硬件编程复习整理</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/12/06/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/OOAD%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="OOAD复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-06</div><div class="title">OOAD复习整理</div></div></a></div><div><a href="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数值分析复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-28</div><div class="title">数值分析复习整理</div></div></a></div><div><a href="/2023/12/12/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="接口技术复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-12</div><div class="title">接口技术复习整理</div></div></a></div><div><a href="/2023/12/30/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%BC%96%E7%A8%8B%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="计算机硬件编程复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-30</div><div class="title">计算机硬件编程复习整理</div></div></a></div><div><a href="/2023/10/28/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E5%A4%A7%E4%B8%89%E4%B8%93%E4%B8%9A%E8%AF%BE%E4%B8%8A%E6%9C%BA%E5%AE%9E%E9%AA%8C%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%90%88%E9%9B%86/" title="大三专业课上机实验碰到的问题合集"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-28</div><div class="title">大三专业课上机实验碰到的问题合集</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/WinkySpeed%20SP%20-%20Repaired.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">WinkySpeed</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">48</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/WinkySpeed"><i class="fab fa-github"></i><span>GitHub</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">数字图像处理复习整理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80"><span class="toc-number">2.</span> <span class="toc-text">数字图像处理基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F"><span class="toc-number">2.1.</span> <span class="toc-text">什么是数字图像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E7%9A%84%E8%A1%A8%E7%A4%BA%E6%96%B9%E5%BC%8F"><span class="toc-number">2.2.</span> <span class="toc-text">数字图像的表示方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%9C%E8%89%B2%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.3.</span> <span class="toc-text">颜色模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.4.</span> <span class="toc-text">数字图像类型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA"><span class="toc-number">3.</span> <span class="toc-text">图像增强</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E5%BA%94%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95"><span class="toc-number">3.1.</span> <span class="toc-text">对应的两种方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%82%B9%E5%A4%84%E7%90%86"><span class="toc-number">3.1.1.</span> <span class="toc-text">点处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E5%8D%B7%E7%A7%AF"><span class="toc-number">3.1.2.</span> <span class="toc-text">模板卷积</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E6%93%8D%E4%BD%9C"><span class="toc-number">3.1.2.1.</span> <span class="toc-text">模板操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E8%BE%B9%E7%95%8C"><span class="toc-number">3.1.2.2.</span> <span class="toc-text">注意边界</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E5%8D%B7%E7%A7%AF%E5%88%86%E8%A7%A3"><span class="toc-number">3.1.2.3.</span> <span class="toc-text">模板卷积分解</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%81%B0%E5%BA%A6%E5%8F%98%E6%8D%A2"><span class="toc-number">3.2.</span> <span class="toc-text">灰度变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%81%B0%E5%BA%A6%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2"><span class="toc-number">3.2.1.</span> <span class="toc-text">灰度线性变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%AE%B5%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2"><span class="toc-number">3.2.2.</span> <span class="toc-text">分段线性变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2"><span class="toc-number">3.2.3.</span> <span class="toc-text">非线性变换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E6%95%B0%E5%8F%98%E6%8D%A2"><span class="toc-number">3.2.3.1.</span> <span class="toc-text">对数变换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%82%E5%BE%8B%E5%8F%98%E6%8D%A2"><span class="toc-number">3.2.3.2.</span> <span class="toc-text">幂律变换</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%96%B9%E5%9B%BE%E4%BF%AE%E6%AD%A3"><span class="toc-number">3.2.4.</span> <span class="toc-text">直方图修正</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%B9%B3%E6%BB%91"><span class="toc-number">3.3.</span> <span class="toc-text">图像平滑</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%99%AA%E5%A3%B0"><span class="toc-number">3.3.1.</span> <span class="toc-text">图像噪声</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%BB%E5%9F%9F%E5%B9%B3%E5%9D%87%E6%B3%95"><span class="toc-number">3.3.2.</span> <span class="toc-text">邻域平均法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E6%9D%83%E6%A8%A1%E6%9D%BF"><span class="toc-number">3.3.3.</span> <span class="toc-text">加权模板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E5%80%BC%E6%BB%A4%E6%B3%A2"><span class="toc-number">3.3.4.</span> <span class="toc-text">中值滤波</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E8%BE%B9%E6%BB%A4%E6%B3%A2"><span class="toc-number">3.3.5.</span> <span class="toc-text">双边滤波</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E9%94%90%E5%8C%96"><span class="toc-number">3.4.</span> <span class="toc-text">图像锐化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%92%9D%E5%8C%96%E6%8E%A9%E8%86%9C%E5%92%8C%E9%AB%98%E6%8F%90%E5%8D%87%E6%BB%A4%E6%B3%A2"><span class="toc-number">3.4.1.</span> <span class="toc-text">钝化掩膜和高提升滤波</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E5%88%86%E6%B3%95"><span class="toc-number">3.4.2.</span> <span class="toc-text">微分法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6%E7%AE%97%E5%AD%90"><span class="toc-number">3.4.2.1.</span> <span class="toc-text">梯度算子</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%9B%BE%E5%83%8F%E9%94%90%E5%8C%96%E6%B3%95"><span class="toc-number">3.4.3.</span> <span class="toc-text">拉普拉斯图像锐化法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E9%A2%91%E5%A2%9E%E5%BC%BA%E6%BB%A4%E6%B3%A2"><span class="toc-number">3.4.4.</span> <span class="toc-text">高频增强滤波</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B3%E6%BB%91%E6%A8%A1%E6%9D%BF%E4%B8%8E%E5%BE%AE%E5%88%86%E6%A8%A1%E6%9D%BF%E5%AF%B9%E6%AF%94"><span class="toc-number">3.5.</span> <span class="toc-text">平滑模板与微分模板对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%AA%E5%BD%A9%E8%89%B2%E5%A4%84%E7%90%86"><span class="toc-number">3.6.</span> <span class="toc-text">伪彩色处理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E7%9A%84%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2"><span class="toc-number">4.</span> <span class="toc-text">图像的几何变换</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2%E5%AE%9A%E4%B9%89"><span class="toc-number">4.1.</span> <span class="toc-text">几何变换定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2%E6%96%B9%E5%BC%8F"><span class="toc-number">4.2.</span> <span class="toc-text">常见几何变换方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2%E5%9F%BA%E7%A1%80"><span class="toc-number">4.3.</span> <span class="toc-text">几何变换基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E6%AF%94%E4%BE%8B%E7%BC%A9%E6%94%BE"><span class="toc-number">4.4.</span> <span class="toc-text">图像比例缩放</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E7%BA%BF%E6%80%A7%E5%9B%BE%E5%83%8F%E6%8F%92%E5%80%BC"><span class="toc-number">4.4.1.</span> <span class="toc-text">双线性图像插值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%B9%B3%E7%A7%BB"><span class="toc-number">4.5.</span> <span class="toc-text">图像平移</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E9%95%9C%E5%83%8F"><span class="toc-number">4.6.</span> <span class="toc-text">图像镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E6%97%8B%E8%BD%AC"><span class="toc-number">4.7.</span> <span class="toc-text">图像旋转</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E9%94%99%E5%88%87shear"><span class="toc-number">4.8.</span> <span class="toc-text">图像错切（shear）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%A4%8D%E5%90%88%E5%8F%98%E6%8D%A2"><span class="toc-number">4.9.</span> <span class="toc-text">图像复合变换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2%E5%8F%98%E6%8D%A2%E7%9F%A9%E9%98%B5%E6%80%BB%E7%BB%93"><span class="toc-number">4.10.</span> <span class="toc-text">几何变换变换矩阵总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%91%E5%9F%9F%E5%A4%84%E7%90%86"><span class="toc-number">5.</span> <span class="toc-text">频域处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%BD%A2%E6%80%81%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="toc-number">6.</span> <span class="toc-text">数学形态学基础</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2"><span class="toc-number">7.</span> <span class="toc-text">图像分割</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E7%89%B9%E5%BE%81%E4%B8%8E%E7%90%86%E8%A7%A3"><span class="toc-number">8.</span> <span class="toc-text">图像特征与理解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%8E%8B%E7%BC%A9"><span class="toc-number">9.</span> <span class="toc-text">图像压缩</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">10.</span> <span class="toc-text">参考资料</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数字图像处理复习整理">数字图像处理复习整理</a><time datetime="2024-01-01T07:03:37.000Z" title="发表于 2024-01-01 15:03:37">2024-01-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/30/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%BC%96%E7%A8%8B%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="计算机硬件编程复习整理">计算机硬件编程复习整理</a><time datetime="2023-12-30T11:24:04.000Z" title="发表于 2023-12-30 19:24:04">2023-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数值分析复习整理">数值分析复习整理</a><time datetime="2023-12-28T01:35:05.000Z" title="发表于 2023-12-28 09:35:05">2023-12-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/20/hexo%E7%9B%B8%E5%85%B3/Hexo_Nunjucks_Error%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" title="Hexo Nunjucks Error解决方法">Hexo Nunjucks Error解决方法</a><time datetime="2023-12-20T10:55:45.000Z" title="发表于 2023-12-20 18:55:45">2023-12-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/12/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="接口技术复习整理">接口技术复习整理</a><time datetime="2023-12-12T02:56:09.000Z" title="发表于 2023-12-12 10:56:09">2023-12-12</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By WinkySpeed</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/">复习整理</a><a class="post-meta__tags" href="/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">数字图像处理</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="计算机图形学复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">计算机图形学复习整理</div></div></a></div><div class="next-post pull-right"><a href="/2023/12/30/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%BC%96%E7%A8%8B%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="计算机硬件编程复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">计算机硬件编程复习整理</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/12/06/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/OOAD%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="OOAD复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-06</div><div class="title">OOAD复习整理</div></div></a></div><div><a href="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数值分析复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-28</div><div class="title">数值分析复习整理</div></div></a></div><div><a href="/2023/12/12/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="接口技术复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-12</div><div class="title">接口技术复习整理</div></div></a></div><div><a href="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="计算机图形学复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-07</div><div class="title">计算机图形学复习整理</div></div></a></div><div><a href="/2023/12/30/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%BC%96%E7%A8%8B%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="计算机硬件编程复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-30</div><div class="title">计算机硬件编程复习整理</div></div></a></div><div><a href="/2023/10/28/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E5%A4%A7%E4%B8%89%E4%B8%93%E4%B8%9A%E8%AF%BE%E4%B8%8A%E6%9C%BA%E5%AE%9E%E9%AA%8C%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%90%88%E9%9B%86/" title="大三专业课上机实验碰到的问题合集"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-28</div><div class="title">大三专业课上机实验碰到的问题合集</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/WinkySpeed%20SP%20-%20Repaired.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">WinkySpeed</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">48</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/WinkySpeed"><i class="fab fa-github"></i><span>GitHub</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">数字图像处理复习整理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E9%A1%B6%E7%BA%A7%E4%BC%9A%E8%AE%AE%E6%9C%9F%E5%88%8A"><span class="toc-number">2.</span> <span class="toc-text">图像处理&#x2F;计算机视觉顶级会议期刊</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80"><span class="toc-number">3.</span> <span class="toc-text">数字图像处理基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F"><span class="toc-number">3.1.</span> <span class="toc-text">什么是数字图像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E7%9A%84%E8%A1%A8%E7%A4%BA%E6%96%B9%E5%BC%8F"><span class="toc-number">3.2.</span> <span class="toc-text">数字图像的表示方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%9C%E8%89%B2%E6%A8%A1%E5%9E%8B"><span class="toc-number">3.3.</span> <span class="toc-text">颜色模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.4.</span> <span class="toc-text">数字图像类型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA"><span class="toc-number">4.</span> <span class="toc-text">图像增强</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E5%BA%94%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95"><span class="toc-number">4.1.</span> <span class="toc-text">对应的两种方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%82%B9%E5%A4%84%E7%90%86"><span class="toc-number">4.1.1.</span> <span class="toc-text">点处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E5%8D%B7%E7%A7%AF"><span class="toc-number">4.1.2.</span> <span class="toc-text">模板卷积</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E6%93%8D%E4%BD%9C"><span class="toc-number">4.1.2.1.</span> <span class="toc-text">模板操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E8%BE%B9%E7%95%8C"><span class="toc-number">4.1.2.2.</span> <span class="toc-text">注意边界</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E5%8D%B7%E7%A7%AF%E5%88%86%E8%A7%A3"><span class="toc-number">4.1.2.3.</span> <span class="toc-text">模板卷积分解</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%81%B0%E5%BA%A6%E5%8F%98%E6%8D%A2"><span class="toc-number">4.2.</span> <span class="toc-text">灰度变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%81%B0%E5%BA%A6%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2"><span class="toc-number">4.2.1.</span> <span class="toc-text">灰度线性变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%AE%B5%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2"><span class="toc-number">4.2.2.</span> <span class="toc-text">分段线性变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2"><span class="toc-number">4.2.3.</span> <span class="toc-text">非线性变换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E6%95%B0%E5%8F%98%E6%8D%A2"><span class="toc-number">4.2.3.1.</span> <span class="toc-text">对数变换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%82%E5%BE%8B%E5%8F%98%E6%8D%A2"><span class="toc-number">4.2.3.2.</span> <span class="toc-text">幂律变换</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%96%B9%E5%9B%BE%E4%BF%AE%E6%AD%A3"><span class="toc-number">4.2.4.</span> <span class="toc-text">直方图修正</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%B9%B3%E6%BB%91"><span class="toc-number">4.3.</span> <span class="toc-text">图像平滑</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%99%AA%E5%A3%B0"><span class="toc-number">4.3.1.</span> <span class="toc-text">图像噪声</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%BB%E5%9F%9F%E5%B9%B3%E5%9D%87%E6%B3%95"><span class="toc-number">4.3.2.</span> <span class="toc-text">邻域平均法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E6%9D%83%E6%A8%A1%E6%9D%BF"><span class="toc-number">4.3.3.</span> <span class="toc-text">加权模板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E5%80%BC%E6%BB%A4%E6%B3%A2"><span class="toc-number">4.3.4.</span> <span class="toc-text">中值滤波</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E8%BE%B9%E6%BB%A4%E6%B3%A2"><span class="toc-number">4.3.5.</span> <span class="toc-text">双边滤波</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E9%94%90%E5%8C%96"><span class="toc-number">4.4.</span> <span class="toc-text">图像锐化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%92%9D%E5%8C%96%E6%8E%A9%E8%86%9C%E5%92%8C%E9%AB%98%E6%8F%90%E5%8D%87%E6%BB%A4%E6%B3%A2"><span class="toc-number">4.4.1.</span> <span class="toc-text">钝化掩膜和高提升滤波</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E5%88%86%E6%B3%95"><span class="toc-number">4.4.2.</span> <span class="toc-text">微分法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6%E7%AE%97%E5%AD%90"><span class="toc-number">4.4.2.1.</span> <span class="toc-text">梯度算子</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%9B%BE%E5%83%8F%E9%94%90%E5%8C%96%E6%B3%95"><span class="toc-number">4.4.3.</span> <span class="toc-text">拉普拉斯图像锐化法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E9%A2%91%E5%A2%9E%E5%BC%BA%E6%BB%A4%E6%B3%A2"><span class="toc-number">4.4.4.</span> <span class="toc-text">高频增强滤波</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B3%E6%BB%91%E6%A8%A1%E6%9D%BF%E4%B8%8E%E5%BE%AE%E5%88%86%E6%A8%A1%E6%9D%BF%E5%AF%B9%E6%AF%94"><span class="toc-number">4.5.</span> <span class="toc-text">平滑模板与微分模板对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%AA%E5%BD%A9%E8%89%B2%E5%A4%84%E7%90%86"><span class="toc-number">4.6.</span> <span class="toc-text">伪彩色处理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E7%9A%84%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2"><span class="toc-number">5.</span> <span class="toc-text">图像的几何变换</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2%E5%AE%9A%E4%B9%89"><span class="toc-number">5.1.</span> <span class="toc-text">几何变换定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2%E6%96%B9%E5%BC%8F"><span class="toc-number">5.2.</span> <span class="toc-text">常见几何变换方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2%E5%9F%BA%E7%A1%80"><span class="toc-number">5.3.</span> <span class="toc-text">几何变换基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E6%AF%94%E4%BE%8B%E7%BC%A9%E6%94%BE"><span class="toc-number">5.4.</span> <span class="toc-text">图像比例缩放</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E7%BA%BF%E6%80%A7%E5%9B%BE%E5%83%8F%E6%8F%92%E5%80%BC"><span class="toc-number">5.4.1.</span> <span class="toc-text">双线性图像插值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%B9%B3%E7%A7%BB"><span class="toc-number">5.5.</span> <span class="toc-text">图像平移</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E9%95%9C%E5%83%8F"><span class="toc-number">5.6.</span> <span class="toc-text">图像镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E6%97%8B%E8%BD%AC"><span class="toc-number">5.7.</span> <span class="toc-text">图像旋转</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E9%94%99%E5%88%87shear"><span class="toc-number">5.8.</span> <span class="toc-text">图像错切（shear）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%A4%8D%E5%90%88%E5%8F%98%E6%8D%A2"><span class="toc-number">5.9.</span> <span class="toc-text">图像复合变换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2%E5%8F%98%E6%8D%A2%E7%9F%A9%E9%98%B5%E6%80%BB%E7%BB%93"><span class="toc-number">5.10.</span> <span class="toc-text">几何变换变换矩阵总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%91%E5%9F%9F%E5%A4%84%E7%90%86"><span class="toc-number">6.</span> <span class="toc-text">频域处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%91%E5%9F%9F%E4%B8%8E%E9%A2%91%E5%9F%9F%E5%8F%98%E6%8D%A2"><span class="toc-number">6.1.</span> <span class="toc-text">频域与频域变换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2"><span class="toc-number">6.2.</span> <span class="toc-text">傅里叶变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A6%BB%E6%95%A3%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2"><span class="toc-number">6.2.1.</span> <span class="toc-text">离散傅里叶变换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BE%E4%BE%8B"><span class="toc-number">6.2.1.1.</span> <span class="toc-text">举例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E6%80%A7%E8%B4%A8"><span class="toc-number">6.2.2.</span> <span class="toc-text">傅里叶变换性质</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%80%A7%E8%B4%A8"><span class="toc-number">6.2.2.1.</span> <span class="toc-text">线性性质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AF%94%E4%BE%8B%E6%80%A7%E8%B4%A8"><span class="toc-number">6.2.2.2.</span> <span class="toc-text">比例性质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E5%88%86%E7%A6%BB%E6%80%A7"><span class="toc-number">6.2.2.3.</span> <span class="toc-text">可分离性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B3%E7%A7%BB%E6%80%A7%E8%B4%A8"><span class="toc-number">6.2.2.4.</span> <span class="toc-text">平移性质</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%97%B6%E7%A7%BB"><span class="toc-number">6.2.2.4.1.</span> <span class="toc-text">时移</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A2%91%E7%A7%BB"><span class="toc-number">6.2.2.4.2.</span> <span class="toc-text">频移</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%91%A8%E6%9C%9F%E6%80%A7"><span class="toc-number">6.2.2.5.</span> <span class="toc-text">周期性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B1%E8%BD%AD%E5%AF%B9%E7%A7%B0%E6%80%A7"><span class="toc-number">6.2.2.6.</span> <span class="toc-text">共轭对称性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%8B%E8%BD%AC%E4%B8%8D%E5%8F%98%E6%80%A7"><span class="toc-number">6.2.2.7.</span> <span class="toc-text">旋转不变性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B3%E5%9D%87%E5%80%BC"><span class="toc-number">6.2.2.8.</span> <span class="toc-text">平均值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%B7%E7%A7%AF%E5%AE%9A%E7%90%86"><span class="toc-number">6.2.2.9.</span> <span class="toc-text">卷积定理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3"><span class="toc-number">6.2.2.10.</span> <span class="toc-text">相关</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%91%E5%9F%9F%E5%8F%98%E6%8D%A2%E7%9A%84%E4%B8%80%E8%88%AC%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">6.3.</span> <span class="toc-text">频域变换的一般表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A6%BB%E6%95%A3%E4%BD%99%E5%BC%A6%E5%8F%98%E6%8D%A2"><span class="toc-number">6.4.</span> <span class="toc-text">离散余弦变换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%91%E5%9F%9F%E5%8F%98%E6%8D%A2%E4%B8%AD%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-number">6.5.</span> <span class="toc-text">频域变换中图像处理的实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E7%9A%84%E9%A2%91%E8%B0%B1%E5%9B%BE"><span class="toc-number">6.5.1.</span> <span class="toc-text">数字图像的频谱图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%91%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E6%AD%A5%E9%AA%A4"><span class="toc-number">6.5.2.</span> <span class="toc-text">频域图像处理步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%BB%A4%E6%B3%A2%E5%99%A8"><span class="toc-number">6.5.2.1.</span> <span class="toc-text">滤波器</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E6%B3%A2%E5%8F%98%E6%8D%A2%E4%BA%86%E8%A7%A3"><span class="toc-number">6.6.</span> <span class="toc-text">小波变换（了解）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%BD%A2%E6%80%81%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="toc-number">7.</span> <span class="toc-text">数学形态学基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-number">7.1.</span> <span class="toc-text">引言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%AC%A6%E5%8F%B7%E5%92%8C%E6%9C%AF%E8%AF%AD"><span class="toc-number">7.1.1.</span> <span class="toc-text">基本符号和术语</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%80%BC%E5%BD%A2%E6%80%81%E5%AD%A6"><span class="toc-number">7.2.</span> <span class="toc-text">二值形态学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%85%90%E8%9A%80"><span class="toc-number">7.2.1.</span> <span class="toc-text">腐蚀</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%85%90%E8%9A%80%E4%B8%BE%E4%BE%8B"><span class="toc-number">7.2.1.1.</span> <span class="toc-text">腐蚀举例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%86%A8%E8%83%80"><span class="toc-number">7.2.2.</span> <span class="toc-text">膨胀</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%86%A8%E8%83%80%E4%B8%BE%E4%BE%8B"><span class="toc-number">7.2.2.1.</span> <span class="toc-text">膨胀举例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%86%A8%E8%83%80%E5%92%8C%E8%85%90%E8%9A%80%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">7.2.3.</span> <span class="toc-text">膨胀和腐蚀的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E8%BF%90%E7%AE%97%E5%92%8C%E9%97%AD%E8%BF%90%E7%AE%97"><span class="toc-number">7.2.4.</span> <span class="toc-text">开运算和闭运算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%80%E8%BF%90%E7%AE%97%E5%92%8C%E9%97%AD%E8%BF%90%E7%AE%97%E7%9A%84%E6%80%A7%E8%B4%A8%E4%BA%86%E8%A7%A3"><span class="toc-number">7.2.4.1.</span> <span class="toc-text">开运算和闭运算的性质（了解）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BB%E4%B8%AD%E5%87%BB%E4%B8%8D%E4%B8%AD%E5%8F%98%E6%8D%A2"><span class="toc-number">7.2.5.</span> <span class="toc-text">击中&#x2F;击不中变换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BB%E4%B8%AD%E5%87%BB%E4%B8%8D%E4%B8%AD%E5%8F%98%E6%8D%A2%E4%B8%BE%E4%BE%8B"><span class="toc-number">7.2.5.1.</span> <span class="toc-text">击中&#x2F;击不中变换举例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BB%E4%B8%AD%E5%87%BB%E4%B8%8D%E4%B8%AD%E5%8F%98%E6%8D%A2%E5%8F%A6%E4%B8%80%E7%A7%8D%E8%A1%A8%E8%BE%BE%E5%BD%A2%E5%BC%8F"><span class="toc-number">7.2.5.2.</span> <span class="toc-text">击中&#x2F;击不中变换另一种表达形式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BB%E4%B8%AD%E5%87%BB%E4%B8%8D%E4%B8%AD%E5%8F%98%E6%8D%A2%E5%8F%AF%E4%BB%A5%E7%94%A8%E4%BA%8E%E5%BD%A2%E7%8A%B6%E8%AF%86%E5%88%AB%E5%92%8C%E7%AB%AF%E7%82%B9%E5%AE%9A%E4%BD%8D"><span class="toc-number">7.2.5.3.</span> <span class="toc-text">击中&#x2F;击不中变换可以用于形状识别和端点定位</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%81%B0%E5%80%BC%E5%BD%A2%E6%80%81%E5%AD%A6"><span class="toc-number">7.3.</span> <span class="toc-text">灰值形态学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%81%B0%E5%80%BC%E8%85%90%E8%9A%80"><span class="toc-number">7.3.1.</span> <span class="toc-text">灰值腐蚀</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%81%B0%E5%BA%A6%E8%86%A8%E8%83%80"><span class="toc-number">7.3.2.</span> <span class="toc-text">灰度膨胀</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%81%B0%E5%BA%A6%E8%86%A8%E8%83%80%E8%85%90%E8%9A%80%E4%B9%8B%E9%97%B4%E5%85%B3%E7%B3%BB%E4%BA%86%E8%A7%A3"><span class="toc-number">7.3.3.</span> <span class="toc-text">灰度膨胀腐蚀之间关系（了解）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%81%B0%E5%80%BC%E5%BC%80%E9%97%AD%E8%BF%90%E7%AE%97"><span class="toc-number">7.3.4.</span> <span class="toc-text">灰值开闭运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%86%A8%E8%83%80%E5%92%8C%E8%85%90%E8%9A%80%E7%BB%93%E5%90%88"><span class="toc-number">7.3.5.</span> <span class="toc-text">膨胀和腐蚀结合</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BD%A2%E6%80%81%E5%AD%A6%E5%BA%94%E7%94%A8"><span class="toc-number">7.4.</span> <span class="toc-text">形态学应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%A2%E6%80%81%E5%AD%A6%E6%BB%A4%E6%B3%A2"><span class="toc-number">7.4.1.</span> <span class="toc-text">形态学滤波</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AA%A8%E6%9E%B6%E6%8F%90%E5%8F%96"><span class="toc-number">7.4.2.</span> <span class="toc-text">骨架提取</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%BD%A2%E6%80%81%E5%AD%A6%E7%BB%86%E5%8C%96%E7%AE%97%E6%B3%95"><span class="toc-number">7.4.2.1.</span> <span class="toc-text">快速形态学细化算法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BE%E4%BE%8B-1"><span class="toc-number">7.4.2.1.1.</span> <span class="toc-text">举例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%92%E7%82%B9%E6%A3%80%E6%B5%8B"><span class="toc-number">7.4.3.</span> <span class="toc-text">角点检测</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2"><span class="toc-number">8.</span> <span class="toc-text">图像分割</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%88%E5%80%BC%E5%88%86%E5%89%B2"><span class="toc-number">8.1.</span> <span class="toc-text">阈值分割</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2%E5%9F%BA%E7%A1%80"><span class="toc-number">8.1.1.</span> <span class="toc-text">图像分割基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9E%E9%80%9A%E5%92%8C8%E8%BF%9E%E9%80%9A"><span class="toc-number">8.1.1.1.</span> <span class="toc-text">4连通和8连通</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%88%E5%80%BC%E5%88%86%E5%89%B2-1"><span class="toc-number">8.1.2.</span> <span class="toc-text">阈值分割</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BA%E5%AE%9A%E9%98%88%E5%80%BC"><span class="toc-number">8.1.2.1.</span> <span class="toc-text">固定阈值</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8C%E5%80%BC%E5%88%86%E5%89%B2"><span class="toc-number">8.1.2.1.1.</span> <span class="toc-text">二值分割</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%9A%E9%98%88%E5%80%BC%E5%88%86%E5%89%B2"><span class="toc-number">8.1.2.1.2.</span> <span class="toc-text">多阈值分割</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%88%E5%80%BC%E5%88%86%E5%89%B2%E4%B8%80%E8%88%AC%E5%85%AC%E5%BC%8F"><span class="toc-number">8.1.3.</span> <span class="toc-text">阈值分割一般公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E9%98%88%E5%80%BC"><span class="toc-number">8.1.4.</span> <span class="toc-text">全局阈值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%81%E5%B0%8F%E5%80%BC%E9%98%88%E5%80%BC%E6%B3%95"><span class="toc-number">8.1.4.1.</span> <span class="toc-text">极小值阈值法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E9%98%88%E5%80%BC%E6%B3%95"><span class="toc-number">8.1.4.2.</span> <span class="toc-text">迭代阈值法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E8%BF%AD%E4%BB%A3%E9%98%88%E5%80%BC%E6%B3%95%E7%9A%84%E5%88%9D%E5%A7%8B%E9%98%88%E5%80%BC"><span class="toc-number">8.1.4.2.1.</span> <span class="toc-text">设置迭代阈值法的初始阈值</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E4%BC%98%E9%98%88%E5%80%BC%E6%B3%95%E4%BA%86%E8%A7%A3"><span class="toc-number">8.1.4.3.</span> <span class="toc-text">最优阈值法（了解）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#otsu%E6%B3%95"><span class="toc-number">8.1.4.4.</span> <span class="toc-text">Otsu法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E9%98%88%E5%80%BC"><span class="toc-number">8.1.5.</span> <span class="toc-text">局部阈值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%8F%98%E6%8D%A2%E6%B3%95"><span class="toc-number">8.1.5.1.</span> <span class="toc-text">直方图变换法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E9%98%88%E5%80%BC"><span class="toc-number">8.1.6.</span> <span class="toc-text">动态阈值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%8C%BA%E5%9F%9F%E7%9A%84%E5%88%86%E5%89%B2"><span class="toc-number">8.2.</span> <span class="toc-text">基于区域的分割</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BA%E5%9F%9F%E7%94%9F%E9%95%BF"><span class="toc-number">8.2.1.</span> <span class="toc-text">区域生长</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BA%E5%9F%9F%E5%88%86%E8%A3%82%E4%B8%8E%E5%90%88%E5%B9%B6"><span class="toc-number">8.2.2.</span> <span class="toc-text">区域分裂与合并</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E8%A3%82%E4%B8%8E%E5%90%88%E5%B9%B6%E7%9A%84%E5%87%86%E5%88%99"><span class="toc-number">8.2.2.1.</span> <span class="toc-text">分裂与合并的准则</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%B0%B4%E5%B2%AD%E5%88%86%E5%89%B2"><span class="toc-number">8.2.3.</span> <span class="toc-text">分水岭分割</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E6%B0%B4%E5%B2%AD%E7%AE%97%E6%B3%95"><span class="toc-number">8.2.3.1.</span> <span class="toc-text">分水岭算法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%99%8D%E9%9B%A8%E6%B3%95"><span class="toc-number">8.2.3.1.1.</span> <span class="toc-text">降雨法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B7%B9%E6%B2%A1%E6%B3%95"><span class="toc-number">8.2.3.1.2.</span> <span class="toc-text">淹没法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E6%B0%B4%E5%B2%AD%E5%88%86%E5%89%B2vincent-soille%E7%AE%97%E6%B3%95"><span class="toc-number">8.2.3.2.</span> <span class="toc-text">分水岭分割Vincent-Soille算法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%A0%87%E8%AE%B0%E7%9A%84%E5%88%86%E5%89%B2"><span class="toc-number">8.2.4.</span> <span class="toc-text">基于标记的分割</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B"><span class="toc-number">8.3.</span> <span class="toc-text">边缘检测</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E5%88%86%E7%AE%97%E5%AD%90"><span class="toc-number">8.3.1.</span> <span class="toc-text">微分算子</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E9%98%B6%E5%B7%AE%E5%88%86"><span class="toc-number">8.3.1.1.</span> <span class="toc-text">一阶差分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E9%98%B6%E5%B7%AE%E5%88%86"><span class="toc-number">8.3.1.2.</span> <span class="toc-text">二阶差分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E9%98%B6%E5%AF%BC%E6%95%B0%E5%92%8C%E4%BA%8C%E9%98%B6%E5%AF%BC%E6%95%B0"><span class="toc-number">8.3.1.3.</span> <span class="toc-text">一阶导数和二阶导数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6%E7%AE%97%E5%AD%90-1"><span class="toc-number">8.3.2.</span> <span class="toc-text">梯度算子</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E9%98%B6%E5%AF%BC%E6%95%B0"><span class="toc-number">8.3.2.1.</span> <span class="toc-text">一阶导数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E9%98%B6%E5%AF%BC%E6%95%B0"><span class="toc-number">8.3.2.2.</span> <span class="toc-text">二阶导数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#canny%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B%E7%AE%97%E5%AD%90"><span class="toc-number">8.3.3.</span> <span class="toc-text">Canny边缘检测算子</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%B9%E7%95%8C%E8%BF%9E%E6%8E%A5"><span class="toc-number">8.3.3.1.</span> <span class="toc-text">边界连接</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hough%E5%8F%98%E6%8D%A2"><span class="toc-number">8.3.4.</span> <span class="toc-text">Hough变换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%81%9A%E7%B1%BB%E5%88%86%E5%89%B2"><span class="toc-number">8.4.</span> <span class="toc-text">聚类分割</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#mean-shift%E5%88%86%E5%89%B2"><span class="toc-number">8.4.1.</span> <span class="toc-text">Mean Shift分割</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B6%85%E5%83%8F%E7%B4%A0%E5%88%86%E5%89%B2"><span class="toc-number">8.4.2.</span> <span class="toc-text">超像素分割</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E8%AE%BA%E5%88%86%E5%89%B2"><span class="toc-number">8.5.</span> <span class="toc-text">图论分割</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B4%BB%E5%8A%A8%E8%BD%AE%E5%BB%93%E5%88%86%E5%89%B2"><span class="toc-number">8.6.</span> <span class="toc-text">活动轮廓分割</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E7%89%B9%E5%BE%81%E4%B8%8E%E7%90%86%E8%A7%A3"><span class="toc-number">9.</span> <span class="toc-text">图像特征与理解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81"><span class="toc-number">9.1.</span> <span class="toc-text">图像的基本特征</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%A0%E4%BD%95%E7%89%B9%E5%BE%81"><span class="toc-number">9.1.1.</span> <span class="toc-text">几何特征</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%8D%E7%BD%AE%E5%92%8C%E6%96%B9%E5%90%91"><span class="toc-number">9.1.1.1.</span> <span class="toc-text">位置和方向</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%91%A8%E9%95%BF"><span class="toc-number">9.1.1.2.</span> <span class="toc-text">周长</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9A%99%E7%A0%81"><span class="toc-number">9.1.1.2.1.</span> <span class="toc-text">隙码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%93%BE%E7%A0%81"><span class="toc-number">9.1.1.2.2.</span> <span class="toc-text">链码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BE%B9%E7%95%8C%E9%9D%A2%E7%A7%AF%E4%B9%8B%E5%92%8C%E8%A1%A8%E7%A4%BA%E5%91%A8%E9%95%BF"><span class="toc-number">9.1.1.2.3.</span> <span class="toc-text">边界面积之和表示周长</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E7%A7%AF"><span class="toc-number">9.1.1.3.</span> <span class="toc-text">面积</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%83%8F%E7%B4%A0%E8%AE%A1%E6%95%B0"><span class="toc-number">9.1.1.3.1.</span> <span class="toc-text">像素计数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B0%81%E9%97%AD%E6%9B%B2%E7%BA%BF%E6%A0%BC%E6%9E%97%E5%85%AC%E5%BC%8F"><span class="toc-number">9.1.1.3.2.</span> <span class="toc-text">封闭曲线格林公式</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%95%BF%E8%BD%B4%E5%92%8C%E7%9F%AD%E8%BD%B4"><span class="toc-number">9.1.1.4.</span> <span class="toc-text">长轴和短轴</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%9D%E7%A6%BB"><span class="toc-number">9.1.1.5.</span> <span class="toc-text">距离</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%A2%E7%8A%B6%E7%89%B9%E5%BE%81"><span class="toc-number">9.1.2.</span> <span class="toc-text">形状特征</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A9%E5%BD%A2%E5%BA%A6"><span class="toc-number">9.1.2.1.</span> <span class="toc-text">矩形度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%86%E5%BD%A2%E5%BA%A6"><span class="toc-number">9.1.2.2.</span> <span class="toc-text">圆形度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%90%83%E6%80%A7%E7%8A%B6"><span class="toc-number">9.1.2.3.</span> <span class="toc-text">球性状</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%81%8F%E5%BF%83%E7%8E%87"><span class="toc-number">9.1.2.4.</span> <span class="toc-text">偏心率</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%A2%E7%8A%B6%E6%8F%8F%E8%BF%B0%E5%AD%90"><span class="toc-number">9.1.2.5.</span> <span class="toc-text">形状描述子</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BE%B9%E7%95%8C%E9%93%BE%E7%A0%81"><span class="toc-number">9.1.2.5.1.</span> <span class="toc-text">边界链码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%80%E9%98%B6%E5%B7%AE%E5%88%86%E9%93%BE%E7%A0%81"><span class="toc-number">9.1.2.5.2.</span> <span class="toc-text">一阶差分链码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%82%85%E9%87%8C%E5%8F%B6%E6%8F%8F%E8%BF%B0%E5%AD%90"><span class="toc-number">9.1.2.5.3.</span> <span class="toc-text">傅里叶描述子</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%92%E7%82%B9%E7%89%B9%E5%BE%81"><span class="toc-number">9.2.</span> <span class="toc-text">角点特征</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#moravec%E7%AE%97%E6%B3%95"><span class="toc-number">9.2.1.</span> <span class="toc-text">Moravec算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#harris%E7%AE%97%E6%B3%95"><span class="toc-number">9.2.2.</span> <span class="toc-text">Harris算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-number">9.2.2.1.</span> <span class="toc-text">步骤</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%B9%E7%90%86%E5%88%86%E6%9E%90"><span class="toc-number">9.3.</span> <span class="toc-text">纹理分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E6%B3%95"><span class="toc-number">9.3.1.</span> <span class="toc-text">统计法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%81%B0%E5%BA%A6%E5%B7%AE%E5%88%86%E7%BB%9F%E8%AE%A1%E6%B3%95"><span class="toc-number">9.3.1.1.</span> <span class="toc-text">灰度差分统计法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%8C%E7%A8%8B%E9%95%BF%E5%BA%A6%E7%BB%9F%E8%AE%A1%E6%B3%95"><span class="toc-number">9.3.1.2.</span> <span class="toc-text">行程长度统计法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%81%94%E5%90%88%E6%A6%82%E7%8E%87%E7%9F%A9%E9%98%B5%E6%B3%95"><span class="toc-number">9.3.1.3.</span> <span class="toc-text">联合概率矩阵法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E5%8F%98%E7%9F%A9%E7%89%B9%E5%BE%81"><span class="toc-number">9.4.</span> <span class="toc-text">不变矩特征</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">9.4.1.</span> <span class="toc-text">矩的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%8F%98%E7%9F%A9"><span class="toc-number">9.4.2.</span> <span class="toc-text">不变矩</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%8C%B9%E9%85%8D"><span class="toc-number">9.5.</span> <span class="toc-text">图像匹配</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E5%8C%B9%E9%85%8D"><span class="toc-number">9.5.1.</span> <span class="toc-text">模板匹配</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E6%B3%95"><span class="toc-number">9.5.1.1.</span> <span class="toc-text">相关法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%AF%E5%B7%AE%E6%B3%95"><span class="toc-number">9.5.1.2.</span> <span class="toc-text">误差法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%8C%B9%E9%85%8D"><span class="toc-number">9.5.2.</span> <span class="toc-text">直方图匹配</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B4%E6%96%B9%E5%9B%BE%E7%9B%B8%E4%BA%A4%E6%B3%95"><span class="toc-number">9.5.2.1.</span> <span class="toc-text">直方图相交法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E8%B7%9D%E7%A6%BB%E6%B3%95"><span class="toc-number">9.5.2.2.</span> <span class="toc-text">欧几里得距离法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AD%E5%BF%83%E7%9F%A9%E6%B3%95"><span class="toc-number">9.5.2.3.</span> <span class="toc-text">中心矩法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%B5%E5%8F%AF%E5%A4%AB%E6%96%AF%E5%9F%BA%E8%B7%9D%E7%A6%BB%E6%B3%95"><span class="toc-number">9.5.2.4.</span> <span class="toc-text">闵可夫斯基距离法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E4%B8%8D%E5%8F%98%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96"><span class="toc-number">9.6.</span> <span class="toc-text">局部不变特征提取</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sift"><span class="toc-number">9.6.1.</span> <span class="toc-text">SIFT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#surf"><span class="toc-number">9.6.2.</span> <span class="toc-text">SURF</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A7%AF%E5%88%86%E5%9B%BE%E5%83%8F"><span class="toc-number">9.6.2.1.</span> <span class="toc-text">积分图像</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%8E%8B%E7%BC%A9"><span class="toc-number">10.</span> <span class="toc-text">图像压缩</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E7%BC%96%E7%A0%81%E6%A6%82%E8%BF%B0"><span class="toc-number">10.1.</span> <span class="toc-text">图像编码概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E6%95%B0%E6%8D%AE%E5%86%97%E4%BD%99"><span class="toc-number">10.2.</span> <span class="toc-text">图像数据冗余</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%86%97%E4%BD%99"><span class="toc-number">10.2.1.</span> <span class="toc-text">空间冗余</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%86%97%E4%BD%99"><span class="toc-number">10.2.2.</span> <span class="toc-text">时间冗余</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E7%A0%81%E5%86%97%E4%BD%99"><span class="toc-number">10.2.3.</span> <span class="toc-text">编码冗余</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E5%86%97%E4%BD%99"><span class="toc-number">10.2.4.</span> <span class="toc-text">结构冗余</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%86%E8%A7%89%E5%86%97%E4%BD%99%E5%92%8C%E7%9F%A5%E8%AF%86%E5%86%97%E4%BD%99"><span class="toc-number">10.2.5.</span> <span class="toc-text">视觉冗余和知识冗余</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%8E%8B%E7%BC%A9%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B"><span class="toc-number">10.3.</span> <span class="toc-text">图像压缩基本过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%8E%8B%E7%BC%A9%E8%B4%A8%E9%87%8F%E8%AF%84%E4%BB%B7"><span class="toc-number">10.4.</span> <span class="toc-text">图像压缩质量评价</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">11.</span> <span class="toc-text">参考资料</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="计算机图形学复习整理">计算机图形学复习整理</a><time datetime="2024-01-07T13:06:54.000Z" title="发表于 2024-01-07 21:06:54">2024-01-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数字图像处理复习整理">数字图像处理复习整理</a><time datetime="2024-01-01T07:03:37.000Z" title="发表于 2024-01-01 15:03:37">2024-01-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/30/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%BC%96%E7%A8%8B%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="计算机硬件编程复习整理">计算机硬件编程复习整理</a><time datetime="2023-12-30T11:24:04.000Z" title="发表于 2023-12-30 19:24:04">2023-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数值分析复习整理">数值分析复习整理</a><time datetime="2023-12-28T01:35:05.000Z" title="发表于 2023-12-28 09:35:05">2023-12-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/20/hexo%E7%9B%B8%E5%85%B3/Hexo_Nunjucks_Error%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" title="Hexo Nunjucks Error解决方法">Hexo Nunjucks Error解决方法</a><time datetime="2023-12-20T10:55:45.000Z" title="发表于 2023-12-20 18:55:45">2023-12-20</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By WinkySpeed</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
   window.MathJax = {
     tex: {
       inlineMath: [ ['$','$'], ["\\(","\\)"]],
