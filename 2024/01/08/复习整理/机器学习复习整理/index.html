@@ -1,0 +1,420 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>机器学习复习整理 | WinkySpeed's Blog</title><meta name="author" content="WinkySpeed"><meta name="copyright" content="WinkySpeed"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="机器学习复习整理 绪论 基本术语 数据 数据集：训练集，测试集 示例&#x2F;样本 属性&#x2F;特征 标记  任务 预测目标 分类（classification）：离散值（比如好瓜，坏瓜） 二分类：好瓜;坏瓜 多分类：冬瓜;南瓜;西瓜  回归（regression）：连续值（比如西瓜的成熟度0.95,0.37） 瓜的成熟度  聚类：无标记信息 有无标记信息 根据训练数据是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习复习整理">
+<meta property="og:url" content="http://example.com/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/index.html">
+<meta property="og:site_name" content="WinkySpeed&#39;s Blog">
+<meta property="og:description" content="机器学习复习整理 绪论 基本术语 数据 数据集：训练集，测试集 示例&#x2F;样本 属性&#x2F;特征 标记  任务 预测目标 分类（classification）：离散值（比如好瓜，坏瓜） 二分类：好瓜;坏瓜 多分类：冬瓜;南瓜;西瓜  回归（regression）：连续值（比如西瓜的成熟度0.95,0.37） 瓜的成熟度  聚类：无标记信息 有无标记信息 根据训练数据是">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/WinkySpeed%20SP%20-%20Repaired.jpg">
+<meta property="article:published_time" content="2024-01-08T01:40:07.000Z">
+<meta property="article:modified_time" content="2024-01-08T03:44:15.914Z">
+<meta property="article:author" content="WinkySpeed">
+<meta property="article:tag" content="复习整理">
+<meta property="article:tag" content="机器学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/WinkySpeed%20SP%20-%20Repaired.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '机器学习复习整理',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-01-08 11:44:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/WinkySpeed%20SP%20-%20Repaired.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">42</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">48</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/33703665_p0.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="WinkySpeed's Blog"><span class="site-name">WinkySpeed's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">机器学习复习整理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-01-08T01:40:07.000Z" title="发表于 2024-01-08 09:40:07">2024-01-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-01-08T03:44:15.914Z" title="更新于 2024-01-08 11:44:15">2024-01-08</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="机器学习复习整理"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="机器学习复习整理">机器学习复习整理</h1>
+<h1 id="绪论">绪论</h1>
+<h2 id="基本术语">基本术语</h2>
+<h3 id="数据">数据</h3>
+<p>数据集：训练集，测试集</p>
+<p>示例/样本</p>
+<p>属性/特征</p>
+<p>标记</p>
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108095646639.png" class title="image-20240108095646639">
+<h3 id="任务">任务</h3>
+<h4 id="预测目标">预测目标</h4>
+<p><strong>分类</strong>（classification）：离散值（比如好瓜，坏瓜）</p>
+<p>二分类：好瓜;坏瓜</p>
+<p>多分类：冬瓜;南瓜;西瓜</p>
+<p><br></p>
+<p><strong>回归</strong>（regression）：连续值（比如西瓜的成熟度0.95,0.37）</p>
+<p>瓜的成熟度</p>
+<p><br></p>
+<p><strong>聚类</strong>：无标记信息</p>
+<h4 id="有无标记信息">有无标记信息</h4>
+<p>根据训练数据是否拥有标记信息，学习任务大致分为两大类：监督学习，无监督学习</p>
+<p>监督学习：分类、回归</p>
+<p>无监督学习：聚类</p>
+<p>半监督学习：两者结合</p>
+<h3 id="泛化能力">泛化能力</h3>
+<p>机器学习的目标是使得学到的模型能很好的适用于“新样本”，而不仅仅是训练集合，我们称模型适用于新样本的能力为<strong>泛化</strong>(generalization)能力</p>
+<p>通常假设样本空间中的样本服从一个未知分布<span class="math inline">\(D\)</span>，样本从这个分布中独立获得，即“<strong>独立同分布</strong>”(i.i.d)</p>
+<p>一般而言训练样本越多越有可能通过学习获得强泛化能力的模型</p>
+<h2 id="假设空间">假设空间</h2>
+<p>把学习的过程看做一个在所有假设组成的空间中搜索的过程，搜索目标是找到与训练集“匹配”的假设，即能够将训练集中的瓜正确判断的假设</p>
+<p>假设的表示一旦确定，假设空间及其规模大小就确定了</p>
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108100313147.png" class title="image-20240108100313147">
+<p>如图，色泽有2种，根蒂有3种，敲声有3种</p>
+<p>但是每一个都加了个1：取任意值，也就是不定</p>
+<p>最后加的1：空集，啥都不是</p>
+<p><span class="math inline">\(3*3*4+1=49\)</span></p>
+<h2 id="归纳偏好">归纳偏好</h2>
+<p>学习过程中对某种类型假设的偏好称作<strong>归纳偏好</strong></p>
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108101746385.png" class title="image-20240108101746385">
+<p>归纳偏好可看作学习算法自身在一个可能很庞大的假设空间中对假设进行选择的启发式或“价值观”</p>
+<p>“奥卡姆剃刀”是一种常用的、自然科学研究中最基本的原则，即“若有多个假设与观察一致，选<strong>最简单</strong>的那个”</p>
+<p>具体的现实问题中，<strong>学习算法本身所做的假设是否成立</strong>，也即算法的归纳偏好是否与问题本身匹配，大多数时候直接决定了算法能否取得好的性能</p>
+<h3 id="nofreelunch">NoFreeLunch</h3>
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108101917506.png" class title="image-20240108101917506">
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108101931043.png" class title="image-20240108101931043">
+<h2 id="发展历程">发展历程</h2>
+<p>推理期</p>
+<p>知识期</p>
+<p>学习期</p>
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108102016375.png" class title="image-20240108102016375">
+<p>对应学派：</p>
+<p>符号主义学习：决策树和基于逻辑的学习</p>
+<p>连接主义学习：基于神经网络</p>
+<p>统计学习：支持向量机和核方法</p>
+<p>连接主义学习：深度学习</p>
+<h1 id="模型评估与选择">模型评估与选择</h1>
+<h2 id="经验误差与过拟合">经验误差与过拟合</h2>
+<h3 id="错误率和误差">错误率和误差</h3>
+<p>错误率：错分样本的占比</p>
+<p>m个样本里有a个样本分类错误，<span class="math inline">\(E=\dfrac{a}{m}\)</span></p>
+<p>精度：1-错误率</p>
+<p>误差：样本真实输出与预测输出之间的差异</p>
+<p>经验（训练）误差：训练集上</p>
+<p>测试误差：训练集</p>
+<p>泛化误差：除训练集以外的所有样本</p>
+<p><br></p>
+<p>由于事先并不知道新样本的特征，我们只能努力使经验误差最小化</p>
+<p>很多时候虽然能在训练集上做到分类错误率为零，但多数情况下这样的学习器并不好</p>
+<h3 id="过拟合">过拟合</h3>
+<p>学习器把训练样本学习的“太好”，将训练样本本身的特点当做所有样本的一般性质，导致泛化性能下降</p>
+<p>解决方法：</p>
+<p>优化目标加正则项</p>
+<p>early stop</p>
+<h3 id="欠拟合">欠拟合</h3>
+<p>对训练样本的一般性质尚未学好</p>
+<p>解决方法：</p>
+<p>决策树:拓展分支</p>
+<p>神经网络:增加训练轮数</p>
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108102634470.png" class title="image-20240108102634470">
+<h2 id="评估方法">评估方法</h2>
+<p>通过实验测试来对学习器的泛化能力进行评估</p>
+<p>现实任务中往往会对学习器的<strong>泛化性能、时间开销、存储开销、可解释性</strong>等方面的因素进行评估并做出选择</p>
+<p>我们假设测试集是从样本真实分布中独立采样获得，将测试集上的“<strong>测试误差</strong>”作为泛化误差的近似，所以测试集要和训练集中的样本尽量<strong>互斥</strong></p>
+<p>对数据集进行适当处理，分为训练集S和测试集T</p>
+<h3 id="留出法">留出法</h3>
+<p>直接将数据集划分为两个互斥集合</p>
+<p>训练/测试集划分要尽可能保持数据分布的一致性</p>
+<p>一般若干次随机划分、<strong>重复实验取平均值</strong></p>
+<p>训练/测试样本比例通常为2:1~4:1</p>
+<h3 id="交叉检验法">交叉检验法</h3>
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108103104455.png" class title="image-20240108103104455">
+<p>将数据集D划分为k个子集同样存在多种划分方式，为了减小因样本划分不同而引入的差别，k折交叉验证通常随机使用不同的划分重复p次，最终的评估结果是这p次k折交叉验证结果的均值，例如常见的“10次10折交叉验证”</p>
+<h4 id="留一法">留一法</h4>
+<p>留一法是交叉检验法的特例，若有m个样本：</p>
+<p>令<span class="math inline">\(k=m\)</span>，则每次只剩下一个样本</p>
+<p>不受随机样本划分方式的影响</p>
+<p>结果往往比较准确</p>
+<p>当数据集比较大时，计算开销难以忍受</p>
+<h3 id="自助法">自助法</h3>
+<p>有放回采样</p>
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108103430743.png" class title="image-20240108103430743">
+<p>实际模型与预期模型都使用<span class="math inline">\(m\)</span>个训练样本</p>
+<p>约有<span class="math inline">\(\dfrac{1}{3}\)</span>的样本没在训练集中出现</p>
+<p>从初始数据集中产生多个不同的训练集，对<strong>集成学习</strong>有很大的好处</p>
+<p>自助法在数据集<strong>较小</strong>、难以有效划分训练/测试集时很有用</p>
+<p>由于改变了数据集分布可能引入估计偏差，在数据量足够时，留出法和交叉验证法更常用。</p>
+<h2 id="性能度量">性能度量</h2>
+<p>性能度量是衡量模型泛化能力的评价标准，反映了任务需求；使用不同的性能度量往往会导致不同的评判结果</p>
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108103639254.png" class title="image-20240108103639254">
+<p>任务分为连续和离散，即回归和分类</p>
+<h3 id="均方误差">均方误差</h3>
+<p><strong>回归任务</strong>最常用的性能度量是“<strong>均方误差</strong>”
+<span class="math display">\[
+E(f;D)=\frac{1}{m}\sum_{i=1}^m(f(x_i)-y_i)^2
+\]</span></p>
+<h3 id="错误率和精度">错误率和精度</h3>
+<p><strong>分类任务</strong>，错误率和精度是最常用的两种性能度量</p>
+<p>错误率：分错样本占样本总数的比例</p>
+<p>精度：分对样本占样本总数的比率</p>
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108103917094.png" class title="image-20240108103917094">
+<h3 id="查准率和查全率">查准率和查全率</h3>
+<p>我们更关注的是“挑出来的西瓜有多少是好瓜”</p>
+<p>对二分类问题，可以将样例根据真实类别与学习器预测类别的组合，分为TP,
+FP, TN, FN</p>
+<p>TP：真正例，即预测是正，实际也是正</p>
+<p>FP：假正例，即预测是正，实际是反</p>
+<p>TN：真反例，即预测是反，实际也是反</p>
+<p>FN：假反例，即预测是反，实际是正</p>
+<p>TP+FP+TN+FN = 样例总数</p>
+<p>列出对应的混淆矩阵：</p>
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108104349865.png" class title="image-20240108104349865">
+<p>查准率（Precision）：<span class="math inline">\(P=\dfrac{TP}{TP+FP}\)</span></p>
+<p>查全率（Recall）：<span class="math inline">\(R=\dfrac{TP}{TP+FN}\)</span></p>
+<p>理解查准率：预测<strong>对的</strong>正样本占全部<strong>预测的正样本</strong>的比例，即分母为TP+FP</p>
+<p>理解查全率：预测<strong>对的</strong>正样本占<strong>全部正样本</strong>的比例，即分母为TP+FN</p>
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108104949383.png" class title="image-20240108104949383">
+<p>准确率就是所有预测正确的样本占全部样本的比例</p>
+<p><span class="math inline">\(Acc=\dfrac{TP+TN}{m}\)</span></p>
+<p>下图展示了采用不同的阈值，最后的结果是不一样的</p>
+<p>比如第一行，1代表阈值取大于0.9，则没有一个查出来是正样本，每一个样本都预测为负样本</p>
+<p>第二行，1代表阈值大于0.8，所以0.9这个点就查出来是正样本，其他都认为是负样本，所以Precision查准率为1/1，Recall查全率为1/4</p>
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108105100592.png" class title="image-20240108105100592">
+<h3 id="p-r曲线">P-R曲线</h3>
+<p>Precision查准率和Recall查全率曲线</p>
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108110524203.png" class title="image-20240108110524203">
+<p>平衡点：P=R</p>
+<p>比平衡点更常用的是F1度量：</p>
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108111339183.png" class title="image-20240108111339183">
+<p>比F1更一般的形式：</p>
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108111359607.png" class title="image-20240108111359607">
+<h3 id="roc与auc">ROC与AUC</h3>
+<p>比较ROC曲线的面积，就是AUC</p>
+<p>越大越好</p>
+<h4 id="roc">ROC</h4>
+<p>ROC：受试者工作特征</p>
+<p>以“假正例率”为横轴，“真正例率”为纵轴可得到ROC曲线，全称“受试者工作特征”</p>
+<h4 id="真正率和假正率">真正率和假正率</h4>
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108111855359.png" class title="image-20240108111855359">
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108111910839.png" class title="image-20240108111910839">
+<p>真正率（TPR）和查全率一样，都是预测正确的正样本占全部正样本的比例，<span class="math inline">\(TPR=\dfrac{TP}{TP+FN}\)</span></p>
+<p>假正率（FPR）类似于真正率，是预测正确的负样本占全部负样本的比例，<span class="math display">\[FPR=\dfrac{FP}{FP+TN}\]</span></p>
+<h4 id="auc">AUC</h4>
+<p>比较ROC曲线的面积，AUC</p>
+<p>图一乐就好</p>
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108112455143.png" class title="image-20240108112455143">
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108112707406.png" class title="image-20240108112707406">
+<h3 id="代价敏感错误率">代价敏感错误率</h3>
+<p>代价矩阵</p>
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108113211120.png" class title="image-20240108113211120">
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108113157111.png" class title="image-20240108113157111">
+<p>代价曲线</p>
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108113221282.png" class title="image-20240108113221282">
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108113247498.png" class title="image-20240108113247498">
+<h2 id="比较检验">比较检验</h2>
+<p>二项检验</p>
+<p>t检验</p>
+<p>交叉验证t检验</p>
+<p>5*2交叉验证法</p>
+<p>McNemar检验</p>
+<p>Friedman检验</p>
+<p>Nemenyi后续检验</p>
+<h2 id="偏差与方差">偏差与方差</h2>
+<p>除了通过实验对学习算法估计泛化性能，还希望了解“为什么”具有这样的性能</p>
+<p>偏差-方差分解是解释学习算法泛化性能的重要工具</p>
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108113601092.png" class title="image-20240108113601092">
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108113643284.png" class title="image-20240108113643284">
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108113651032.png" class title="image-20240108113651032">
+<p><strong>泛化误差</strong><span class="math inline">\(E(f;D)\)</span>可以分解为<strong>偏差</strong><span class="math inline">\(bias^2(x)\)</span>、<strong>方差</strong><span class="math inline">\(var(x)\)</span>与<strong>噪声</strong><span class="math inline">\(\varepsilon^2\)</span>之和，即 <span class="math display">\[
+E(f;D)=bias^2(x)+var(x)+\varepsilon^2
+\]</span></p>
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108114033643.png" class title="image-20240108114033643">
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108114101967.png" class title="image-20240108114101967">
+<h1 id="线性模型">线性模型</h1>
+<h2 id="基本形式">基本形式</h2>
+<img src="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240108114331016.png" class title="image-20240108114331016">
+<p>把系数<span class="math inline">\(\omega\)</span>和自变量x写成向量的形式</p>
+<h2 id="线性回归">线性回归</h2>
+<h2 id="对数几率回归">对数几率回归</h2>
+<h2 id="线性判别学习">线性判别学习</h2>
+<h1 id="支持向量机">支持向量机</h1>
+<h2 id="间隔与支持向量">间隔与支持向量</h2>
+<h2 id="对偶问题">对偶问题</h2>
+<h2 id="核函数">核函数</h2>
+<h1 id="神经网络">神经网络</h1>
+<h2 id="神经元模型">神经元模型</h2>
+<h2 id="感知机与多层网络">感知机与多层网络</h2>
+<h2 id="误差逆传播算法">误差逆传播算法</h2>
+<h1 id="贝叶斯分类器">贝叶斯分类器</h1>
+<h2 id="贝叶斯决策论">贝叶斯决策论</h2>
+<h2 id="极大似然估计">极大似然估计</h2>
+<h2 id="朴素贝叶斯分类器">朴素贝叶斯分类器</h2>
+<h2 id="半朴素贝叶斯分类器">半朴素贝叶斯分类器</h2>
+<h1 id="聚类">聚类</h1>
+<h2 id="聚类任务">聚类任务</h2>
+<h2 id="性能度量-1">性能度量</h2>
+<h2 id="距离计算">距离计算</h2>
+<h2 id="原型聚类">原型聚类</h2>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/">复习整理</a><a class="post-meta__tags" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="计算机图形学复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">计算机图形学复习整理</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数值分析复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-28</div><div class="title">数值分析复习整理</div></div></a></div><div><a href="/2023/12/06/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/OOAD%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="OOAD复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-06</div><div class="title">OOAD复习整理</div></div></a></div><div><a href="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数字图像处理复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-01</div><div class="title">数字图像处理复习整理</div></div></a></div><div><a href="/2023/12/12/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="接口技术复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-12</div><div class="title">接口技术复习整理</div></div></a></div><div><a href="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="计算机图形学复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-07</div><div class="title">计算机图形学复习整理</div></div></a></div><div><a href="/2023/12/30/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%BC%96%E7%A8%8B%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="计算机硬件编程复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-30</div><div class="title">计算机硬件编程复习整理</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/WinkySpeed%20SP%20-%20Repaired.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">WinkySpeed</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">42</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">48</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/WinkySpeed"><i class="fab fa-github"></i><span>GitHub</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">机器学习复习整理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%AA%E8%AE%BA"><span class="toc-number">2.</span> <span class="toc-text">绪论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD"><span class="toc-number">2.1.</span> <span class="toc-text">基本术语</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE"><span class="toc-number">2.1.1.</span> <span class="toc-text">数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1"><span class="toc-number">2.1.2.</span> <span class="toc-text">任务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%84%E6%B5%8B%E7%9B%AE%E6%A0%87"><span class="toc-number">2.1.2.1.</span> <span class="toc-text">预测目标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%89%E6%97%A0%E6%A0%87%E8%AE%B0%E4%BF%A1%E6%81%AF"><span class="toc-number">2.1.2.2.</span> <span class="toc-text">有无标记信息</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%9B%E5%8C%96%E8%83%BD%E5%8A%9B"><span class="toc-number">2.1.3.</span> <span class="toc-text">泛化能力</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%81%87%E8%AE%BE%E7%A9%BA%E9%97%B4"><span class="toc-number">2.2.</span> <span class="toc-text">假设空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BD%92%E7%BA%B3%E5%81%8F%E5%A5%BD"><span class="toc-number">2.3.</span> <span class="toc-text">归纳偏好</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#nofreelunch"><span class="toc-number">2.3.1.</span> <span class="toc-text">NoFreeLunch</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%91%E5%B1%95%E5%8E%86%E7%A8%8B"><span class="toc-number">2.4.</span> <span class="toc-text">发展历程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9"><span class="toc-number">3.</span> <span class="toc-text">模型评估与选择</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%8F%E9%AA%8C%E8%AF%AF%E5%B7%AE%E4%B8%8E%E8%BF%87%E6%8B%9F%E5%90%88"><span class="toc-number">3.1.</span> <span class="toc-text">经验误差与过拟合</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E7%8E%87%E5%92%8C%E8%AF%AF%E5%B7%AE"><span class="toc-number">3.1.1.</span> <span class="toc-text">错误率和误差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E6%8B%9F%E5%90%88"><span class="toc-number">3.1.2.</span> <span class="toc-text">过拟合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AC%A0%E6%8B%9F%E5%90%88"><span class="toc-number">3.1.3.</span> <span class="toc-text">欠拟合</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95"><span class="toc-number">3.2.</span> <span class="toc-text">评估方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%95%99%E5%87%BA%E6%B3%95"><span class="toc-number">3.2.1.</span> <span class="toc-text">留出法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A4%E5%8F%89%E6%A3%80%E9%AA%8C%E6%B3%95"><span class="toc-number">3.2.2.</span> <span class="toc-text">交叉检验法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%95%99%E4%B8%80%E6%B3%95"><span class="toc-number">3.2.2.1.</span> <span class="toc-text">留一法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%8A%A9%E6%B3%95"><span class="toc-number">3.2.3.</span> <span class="toc-text">自助法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E5%BA%A6%E9%87%8F"><span class="toc-number">3.3.</span> <span class="toc-text">性能度量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%87%E6%96%B9%E8%AF%AF%E5%B7%AE"><span class="toc-number">3.3.1.</span> <span class="toc-text">均方误差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E7%8E%87%E5%92%8C%E7%B2%BE%E5%BA%A6"><span class="toc-number">3.3.2.</span> <span class="toc-text">错误率和精度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E5%87%86%E7%8E%87%E5%92%8C%E6%9F%A5%E5%85%A8%E7%8E%87"><span class="toc-number">3.3.3.</span> <span class="toc-text">查准率和查全率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#p-r%E6%9B%B2%E7%BA%BF"><span class="toc-number">3.3.4.</span> <span class="toc-text">P-R曲线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#roc%E4%B8%8Eauc"><span class="toc-number">3.3.5.</span> <span class="toc-text">ROC与AUC</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#roc"><span class="toc-number">3.3.5.1.</span> <span class="toc-text">ROC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9C%9F%E6%AD%A3%E7%8E%87%E5%92%8C%E5%81%87%E6%AD%A3%E7%8E%87"><span class="toc-number">3.3.5.2.</span> <span class="toc-text">真正率和假正率</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#auc"><span class="toc-number">3.3.5.3.</span> <span class="toc-text">AUC</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E4%BB%B7%E6%95%8F%E6%84%9F%E9%94%99%E8%AF%AF%E7%8E%87"><span class="toc-number">3.3.6.</span> <span class="toc-text">代价敏感错误率</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C"><span class="toc-number">3.4.</span> <span class="toc-text">比较检验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%81%8F%E5%B7%AE%E4%B8%8E%E6%96%B9%E5%B7%AE"><span class="toc-number">3.5.</span> <span class="toc-text">偏差与方差</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B"><span class="toc-number">4.</span> <span class="toc-text">线性模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%BD%A2%E5%BC%8F"><span class="toc-number">4.1.</span> <span class="toc-text">基本形式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="toc-number">4.2.</span> <span class="toc-text">线性回归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E6%95%B0%E5%87%A0%E7%8E%87%E5%9B%9E%E5%BD%92"><span class="toc-number">4.3.</span> <span class="toc-text">对数几率回归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%88%A4%E5%88%AB%E5%AD%A6%E4%B9%A0"><span class="toc-number">4.4.</span> <span class="toc-text">线性判别学习</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA"><span class="toc-number">5.</span> <span class="toc-text">支持向量机</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%B4%E9%9A%94%E4%B8%8E%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F"><span class="toc-number">5.1.</span> <span class="toc-text">间隔与支持向量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E5%81%B6%E9%97%AE%E9%A2%98"><span class="toc-number">5.2.</span> <span class="toc-text">对偶问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%87%BD%E6%95%B0"><span class="toc-number">5.3.</span> <span class="toc-text">核函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-number">6.</span> <span class="toc-text">神经网络</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A5%9E%E7%BB%8F%E5%85%83%E6%A8%A1%E5%9E%8B"><span class="toc-number">6.1.</span> <span class="toc-text">神经元模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%84%9F%E7%9F%A5%E6%9C%BA%E4%B8%8E%E5%A4%9A%E5%B1%82%E7%BD%91%E7%BB%9C"><span class="toc-number">6.2.</span> <span class="toc-text">感知机与多层网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AF%E5%B7%AE%E9%80%86%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95"><span class="toc-number">6.3.</span> <span class="toc-text">误差逆传播算法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB%E5%99%A8"><span class="toc-number">7.</span> <span class="toc-text">贝叶斯分类器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%86%B3%E7%AD%96%E8%AE%BA"><span class="toc-number">7.1.</span> <span class="toc-text">贝叶斯决策论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1"><span class="toc-number">7.2.</span> <span class="toc-text">极大似然估计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB%E5%99%A8"><span class="toc-number">7.3.</span> <span class="toc-text">朴素贝叶斯分类器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%8A%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB%E5%99%A8"><span class="toc-number">7.4.</span> <span class="toc-text">半朴素贝叶斯分类器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%81%9A%E7%B1%BB"><span class="toc-number">8.</span> <span class="toc-text">聚类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%81%9A%E7%B1%BB%E4%BB%BB%E5%8A%A1"><span class="toc-number">8.1.</span> <span class="toc-text">聚类任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E5%BA%A6%E9%87%8F-1"><span class="toc-number">8.2.</span> <span class="toc-text">性能度量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%9D%E7%A6%BB%E8%AE%A1%E7%AE%97"><span class="toc-number">8.3.</span> <span class="toc-text">距离计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E5%9E%8B%E8%81%9A%E7%B1%BB"><span class="toc-number">8.4.</span> <span class="toc-text">原型聚类</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/08/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="机器学习复习整理">机器学习复习整理</a><time datetime="2024-01-08T01:40:07.000Z" title="发表于 2024-01-08 09:40:07">2024-01-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/07/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="计算机图形学复习整理">计算机图形学复习整理</a><time datetime="2024-01-07T13:06:54.000Z" title="发表于 2024-01-07 21:06:54">2024-01-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/01/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数字图像处理复习整理">数字图像处理复习整理</a><time datetime="2024-01-01T07:03:37.000Z" title="发表于 2024-01-01 15:03:37">2024-01-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/30/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%BC%96%E7%A8%8B%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="计算机硬件编程复习整理">计算机硬件编程复习整理</a><time datetime="2023-12-30T11:24:04.000Z" title="发表于 2023-12-30 19:24:04">2023-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数值分析复习整理">数值分析复习整理</a><time datetime="2023-12-28T01:35:05.000Z" title="发表于 2023-12-28 09:35:05">2023-12-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By WinkySpeed</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2d-widget/autoload.js"></script></body></html>
