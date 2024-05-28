@@ -1,0 +1,506 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>LeetCode训练记录 | WinkySpeed's Blog</title><meta name="author" content="WinkySpeed"><meta name="copyright" content="WinkySpeed"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="LeetCode训练记录 太久没用C++了，记录一下大概用法 因为蓝桥杯准备的是Python，C++现在已经很久没用了 难绷的是，蓝桥杯Python组还打水漂了，太幽默了 不过问题不大，接着搞C++的就行 LeetCode代码运行框架 力扣是写函数的，不用写输入输出，一定程度上比较方便 但之前没写过力扣，写过的全是牛客、洛谷这种从0开始写完整代码的，没有只写函数的 再加上我很久没有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode训练记录">
+<meta property="og:url" content="http://example.com/2024/05/06/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/LeetCode%E8%AE%AD%E7%BB%83%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="WinkySpeed&#39;s Blog">
+<meta property="og:description" content="LeetCode训练记录 太久没用C++了，记录一下大概用法 因为蓝桥杯准备的是Python，C++现在已经很久没用了 难绷的是，蓝桥杯Python组还打水漂了，太幽默了 不过问题不大，接着搞C++的就行 LeetCode代码运行框架 力扣是写函数的，不用写输入输出，一定程度上比较方便 但之前没写过力扣，写过的全是牛客、洛谷这种从0开始写完整代码的，没有只写函数的 再加上我很久没有">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/WinkySpeed%20SP%20-%20Repaired.jpg">
+<meta property="article:published_time" content="2024-05-06T13:31:21.000Z">
+<meta property="article:modified_time" content="2024-05-22T13:41:00.178Z">
+<meta property="article:author" content="WinkySpeed">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="LeetCode">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/WinkySpeed%20SP%20-%20Repaired.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/05/06/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/LeetCode%E8%AE%AD%E7%BB%83%E8%AE%B0%E5%BD%95/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'LeetCode训练记录',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-05-22 21:41:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/WinkySpeed%20SP%20-%20Repaired.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">54</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/33703665_p0.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="WinkySpeed's Blog"><span class="site-name">WinkySpeed's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">LeetCode训练记录</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-05-06T13:31:21.000Z" title="发表于 2024-05-06 21:31:21">2024-05-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-22T13:41:00.178Z" title="更新于 2024-05-22 21:41:00">2024-05-22</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="LeetCode训练记录"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="leetcode训练记录">LeetCode训练记录</h1>
+<p>太久没用C++了，记录一下大概用法</p>
+<p>因为蓝桥杯准备的是Python，C++现在已经很久没用了</p>
+<p>难绷的是，蓝桥杯Python组还打水漂了，太幽默了</p>
+<p>不过问题不大，接着搞C++的就行</p>
+<h1 id="leetcode代码运行框架">LeetCode代码运行框架</h1>
+<p>力扣是写函数的，不用写输入输出，一定程度上比较方便</p>
+<p>但之前没写过力扣，写过的全是牛客、洛谷这种从0开始写完整代码的，没有只写函数的</p>
+<p>再加上我很久没有练习C++了，因此在此总结力扣代码的运行框架</p>
+<p><br></p>
+<p>力扣代码提交</p>
+<p>以“<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/two-sum/">两数之和</a>”题目（<del>力扣题库第一题</del>）为例，你需要提交的是一个<code>Solution</code>类中的<code>twoSum</code>函数，参数和返回值类型已经确定：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">twoSum</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>因此，用集成环境需要写一个<code>Solution</code>类，完成需要实现的<code>twoSum</code>函数，再写一个<code>Run</code>函数，最后在<code>main</code>函数中调用即可</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//万能头文件，如果MinGW版本低可能找不到这个文件</span></span><br><span class="line"><span class="comment">//可以去 https://winlibs.com 下载新的MinGW</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Solution类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">//需要实现的函数，此处用暴力做法</span></span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">twoSum</span><span class="params">(vector&lt;<span class="type">int</span>&gt; &amp;nums, <span class="type">int</span> target)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; result;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; nums.<span class="built_in">size</span>(); j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (nums[i] + nums[j] == target)</span><br><span class="line">                &#123;</span><br><span class="line">                    result.<span class="built_in">push_back</span>(i);</span><br><span class="line">                    result.<span class="built_in">push_back</span>(j);</span><br><span class="line">                    <span class="keyword">return</span> result;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">	<span class="comment">//Run函数</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Run</span><span class="params">(vector&lt;<span class="type">int</span>&gt; &amp;nums, <span class="type">int</span> target)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; tmp = <span class="keyword">this</span>-&gt;<span class="built_in">twoSum</span>(nums, target);</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;[&quot;</span> &lt;&lt; tmp[<span class="number">0</span>] &lt;&lt; <span class="string">&quot;,&quot;</span> &lt;&lt; tmp[<span class="number">1</span>] &lt;&lt; <span class="string">&quot;]&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//main函数里初始化一个对象</span></span><br><span class="line">    Solution ans;</span><br><span class="line">    <span class="comment">//初始化需要的参数，省略了输入函数</span></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; nums = &#123;<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>&#125;;</span><br><span class="line">    <span class="type">int</span> target = <span class="number">9</span>;</span><br><span class="line">    <span class="comment">//调用Run函数得到结果</span></span><br><span class="line">    ans.<span class="built_in">Run</span>(nums, target);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>大概的框架就是这样</p>
+<h1 id="异或运算寻找只出现一次的数">异或运算寻找只出现一次的数</h1>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/single-number/description/">只出现一次的数字</a></p>
+<p>给你一个 <strong>非空</strong> 整数数组 <code>nums</code>
+，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
+<p>你必须设计并实现线性时间复杂度的算法来解决此问题，且该算法只使用常量额外空间。</p>
+<p><code>1 &lt;= nums.length &lt;= 3 * 104</code></p>
+<p><code>-3 * 104 &lt;= nums[i] &lt;= 3 * 104</code></p>
+<p>除了某个元素只出现一次以外，其余每个元素均出现两次。</p>
+<p><br></p>
+<p>这个题刚看到就想着用桶排序的思路，即一个萝卜一个坑，可以找到那个唯一的数</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 桶排序思想</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">singleNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt; &amp;nums)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="type">const</span> <span class="type">int</span> defaultSize = <span class="number">1e5</span>;</span><br><span class="line">        <span class="type">int</span> lst[defaultSize] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="type">int</span> delta = <span class="number">3e4</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            lst[nums[i] + delta]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; defaultSize; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (lst[i] == <span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> i - delta;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>很快就能写完，但是用时太长了</p>
+<p>于是就准备借鉴一下高手做法：</p>
+<p>高手做法用的是异或操作<code>^</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span> ^ <span class="number">0</span> = <span class="number">0</span></span><br><span class="line"><span class="number">0</span> ^ <span class="number">1</span> = <span class="number">1</span></span><br><span class="line"><span class="number">1</span> ^ <span class="number">0</span> = <span class="number">1</span></span><br><span class="line"><span class="number">1</span> ^ <span class="number">1</span> = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p>故0与A异或，结果为A</p>
+<p>A与A异或，结果为0</p>
+<p>故如果有重复的数，异或结果就为0</p>
+<p>比如一个数组为<code>[4,1,2,1,2]</code>，写成二进制就是<code>[1000,0001,0010,0001,0010]</code></p>
+<p>因为异或有交换律，所以最后异或的结果就是<code>(1^1)^(2^2)^4=0^0^4=4</code></p>
+<p>代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 高手做法：异或</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">singleNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt; &amp;nums)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="type">int</span> result = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// // C++11以后的版本可以像Python一样写</span></span><br><span class="line">        <span class="comment">// // Python里是 for num in nums:</span></span><br><span class="line">        <span class="comment">// // C++里是 for(int num : nums)</span></span><br><span class="line">        <span class="comment">// for (int num : nums)</span></span><br><span class="line">        <span class="comment">// &#123;</span></span><br><span class="line">        <span class="comment">//     result = result ^ num;</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            result = result ^ nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>此外，此题还能用排序的方法，然后遍历，就能找到唯一的数</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 排序</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">singleNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt; &amp;nums)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="comment">// 注意考虑数组大小问题</span></span><br><span class="line">        <span class="keyword">if</span> (nums.<span class="built_in">size</span>() == <span class="number">1</span> || (nums.<span class="built_in">size</span>() &gt; <span class="number">1</span> &amp;&amp; nums[<span class="number">0</span>] != nums[<span class="number">1</span>]))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (nums.<span class="built_in">size</span>() &gt; <span class="number">1</span> &amp;&amp; nums[nums.<span class="built_in">size</span>() - <span class="number">1</span>] != nums[nums.<span class="built_in">size</span>() - <span class="number">2</span>])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> nums[nums.<span class="built_in">size</span>() - <span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; nums.<span class="built_in">size</span>() - <span class="number">1</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] != nums[i - <span class="number">1</span>] &amp;&amp; nums[i] != nums[i + <span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>只不过这个做法需要考虑下标的正确用法，要讨论“数组长度只有1”、“不同的数在开头”、“不同的数在最后”、“不同的数在中间”这几种情况</p>
+<p>因为涉及到<code>nums.size() - 1</code>，<code>nums.size() - 2</code>这样的运算，所以需要考虑<code>nums.size() &gt; 1</code></p>
+<p>因为涉及到<code>nums[0] != nums[1]</code>，所以也需要考虑<code>nums.size() &gt; 1</code></p>
+<p>就这两点错误，导致一开始没完全做对</p>
+<p>bing给我改的新代码如下：</p>
+<blockquote>
+<p>下面是一个更简洁的版本：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="function"><span class="type">int</span> <span class="title">singleNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt; &amp;nums)</span> </span>&#123;</span><br><span class="line">   <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">   <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i += <span class="number">2</span>) &#123;</span><br><span class="line">       <span class="keyword">if</span> (i + <span class="number">1</span> == nums.<span class="built_in">size</span>() || nums[i] != nums[i + <span class="number">1</span>]) &#123;</span><br><span class="line">           <span class="keyword">return</span> nums[i];</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&gt;&#125;</span><br></pre></td></tr></table></figure>
+<p>在这个版本中，我们首先对数组进行排序。然后，我们每次跳过两个元素进行遍历。因为如果一个数字有两个副本，那么它们现在应该是相邻的。如果我们发现<code>nums[i]</code>不等于<code>nums[i + 1]</code>，那么<code>nums[i]</code>就是只出现一次的数字。如果我们遍历完整个数组都没有找到只出现一次的数字，那么我们返回0。</p>
+</blockquote>
+<p>这样好看多了，也不需要讨论那么多</p>
+<p>Sad for programmers</p>
+<h1 id="原地修改vector时size返回值会变">原地修改<code>vector</code>时<code>size()</code>返回值会变</h1>
+<p>很弱智的问题，但就是出错了，因此记录</p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/move-zeroes/description/">移动零</a></p>
+<p>给定一个数组 <code>nums</code>，编写一个函数将所有 <code>0</code>
+移动到数组的末尾，同时保持非零元素的相对顺序。</p>
+<p><strong>请注意</strong>
+，必须在不复制数组的情况下原地对数组进行操作。</p>
+<img src="/2024/05/06/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/LeetCode%E8%AE%AD%E7%BB%83%E8%AE%B0%E5%BD%95/image-20240518102042387.png" class title="image-20240518102042387">
+<p>确实很容易的问题，直接用vector的<code>erase</code>就能解决</p>
+<p>遍历数组，如果是0就直接<code>erase</code>，最后<code>push_back</code>对应个数的0就行</p>
+<p>但是这里我出错了，错误代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//出错部分</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; OriginSize - nums.<span class="built_in">size</span>(); i++)</span><br><span class="line">&#123;</span><br><span class="line">    nums.<span class="built_in">push_back</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>很明显的错误，但是做得少，因为原地操作数组经验太少</p>
+<p>数组变动，<strong>就会导致<code>nums.size()</code>变动</strong>，循环次数就变动了，因此错误</p>
+<p><br></p>
+<p>还有一个容易错误的地方：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (nums[i] == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        nums.<span class="built_in">erase</span>(nums.<span class="built_in">begin</span>() + i);</span><br><span class="line">        i--;	<span class="comment">//i--如果漏了，就会导致连续两个0的情况出错</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>i--</code>如果漏了，就会导致连续两个0的情况出错</p>
+<p>完整函数</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// STL原地修改，容易错</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">moveZeroes</span><span class="params">(vector&lt;<span class="type">int</span>&gt; &amp;nums)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> OriginSize = nums.<span class="built_in">size</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[i] == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            nums.<span class="built_in">erase</span>(nums.<span class="built_in">begin</span>() + i);</span><br><span class="line">            i--;	<span class="comment">//原地删完i再变回去</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> Sizenow = nums.<span class="built_in">size</span>();	<span class="comment">//提前记下所需个数，保证循环次数不变</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; OriginSize - Sizenow; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        nums.<span class="built_in">push_back</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>还是看看远方的双指针做法吧</p>
+<p>思路简单，<code>i</code>一定指向0的位置，<code>j</code>一定指向非0位置，而且一定是后面的非0数换前面的0（即<code>i&lt;j</code>）</p>
+<p>容易出错的点就是<code>[1,0,0,2]</code>这样的情况</p>
+<p><code>i</code>和<code>j</code>都指向对应位置，但是<code>i</code>比<code>j</code>大，不能交换，此时需要更新<code>j</code></p>
+<p>第一遍写的时候忽略了这种情况</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 双指针</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">moveZeroes</span><span class="params">(vector&lt;<span class="type">int</span>&gt; &amp;nums)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>() &amp;&amp; j &lt; nums.<span class="built_in">size</span>();)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 保证i指向0</span></span><br><span class="line">        <span class="keyword">if</span> (nums[i] != <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            i++;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 保证j指向非0</span></span><br><span class="line">        <span class="keyword">if</span> (nums[j] == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            j++;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 保证后面的非0数换前面的0</span></span><br><span class="line">        <span class="keyword">if</span> (i &lt; j)</span><br><span class="line">        &#123;</span><br><span class="line">            nums[i] = nums[j];</span><br><span class="line">            nums[j] = <span class="number">0</span>;</span><br><span class="line">            i++;</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 如果此时i和j都指向对应的数，但是i比j大，就更新j</span></span><br><span class="line">        <span class="comment">// 比如[1,0,0,2]这样的情况</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="哈希表解决两数之和">哈希表解决两数之和</h1>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/two-sum/">两数之和</a>是力扣题库第一题，我现阶段也只能想到暴力解法，因此在此记录高手做法</p>
+<p>而且这个高手做法提供了一个很好的思路，<strong>利用遍历过的已知信息</strong></p>
+<img src="/2024/05/06/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/LeetCode%E8%AE%AD%E7%BB%83%E8%AE%B0%E5%BD%95/image-20240518113746758.png" class title="image-20240518113746758">
+<img src="/2024/05/06/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/LeetCode%E8%AE%AD%E7%BB%83%E8%AE%B0%E5%BD%95/image-20240518113803529.png" class title="image-20240518113803529">
+<p>暴力解法还是很容易的，遍历就完了，就是太蠢了</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 暴力做法</span></span><br><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">twoSum</span><span class="params">(vector&lt;<span class="type">int</span>&gt; &amp;nums, <span class="type">int</span> target)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; result;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; nums.<span class="built_in">size</span>(); j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] + nums[j] == target)</span><br><span class="line">            &#123;</span><br><span class="line">                result.<span class="built_in">push_back</span>(i);</span><br><span class="line">                result.<span class="built_in">push_back</span>(j);</span><br><span class="line">                <span class="keyword">return</span> result;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>来看看高手方法：哈希表</p>
+<p>大致思路是利用键值对<code>map</code>，遍历数组</p>
+<p>每次查找<code>target - nums[i]</code>这个键有没有存入<code>map</code>，如果有，那答案就是他了</p>
+<p>如果没有，就把<code>nums[i]</code>这个键和下标存入这个<code>map</code></p>
+<p>因为题目保证一定有解，所以这个方法能求出正确结果</p>
+<p>这个方法的好处是<strong>利用了已知信息</strong>（没有成功配对的数的下标是已知的），可以通过<code>O(1)</code>的复杂度求出<code>target - nums[i]</code>的坐标</p>
+<p>而暴力做法的双重循环，是通过<code>O(n)</code>的时间复杂度寻找是否存在<code>target - nums[i]</code>这个数，因此效率低下</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 哈希表高手做法</span></span><br><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">twoSum</span><span class="params">(vector&lt;<span class="type">int</span>&gt; &amp;nums, <span class="type">int</span> target)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; result;</span><br><span class="line">    map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; Mymap;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (Mymap.<span class="built_in">find</span>(target - nums[i]) == Mymap.<span class="built_in">end</span>())</span><br><span class="line">        &#123;</span><br><span class="line">            Mymap[nums[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            result.<span class="built_in">push_back</span>(i);</span><br><span class="line">            result.<span class="built_in">push_back</span>(Mymap[target - nums[i]]);</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>这个题还有一个高手做法：先排序，再用双指针两边缩进，直到找到解</p>
+<p>可以参考<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1bP411c7oJ">相向双指针解决两数之和</a></p>
+<p>但有一点需要注意：排序以后数组下标会改变，需要存下原来对应坐标的位置</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 双指针</span></span><br><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">twoSum</span><span class="params">(vector&lt;<span class="type">int</span>&gt; &amp;nums, <span class="type">int</span> target)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; result;</span><br><span class="line">    <span class="comment">// 存下原数组的拷贝</span></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; tmp = nums;</span><br><span class="line">	<span class="comment">// 排序</span></span><br><span class="line">    <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>, j = nums.<span class="built_in">size</span>() - <span class="number">1</span>; i &lt; nums.<span class="built_in">size</span>(), j &gt;= <span class="number">0</span>;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[i] + nums[j] &gt; target)</span><br><span class="line">        &#123;</span><br><span class="line">            j--;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (nums[i] + nums[j] &lt; target)</span><br><span class="line">        &#123;</span><br><span class="line">            i++;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (nums[i] + nums[j] == target &amp;&amp; i != j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">0</span>; k &lt; tmp.<span class="built_in">size</span>(); k++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (nums[i] == tmp[k])</span><br><span class="line">                &#123;</span><br><span class="line">                    result.<span class="built_in">push_back</span>(k);</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (nums[j] == tmp[k])</span><br><span class="line">                &#123;</span><br><span class="line">                    result.<span class="built_in">push_back</span>(k);</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="各种数据类型上下限">各种数据类型上下限</h1>
+<p>弱质题：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/reverse-integer/description/">整数反转</a></p>
+<img src="/2024/05/06/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/LeetCode%E8%AE%AD%E7%BB%83%E8%AE%B0%E5%BD%95/image-20240519105544283.png" class title="image-20240519105544283">
+<img src="/2024/05/06/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/LeetCode%E8%AE%AD%E7%BB%83%E8%AE%B0%E5%BD%95/image-20240519105558549.png" class title="image-20240519105558549">
+<p>需要考虑<code>int</code>会溢出，上下限为<code>负21亿多</code>到<code>正21亿多</code></p>
+<p>有两个宏可以用：<code>INT_MAX</code>（<code>0x7fffffff</code>即<code>2147483647</code>）和<code>INT_MIN</code>（<code>-0x7fffffff - 1</code>即<code>-2147483648</code>）</p>
+<p>同理，<code>long long</code>的上限是<code>INT64_MAX</code>，下限是<code>INT64_MIN</code></p>
+<p>太久没写这样的代码了，写起来跟弱质一样</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 低手算法，不要这样写</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">reverse</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">bool</span> ifnegative = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (x &lt; <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        ifnegative = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    x = <span class="built_in">abs</span>(x);</span><br><span class="line">    <span class="comment">//这里一开始还写错了</span></span><br><span class="line">    <span class="comment">//用的 vector&lt;int&gt; 导致result_Array里的值直接超出范围</span></span><br><span class="line">    <span class="comment">//但是最后求和result的时候看不出来，因为result_Array的值自动转换到范围之内了</span></span><br><span class="line">    <span class="comment">//挺低能的错误</span></span><br><span class="line">    vector&lt;<span class="type">long</span> <span class="type">long</span>&gt; result_Array;</span><br><span class="line">    <span class="keyword">while</span> (x != <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        result_Array.<span class="built_in">push_back</span>(x % <span class="number">10</span>);</span><br><span class="line">        x /= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> result = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; result_Array.<span class="built_in">size</span>(); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = i; j &lt; result_Array.<span class="built_in">size</span>() - <span class="number">1</span>; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            result_Array[i] *= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        result += result_Array[i];</span><br><span class="line">        <span class="keyword">if</span> (result &gt; INT_MAX || result &lt; INT_MIN)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (ifnegative)</span><br><span class="line">    &#123;</span><br><span class="line">        result *= <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>难绷，真的手生了，怎么会想新开一个数组写啊</p>
+<p>看看正常人是怎么写代码的：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 正常人写法</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">reverse</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> result = <span class="number">0</span>; <span class="comment">// 使用 long long 类型来防止溢出</span></span><br><span class="line">    <span class="keyword">while</span> (x != <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> digit = x % <span class="number">10</span>;</span><br><span class="line">        result = result * <span class="number">10</span> + digit;</span><br><span class="line">        <span class="keyword">if</span> (result &gt; INT_MAX || result &lt; INT_MIN)</span><br><span class="line">        &#123;             <span class="comment">// 检查是否溢出</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 如果溢出，返回 0</span></span><br><span class="line">        &#125;</span><br><span class="line">        x /= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>刚好总结一下C++中各种数据类型的范围，参考<a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/cpp/cpp/data-type-ranges?view=msvc-170">数据类型范围
+| Microsoft Learn</a></p>
+<table>
+<colgroup>
+<col style="width: 17%">
+<col style="width: 14%">
+<col style="width: 28%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">类型名称</th>
+<th style="text-align: center;">字节</th>
+<th style="text-align: center;">其他名称</th>
+<th style="text-align: center;">值的范围</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong><code>int</code></strong></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><strong><code>signed</code></strong></td>
+<td style="text-align: center;">-2,147,483,648 到 2,147,483,647</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><code>unsigned int</code></strong></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><strong><code>unsigned</code></strong></td>
+<td style="text-align: center;">0 到 4,294,967,295</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><code>bool</code></strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">无</td>
+<td style="text-align: center;"><strong><code>false</code></strong> 或
+<strong><code>true</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><code>char</code></strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">无</td>
+<td style="text-align: center;">-128 到 127</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><code>signed char</code></strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">无</td>
+<td style="text-align: center;">-128 到 127</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><code>unsigned char</code></strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">无</td>
+<td style="text-align: center;">0 到 255</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><code>short</code></strong></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><strong><code>short int</code></strong>，<strong><code>signed short int</code></strong></td>
+<td style="text-align: center;">-32,768 到 32,767</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><code>unsigned short</code></strong></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><strong><code>unsigned short int</code></strong></td>
+<td style="text-align: center;">0 到 65,535</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><code>long</code></strong></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><strong><code>long int</code></strong>，<strong><code>signed long int</code></strong></td>
+<td style="text-align: center;">-2,147,483,648 到 2,147,483,647</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><code>unsigned long</code></strong></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><strong><code>unsigned long int</code></strong></td>
+<td style="text-align: center;">0 到 4,294,967,295</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><code>long long</code></strong></td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">无</td>
+<td style="text-align: center;">-9,223,372,036,854,775,808 到
+9,223,372,036,854,775,807</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><code>unsigned long long</code></strong></td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">无</td>
+<td style="text-align: center;">0 到 18,446,744,073,709,551,615</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><code>float</code></strong></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">无</td>
+<td style="text-align: center;">3.4E +/- 38（7 位数）</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><code>double</code></strong></td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">无</td>
+<td style="text-align: center;">1.7E +/- 308（15 位数）</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><code>long double</code></strong></td>
+<td style="text-align: center;">与 <strong><code>double</code></strong>
+相同</td>
+<td style="text-align: center;">无</td>
+<td style="text-align: center;">与 <strong><code>double</code></strong>
+相同</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>有时也需要注意<code>long long</code>的上下限（19位数），上限是<code>INT64_MAX</code>，下限是<code>INT64_MIN</code></p>
+<p>比如<code>20000000000000000000</code>这个数就超过了<code>long long</code>的上界（有20位）</p>
+<h1 id="stringearse函数"><code>string::earse()</code>函数</h1>
+<p>太久没用忘了，具体用法如下：</p>
+<blockquote>
+<p>在 C++ 中，<code>string</code> 类的 <code>erase</code>
+函数用于删除字符串中的一部分。以下是 <code>erase</code>
+函数的一些常见用法：</p>
+<p><strong>s.erase(pos, n)</strong>：删除从 <code>pos</code> 开始的
+<code>n</code> 个字符。例如，<code>s.erase(0, 1)</code>
+就是删除第一个字符。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;string s = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">&gt;s.<span class="built_in">erase</span>(<span class="number">0</span>, <span class="number">1</span>);  <span class="comment">// 删除第一个字符</span></span><br><span class="line">&gt;cout &lt;&lt; s &lt;&lt; endl;  <span class="comment">// 输出：&quot;ello&quot;</span></span><br></pre></td></tr></table></figure>
+<p><strong>s.erase(pos)</strong>：删除 <code>pos</code>
+处的一个字符。<code>pos</code> 是一个 <code>string</code>
+类型的迭代器。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;string s = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">&gt;s.<span class="built_in">erase</span>(s.<span class="built_in">begin</span>());  <span class="comment">// 删除第一个字符</span></span><br><span class="line">&gt;cout &lt;&lt; s &lt;&lt; endl;  <span class="comment">// 输出：&quot;ello&quot;</span></span><br></pre></td></tr></table></figure>
+<p><strong>s.erase(first, last)</strong>：删除从 <code>first</code> 到
+<code>last</code> 之间的字符</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;string s = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">&gt;s.<span class="built_in">erase</span>(s.<span class="built_in">begin</span>(), s.<span class="built_in">begin</span>() + <span class="number">3</span>);  <span class="comment">// 删除前三个字符</span></span><br><span class="line">&gt;cout &lt;&lt; s &lt;&lt; endl;  <span class="comment">// 输出：&quot;lo&quot;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>也就是说，<code>erase</code>函数里的参数有两种类型：迭代器类型和下标(<code>int</code>)类型</p>
+<p>如果参数是迭代器那么就<strong>只会删除一个字符</strong>，如果是下标，如果不指定删除字符个数，默认删除下标后的<strong>全部</strong></p>
+<p>总结如下，注意<code>s.erase(s.end())</code>
+会导致未定义行为，在我的机子上体现的就是清空字符串</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">string s = <span class="string">&quot;0123456789&quot;</span>;</span><br><span class="line"><span class="comment">// 迭代器情况，只删一个字符</span></span><br><span class="line"><span class="comment">// 删除0</span></span><br><span class="line">s.<span class="built_in">erase</span>(s.<span class="built_in">begin</span>());</span><br><span class="line">cout &lt;&lt; s &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">s = <span class="string">&quot;0123456789&quot;</span>;</span><br><span class="line"><span class="comment">// 删除1</span></span><br><span class="line">s.<span class="built_in">erase</span>(s.<span class="built_in">begin</span>() + <span class="number">1</span>);</span><br><span class="line">cout &lt;&lt; s &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">s = <span class="string">&quot;0123456789&quot;</span>;</span><br><span class="line"><span class="comment">// s.end() 返回的是一个指向字符串末尾的迭代器</span></span><br><span class="line"><span class="comment">// s.erase(s.end()) 会导致未定义行为</span></span><br><span class="line"><span class="comment">// 删除最后一个元素正确写法</span></span><br><span class="line">s.<span class="built_in">erase</span>(s.<span class="built_in">end</span>() - <span class="number">1</span>);</span><br><span class="line">cout &lt;&lt; s &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 下标情况</span></span><br><span class="line">s = <span class="string">&quot;0123456789&quot;</span>;</span><br><span class="line"><span class="comment">// 删除1以及之后的全部</span></span><br><span class="line">s.<span class="built_in">erase</span>(<span class="number">1</span>);</span><br><span class="line">cout &lt;&lt; s &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">s = <span class="string">&quot;0123456789&quot;</span>;</span><br><span class="line"><span class="comment">// 指定删除字符个数</span></span><br><span class="line">s.<span class="built_in">erase</span>(<span class="number">1</span>, <span class="number">1</span>); <span class="comment">// 删除下标为1的1个字符</span></span><br><span class="line">cout &lt;&lt; s &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">s = <span class="string">&quot;0123456789&quot;</span>;</span><br><span class="line"><span class="comment">// 指定删除字符个数</span></span><br><span class="line">s.<span class="built_in">erase</span>(<span class="number">0</span>, <span class="number">2</span>); <span class="comment">// 删除下标为0的连续两个字符</span></span><br><span class="line">cout &lt;&lt; s &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<h1 id="数值类型转换为string">数值类型转换为<code>string</code></h1>
+<p>这也是很久没用忘记的内容了，使用<code>std::to_string()</code>函数</p>
+<p>比如：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> num = <span class="number">123</span>;</span><br><span class="line">std::string str = std::<span class="built_in">to_string</span>(num);</span><br><span class="line"><span class="comment">// 现在，str 是 &quot;123&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="type">double</span> d = <span class="number">3.14</span>;</span><br><span class="line">std::string str1 = std::<span class="built_in">to_string</span>(d);</span><br><span class="line"><span class="comment">// 现在，str1 是 &quot;3.140000&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="type">float</span> f = <span class="number">2.71f</span>;</span><br><span class="line">std::string str2 = std::<span class="built_in">to_string</span>(f);</span><br><span class="line"><span class="comment">// 现在，str2 是 &quot;2.710000&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="type">long</span> l = <span class="number">1000000</span>;</span><br><span class="line">std::string str3 = std::<span class="built_in">to_string</span>(l);</span><br><span class="line"><span class="comment">// 现在，str3 是 &quot;1000000&quot;</span></span><br></pre></td></tr></table></figure>
+<p>注意，对于浮点数，默认是小数点后六位，即使超过了6位也会截断6位存入字符串</p>
+<h1 id="stl中stack的基本用法">STL中<code>stack</code>的基本用法</h1>
+<p>以前都是自己写栈类的，这次看看<code>stack</code>的基本语法，不用手写了</p>
+<blockquote>
+<p>在C++中，标准模板库（STL）提供了一个名为 <code>std::stack</code>
+的栈容器适配器。栈是一种后进先出（LIFO）的数据结构，只允许在栈顶添加或删除元素。</p>
+<p>以下是一些基本的 <code>std::stack</code> 操作：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span> <span class="comment">// 引入栈的头文件</span></span></span><br><span class="line"></span><br><span class="line">&gt;<span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   std::stack&lt;<span class="type">int</span>&gt; s; <span class="comment">// 创建一个空的 int 类型的栈</span></span><br><span class="line"></span><br><span class="line">   s.<span class="built_in">push</span>(<span class="number">1</span>); <span class="comment">// 将元素 1 压入栈顶</span></span><br><span class="line">   s.<span class="built_in">push</span>(<span class="number">2</span>); <span class="comment">// 将元素 2 压入栈顶</span></span><br><span class="line">   s.<span class="built_in">push</span>(<span class="number">3</span>); <span class="comment">// 将元素 3 压入栈顶</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">// 现在，栈的内容是：3, 2, 1</span></span><br><span class="line"></span><br><span class="line">   <span class="type">int</span> top = s.<span class="built_in">top</span>(); <span class="comment">// 获取栈顶元素，此时 top 的值是 3</span></span><br><span class="line"></span><br><span class="line">   s.<span class="built_in">pop</span>(); <span class="comment">// 弹出栈顶元素</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">// 现在，栈的内容是：2, 1</span></span><br><span class="line"></span><br><span class="line">   <span class="type">bool</span> isEmpty = s.<span class="built_in">empty</span>(); <span class="comment">// 检查栈是否为空，此时 isEmpty 的值是 false</span></span><br><span class="line"></span><br><span class="line">   <span class="type">int</span> size = s.<span class="built_in">size</span>(); <span class="comment">// 获取栈的大小，此时 size 的值是 2</span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&gt;&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h1 id="set解决环形链表"><code>set</code>解决环形链表</h1>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/linked-list-cycle/description/">环形链表</a>是一个比较简单的题，可以利用<code>map</code>或者<code>unordered_map</code>里键的唯一性来解决</p>
+<p>但既然涉及到“唯一性”，我想不得不提到另一个只用到“唯一性”的工具：集合<code>set</code></p>
+<p>之前也没用过<code>set</code>，故在此记录用法</p>
+<blockquote>
+<p>在C++中，标准模板库（STL）提供了一个名为 <code>std::set</code>
+的容器。<code>std::set</code>
+是一种关联容器，它包含的元素都是唯一的。<code>std::set</code>
+内部通常实现为红黑树，元素会按照特定的排序准则插入，所以你可以很快地通过键值进行检索。</p>
+<p>以下是一些基本的 <code>std::set</code> 操作：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="meta">#<span class="keyword">include</span> <span class="string">&lt;set&gt;</span> <span class="comment">// 引入 set 的头文件</span></span></span><br><span class="line"></span><br><span class="line">&gt;<span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   std::set&lt;<span class="type">int</span>&gt; s; <span class="comment">// 创建一个空的 int 类型的 set</span></span><br><span class="line"></span><br><span class="line">   s.<span class="built_in">insert</span>(<span class="number">1</span>); <span class="comment">// 将元素 1 插入 set</span></span><br><span class="line">   s.<span class="built_in">insert</span>(<span class="number">2</span>); <span class="comment">// 将元素 2 插入 set</span></span><br><span class="line">   s.<span class="built_in">insert</span>(<span class="number">3</span>); <span class="comment">// 将元素 3 插入 set</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">// 现在，set 的内容是：1, 2, 3</span></span><br><span class="line"></span><br><span class="line">   s.<span class="built_in">erase</span>(<span class="number">2</span>); <span class="comment">// 删除元素 2</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">// 现在，set 的内容是：1, 3</span></span><br><span class="line"></span><br><span class="line">   <span class="type">bool</span> exists = s.<span class="built_in">count</span>(<span class="number">3</span>); <span class="comment">// 检查元素 3 是否存在，此时 exists 的值是 true</span></span><br><span class="line"></span><br><span class="line">   <span class="type">int</span> size = s.<span class="built_in">size</span>(); <span class="comment">// 获取 set 的大小，此时 size 的值是 2</span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&gt;&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>不过感觉<code>map</code>比起<code>set</code>更灵活一些？毕竟是键值对，比如<code>map</code>里可以直接通过键来访问或修改值，比如：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">map&lt;string, <span class="type">int</span>&gt; Mymap;</span><br><span class="line"><span class="comment">//插入元素</span></span><br><span class="line">Mymap[<span class="string">&quot;WHITE ALBUM 2&quot;</span>] = <span class="number">1</span>;</span><br><span class="line">Mymap[<span class="string">&quot;サクラノ詩&quot;</span>] = <span class="number">1</span>;</span><br><span class="line">Mymap[<span class="string">&quot;STEINS;GATE&quot;</span>] = <span class="number">2</span>;</span><br><span class="line">Mymap[<span class="string">&quot;Ever17&quot;</span>] = <span class="number">3</span>;</span><br><span class="line"><span class="comment">//查找指定键对应的值</span></span><br><span class="line">cout &lt;&lt; Mymap[<span class="string">&quot;WHITE ALBUM 2&quot;</span>] &lt;&lt; endl;</span><br><span class="line"><span class="comment">//更新元素</span></span><br><span class="line">Mymap[<span class="string">&quot;WHITE ALBUM 2&quot;</span>] = <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>std::set</code> 只包含键，而不包含值，所以不能像
+<code>std::map</code> 那样通过键来访问或修改值。</p>
+<p>在 <code>std::set</code> 中，你只能使用 <code>insert</code>
+方法来添加元素。例如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;std::set&lt;std::string&gt; mySet;</span><br><span class="line">&gt;mySet.<span class="built_in">insert</span>(<span class="string">&quot;test&quot;</span>);</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>总结<code>set</code>用法：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 可以直接给set赋初值</span></span><br><span class="line">set&lt;<span class="type">int</span>&gt; s = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line"><span class="comment">// 插入元素</span></span><br><span class="line">s.<span class="built_in">insert</span>(<span class="number">4</span>);</span><br><span class="line"><span class="comment">// 查找元素，有两种方法</span></span><br><span class="line"><span class="comment">// count函数，返回一个布尔值，用于检查存在与否</span></span><br><span class="line"><span class="type">bool</span> ifexist = s.<span class="built_in">count</span>(<span class="number">1</span>);</span><br><span class="line"><span class="comment">// find函数，返回一个迭代器（指针），指向 set 中等于给定值的元素</span></span><br><span class="line"><span class="comment">// 如果找到了，就返回对应元素的指针</span></span><br><span class="line"><span class="comment">// 如果没找到，返回 end()</span></span><br><span class="line"><span class="keyword">auto</span> it = s.<span class="built_in">find</span>(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">if</span> (it != s.<span class="built_in">end</span>())</span><br><span class="line">&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;找到元素 &quot;</span> &lt;&lt; *it &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;未找到元素&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 删除元素，返回值就是是否删除成功</span></span><br><span class="line">cout &lt;&lt; s.<span class="built_in">erase</span>(<span class="number">2</span>) &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; s.<span class="built_in">erase</span>(<span class="number">2</span>) &lt;&lt; endl;</span><br><span class="line"><span class="comment">// 获取大小</span></span><br><span class="line">cout &lt;&lt; s.<span class="built_in">size</span>() &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<p>回到这个很简单的题：</p>
+<img src="/2024/05/06/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/LeetCode%E8%AE%AD%E7%BB%83%E8%AE%B0%E5%BD%95/image-20240522213237181.png" class title="image-20240522213237181">
+<img src="/2024/05/06/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/LeetCode%E8%AE%AD%E7%BB%83%E8%AE%B0%E5%BD%95/image-20240522213252175.png" class title="image-20240522213252175">
+<p>就可以用<code>ListNode *</code>的唯一性来确定是否到达重复位置，判断是否环路</p>
+<p>我最开始用的<code>map</code>解决，其实是一个道理，也是利用键的唯一性，看到题解用的<code>set</code>，确实没用过，因此记录</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// map解决</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">hasCycle</span><span class="params">(ListNode *head)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// map&lt;ListNode *, int&gt; Mymap;</span></span><br><span class="line">    unordered_map&lt;ListNode *, <span class="type">int</span>&gt; Mymap;</span><br><span class="line">    ListNode *it = head;</span><br><span class="line">    <span class="keyword">while</span> (it != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 这里利用的是map的特性：试图访问map中不存在的键时，这个键会被自动插入到映射中</span></span><br><span class="line">        <span class="comment">// 并且其值会被初始化为该类型的默认值，对于整数类型默认值是0</span></span><br><span class="line">        <span class="keyword">if</span> (Mymap[it] == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            Mymap[it]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        it = it-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// set解决，逻辑跟map解决一模一样</span></span><br><span class="line"><span class="comment">// 唯一的区别就在于判断是否已经存入，set用 count 函数可以做到</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">hasCycle</span><span class="params">(ListNode *head)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    set&lt;ListNode *&gt; Myset;</span><br><span class="line">    ListNode *it = head;</span><br><span class="line">    <span class="keyword">while</span> (it != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (Myset.<span class="built_in">count</span>(it) == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            Myset.<span class="built_in">insert</span>(it);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        it = it-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个题也可以用快慢指针解决，快指针走2步，慢指针走1步</p>
+<p>因为有个步数差，如果指针追上（相遇）说明一定有环路</p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<hr>
+<h1 id="参考资料">参考资料</h1>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1bP411c7oJ">相向双指针解决两数之和</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/cpp/cpp/data-type-ranges?view=msvc-170">数据类型范围
+| Microsoft Learn</a></p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/C/">C++</a><a class="post-meta__tags" href="/tags/LeetCode/">LeetCode</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/05/14/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/GAMES101%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="GAMES101学习记录"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">GAMES101学习记录</div></div></a></div><div class="next-post pull-right"><a href="/2024/03/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/2024%E8%93%9D%E6%A1%A5%E6%9D%AF%E8%AE%AD%E7%BB%83/" title="2024蓝桥杯训练"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">2024蓝桥杯训练</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/05/14/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/GAMES101%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="GAMES101学习记录"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-14</div><div class="title">GAMES101学习记录</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/WinkySpeed%20SP%20-%20Repaired.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">WinkySpeed</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">54</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/WinkySpeed"><i class="fab fa-github"></i><span>GitHub</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode%E8%AE%AD%E7%BB%83%E8%AE%B0%E5%BD%95"><span class="toc-number">1.</span> <span class="toc-text">LeetCode训练记录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode%E4%BB%A3%E7%A0%81%E8%BF%90%E8%A1%8C%E6%A1%86%E6%9E%B6"><span class="toc-number">2.</span> <span class="toc-text">LeetCode代码运行框架</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%82%E6%88%96%E8%BF%90%E7%AE%97%E5%AF%BB%E6%89%BE%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0"><span class="toc-number">3.</span> <span class="toc-text">异或运算寻找只出现一次的数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8E%9F%E5%9C%B0%E4%BF%AE%E6%94%B9vector%E6%97%B6size%E8%BF%94%E5%9B%9E%E5%80%BC%E4%BC%9A%E5%8F%98"><span class="toc-number">4.</span> <span class="toc-text">原地修改vector时size()返回值会变</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%93%88%E5%B8%8C%E8%A1%A8%E8%A7%A3%E5%86%B3%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="toc-number">5.</span> <span class="toc-text">哈希表解决两数之和</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%84%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8A%E4%B8%8B%E9%99%90"><span class="toc-number">6.</span> <span class="toc-text">各种数据类型上下限</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#stringearse%E5%87%BD%E6%95%B0"><span class="toc-number">7.</span> <span class="toc-text">string::earse()函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E4%B8%BAstring"><span class="toc-number">8.</span> <span class="toc-text">数值类型转换为string</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#stl%E4%B8%ADstack%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="toc-number">9.</span> <span class="toc-text">STL中stack的基本用法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#set%E8%A7%A3%E5%86%B3%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8"><span class="toc-number">10.</span> <span class="toc-text">set解决环形链表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">11.</span> <span class="toc-text">参考资料</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/The-Missing-Semester-of-My-CS-Education%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="The Missing Semester of My CS Education学习记录">The Missing Semester of My CS Education学习记录</a><time datetime="2024-05-25T08:10:00.000Z" title="发表于 2024-05-25 16:10:00">2024-05-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/24/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Raycasting%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-%E8%BF%9B%E9%98%B6%E4%B8%8E%E6%89%A9%E5%B1%95/" title="Raycasting学习记录_进阶与扩展">Raycasting学习记录_进阶与扩展</a><time datetime="2024-05-24T07:00:00.000Z" title="发表于 2024-05-24 15:00:00">2024-05-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/14/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/GAMES101%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="GAMES101学习记录">GAMES101学习记录</a><time datetime="2024-05-14T07:22:42.000Z" title="发表于 2024-05-14 15:22:42">2024-05-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/06/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/LeetCode%E8%AE%AD%E7%BB%83%E8%AE%B0%E5%BD%95/" title="LeetCode训练记录">LeetCode训练记录</a><time datetime="2024-05-06T13:31:21.000Z" title="发表于 2024-05-06 21:31:21">2024-05-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/2024%E8%93%9D%E6%A1%A5%E6%9D%AF%E8%AE%AD%E7%BB%83/" title="2024蓝桥杯训练">2024蓝桥杯训练</a><time datetime="2024-03-13T02:07:17.000Z" title="发表于 2024-03-13 10:07:17">2024-03-13</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By WinkySpeed</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2d-widget/autoload.js"></script></body></html>
