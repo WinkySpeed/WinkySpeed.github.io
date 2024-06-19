@@ -1,0 +1,881 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>计算机视觉复习整理 | WinkySpeed's Blog</title><meta name="author" content="WinkySpeed"><meta name="copyright" content="WinkySpeed"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="计算机视觉复习整理 基本概念，经典应用，重要知识点 计算机视觉概念、相关AI，图像处理，机器学习，深度学习之间关系 滤波和边缘提取 滤波：空域频域两种滤波方法了解（步骤）；不同滤波方法降噪 边缘提取：一阶差分，二阶差分，原理 卷积：图像上基本的操作；互相关之间的关系；操作的时候按互相关 深度学习框架，和numpy之间区别，框架优势 paddlepaddle使用 卷积计算、池化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机视觉复习整理">
+<meta property="og:url" content="http://example.com/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/index.html">
+<meta property="og:site_name" content="WinkySpeed&#39;s Blog">
+<meta property="og:description" content="计算机视觉复习整理 基本概念，经典应用，重要知识点 计算机视觉概念、相关AI，图像处理，机器学习，深度学习之间关系 滤波和边缘提取 滤波：空域频域两种滤波方法了解（步骤）；不同滤波方法降噪 边缘提取：一阶差分，二阶差分，原理 卷积：图像上基本的操作；互相关之间的关系；操作的时候按互相关 深度学习框架，和numpy之间区别，框架优势 paddlepaddle使用 卷积计算、池化">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/WinkySpeed%20SP%20-%20Repaired.jpg">
+<meta property="article:published_time" content="2024-06-18T11:15:00.000Z">
+<meta property="article:modified_time" content="2024-06-19T17:30:14.373Z">
+<meta property="article:author" content="WinkySpeed">
+<meta property="article:tag" content="复习整理">
+<meta property="article:tag" content="计算机视觉">
+<meta property="article:tag" content="图像处理">
+<meta property="article:tag" content="深度学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/WinkySpeed%20SP%20-%20Repaired.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '计算机视觉复习整理',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-06-20 01:30:14'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/WinkySpeed%20SP%20-%20Repaired.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">49</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">59</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/33703665_p0.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="WinkySpeed's Blog"><span class="site-name">WinkySpeed's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">计算机视觉复习整理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-06-18T11:15:00.000Z" title="发表于 2024-06-18 19:15:00">2024-06-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-06-19T17:30:14.373Z" title="更新于 2024-06-20 01:30:14">2024-06-20</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="计算机视觉复习整理"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="计算机视觉复习整理">计算机视觉复习整理</h1>
+<p>基本概念，经典应用，重要知识点</p>
+<p>计算机视觉概念、相关AI，图像处理，机器学习，深度学习之间关系</p>
+<p>滤波和边缘提取</p>
+<p>滤波：空域频域两种滤波方法了解（步骤）；不同滤波方法降噪</p>
+<p>边缘提取：一阶差分，二阶差分，原理</p>
+<p>卷积：图像上基本的操作；互相关之间的关系；操作的时候按互相关</p>
+<p>深度学习框架，和numpy之间区别，框架优势</p>
+<p>paddlepaddle使用</p>
+<p>卷积计算、池化</p>
+<p>SIFT，HOG，词袋模型</p>
+<p>图像匹配，图像查找（一幅图找另外一幅图，一堆图找指定图像相似图）</p>
+<p>直方图，所有传统计算机视觉中很重要，特点，图像直方图（像素分布），共性，统计特点</p>
+<p>HOG，sift，图像分割，词袋模型都有直方图</p>
+<p>论文阅读题：</p>
+<p>综述阅读，回顾卷积神经网络发展历程，多少种卷积、不同激活函数等</p>
+<p>经典网络，AlexNet，VGG，GoogLeNet，ResNet</p>
+<p>轻量级网络，在边缘（计算能力不是很强的硬件）上跑：mobileNet，shuffleNet，GhostNet，基本了解</p>
+<h1 id="题型">题型</h1>
+<p>全是主观题</p>
+<p>10个简答题，5分一个</p>
+<p>计算题，15分</p>
+<p>论文阅读题，4个问题任选两个，15分</p>
+<p>设计题，20分，设计思路写的尽可能详细一点，不用写代码，设计一个分类系统，用分类器，交叉验证，划分验证集训练集，各种指标衡量（实验四）</p>
+<h1 id="基础概念关系">基础概念关系</h1>
+<h2 id="计算机视觉定义">计算机视觉定义</h2>
+<blockquote>
+<p>Computer Vision has a dual goal. From the biological science point of
+view, computer vision aims to come up with computational models of the
+human visual system. From <strong>the engineering point of
+view</strong>, <strong>computer vision aims to build autonomous systems
+which could perform some of the tasks</strong>, <strong>which the human
+visual system can perform</strong> (and even surpass it in many
+cases).</p>
+<p>计算机视觉有双重目标。从生物科学的角度来看，计算机视觉的目标是构建人类视觉系统的计算模型。从工程学的角度来看，计算机视觉的目标是<strong>构建能够执行人类视觉系统可以执行的一些任务的自主系统</strong>（甚至在许多情况下超越它）。</p>
+<p>At an abstract level, the goal of computer vision problems is
+<strong>to use the observed image data to infer something about the
+world</strong>.</p>
+<p>在抽象层面上，计算机视觉问题的目标是<strong>使用观察到的图像数据来推断出关于世界的一些信息</strong>。</p>
+<p>Computer vision is <strong>the automated extraction of information
+from images</strong>. Information can mean anything from 3D models,
+camera position, object detection and recognition to grouping and
+searching image content.</p>
+<p>计算机视觉是<strong>从图像中自动提取信息</strong>。信息可以是从3D模型、相机位置、对象检测和识别，到分组和搜索图像内容的任何东西。</p>
+</blockquote>
+<h2 id="计算机视觉主要任务">计算机视觉主要任务</h2>
+<p>图像分类</p>
+<p>图像定位</p>
+<p>目标检测</p>
+<p>语义分割</p>
+<p>实例分割</p>
+<p>目标跟踪</p>
+<h2 id="机器视觉对比">机器视觉对比</h2>
+<p>机器视觉：用计算机来模拟人的视觉功能，从客观事物的图像中提取信息，进行处理并加以理解，最终用于实际检测、测量和控制</p>
+<p>计算机视觉：用计算机来实现人类的视觉功能，即对客观世界中三维场景的感知、加工和解释</p>
+<p>计算机视觉更关注视觉科学问题的研究和软件的可能设计，更偏向于<strong>研究</strong></p>
+<p>机器视觉意味着不仅研究软件还要研究硬件环境和实际应用所需要的图像采集技术，更偏向于<strong>工程</strong></p>
+<p><br></p>
+<h2 id="图像处理关系">图像处理关系</h2>
+<h3 id="计算机视觉-computer-vision">计算机视觉 (Computer Vision)</h3>
+<p>计算机视觉是指使计算机能够“看”和“理解”图像和视频中内容的技术和科学研究领域。这个领域的目的是模仿人类视觉系统的功能，使计算机能够识别和处理物体、场景和活动，从而执行诸如导航、机器人控制、事件检测、物体识别和分类等任务。</p>
+<p><strong>关键任务包括</strong>：</p>
+<ul>
+<li>物体检测和识别</li>
+<li>场景重建</li>
+<li>视频跟踪</li>
+<li>动作识别</li>
+<li>图像分割</li>
+</ul>
+<p>计算机视觉通常需要理解图像内容的上下文，不仅识别图像中的元素，而且还要理解这些元素之间的关系以及它们在真实世界中的功能和动态。</p>
+<h3 id="图像处理-image-processing">图像处理 (Image Processing)</h3>
+<p>图像处理主要关注于图像本身的改进、恢复和优化。它涉及对图像数据进行处理以进行增强、压缩、恢复和其他操作，以便于存储、传输或更好地视觉呈现。图像处理的目标是改善图像质量或提取信息。</p>
+<p><strong>常见操作包括</strong>：</p>
+<ul>
+<li>图像增强（如对比度调整、锐化）</li>
+<li>图像恢复（如去噪、去模糊）</li>
+<li>图像压缩（如JPEG压缩）</li>
+<li>彩色处理</li>
+<li>形态学变换</li>
+</ul>
+<p>图像处理技术经常作为计算机视觉任务的预处理步骤，帮助改善原始图像数据的质量，从而为后续的分析和理解任务创造更好的条件。</p>
+<h3 id="区别">区别</h3>
+<p>计算机视觉是指使计算机能够“看”和“理解”图像和视频中内容的技术和科学研究领域，需要理解图像内容的上下文，不仅识别图像中的元素，而且还要理解这些元素之间的关系以及它们在真实世界中的功能和动态。</p>
+<p>图像处理主要关注于图像本身的改进、恢复和优化。它涉及对图像数据进行处理以进行增强、压缩、恢复和其他操作，以便于存储、传输或更好地视觉呈现。图像处理的目标是改善图像质量或提取信息。</p>
+<h3 id="联系">联系</h3>
+<p>一个给定的计算机视觉系统可能需要对原始输入应用图像处理，例如预处理图像：</p>
+<ul>
+<li>对图像的光度属性进行标准化，例如亮度或颜色。</li>
+<li>裁剪图像的边界，例如在照片中将对象居中。</li>
+<li>从图像中去除数字噪声，例如低光照级别的数字伪影。这些都是为了使图像更适合后续的计算机视觉任务。</li>
+</ul>
+<p>图像处理可以通过改善图像质量来提高计算机视觉系统的性能；而计算机视觉则通过对图像的高级理解增加了图像处理的应用范围。</p>
+<h2 id="与人工智能的关系">与人工智能的关系</h2>
+<p>计算机视觉是：</p>
+<p>A quest to AI（人工智能的追求）</p>
+<p>A driving force of AI （人工智能的驱动力）</p>
+<p>Key application of AI（人工智能的关键应用）</p>
+<p>计算机视觉与人工智能的关系表现为相互支持和促进。计算机视觉依赖于AI的算法和模型来执行其核心任务，如图像识别和场景理解；而AI领域则通过解决计算机视觉中的具体问题，如图像分类或对象检测，来推动技术的创新和发展。</p>
+<h2 id="机器学习深度学习关系">机器学习、深度学习关系</h2>
+<p>2012年前手工设计提取特征方法，通过直方图来统计数据特征，以SIFT、HOG为主</p>
+<p>2012年后设计卷积层，使用卷积神经网络自动学习特征占主导</p>
+<h3 id="计算机视觉与机器学习">计算机视觉与机器学习</h3>
+<p>计算机视觉是一门研究如何使机器“看”和“理解”视觉世界的科学。机器学习提供了实现这一目标的方法和技术，尤其是通过算法自动识别和解释图像和视频数据。</p>
+<ul>
+<li><strong>机器学习的应用</strong>：在计算机视觉任务中，机器学习算法用于自动识别图像中的模式，进行图像分类、对象检测、场景理解等。这些算法包括支持向量机（SVM）、决策树、随机森林、以及聚类方法等。</li>
+<li><strong>特征提取与处理</strong>：传统的机器学习在计算机视觉中的应用通常依赖于手工设计的特征提取技术，如HOG（方向梯度直方图）、SIFT（尺度不变特征变换）等，这些特征随后用于训练分类器或其他学习模型。</li>
+</ul>
+<h3 id="计算机视觉与深度学习">计算机视觉与深度学习</h3>
+<p>深度学习是机器学习中的一个子领域，它使用多层神经网络来学习数据的高级抽象表示。在计算机视觉中，深度学习已成为最为关键的技术之一，尤其是卷积神经网络（CNN）在图像处理中的应用。</p>
+<ul>
+<li><strong>深度学习的革命</strong>：深度学习极大地改进了计算机视觉的性能，特别是在图像分类和对象识别任务中。CNN可以自动从原始图像数据中学习复杂的特征，无需人工介入。</li>
+<li><strong>端到端学习模型</strong>：深度学习允许从输入到输出构建端到端的模型，例如，从图像直接预测标签，这简化了处理流程并提高了效率。</li>
+</ul>
+<h3 id="相互影响">相互影响</h3>
+<ul>
+<li><strong>推动技术发展</strong>：计算机视觉的需求和挑战推动了机器学习和深度学习技术的发展。例如，对象检测和视觉追踪的需求促进了如R-CNN、YOLO和LSTM等特定算法的创新。</li>
+<li><strong>扩展应用场景</strong>：反过来，机器学习和深度学习在计算机视觉的成功应用也扩展了它们在其他领域的应用，如语音识别、自然语言处理和无人驾驶汽车。</li>
+</ul>
+<h1 id="滤波">滤波</h1>
+<p>空域滤波：直接在图像平面上对像素值进行操作，基于邻域处理的增强方法，它应用某一<strong>模板</strong>对每个像元与其周围邻域的<strong>所有像元</strong>进行某种数学运算得到该像元的新的灰度值，新的灰度值的大小不仅与该像元的灰度值有关，而且<strong>还与其邻域内的像元</strong>的灰度值有关。</p>
+<p>频域滤波：频域滤波首先需要将图像从空间域转换到频率域（通常通过傅立叶变换）。在频率域中，图像的频率成分被修改后再转换回空间域。</p>
+<h2 id="空域滤波">空域滤波</h2>
+<h3 id="线性滤波">线性滤波</h3>
+<h4 id="一维情况">一维情况</h4>
+<p>噪声是高斯噪声，独立同分布</p>
+<p>将损坏的每个像素替换为其相邻像素的平均值</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619110615904.png" class title="image-20240619110615904">
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619110623102.png" class title="image-20240619110623102">
+<h4 id="二维情况">二维情况</h4>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619111051378.png" class title="image-20240619111051378">
+<p>二维平滑：均值滤波、高斯滤波</p>
+<p>二维平滑注意边界处理：</p>
+<ul>
+<li>可以忽略边界，处理结果就少一圈</li>
+<li>可以拓展图像，这个有很多方法，比如加黑色边界、复制图像边界的值、图像镜像拓展、图像周期拓展</li>
+</ul>
+<h3 id="卷积">卷积</h3>
+<h4 id="卷积与互相关">卷积与互相关</h4>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619144544979.png" class title="image-20240619144544979">
+<p>想让结果与模板一致，就要把模板翻转</p>
+<p>卷积符号：<span class="math inline">\(*\)</span></p>
+<p>互相关符号：<span class="math inline">\(\bigotimes\)</span></p>
+<p>卷积和互相关是很相似的运算：</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619143502633.png" class title="image-20240619143502633">
+<p>互相关就是把卷积的模板（卷积核）翻转（沿水平和垂直方向都进行翻转）</p>
+<p>在神经网络里，说的“卷积”其实用的是<strong>“互相关”</strong></p>
+<h4 id="可分离卷积">可分离卷积</h4>
+<p>高斯滤波器是可分离的</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619143646336.png" class title="image-20240619143646336">
+<h3 id="非线性滤波">非线性滤波</h3>
+<h4 id="中值滤波">中值滤波</h4>
+<p>取中值</p>
+<p>适合消除椒盐噪声</p>
+<h4 id="双边滤波">双边滤波</h4>
+<p>双边滤波是一种非线性的滤波方法，它结合了空间邻近度和像素差异两个因素，旨在在去噪的同时保留边缘</p>
+<p>双边滤波能很好地保留<strong>边缘</strong>，但高斯滤波不能</p>
+<h3 id="模板匹配">模板匹配</h3>
+<h4 id="内积">内积</h4>
+<p>两个向量内积越大，越相关</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619144331109.png" class title="image-20240619144331109">
+<h4 id="归一化互相关模板匹配">归一化互相关模板匹配</h4>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619144944353.png" class title="image-20240619144944353">
+<p>大致过程：滑动窗口（与模板图像一样大）遍历图像中需要搜索的区域，对每个像素计算与模板平均值之差，以及相应的目标图像子图像中对应像素的值与子图像平均值之差的乘积；再进行归一化操作；最后最高的值就是匹配位置</p>
+<p>但是，这个方法仅适合在原图中找原图的一部分</p>
+<p>如果换成其他图像，因为归一化互相关模板匹配受光照影响大，对灰度变化、旋转、尺度、遮掩等敏感，会导致出问题</p>
+<h2 id="频域滤波">频域滤波</h2>
+<h3 id="图像傅里叶变换">图像傅里叶变换</h3>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619151056667.png" class title="image-20240619151056667">
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619150550789.png" class title="image-20240619150550789">
+<p>高频部分指图像边缘</p>
+<p>低频部分指非边缘</p>
+<p>正常傅里叶变换后，高频部分会在图像中间，低频部分会在图像四角</p>
+<p>一般会将傅里叶变换的图像频移，把四个角的低频信息集中在中间：</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619150722796.png" class title="image-20240619150722796">
+<p>频移后的图像，低频信息就会在中间，高频部分就在角落</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619150910825.png" class title="image-20240619150910825">
+<h3 id="频域滤波步骤">频域滤波步骤</h3>
+<ol type="1">
+<li>原图像<span class="math inline">\(I\)</span>每个对应像素乘<span class="math inline">\((-1)^{r+c}\)</span>，得到新的矩阵<span class="math inline">\(I^{&#39;}\)</span></li>
+<li>新矩阵<span class="math inline">\(I^{&#39;}\)</span>右侧和下侧补0，得到实矩阵<span class="math inline">\(F\)</span></li>
+<li>对实矩阵<span class="math inline">\(F\)</span>进行傅里叶变换，得到复矩阵<span class="math inline">\(f\)</span></li>
+<li>对复矩阵<span class="math inline">\(f\)</span>与复矩阵滤波器<span class="math inline">\(Filter\)</span>（这个滤波器矩阵一般是实矩阵）<strong>点乘</strong>，得到复矩阵<span class="math inline">\(f_{Filter}\)</span></li>
+<li>对复矩阵<span class="math inline">\(f_{Filter}\)</span>进行逆傅里叶变换，得到复矩阵<span class="math inline">\(f^{&#39;}\)</span></li>
+<li>对复矩阵<span class="math inline">\(f^{&#39;}\)</span>取实部，得到实矩阵<span class="math inline">\(f^{&#39;}_{real}\)</span></li>
+<li>对实矩阵<span class="math inline">\(f^{&#39;}_{real}\)</span>进行裁剪，得到实矩阵<span class="math inline">\(I^{&#39;&#39;}\)</span></li>
+<li>最后对这个实矩阵<span class="math inline">\(I^{&#39;&#39;}\)</span>每个像素乘<span class="math inline">\((-1)^{r+c}\)</span>，得到最终图像<span class="math inline">\(I_{Filter}\)</span></li>
+</ol>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619151930296.png" class title="image-20240619151930296">
+<p>实际操作例子：</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619152303289.png" class title="image-20240619152303289">
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619152319878.png" class title="image-20240619152319878">
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619152327480.png" class title="image-20240619152327480">
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619152450588.png" class title="image-20240619152450588">
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619152540485.png" class title="image-20240619152540485">
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619152547628.png" class title="image-20240619152547628">
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619152557276.png" class title="image-20240619152557276">
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619152602546.png" class title="image-20240619152602546">
+<h3 id="频域滤波器">频域滤波器</h3>
+<p>注意：这里假设进行傅里叶变换后默认进行频移操作，把低配信号移动到中间，高频信号移动到四周</p>
+<h4 id="低通滤波">低通滤波</h4>
+<h5 id="理想低通滤波器">理想低通滤波器</h5>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619152740216.png" class title="image-20240619152740216">
+<h5 id="巴特沃斯低通滤波器">巴特沃斯低通滤波器</h5>
+<p>巴特沃斯滤波器越高阶，越接近理想滤波器</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619152804940.png" class title="image-20240619152804940">
+<h5 id="高斯低通滤波器">高斯低通滤波器</h5>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619153024782.png" class title="image-20240619153024782">
+<h5 id="振铃现象">振铃现象</h5>
+<p>振铃现象是指在对一幅图像进行滤波处理时，如果选用的频域滤波器具有陡峭的变化，那么滤波后的图像可能会出现“振铃”，指输出图像的灰度剧烈变化处产生的震荡，就好像钟被敲击后产生的空气震荡</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619153340819.png" class title="image-20240619153340819">
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619153435316.png" class title="image-20240619153435316">
+<p>因此，实际上的理想低通滤波器在实际应用中不常用</p>
+<p>巴特沃斯滤波器也会出现振铃现象</p>
+<p>但是高斯低通滤波没有振铃现象</p>
+<h4 id="高通滤波">高通滤波</h4>
+<h5 id="理想高通滤波器">理想高通滤波器</h5>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619153620530.png" class title="image-20240619153620530">
+<h5 id="巴特沃斯高通滤波器">巴特沃斯高通滤波器</h5>
+<p>巴特沃斯滤波器越高阶，越接近理想滤波器</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619153639177.png" class title="image-20240619153639177">
+<h5 id="高斯高通滤波器">高斯高通滤波器</h5>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619153700625.png" class title="image-20240619153700625">
+<h1 id="边缘提取">边缘提取</h1>
+<p>边缘检测的算子，所有数字加起来必须等于0</p>
+<h2 id="边缘检测">边缘检测</h2>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619153932928.png" class title="image-20240619153932928">
+<p>边缘检测的原理：一阶导数<strong>极值点</strong>对应的就是边缘，二阶导数<strong>过零点</strong>对应的就是边缘</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619154113694.png" class title="image-20240619154113694">
+<p>对连续时间信号来说，是导数</p>
+<p>对离散时间信号来说，是差分（<span class="math inline">\(\Delta
+k=1\)</span>）</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619154438225.png" class title="image-20240619154438225">
+<h2 id="基于一阶差分的边缘检测">基于一阶差分的边缘检测</h2>
+<p>Roberts边缘检测</p>
+<p>Prewitt边缘检测</p>
+<p>Sobel边缘检测</p>
+<p>Canny边缘检测</p>
+<h3 id="核心步骤">核心步骤</h3>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619155553818.png" class title="image-20240619155553818">
+<h3 id="roberts边缘检测">Roberts边缘检测</h3>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619160530854.png" class title="image-20240619160530854">
+<p>方向看0的方向，0如果是45度那就反应的45度方向上灰度变化率（边界）</p>
+<p>可以举个例子，如<a target="_blank" rel="noopener" href="https://winkyspeed.github.io/2024/01/01/复习整理/数字图像处理复习整理/">数字图像处理复习整理</a>中手算sobel垂直方向模板，0是水平排列的，检测出来的就是水平边界</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240107151353534.png" class title="image-20240107151353534">
+<p>后面同理</p>
+<p>Roberts边缘检测，很多噪声的强度大于边缘的强度</p>
+<h3 id="prewitt边缘检测">Prewitt边缘检测</h3>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619160905504.png" class title="image-20240619160905504">
+<p>Prewitt边缘检测的算子是可以分离的</p>
+<h3 id="sobel边缘检测">Sobel边缘检测</h3>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619160947091.png" class title="image-20240619160947091">
+<h3 id="canny边缘检测">Canny边缘检测</h3>
+<p>检测步骤：</p>
+<ol type="1">
+<li>分别使用Sobel算子的水平和垂直方向卷积核与图像做卷积，得dx，dy；</li>
+<li>使用dx和dy计算各个位置的梯度方向angle=arctan2(dy,dx);</li>
+<li>基于梯度方向，对每一个位置做非最大值抑制;</li>
+<li>双阈值的滞后阈值处理。</li>
+</ol>
+<p>具体步骤：</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619161331364.png" class title="image-20240619161331364">
+<p><strong>利用dx和dy的平方和开方得到边缘强度矩阵</strong></p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619161340120.png" class title="image-20240619161340120">
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619161357375.png" class title="image-20240619161357375">
+<p>注意梯度方向在<span class="math inline">\([-180,180]\)</span></p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619162107335.png" class title="image-20240619162107335">
+<p>从(1,1)开始，忽略边缘一圈</p>
+<p>然后根据梯度方向对应位置的角度，确定参与运算的数</p>
+<p>计算出对应的两个数，如果与边缘强度矩阵对应位置数比较</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619162623280.png" class title="image-20240619162623280">
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619162737147.png" class title="image-20240619162737147">
+<p>角度划分区间：</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619163223859.png" class title="image-20240619163223859">
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619163430683.png" class title="image-20240619163430683">
+<h2 id="基于二阶差分的边缘检测">基于二阶差分的边缘检测</h2>
+<p>与一阶差分的模板不同，用到了对角</p>
+<p>拉普拉斯边缘检测</p>
+<p>高斯拉普拉斯边缘检测</p>
+<p>高斯差分边缘检测</p>
+<p>Marr-Hildreth边缘检测</p>
+<h3 id="拉普拉斯边缘检测">拉普拉斯边缘检测</h3>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619163524162.png" class title="image-20240619163524162">
+<h3 id="高斯拉普拉斯边缘检测">高斯拉普拉斯边缘检测</h3>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619163649525.png" class title="image-20240619163649525">
+<h3 id="高斯差分边缘检测">高斯差分边缘检测</h3>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619163720138.png" class title="image-20240619163720138">
+<h3 id="marr-hildreth边缘检测">Marr-Hildreth边缘检测</h3>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619163838305.png" class title="image-20240619163838305">
+<h2 id="hoghistogram-of-oriented-gradient">HOG（Histogram of Oriented
+Gradient）</h2>
+<p>广泛用于目标检测</p>
+<p><strong>特征描述子</strong>定义为：它是图像的一个简化的表示，其中仅包含图像最重要的信息</p>
+<p>HOG特征提取步骤：</p>
+<ol type="1">
+<li>图像缩放</li>
+<li>计算梯度dx和dy，用Sobel算子求解</li>
+<li>计算边缘强度和方向（类似于Canny边缘检测，但是这里角度在<span class="math inline">\([0,180]\)</span>）</li>
+<li>将图像划分为8x8的cell，并计算各个cell的梯度直方图（9维向量）</li>
+<li>归一化block中的梯度（一个block为16x16，即一个block有4个cell，即一个block有36维向量）</li>
+<li>获取整幅图像的特征，滑动block，获取全部block的36维向量，拼接这些向量就是最终特征向量</li>
+</ol>
+<p>具体过程：</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619173058201.png" class title="image-20240619173058201">
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619173104271.png" class title="image-20240619173104271">
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619173116022.png" class title="image-20240619173116022">
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619173204600.png" class title="image-20240619173204600">
+<p>一个block有4个cell，一个cell是1x9维向量，因此一个block就是1x(4x9)=1x36维向量</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619173317122.png" class title="image-20240619173317122">
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619173351541.png" class title="image-20240619173351541">
+<h1 id="角点检测">角点检测</h1>
+<p>SUSAN算子</p>
+<p>Harris</p>
+<h2 id="susan算子">SUSAN算子</h2>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619175116402.png" class title="image-20240619175116402">
+<p>圆形模板，USAN面积倒数作为输出，判断极大值就能找出角点</p>
+<h2 id="harris">Harris</h2>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619175720077.png" class title="image-20240619175720077">
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619175744008.png" class title="image-20240619175744008">
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619175751101.png" class title="image-20240619175751101">
+<h1 id="图像匹配">图像匹配</h1>
+<p>SIFT</p>
+<p>关键点匹配</p>
+<h2 id="sift">SIFT</h2>
+<p>一种基于尺度空间的、对图像缩放、旋转甚至仿射变换保持不变性的图像局部特征描述算子－SIFT（尺度不变特征变换）</p>
+<p>SIFT步骤：</p>
+<ol type="1">
+<li>构建尺度空间
+<ul>
+<li>高斯滤波，使用高斯滤波器对原始图像在不同尺度上进行平滑，生成一系列尺度变化的图像，这些图像组成了所谓的高斯金字塔</li>
+<li>构建尺度空间，模拟物体尺度变换（近大远小）</li>
+</ul></li>
+<li>定位关键点
+<ul>
+<li>计算DoG高斯差分金字塔，通过相邻尺度的高斯图像相减得到</li>
+<li>在差分高斯金字塔（DoG金字塔）中，每个像素与其相邻的26个像素比较，找局部极大值和极小值，这些就是初步关键点</li>
+<li>再在这些极值点里删除不稳定的特征点</li>
+</ul></li>
+<li>指定关键点方向
+<ul>
+<li>计算关键点邻域像素的梯度方向和幅值</li>
+<li>计算关键点邻域梯度直方图，共36个维度（360度，每隔10度取一次），求出主方向（有时也有辅方向，判断依据是有没有超过峰值的80%）</li>
+</ul></li>
+<li>描述关键点
+<ul>
+<li>以关键点梯度方向为基准，调整邻域点梯度方向，并更新梯度方向，以实现旋转不变性</li>
+<li>分解关键点邻域为16个4x4的块，每个块再统计一个8维直方图（360度，这次隔45度取一次）</li>
+<li>将每个直方图槽数据串联即可得到关键点的SIFT描述，即128维特征向量</li>
+</ul></li>
+</ol>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619175956652.png" class title="image-20240619175956652">
+<h3 id="构建尺度空间">构建尺度空间</h3>
+<p>就是构建高斯金字塔，每一层的宽高都是上一层的一半</p>
+<p>首先对原始输入图像进行适当的上采样（可选，取决于需要检测的最小特征尺度），并用一个初始的高斯核进行平滑，生成基础图像，这保证了在所有尺度上的图像特征都能被检测到</p>
+<p>从基础图像开始，逐渐增加高斯核的<span class="math inline">\(\sigma\)</span>值，对图像进行一系列的模糊。每次模糊都使用稍大一点的<span class="math inline">\(\sigma\)</span>，这样做生成了一系列尺度递增的图像，每个图像都比前一个更模糊</p>
+<h3 id="定位关键点">定位关键点</h3>
+<p>然后将每一层的相邻两张图做差分，得到DoG高斯差分金字塔</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619192829599.png" class title="image-20240619192829599">
+<p>在差分高斯金字塔（DoG金字塔）中，每个像素与其相邻的像素（同一图像中的<strong>8个</strong>邻域像素和<strong>相邻尺度上对应的9+9</strong>个像素，共26个邻域像素）比较，以寻找局部极大值和极小值，这些就是初步关键点</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619193830023.png" class title="image-20240619193830023">
+<p>再在这些极值点里删除不稳定的特征点：</p>
+<ol type="1">
+<li>从离散空间中估计出极值点的精确位置，借助DOG二阶泰勒展开，用值已知的点A估计点A附近的某点B的值</li>
+<li>去除对比度低的关键点</li>
+<li>去除处于边缘的关键点</li>
+</ol>
+<h3 id="指定关键点方向">指定关键点方向</h3>
+<p>计算关键点邻域像素的梯度方向和幅值</p>
+<p>将一圆周360°划分成36个槽，从0°开始每槽递增10°</p>
+<p>根据邻域点的方向、梯度的幅值以及距离特征点的远近构建上述<strong>梯度方向直方图</strong></p>
+<p>根据梯度直方图，直方图<strong>峰值所对应的的角度</strong>就是当前特征点A的方向</p>
+<p>同时如果某角度的梯度幅值和&gt;=峰值的80%，那么就产生一个新的特征点B，这个点的坐标、尺度等参数同A，但是角度不同，A点为主方向，B点等为辅方向</p>
+<h3 id="描述关键点">描述关键点</h3>
+<p>以关键点梯度方向为基准，调整邻域点梯度方向，并<strong>更新</strong>梯度方向</p>
+<p>将关键点邻域划分为16x16，进一步将其中4x4的小块划分为一组</p>
+<p>计算4x4小块的梯度方向直方图，只是这次直方图的槽是以45度划分的，因此每个直方图只有8个槽</p>
+<p>统计每个4×4块的方向梯度直方图，为了去除光照对描述子的影响，对梯度直方图进行归一化处理</p>
+<p>然后将每个直方图槽数据串联即可得到关键点的SIFT描述，即128维特征向量</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619194343296.png" class title="image-20240619194343296">
+<h2 id="关键点匹配">关键点匹配</h2>
+<p>需要提取sift特征</p>
+<h1 id="深度学习">深度学习</h1>
+<h2 id="深度学习框架与numpy">深度学习框架与numpy</h2>
+<blockquote>
+<p>深度学习框架（如TensorFlow, PyTorch,
+Keras等）和NumPy都是在Python生态中广泛使用的库，但它们各自的设计目标和功能强调有很大不同。以下是对它们之间的比较以及深度学习框架的优势介绍：</p>
+<h3 id="基本差异">基本差异</h3>
+<ol type="1">
+<li><strong>目的</strong>：</li>
+</ol>
+<ul>
+<li><strong>NumPy</strong>：提供了一个高性能的多维数组对象及相应的工具，主要用于科学计算。它的功能围绕数组计算展开，支持广播、矩阵运算等基本数学和复杂的统计操作。</li>
+<li><strong>深度学习框架</strong>：旨在<strong>简化并优化</strong>深度学习模型的构建、训练、测试和部署。这些框架提供<strong>自动微分、优化器、预定义的多层次网络结构</strong>等专为机器学习和深度学习设计的高级功能。</li>
+</ul>
+<ol start="2" type="1">
+<li><strong>数据结构</strong>：</li>
+</ol>
+<ul>
+<li><strong>NumPy</strong>：主要使用<code>ndarray</code>对象，这是一个通用的多维数组，适用于各种数值计算任务。</li>
+<li><strong>深度学习框架</strong>：虽然也使用类似于NumPy的多维数组（如TensorFlow的Tensor或PyTorch的Tensor），但这些数组专为高效的机器学习计算优化，支持<strong>GPU加速和自动微分</strong>。</li>
+</ul>
+<ol start="3" type="1">
+<li><strong>计算性能</strong>：</li>
+</ol>
+<ul>
+<li><strong>NumPy</strong>：主要在CPU上执行，虽然有些操作可以用NumPy库如NumExpr、CuPy在GPU上执行，但这<strong>不是原生支持</strong>。</li>
+<li><strong>深度学习框架</strong>：天生支持在GPU和TPU等硬件上运行，这对于训练复杂的深度学习模型是必须的。</li>
+</ul>
+<ol start="4" type="1">
+<li><strong>模型定义和训练</strong>：</li>
+</ol>
+<ul>
+<li><strong>NumPy</strong>：手动实现。</li>
+<li><strong>深度学习框架</strong>：深度学习框架提供了一系列的工具和函数，使得定义和训练神经网络变得更加容易。</li>
+</ul>
+<h3 id="深度学习框架的优势">深度学习框架的优势</h3>
+<h3 id="深度学习框架的优势-1">深度学习框架的优势</h3>
+<ol type="1">
+<li><strong>自动微分</strong>：提供<strong>自动微分技术</strong>来自动计算神经网络中的梯度。这是训练深度学习模型的关键技术，极大简化了模型的开发和训练过程。</li>
+<li><strong>模型抽象</strong>：深度学习框架提供高层次的API来定义和操作复杂的模型架构，如卷积神经网络(CNN)、循环神经网络(RNN)等。</li>
+<li><strong>优化算法</strong>：内置多种优化算法如SGD、Adam等，这些算法帮助用户轻松实现和测试不同的优化策略。</li>
+<li><strong>模型保存和恢复</strong>：支持模型的保存和加载，方便模型的部署和继续训练。</li>
+<li><strong>大规模部署</strong>：提供工具和库支持模型的大规模训练和部署，包括多GPU训练、分布式训练等。</li>
+<li><strong>社区和生态</strong>：拥有庞大的开发者和研究社区，提供大量预训练模型、教程和最佳实践。</li>
+</ol>
+<p>总之，虽然NumPy在科学计算领域非常强大和灵活，但深度学习框架通过专门为深度学习优化的工具和API，提供了更适合构建、训练和部署复杂神经网络模型的环境。</p>
+</blockquote>
+<h2 id="深度学习中卷积和互相关的关系">深度学习中卷积和互相关的关系</h2>
+<p>在深度学习，特别是在实现卷积神经网络时：</p>
+<ul>
+<li><strong>互相关操作</strong>经常被称为“卷积”。这主要是出于历史和软件实现的方便，因为在深度学习中，滤波器（或称为卷积核）通常是学习得到的，而不是预先定义的。因此，是否翻转这个滤波器在数学上不会产生本质区别，因为无论如何滤波器都要通过训练来调整其值。</li>
+<li><strong>真正的卷积操作</strong>（包括翻转步骤）在深度学习框架中较少使用，因为它并不为神经网络提供额外的优势，而且会增加计算的复杂性。</li>
+</ul>
+<p>尽管从理论上讲，卷积和互相关有着明确的区别，但在实际的深度学习应用中，这种区别通常是无关紧要的。无论使用哪种方法，网络在训练过程中都能学习到将输入有效映射到输出的最佳权重。因此，无论是从卷积还是互相关角度出发，最终的学习效果和网络性能应该是等价的。</p>
+<p>这种简化使得实现更为直接，同时也使得非专业人士更易于理解和应用CNN。在实际编程实现和教学中，通常使用术语“卷积”来描述这一操作，尽管按照严格定义，它更接近于互相关。</p>
+<h2 id="卷积的计算">卷积的计算</h2>
+<p>这个还是比较容易的，就是正常的模板卷积</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619202930803.png" class title="image-20240619202930803">
+<p>卷积的神经网络，并不是全连接（fully
+connected），也因此可以权重共享</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619203032287.png" class title="image-20240619203032287">
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619231555248.png" class title="image-20240619231555248">
+<h2 id="maxpooling计算">MaxPooling计算</h2>
+<p>这个也是很容易，找最大值就行</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619203228813.png" class title="image-20240619203228813">
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619203244677.png" class title="image-20240619203244677">
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619203303749.png" class title="image-20240619203303749">
+<h2 id="cnn步骤">CNN步骤</h2>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619203529003.png" class title="image-20240619203529003">
+<p>原图——卷积——pooling——卷积——pooling——接入全连接神经网络</p>
+<h2 id="cnn参数的计算">CNN参数的计算</h2>
+<h3 id="具体例子">具体例子</h3>
+<p>先看个具体的例子</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619205815184.png" class title="image-20240619205815184">
+<p>设stride为1，从头开始分析：</p>
+<p>输入图像是一个1通道28x28像素的灰度图像</p>
+<p>用25个3x3的卷积核来卷积，每一个核的通道需要跟上一层图像的通道对应，也就是说这25个3x3的卷积核都是<strong>单通道</strong>的</p>
+<p>卷积后一行有<span class="math inline">\(\dfrac{28-3}{1}+1=26\)</span>个像素</p>
+<p>第一次卷积得出的结果就是25个通道（用几个卷积核，结果就有几个通道），每个通道都是26x26个像素</p>
+<p>然后MaxPooling，用2x2的大小，得出来的结果就是25个通道，每个通道是13x13个像素</p>
+<p>再用50个3x3的卷积核来卷积，每一个核的通道需要跟上一层图像的通道对应，也就是说这50个3x3的卷积核都是<strong>25个通道</strong>的</p>
+<p>卷积后一行有<span class="math inline">\(\dfrac{13-3}{1}+1=11\)</span>个像素</p>
+<p>第二层卷积得出的结果就是50个通道，每个通道都是11x11个像素</p>
+<p>然后MaxPooling，用2x2的大小，得出来的结果就是50个通道，每个通道是5x5个像素</p>
+<p><br></p>
+<p>再看参数个数，一个卷积核里有多少数字就有几个参数</p>
+<p>第一种卷积核，是3x3的单通道，一个卷积核的参数个数就是1x3x3=9</p>
+<p>第二种卷积核，是3x3的25通道，一个卷积核的参数个数就是25x3x3=225</p>
+<p>pooling不需要参数</p>
+<p><br></p>
+<h3 id="参数计算公式">参数计算公式</h3>
+<p>设输入图像，宽为<span class="math inline">\(W\)</span>，高为<span class="math inline">\(H\)</span>，维数为<span class="math inline">\(D\)</span></p>
+<p>设用<span class="math inline">\(K\)</span>个卷积核，每个卷积核都是<span class="math inline">\(F\times F\)</span>，步长stride为<span class="math inline">\(S\)</span>，padding为<span class="math inline">\(P\)</span></p>
+<p>因此，产生的新图像：</p>
+<p>新的宽：<span class="math inline">\(W^{&#39;}=\dfrac{W-F+2P}{S}+1\)</span></p>
+<p>新的高：<span class="math inline">\(H^{&#39;}=\dfrac{H-F+2P}{S}+1\)</span></p>
+<p>新的维数：<span class="math inline">\(K\)</span></p>
+<p><br></p>
+<p>参数：看卷积核里数字的个数</p>
+<h2 id="反向传播">反向传播</h2>
+<p>链式法则：上流梯度*下流梯度</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619222018873.png" class title="image-20240619222018873">
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619222053964.png" class title="image-20240619222053964">
+<p>例如：</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619222127097.png" class title="image-20240619222127097">
+<p>这里上流梯度是<span class="math inline">\(-0.53\)</span></p>
+<p>下流梯度：<span class="math inline">\(f=e^x,\dfrac{df}{dx}=e^x\)</span>，下流的<span class="math inline">\(x=-1\)</span>，即下流梯度<span class="math inline">\(e^{-1}\)</span></p>
+<p>链式法则：<span class="math inline">\(-0.53\times
+e^{-1}=-0.2\)</span></p>
+<p>计算的时候写出<span class="math inline">\(f\)</span>跟<span class="math inline">\(x\)</span>的关系，再求导，再求梯度即可</p>
+<h2 id="经典神经网络">经典神经网络</h2>
+<p>AlexNet</p>
+<p>VGGNet</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619222551589.png" class title="image-20240619222551589">
+<p>GoogLeNet</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619222603592.png" class title="image-20240619222603592">
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619222616622.png" class title="image-20240619222616622">
+<p>ResNet</p>
+<img src="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/image-20240619222637382.png" class title="image-20240619222637382">
+<h1 id="词袋模型">词袋模型</h1>
+<h2 id="bow">BoW</h2>
+<p>词袋模型简称BoW，是一种文本特征表示方法</p>
+<p>不管是机器学习还是深度学习，接受的数据肯定是一个向量</p>
+<p>于是我们需要设计一个方法将文本转换为数值向量：</p>
+<ol type="1">
+<li>统计出所有文本数据中出现的不同单词个数NUM</li>
+<li>创建一个长度为NUM的整形数组，使一个单词对应一个元素（算是统计频度的直方图）</li>
+<li>遍历每个文本，对应单词数目在数组里加一（类似桶排序）</li>
+</ol>
+<h2 id="计算机视觉中的词袋模型">计算机视觉中的词袋模型</h2>
+<p>关键：</p>
+<ol type="1">
+<li>特征提取</li>
+<li>构建code words dictionary</li>
+</ol>
+<h2 id="基于词袋模型的图像识别">基于词袋模型的图像识别</h2>
+<p>步骤：</p>
+<ol type="1">
+<li>将图像裁剪成指定大小的网格，进行SIFT特征提取</li>
+<li>对SIFT做聚类，得出的聚类中心就是视觉词汇，所有视觉词汇的集合就是码字词典（视觉词典）</li>
+<li>图像表示，对每一幅图像以码字字典为规范，对图像的每一个SIFT特征点计算与词典中每个词汇的距离，最近的自增，就能得到这个图像的码本</li>
+<li>分类器训练</li>
+<li>测试分类器</li>
+</ol>
+<h2 id="基于词袋模型的图像检索">基于词袋模型的图像检索</h2>
+<p>TF-IDF：TF是词频，IDF是逆文本频率指数</p>
+<p>这个方法用以评估一个字词对一个文件集或语料库中其中一个文件的重要程度</p>
+<p>字词的重要性会随着文件中出现的次数成正比增加，也会随着在语料库中出现的频率成反比下降</p>
+<p>因此，基于词袋模型的图像检索就可以用这种方法来比对相似度</p>
+<h1 id="图像匹配-1">图像匹配</h1>
+<p>在原图中搜索原图的一部分：归一化互相关模板匹配</p>
+<p>在别的图中搜索，比如同一本书在不同的地方出现：</p>
+<p><strong>SIFT</strong></p>
+<p>对第一个图的每一个关键点计算到第二个图的每个关键点的欧氏距离（穷举），最近的就是最匹配关键点，选出最好的前50个</p>
+<p>简化：kd树搜索，搜索内容以目标图像的关键点为基准，搜索与目标图像特征点最邻近的原图像特征点和次邻近的原图像特征点</p>
+<p><strong>HOG</strong></p>
+<p>比对特征向量</p>
+<p><strong>词袋模型</strong></p>
+<p>建立词袋模型</p>
+<p>使用TF-IDF对目标进行权重计算，得到关键码keys</p>
+<p>然后比对目标和原始图像，计算他们两个key的内积得到value，value越大越相似</p>
+<h1 id="直方图">直方图</h1>
+<h2 id="hoghistogram-of-oriented-gradients">HOG（Histogram of Oriented
+Gradients）</h2>
+<ul>
+<li><strong>体现</strong>：HOG技术的核心就是计算图像局部区域（cells）的梯度方向直方图。这些直方图描述了这些局部区域内像素点梯度的分布情况，通过统计各个方向梯度的频率（即每个方向的梯度强度总和）来构建直方图。</li>
+<li><strong>统计</strong>：8x8 cell的梯度。</li>
+<li><strong>应用</strong>：HOG特征常用于物体检测，特别是行人检测，因为它能有效捕获物体的形状和纹理信息。</li>
+</ul>
+<h2 id="siftscale-invariant-feature-transform">SIFT（Scale-Invariant
+Feature Transform）</h2>
+<ul>
+<li><strong>体现</strong>：在SIFT特征提取过程中，每个关键点周围的区域被用来计算该点的梯度直方图。这个直方图基于像素的梯度和方向，通常分为36个bin（每10度一个bin）。</li>
+<li><strong>统计</strong>：关键点邻域梯度的直方图，36维；再把关键点邻域划分为16个4x4的小块，对每个小块求梯度方向直方图，8维。</li>
+<li><strong>应用</strong>：通过这些直方图，SIFT描述符不仅能够捕获关键点的局部特征，还能够保持对尺度和旋转的不变性，使其在图像匹配和识别任务中非常有效。</li>
+</ul>
+<h2 id="图像分割">图像分割</h2>
+<ul>
+<li><strong>体现</strong>：在图像分割中，直方图用于分析图像中像素值（如灰度值或颜色通道）的分布。例如，通过灰度直方图可以识别出不同的峰值，这些峰值代表图像中的主要灰度级，可以用于区分不同的区域。</li>
+<li><strong>统计</strong>：像素灰度值直方图。</li>
+<li><strong>应用</strong>：基于直方图的阈值方法是一种常见的图像分割技术，如Otsu方法自动选择一个阈值来最大化类间方差，从而分割图像。</li>
+</ul>
+<h2 id="词袋模型bag-of-words">词袋模型（Bag of Words）</h2>
+<ul>
+<li><strong>体现</strong>：在图像的词袋模型中，直方图用于表示图像中的视觉词汇的分布。首先，通过聚类方法（如K-means）对所有图像的特征（如SIFT特征）进行聚类，形成视觉词汇（视觉单词）。然后，对于每张图像，统计其特征落在每个聚类中心（即每个视觉单词）的频率，形成一个直方图。</li>
+<li><strong>统计</strong>：词频直方图。</li>
+<li><strong>应用</strong>：这种方法常用于图像分类和检索，通过比较图像的视觉词袋直方图来评估图像间的相似度。</li>
+</ul>
+<p>总结来说，直方图作为一种统计工具，在这些技术中提供了一种简单而强大的方式来总结和比较图像中的信息，无论是梯度方向、像素强度还是特征频率。这些应用体现了直方图在图像处理和计算机视觉中的多功能性和核心地位。</p>
+<h1 id="论文阅读">论文阅读</h1>
+<h2 id="摘要">摘要</h2>
+<p>摘要—卷积神经网络（CNN）是深度学习领域最重要的网络之一。由于CNN在包括但不限于计算机视觉和自然语言处理等多个领域取得了令人瞩目的成就，它在过去几年中吸引了工业界和学术界的广泛关注。现有的综述主要关注CNN在不同场景中的应用，没有从一个通用的角度考虑CNN，而且一些最近提出的新观点也没有涵盖。在这篇综述中，我们旨在尽可能提供这一快速发展领域中的新观点和前景。此外，我们不仅涉及到二维卷积，还涉及到一维和多维卷积。</p>
+<p>首先，本综述从简要介绍CNN的历史开始。</p>
+<p>其次，我们提供了CNN的概述。</p>
+<p>第三，介绍了经典和先进的CNN模型，特别是那些使它们达到最先进结果的关键点。</p>
+<p>第四，通过实验分析，我们得出了一些结论，并为功能选择提供了几条经验法则。</p>
+<p>第五，涵盖了一维、二维和多维卷积的应用。</p>
+<p>最后，讨论了CNN的一些开放性问题和有前途的方向，以作为未来工作的指南。</p>
+<h2 id="卷积神经网络cnn比较一般人工神经网络的优势">卷积神经网络CNN比较一般人工神经网络的优势</h2>
+<ol type="1">
+<li><strong>局部连接</strong>：每个神经元不再与前一层的所有神经元连接，而只连接到少数几个神经元。这种方式有效减少了参数数量，加速了收敛过程。</li>
+<li><strong>权重共享</strong>：一组连接可以共享相同的权重，这进一步减少了参数的数量。</li>
+<li><strong>降采样降维</strong>：池化层利用图像局部相关性原理对图像进行降采样，这不仅可以减少数据量，同时保留有用信息，还可以通过去除不重要的特征来减少参数数量。</li>
+</ol>
+<p>这三个吸引人的特性使得CNN成为深度学习领域最具代表性的算法之一</p>
+<h2 id="经典cnn">经典CNN</h2>
+<p>LeNet-5，用于手写体字符识别</p>
+<p>AlexNet，首次在CNN上成功地利用了ReLU激活函数、dropout（随机忽略一些神经元，
+以避免过度拟合）和局部归一化(LRN)</p>
+<p>VGGNets，增加神经网络的深度可以在一定程度上提高网络的最终性能，移除LRN</p>
+<p>GoogLeNet，第一个通过Inception模块形成的大规模CNN</p>
+<p>ResNet，重要贡献是由快捷连接构造的两层残差块（太深了容易导致梯度消失，梯度爆炸等问题）</p>
+<p>DCGAN</p>
+<p>MobileNets，轻量级模型</p>
+<p>ShuffleNets，解决移动设备计算能力不足的问题</p>
+<p>GhostNet，有效地降低计算成本</p>
+<h2 id="激活函数讨论">激活函数讨论</h2>
+<p>Sigmoid，映射到（0,1），用于二进制分类问题</p>
+<p>tanh，映射到（-1,1），输出的平均值为
+0，它可以实现一种归一化，这使得下一层更容易学习</p>
+<p>Rectified Linear Unit（ReLU），当x小于0时，其函数值为0;
+当x大于或等于0时，其函数值为x本身；显著优点是可以加快学习速度：ReLU的导函数是一个常数，而Sigmoid和tanh的导数需要除法指数运算</p>
+<p>Leaky ReLU ，可以减少神经元失活</p>
+<p>PReLU，负面部分的斜率是基于数据的，而不是预定义的</p>
+<p>ELU，具有负值，因此其输出的平均值接近于0，使得收敛速度比ReLU函数快；然而，负的部分是一条曲线，需要很多复杂的导数。</p>
+<h2 id="选择激活函数的经验法则">选择激活函数的经验法则</h2>
+<p>对于二元分类问题，最后一层可以利用Sigmoid；对于多元分类问题。最后一层可以利用softmax</p>
+<p>由于梯度消失，有时应避免使用Sigmoid和tanh函数。通常情况下，在隐蔽层中，ReLU或Leaky
+ReLU是一个不错的选择</p>
+<p>如果你对选择激活函数没有概念，可以试试ReLU或Leaky ReLU</p>
+<p>如果大量的神经元在训练过程中未被激活，请尝试利用Leaky
+ReLU、PReLU等</p>
+<p>Leaky ReLU中的负斜率可以被设置为 0.02来加快训练速度</p>
+<h2 id="损失函数">损失函数</h2>
+<p>常见的损失函数包括平均绝对误差(MAE) ，均方误差(MSE) ，交叉熵等</p>
+<p>在卷积神经网络中，当处理回归问题时，我们可能会使用MAE或MSE</p>
+<p>在卷积神经网络中，当涉及到分类任务时，最典型的一种方法是交叉熵损失法</p>
+<h2 id="优化器">优化器</h2>
+<p>常见的优化算法有Momentum，RMSprop，Adam等等</p>
+<h2 id="cnn应用">CNN应用</h2>
+<p>一维CNN：时间序列预测、信号识别</p>
+<p>二维CNN：图像分类、目标检测、图像分割、面部识别</p>
+<p>多维CNN（以三维为例）：人类行为识别、物体识别/检测</p>
+<h2 id="cnn前景">CNN前景</h2>
+<p>模型压缩，将模型部署到嵌入式设备</p>
+<p>CNN的安全</p>
+<p>网络架构搜索</p>
+<p>胶囊神经网络</p>
+<h1 id="实验四分析">实验四分析</h1>
+<h2 id="hogsvm">HOG+SVM</h2>
+<p>设计一个基于支持向量机（SVM）的分类系统，用于分类苹果树叶的病害类型</p>
+<p>系统将采用Histogram of Oriented Gradients (HOG)
+作为特征提取方法，并使用交叉验证来优化模型参数及评估模型性能</p>
+<p><strong>数据准备</strong></p>
+<p>数据收集：收集足够的苹果树叶图像，确保包括所有感兴趣的病害类型</p>
+<p>数据标注：对收集的图像分好文件夹或进行人工标注，分类标签包括斑点落叶病、花叶病和锈病</p>
+<p><strong>特征提取</strong></p>
+<p>使用HOG：选择HOG作为特征提取方法，因为HOG能有效地捕获图像的局部形状信息和纹理信息，适合于处理图像分类任务</p>
+<p><strong>数据划分</strong></p>
+<p>划分策略：将数据集划分为训练集、验证集和测试集。其中，训练集用于模型训练，验证集用于模型选择和调参，测试集用于最终的模型评估
+交叉验证：在训练过程中采用K折交叉验证方法，以确保评估结果的稳定性和可靠性</p>
+<p><strong>模型选择与训练</strong></p>
+<p>选择SVM：选用SVM作为分类器，因其在小样本情况下表现良好，适合处理复杂的图像分类问题</p>
+<p><strong>性能评估</strong></p>
+<p>评估指标：使用多个指标来评估模型性能，包括准确度（Accuracy）、精确度（Precision）、召回率（Recall）、F1分数和混淆矩阵</p>
+<p>混淆矩阵：特别利用混淆矩阵来可视化模型在各个类别上的性能，以识别模型可能的偏差或不足</p>
+<h2 id="resnet">ResNet</h2>
+<p>设计一个基于深度学习的分类系统，我们将利用预训练的ResNet模型对苹果树叶的病害类型进行分类</p>
+<p><strong>数据准备</strong></p>
+<p>数据收集：收集足够的苹果树叶图像，确保包括所有感兴趣的病害类型</p>
+<p>数据标注：对收集的图像分好文件夹或进行人工标注，分类标签包括斑点落叶病、花叶病和锈病</p>
+<p><strong>数据预处理</strong></p>
+<p>调整图像大小至统一尺寸（64x128），以符合模型输入要求</p>
+<p>转换图像数据类型，将图像数据转换为浮点张量，并调整通道顺序以适应PyTorch模型输入（通道、高度、宽度）</p>
+<p><strong>模型修改和适配</strong></p>
+<p>加载预训练模型：加载预训练的ResNet50模型</p>
+<p>自定义输出层：更换ResNet的全连接层，以匹配苹果树叶病害的三个类别</p>
+<p>参数设置：模型的最后一层采用线性变换，其输入特征数与ResNet最后一层的输出特征数相同，输出特征数为类别数（3）</p>
+<p><strong>训练过程</strong></p>
+<p>设置优化器和损失函数：使用SGD优化器和交叉熵损失函数，设置学习率和动量</p>
+<p>批处理和迭代：利用DataLoader进行数据批处理，执行多个训练周期</p>
+<p>损失监控：每个训练周期结束时输出损失，监控训练进度</p>
+<p><strong>性能评估</strong></p>
+<p>测试函数：设计测试函数以评估模型在测试集上的表现</p>
+<p>准确率计算：通过比较预测标签和真实标签来计算准确率</p>
+<p>混淆矩阵生成和可视化：生成混淆矩阵以查看各类别的分类性能，并通过热图进行可视化</p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<hr>
+<h1 id="参考资料">参考资料</h1>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43333886/article/details/123096415">A
+Survey of Convolutional Neural Networks: Analysis, Applications, and
+Prospects</a></p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/">复习整理</a><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">计算机视觉</a><a class="post-meta__tags" href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">图像处理</a><a class="post-meta__tags" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/06/09/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/VSCode-Pylance%E9%AB%98%E7%89%88%E6%9C%AC%E9%97%AE%E9%A2%98/" title="VSCode Pylance高版本问题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">VSCode Pylance高版本问题</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/02/12/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/Java%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="Java复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-12</div><div class="title">Java复习整理</div></div></a></div><div><a href="/2023/12/06/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/OOAD%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="OOAD复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-06</div><div class="title">OOAD复习整理</div></div></a></div><div><a href="/2023/06/03/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数字信号处理复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-03</div><div class="title">数字信号处理复习整理</div></div></a></div><div><a href="/2023/02/16/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="操作系统复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-16</div><div class="title">操作系统复习整理</div></div></a></div><div><a href="/2023/12/28/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数值分析复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-28</div><div class="title">数值分析复习整理</div></div></a></div><div><a href="/2023/02/14/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="数据结构复习整理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-14</div><div class="title">数据结构复习整理</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/WinkySpeed%20SP%20-%20Repaired.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">WinkySpeed</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">49</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">59</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/WinkySpeed"><i class="fab fa-github"></i><span>GitHub</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">计算机视觉复习整理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">题型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E5%85%B3%E7%B3%BB"><span class="toc-number">3.</span> <span class="toc-text">基础概念关系</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%AE%9A%E4%B9%89"><span class="toc-number">3.1.</span> <span class="toc-text">计算机视觉定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E4%B8%BB%E8%A6%81%E4%BB%BB%E5%8A%A1"><span class="toc-number">3.2.</span> <span class="toc-text">计算机视觉主要任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E5%AF%B9%E6%AF%94"><span class="toc-number">3.3.</span> <span class="toc-text">机器视觉对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%85%B3%E7%B3%BB"><span class="toc-number">3.4.</span> <span class="toc-text">图像处理关系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89-computer-vision"><span class="toc-number">3.4.1.</span> <span class="toc-text">计算机视觉 (Computer Vision)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-image-processing"><span class="toc-number">3.4.2.</span> <span class="toc-text">图像处理 (Image Processing)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BA%E5%88%AB"><span class="toc-number">3.4.3.</span> <span class="toc-text">区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%94%E7%B3%BB"><span class="toc-number">3.4.4.</span> <span class="toc-text">联系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">3.5.</span> <span class="toc-text">与人工智能的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%B3%E7%B3%BB"><span class="toc-number">3.6.</span> <span class="toc-text">机器学习、深度学习关系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0"><span class="toc-number">3.6.1.</span> <span class="toc-text">计算机视觉与机器学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0"><span class="toc-number">3.6.2.</span> <span class="toc-text">计算机视觉与深度学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E4%BA%92%E5%BD%B1%E5%93%8D"><span class="toc-number">3.6.3.</span> <span class="toc-text">相互影响</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%BB%A4%E6%B3%A2"><span class="toc-number">4.</span> <span class="toc-text">滤波</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E5%9F%9F%E6%BB%A4%E6%B3%A2"><span class="toc-number">4.1.</span> <span class="toc-text">空域滤波</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%BB%A4%E6%B3%A2"><span class="toc-number">4.1.1.</span> <span class="toc-text">线性滤波</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E7%BB%B4%E6%83%85%E5%86%B5"><span class="toc-number">4.1.1.1.</span> <span class="toc-text">一维情况</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E7%BB%B4%E6%83%85%E5%86%B5"><span class="toc-number">4.1.1.2.</span> <span class="toc-text">二维情况</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%B7%E7%A7%AF"><span class="toc-number">4.1.2.</span> <span class="toc-text">卷积</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%B7%E7%A7%AF%E4%B8%8E%E4%BA%92%E7%9B%B8%E5%85%B3"><span class="toc-number">4.1.2.1.</span> <span class="toc-text">卷积与互相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E5%88%86%E7%A6%BB%E5%8D%B7%E7%A7%AF"><span class="toc-number">4.1.2.2.</span> <span class="toc-text">可分离卷积</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%BB%A4%E6%B3%A2"><span class="toc-number">4.1.3.</span> <span class="toc-text">非线性滤波</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AD%E5%80%BC%E6%BB%A4%E6%B3%A2"><span class="toc-number">4.1.3.1.</span> <span class="toc-text">中值滤波</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8C%E8%BE%B9%E6%BB%A4%E6%B3%A2"><span class="toc-number">4.1.3.2.</span> <span class="toc-text">双边滤波</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E5%8C%B9%E9%85%8D"><span class="toc-number">4.1.4.</span> <span class="toc-text">模板匹配</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E7%A7%AF"><span class="toc-number">4.1.4.1.</span> <span class="toc-text">内积</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%92%E4%B8%80%E5%8C%96%E4%BA%92%E7%9B%B8%E5%85%B3%E6%A8%A1%E6%9D%BF%E5%8C%B9%E9%85%8D"><span class="toc-number">4.1.4.2.</span> <span class="toc-text">归一化互相关模板匹配</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%91%E5%9F%9F%E6%BB%A4%E6%B3%A2"><span class="toc-number">4.2.</span> <span class="toc-text">频域滤波</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2"><span class="toc-number">4.2.1.</span> <span class="toc-text">图像傅里叶变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%91%E5%9F%9F%E6%BB%A4%E6%B3%A2%E6%AD%A5%E9%AA%A4"><span class="toc-number">4.2.2.</span> <span class="toc-text">频域滤波步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%91%E5%9F%9F%E6%BB%A4%E6%B3%A2%E5%99%A8"><span class="toc-number">4.2.3.</span> <span class="toc-text">频域滤波器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%8E%E9%80%9A%E6%BB%A4%E6%B3%A2"><span class="toc-number">4.2.3.1.</span> <span class="toc-text">低通滤波</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%90%86%E6%83%B3%E4%BD%8E%E9%80%9A%E6%BB%A4%E6%B3%A2%E5%99%A8"><span class="toc-number">4.2.3.1.1.</span> <span class="toc-text">理想低通滤波器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B7%B4%E7%89%B9%E6%B2%83%E6%96%AF%E4%BD%8E%E9%80%9A%E6%BB%A4%E6%B3%A2%E5%99%A8"><span class="toc-number">4.2.3.1.2.</span> <span class="toc-text">巴特沃斯低通滤波器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%AB%98%E6%96%AF%E4%BD%8E%E9%80%9A%E6%BB%A4%E6%B3%A2%E5%99%A8"><span class="toc-number">4.2.3.1.3.</span> <span class="toc-text">高斯低通滤波器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8C%AF%E9%93%83%E7%8E%B0%E8%B1%A1"><span class="toc-number">4.2.3.1.4.</span> <span class="toc-text">振铃现象</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AB%98%E9%80%9A%E6%BB%A4%E6%B3%A2"><span class="toc-number">4.2.3.2.</span> <span class="toc-text">高通滤波</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%90%86%E6%83%B3%E9%AB%98%E9%80%9A%E6%BB%A4%E6%B3%A2%E5%99%A8"><span class="toc-number">4.2.3.2.1.</span> <span class="toc-text">理想高通滤波器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B7%B4%E7%89%B9%E6%B2%83%E6%96%AF%E9%AB%98%E9%80%9A%E6%BB%A4%E6%B3%A2%E5%99%A8"><span class="toc-number">4.2.3.2.2.</span> <span class="toc-text">巴特沃斯高通滤波器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%AB%98%E6%96%AF%E9%AB%98%E9%80%9A%E6%BB%A4%E6%B3%A2%E5%99%A8"><span class="toc-number">4.2.3.2.3.</span> <span class="toc-text">高斯高通滤波器</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BE%B9%E7%BC%98%E6%8F%90%E5%8F%96"><span class="toc-number">5.</span> <span class="toc-text">边缘提取</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B"><span class="toc-number">5.1.</span> <span class="toc-text">边缘检测</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E4%B8%80%E9%98%B6%E5%B7%AE%E5%88%86%E7%9A%84%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B"><span class="toc-number">5.2.</span> <span class="toc-text">基于一阶差分的边缘检测</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%AD%A5%E9%AA%A4"><span class="toc-number">5.2.1.</span> <span class="toc-text">核心步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#roberts%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B"><span class="toc-number">5.2.2.</span> <span class="toc-text">Roberts边缘检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#prewitt%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B"><span class="toc-number">5.2.3.</span> <span class="toc-text">Prewitt边缘检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sobel%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B"><span class="toc-number">5.2.4.</span> <span class="toc-text">Sobel边缘检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#canny%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B"><span class="toc-number">5.2.5.</span> <span class="toc-text">Canny边缘检测</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E4%BA%8C%E9%98%B6%E5%B7%AE%E5%88%86%E7%9A%84%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B"><span class="toc-number">5.3.</span> <span class="toc-text">基于二阶差分的边缘检测</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B"><span class="toc-number">5.3.1.</span> <span class="toc-text">拉普拉斯边缘检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E6%96%AF%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B"><span class="toc-number">5.3.2.</span> <span class="toc-text">高斯拉普拉斯边缘检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E6%96%AF%E5%B7%AE%E5%88%86%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B"><span class="toc-number">5.3.3.</span> <span class="toc-text">高斯差分边缘检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#marr-hildreth%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B"><span class="toc-number">5.3.4.</span> <span class="toc-text">Marr-Hildreth边缘检测</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hoghistogram-of-oriented-gradient"><span class="toc-number">5.4.</span> <span class="toc-text">HOG（Histogram of Oriented
+Gradient）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%92%E7%82%B9%E6%A3%80%E6%B5%8B"><span class="toc-number">6.</span> <span class="toc-text">角点检测</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#susan%E7%AE%97%E5%AD%90"><span class="toc-number">6.1.</span> <span class="toc-text">SUSAN算子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#harris"><span class="toc-number">6.2.</span> <span class="toc-text">Harris</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%8C%B9%E9%85%8D"><span class="toc-number">7.</span> <span class="toc-text">图像匹配</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#sift"><span class="toc-number">7.1.</span> <span class="toc-text">SIFT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E5%BB%BA%E5%B0%BA%E5%BA%A6%E7%A9%BA%E9%97%B4"><span class="toc-number">7.1.1.</span> <span class="toc-text">构建尺度空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%BD%8D%E5%85%B3%E9%94%AE%E7%82%B9"><span class="toc-number">7.1.2.</span> <span class="toc-text">定位关键点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E5%AE%9A%E5%85%B3%E9%94%AE%E7%82%B9%E6%96%B9%E5%90%91"><span class="toc-number">7.1.3.</span> <span class="toc-text">指定关键点方向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0%E5%85%B3%E9%94%AE%E7%82%B9"><span class="toc-number">7.1.4.</span> <span class="toc-text">描述关键点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E7%82%B9%E5%8C%B9%E9%85%8D"><span class="toc-number">7.2.</span> <span class="toc-text">关键点匹配</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0"><span class="toc-number">8.</span> <span class="toc-text">深度学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6%E4%B8%8Enumpy"><span class="toc-number">8.1.</span> <span class="toc-text">深度学习框架与numpy</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%B7%AE%E5%BC%82"><span class="toc-number">8.1.1.</span> <span class="toc-text">基本差异</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="toc-number">8.1.2.</span> <span class="toc-text">深度学习框架的优势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BC%98%E5%8A%BF-1"><span class="toc-number">8.1.3.</span> <span class="toc-text">深度学习框架的优势</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E5%8D%B7%E7%A7%AF%E5%92%8C%E4%BA%92%E7%9B%B8%E5%85%B3%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">8.2.</span> <span class="toc-text">深度学习中卷积和互相关的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%B7%E7%A7%AF%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="toc-number">8.3.</span> <span class="toc-text">卷积的计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#maxpooling%E8%AE%A1%E7%AE%97"><span class="toc-number">8.4.</span> <span class="toc-text">MaxPooling计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cnn%E6%AD%A5%E9%AA%A4"><span class="toc-number">8.5.</span> <span class="toc-text">CNN步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cnn%E5%8F%82%E6%95%B0%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="toc-number">8.6.</span> <span class="toc-text">CNN参数的计算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E4%BE%8B%E5%AD%90"><span class="toc-number">8.6.1.</span> <span class="toc-text">具体例子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F"><span class="toc-number">8.6.2.</span> <span class="toc-text">参数计算公式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD"><span class="toc-number">8.7.</span> <span class="toc-text">反向传播</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-number">8.8.</span> <span class="toc-text">经典神经网络</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%8D%E8%A2%8B%E6%A8%A1%E5%9E%8B"><span class="toc-number">9.</span> <span class="toc-text">词袋模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#bow"><span class="toc-number">9.1.</span> <span class="toc-text">BoW</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E4%B8%AD%E7%9A%84%E8%AF%8D%E8%A2%8B%E6%A8%A1%E5%9E%8B"><span class="toc-number">9.2.</span> <span class="toc-text">计算机视觉中的词袋模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E8%AF%8D%E8%A2%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB"><span class="toc-number">9.3.</span> <span class="toc-text">基于词袋模型的图像识别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E8%AF%8D%E8%A2%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%9B%BE%E5%83%8F%E6%A3%80%E7%B4%A2"><span class="toc-number">9.4.</span> <span class="toc-text">基于词袋模型的图像检索</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%8C%B9%E9%85%8D-1"><span class="toc-number">10.</span> <span class="toc-text">图像匹配</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%B4%E6%96%B9%E5%9B%BE"><span class="toc-number">11.</span> <span class="toc-text">直方图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#hoghistogram-of-oriented-gradients"><span class="toc-number">11.1.</span> <span class="toc-text">HOG（Histogram of Oriented
+Gradients）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#siftscale-invariant-feature-transform"><span class="toc-number">11.2.</span> <span class="toc-text">SIFT（Scale-Invariant
+Feature Transform）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2"><span class="toc-number">11.3.</span> <span class="toc-text">图像分割</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%8D%E8%A2%8B%E6%A8%A1%E5%9E%8Bbag-of-words"><span class="toc-number">11.4.</span> <span class="toc-text">词袋模型（Bag of Words）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB"><span class="toc-number">12.</span> <span class="toc-text">论文阅读</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-number">12.1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9Ccnn%E6%AF%94%E8%BE%83%E4%B8%80%E8%88%AC%E4%BA%BA%E5%B7%A5%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="toc-number">12.2.</span> <span class="toc-text">卷积神经网络CNN比较一般人工神经网络的优势</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8cnn"><span class="toc-number">12.3.</span> <span class="toc-text">经典CNN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0%E8%AE%A8%E8%AE%BA"><span class="toc-number">12.4.</span> <span class="toc-text">激活函数讨论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0%E7%9A%84%E7%BB%8F%E9%AA%8C%E6%B3%95%E5%88%99"><span class="toc-number">12.5.</span> <span class="toc-text">选择激活函数的经验法则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">12.6.</span> <span class="toc-text">损失函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E5%99%A8"><span class="toc-number">12.7.</span> <span class="toc-text">优化器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cnn%E5%BA%94%E7%94%A8"><span class="toc-number">12.8.</span> <span class="toc-text">CNN应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cnn%E5%89%8D%E6%99%AF"><span class="toc-number">12.9.</span> <span class="toc-text">CNN前景</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%9B%9B%E5%88%86%E6%9E%90"><span class="toc-number">13.</span> <span class="toc-text">实验四分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#hogsvm"><span class="toc-number">13.1.</span> <span class="toc-text">HOG+SVM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#resnet"><span class="toc-number">13.2.</span> <span class="toc-text">ResNet</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">14.</span> <span class="toc-text">参考资料</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/18/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="计算机视觉复习整理">计算机视觉复习整理</a><time datetime="2024-06-18T11:15:00.000Z" title="发表于 2024-06-18 19:15:00">2024-06-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/09/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/VSCode-Pylance%E9%AB%98%E7%89%88%E6%9C%AC%E9%97%AE%E9%A2%98/" title="VSCode Pylance高版本问题">VSCode Pylance高版本问题</a><time datetime="2024-06-09T10:11:24.000Z" title="发表于 2024-06-09 18:11:24">2024-06-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/24/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Raycasting%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-%E8%BF%9B%E9%98%B6%E4%B8%8E%E6%89%A9%E5%B1%95/" title="Raycasting学习记录_进阶与扩展">Raycasting学习记录_进阶与扩展</a><time datetime="2024-05-24T07:00:00.000Z" title="发表于 2024-05-24 15:00:00">2024-05-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/14/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/GAMES101%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="GAMES101学习记录">GAMES101学习记录</a><time datetime="2024-05-14T07:22:42.000Z" title="发表于 2024-05-14 15:22:42">2024-05-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/06/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/LeetCode%E8%AE%AD%E7%BB%83%E8%AE%B0%E5%BD%95/" title="LeetCode训练记录">LeetCode训练记录</a><time datetime="2024-05-06T13:31:21.000Z" title="发表于 2024-05-06 21:31:21">2024-05-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By WinkySpeed</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2d-widget/autoload.js"></script></body></html>
